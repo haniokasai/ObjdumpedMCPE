@@ -1,0 +1,44 @@
+  87c3e8:	b570      	push	{r4, r5, r6, lr}
+  87c3ea:	b086      	sub	sp, #24
+  87c3ec:	4604      	mov	r4, r0
+  87c3ee:	4668      	mov	r0, sp
+  87c3f0:	460d      	mov	r5, r1
+  87c3f2:	f616 ed66 	blx	692ec0 <EntityRuntimeID ReadOnlyBinaryStream::getType<EntityRuntimeID>()@plt>
+  87c3f6:	e9dd 0100 	ldrd	r0, r1, [sp]
+  87c3fa:	466e      	mov	r6, sp
+  87c3fc:	e9c4 0104 	strd	r0, r1, [r4, #16]
+  87c400:	4630      	mov	r0, r6
+  87c402:	4629      	mov	r1, r5
+  87c404:	f616 edec 	blx	692fe0 <ItemInstance ReadOnlyBinaryStream::getType<ItemInstance>()@plt>
+  87c408:	f104 0018 	add.w	r0, r4, #24
+  87c40c:	4631      	mov	r1, r6
+  87c40e:	f616 e8cc 	blx	6925a8 <ItemInstance::operator=(ItemInstance const&)@plt>
+  87c412:	9802      	ldr	r0, [sp, #8]
+  87c414:	b110      	cbz	r0, 87c41c <MobEquipmentPacket::read(BinaryStream&)+0x34>
+  87c416:	6801      	ldr	r1, [r0, #0]
+  87c418:	6849      	ldr	r1, [r1, #4]
+  87c41a:	4788      	blx	r1
+  87c41c:	4628      	mov	r0, r5
+  87c41e:	f616 ecae 	blx	692d7c <ReadOnlyBinaryStream::getByte()@plt>
+  87c422:	f884 0036 	strb.w	r0, [r4, #54]	; 0x36
+  87c426:	4628      	mov	r0, r5
+  87c428:	f616 eca8 	blx	692d7c <ReadOnlyBinaryStream::getByte()@plt>
+  87c42c:	f884 0037 	strb.w	r0, [r4, #55]	; 0x37
+  87c430:	4628      	mov	r0, r5
+  87c432:	f616 eca4 	blx	692d7c <ReadOnlyBinaryStream::getByte()@plt>
+  87c436:	f884 0038 	strb.w	r0, [r4, #56]	; 0x38
+  87c43a:	f994 1036 	ldrsb.w	r1, [r4, #54]	; 0x36
+  87c43e:	62e1      	str	r1, [r4, #44]	; 0x2c
+  87c440:	f994 1037 	ldrsb.w	r1, [r4, #55]	; 0x37
+  87c444:	6321      	str	r1, [r4, #48]	; 0x30
+  87c446:	f884 0035 	strb.w	r0, [r4, #53]	; 0x35
+  87c44a:	b006      	add	sp, #24
+  87c44c:	bd70      	pop	{r4, r5, r6, pc}
+  87c44e:	4604      	mov	r4, r0
+  87c450:	9802      	ldr	r0, [sp, #8]
+  87c452:	b110      	cbz	r0, 87c45a <MobEquipmentPacket::read(BinaryStream&)+0x72>
+  87c454:	6801      	ldr	r1, [r0, #0]
+  87c456:	6849      	ldr	r1, [r1, #4]
+  87c458:	4788      	blx	r1
+  87c45a:	4620      	mov	r0, r4
+  87c45c:	f614 e8a8 	blx	6905b0 <_Unwind_Resume@plt>

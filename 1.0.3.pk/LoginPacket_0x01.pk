@@ -1,0 +1,204 @@
+  877b4c:	b570      	push	{r4, r5, r6, lr}
+  877b4e:	b088      	sub	sp, #32
+  877b50:	4604      	mov	r4, r0
+  877b52:	486e      	ldr	r0, [pc, #440]	; (877d0c <LoginPacket::read(BinaryStream&)+0x1c0>)
+  877b54:	460d      	mov	r5, r1
+  877b56:	496e      	ldr	r1, [pc, #440]	; (877d10 <LoginPacket::read(BinaryStream&)+0x1c4>)
+  877b58:	4478      	add	r0, pc
+  877b5a:	5808      	ldr	r0, [r1, r0]
+  877b5c:	6806      	ldr	r6, [r0, #0]
+  877b5e:	4628      	mov	r0, r5
+  877b60:	f61b e906 	blx	692d70 <ReadOnlyBinaryStream::getSignedBigEndianInt()@plt>
+  877b64:	6120      	str	r0, [r4, #16]
+  877b66:	42b0      	cmp	r0, r6
+  877b68:	d13a      	bne.n	877be0 <LoginPacket::read(BinaryStream&)+0x94>
+  877b6a:	4628      	mov	r0, r5
+  877b6c:	f61b e906 	blx	692d7c <ReadOnlyBinaryStream::getByte()@plt>
+  877b70:	ae06      	add	r6, sp, #24
+  877b72:	7320      	strb	r0, [r4, #12]
+  877b74:	4629      	mov	r1, r5
+  877b76:	4630      	mov	r0, r6
+  877b78:	f61a ec8c 	blx	692494 <ReadOnlyBinaryStream::getString()@plt>
+  877b7c:	a804      	add	r0, sp, #16
+  877b7e:	f10d 0217 	add.w	r2, sp, #23
+  877b82:	4631      	mov	r1, r6
+  877b84:	f61b e900 	blx	692d88 <Util::decompress(std::string const&, bool&)@plt>
+  877b88:	f89d 0017 	ldrb.w	r0, [sp, #23]
+  877b8c:	b1a8      	cbz	r0, 877bba <LoginPacket::read(BinaryStream&)+0x6e>
+  877b8e:	a801      	add	r0, sp, #4
+  877b90:	a904      	add	r1, sp, #16
+  877b92:	f61b e900 	blx	692d94 <ConnectionRequest::fromString(std::string const&)@plt>
+  877b96:	200c      	movs	r0, #12
+  877b98:	f618 ed10 	blx	6905bc <operator new(unsigned int)@plt>
+  877b9c:	4605      	mov	r5, r0
+  877b9e:	a901      	add	r1, sp, #4
+  877ba0:	4628      	mov	r0, r5
+  877ba2:	f61b e8fe 	blx	692da0 <ConnectionRequest::ConnectionRequest(ConnectionRequest const&)@plt>
+  877ba6:	6960      	ldr	r0, [r4, #20]
+  877ba8:	6165      	str	r5, [r4, #20]
+  877baa:	b118      	cbz	r0, 877bb4 <LoginPacket::read(BinaryStream&)+0x68>
+  877bac:	f61b e8bc 	blx	692d28 <ConnectionRequest::~ConnectionRequest()@plt>
+  877bb0:	f618 ec2c 	blx	69040c <operator delete(void*)@plt>
+  877bb4:	a801      	add	r0, sp, #4
+  877bb6:	f61b e8b8 	blx	692d28 <ConnectionRequest::~ConnectionRequest()@plt>
+  877bba:	485c      	ldr	r0, [pc, #368]	; (877d2c <LoginPacket::read(BinaryStream&)+0x1e0>)
+  877bbc:	4c56      	ldr	r4, [pc, #344]	; (877d18 <LoginPacket::read(BinaryStream&)+0x1cc>)
+  877bbe:	4478      	add	r0, pc
+  877bc0:	9904      	ldr	r1, [sp, #16]
+  877bc2:	5822      	ldr	r2, [r4, r0]
+  877bc4:	f1a1 000c 	sub.w	r0, r1, #12
+  877bc8:	4290      	cmp	r0, r2
+  877bca:	d110      	bne.n	877bee <LoginPacket::read(BinaryStream&)+0xa2>
+  877bcc:	4859      	ldr	r0, [pc, #356]	; (877d34 <LoginPacket::read(BinaryStream&)+0x1e8>)
+  877bce:	9906      	ldr	r1, [sp, #24]
+  877bd0:	4478      	add	r0, pc
+  877bd2:	5822      	ldr	r2, [r4, r0]
+  877bd4:	f1a1 000c 	sub.w	r0, r1, #12
+  877bd8:	4290      	cmp	r0, r2
+  877bda:	d11a      	bne.n	877c12 <LoginPacket::read(BinaryStream&)+0xc6>
+  877bdc:	b008      	add	sp, #32
+  877bde:	bd70      	pop	{r4, r5, r6, pc}
+  877be0:	68e8      	ldr	r0, [r5, #12]
+  877be2:	6800      	ldr	r0, [r0, #0]
+  877be4:	f850 0c0c 	ldr.w	r0, [r0, #-12]
+  877be8:	6068      	str	r0, [r5, #4]
+  877bea:	b008      	add	sp, #32
+  877bec:	bd70      	pop	{r4, r5, r6, pc}
+  877bee:	4a50      	ldr	r2, [pc, #320]	; (877d30 <LoginPacket::read(BinaryStream&)+0x1e4>)
+  877bf0:	4b4b      	ldr	r3, [pc, #300]	; (877d20 <LoginPacket::read(BinaryStream&)+0x1d4>)
+  877bf2:	447a      	add	r2, pc
+  877bf4:	589b      	ldr	r3, [r3, r2]
+  877bf6:	1f0a      	subs	r2, r1, #4
+  877bf8:	b1eb      	cbz	r3, 877c36 <LoginPacket::read(BinaryStream&)+0xea>
+  877bfa:	f3bf 8f5b 	dmb	ish
+  877bfe:	e852 1f00 	ldrex	r1, [r2]
+  877c02:	1e4b      	subs	r3, r1, #1
+  877c04:	e842 3600 	strex	r6, r3, [r2]
+  877c08:	2e00      	cmp	r6, #0
+  877c0a:	d1f8      	bne.n	877bfe <LoginPacket::read(BinaryStream&)+0xb2>
+  877c0c:	f3bf 8f5b 	dmb	ish
+  877c10:	e014      	b.n	877c3c <LoginPacket::read(BinaryStream&)+0xf0>
+  877c12:	4a49      	ldr	r2, [pc, #292]	; (877d38 <LoginPacket::read(BinaryStream&)+0x1ec>)
+  877c14:	4b42      	ldr	r3, [pc, #264]	; (877d20 <LoginPacket::read(BinaryStream&)+0x1d4>)
+  877c16:	447a      	add	r2, pc
+  877c18:	589b      	ldr	r3, [r3, r2]
+  877c1a:	1f0a      	subs	r2, r1, #4
+  877c1c:	b1a3      	cbz	r3, 877c48 <LoginPacket::read(BinaryStream&)+0xfc>
+  877c1e:	f3bf 8f5b 	dmb	ish
+  877c22:	e852 1f00 	ldrex	r1, [r2]
+  877c26:	1e4b      	subs	r3, r1, #1
+  877c28:	e842 3600 	strex	r6, r3, [r2]
+  877c2c:	2e00      	cmp	r6, #0
+  877c2e:	d1f8      	bne.n	877c22 <LoginPacket::read(BinaryStream&)+0xd6>
+  877c30:	f3bf 8f5b 	dmb	ish
+  877c34:	e00b      	b.n	877c4e <LoginPacket::read(BinaryStream&)+0x102>
+  877c36:	6811      	ldr	r1, [r2, #0]
+  877c38:	1e4b      	subs	r3, r1, #1
+  877c3a:	6013      	str	r3, [r2, #0]
+  877c3c:	2900      	cmp	r1, #0
+  877c3e:	dcc5      	bgt.n	877bcc <LoginPacket::read(BinaryStream&)+0x80>
+  877c40:	a907      	add	r1, sp, #28
+  877c42:	f280 ec76 	blx	af8530 <Horse::onLadder(bool)+0x64>
+  877c46:	e7c1      	b.n	877bcc <LoginPacket::read(BinaryStream&)+0x80>
+  877c48:	6811      	ldr	r1, [r2, #0]
+  877c4a:	1e4b      	subs	r3, r1, #1
+  877c4c:	6013      	str	r3, [r2, #0]
+  877c4e:	2900      	cmp	r1, #0
+  877c50:	dcc4      	bgt.n	877bdc <LoginPacket::read(BinaryStream&)+0x90>
+  877c52:	a904      	add	r1, sp, #16
+  877c54:	f280 ec6c 	blx	af8530 <Horse::onLadder(bool)+0x64>
+  877c58:	e7c0      	b.n	877bdc <LoginPacket::read(BinaryStream&)+0x90>
+  877c5a:	4604      	mov	r4, r0
+  877c5c:	e013      	b.n	877c86 <LoginPacket::read(BinaryStream&)+0x13a>
+  877c5e:	4604      	mov	r4, r0
+  877c60:	e008      	b.n	877c74 <LoginPacket::read(BinaryStream&)+0x128>
+  877c62:	4604      	mov	r4, r0
+  877c64:	e003      	b.n	877c6e <LoginPacket::read(BinaryStream&)+0x122>
+  877c66:	4604      	mov	r4, r0
+  877c68:	4628      	mov	r0, r5
+  877c6a:	f618 ebd0 	blx	69040c <operator delete(void*)@plt>
+  877c6e:	a801      	add	r0, sp, #4
+  877c70:	f61b e85a 	blx	692d28 <ConnectionRequest::~ConnectionRequest()@plt>
+  877c74:	4827      	ldr	r0, [pc, #156]	; (877d14 <LoginPacket::read(BinaryStream&)+0x1c8>)
+  877c76:	4a28      	ldr	r2, [pc, #160]	; (877d18 <LoginPacket::read(BinaryStream&)+0x1cc>)
+  877c78:	4478      	add	r0, pc
+  877c7a:	9904      	ldr	r1, [sp, #16]
+  877c7c:	5812      	ldr	r2, [r2, r0]
+  877c7e:	f1a1 000c 	sub.w	r0, r1, #12
+  877c82:	4290      	cmp	r0, r2
+  877c84:	d122      	bne.n	877ccc <LoginPacket::read(BinaryStream&)+0x180>
+  877c86:	4827      	ldr	r0, [pc, #156]	; (877d24 <LoginPacket::read(BinaryStream&)+0x1d8>)
+  877c88:	4a23      	ldr	r2, [pc, #140]	; (877d18 <LoginPacket::read(BinaryStream&)+0x1cc>)
+  877c8a:	4478      	add	r0, pc
+  877c8c:	9906      	ldr	r1, [sp, #24]
+  877c8e:	5812      	ldr	r2, [r2, r0]
+  877c90:	f1a1 000c 	sub.w	r0, r1, #12
+  877c94:	4290      	cmp	r0, r2
+  877c96:	d016      	beq.n	877cc6 <LoginPacket::read(BinaryStream&)+0x17a>
+  877c98:	4a23      	ldr	r2, [pc, #140]	; (877d28 <LoginPacket::read(BinaryStream&)+0x1dc>)
+  877c9a:	4b21      	ldr	r3, [pc, #132]	; (877d20 <LoginPacket::read(BinaryStream&)+0x1d4>)
+  877c9c:	447a      	add	r2, pc
+  877c9e:	589b      	ldr	r3, [r3, r2]
+  877ca0:	1f0a      	subs	r2, r1, #4
+  877ca2:	b373      	cbz	r3, 877d02 <LoginPacket::read(BinaryStream&)+0x1b6>
+  877ca4:	f3bf 8f5b 	dmb	ish
+  877ca8:	e852 1f00 	ldrex	r1, [r2]
+  877cac:	1e4b      	subs	r3, r1, #1
+  877cae:	e842 3600 	strex	r6, r3, [r2]
+  877cb2:	2e00      	cmp	r6, #0
+  877cb4:	d1f8      	bne.n	877ca8 <LoginPacket::read(BinaryStream&)+0x15c>
+  877cb6:	f3bf 8f5b 	dmb	ish
+  877cba:	2900      	cmp	r1, #0
+  877cbc:	bfdc      	itt	le
+  877cbe:	f10d 011c 	addle.w	r1, sp, #28
+  877cc2:	f280 ec36 	blxle	af8530 <Horse::onLadder(bool)+0x64>
+  877cc6:	4620      	mov	r0, r4
+  877cc8:	f618 ec72 	blx	6905b0 <_Unwind_Resume@plt>
+  877ccc:	4a13      	ldr	r2, [pc, #76]	; (877d1c <LoginPacket::read(BinaryStream&)+0x1d0>)
+  877cce:	4b14      	ldr	r3, [pc, #80]	; (877d20 <LoginPacket::read(BinaryStream&)+0x1d4>)
+  877cd0:	447a      	add	r2, pc
+  877cd2:	589b      	ldr	r3, [r3, r2]
+  877cd4:	1f0a      	subs	r2, r1, #4
+  877cd6:	b15b      	cbz	r3, 877cf0 <LoginPacket::read(BinaryStream&)+0x1a4>
+  877cd8:	f3bf 8f5b 	dmb	ish
+  877cdc:	e852 1f00 	ldrex	r1, [r2]
+  877ce0:	1e4b      	subs	r3, r1, #1
+  877ce2:	e842 3600 	strex	r6, r3, [r2]
+  877ce6:	2e00      	cmp	r6, #0
+  877ce8:	d1f8      	bne.n	877cdc <LoginPacket::read(BinaryStream&)+0x190>
+  877cea:	f3bf 8f5b 	dmb	ish
+  877cee:	e002      	b.n	877cf6 <LoginPacket::read(BinaryStream&)+0x1aa>
+  877cf0:	6811      	ldr	r1, [r2, #0]
+  877cf2:	1e4b      	subs	r3, r1, #1
+  877cf4:	6013      	str	r3, [r2, #0]
+  877cf6:	2900      	cmp	r1, #0
+  877cf8:	dcc5      	bgt.n	877c86 <LoginPacket::read(BinaryStream&)+0x13a>
+  877cfa:	a907      	add	r1, sp, #28
+  877cfc:	f280 ec18 	blx	af8530 <Horse::onLadder(bool)+0x64>
+  877d00:	e7c1      	b.n	877c86 <LoginPacket::read(BinaryStream&)+0x13a>
+  877d02:	6811      	ldr	r1, [r2, #0]
+  877d04:	1e4b      	subs	r3, r1, #1
+  877d06:	6013      	str	r3, [r2, #0]
+  877d08:	e7d7      	b.n	877cba <LoginPacket::read(BinaryStream&)+0x16e>
+  877d0a:	bf00      	nop
+  877d0c:	b96c      	cbnz	r4, 877d2a <LoginPacket::read(BinaryStream&)+0x1de>
+  877d0e:	0159      	lsls	r1, r3, #5
+  877d10:	8da4      	ldrh	r4, [r4, #44]	; 0x2c
+  877d12:	ffff b84c 	vtbx.8	d27, {d15}, d12
+  877d16:	0159      	lsls	r1, r3, #5
+  877d18:	8ae0      	ldrh	r0, [r4, #22]
+  877d1a:	ffff b7f4 	vqshl.u64	<illegal reg q13.5>, q10, #63	; 0x3f
+  877d1e:	0159      	lsls	r1, r3, #5
+  877d20:	8ae4      	ldrh	r4, [r4, #22]
+  877d22:	ffff b83a 	vqshrun.s64	d27, q13, #1
+  877d26:	0159      	lsls	r1, r3, #5
+  877d28:	b828      			; <UNDEFINED> instruction: 0xb828
+  877d2a:	0159      	lsls	r1, r3, #5
+  877d2c:	b906      	cbnz	r6, 877d30 <LoginPacket::read(BinaryStream&)+0x1e4>
+  877d2e:	0159      	lsls	r1, r3, #5
+  877d30:	b8d2      			; <UNDEFINED> instruction: 0xb8d2
+  877d32:	0159      	lsls	r1, r3, #5
+  877d34:	b8f4      			; <UNDEFINED> instruction: 0xb8f4
+  877d36:	0159      	lsls	r1, r3, #5
+  877d38:	b8ae      			; <UNDEFINED> instruction: 0xb8ae
+  877d3a:	0159      	lsls	r1, r3, #5

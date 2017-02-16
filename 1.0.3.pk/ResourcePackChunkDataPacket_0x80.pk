@@ -1,0 +1,116 @@
+  880230:	b5f0      	push	{r4, r5, r6, r7, lr}
+  880232:	b083      	sub	sp, #12
+  880234:	466e      	mov	r6, sp
+  880236:	4605      	mov	r5, r0
+  880238:	4630      	mov	r0, r6
+  88023a:	460c      	mov	r4, r1
+  88023c:	f612 e92a 	blx	692494 <ReadOnlyBinaryStream::getString()@plt>
+  880240:	f105 000c 	add.w	r0, r5, #12
+  880244:	4631      	mov	r1, r6
+  880246:	f278 e9c4 	blx	af85d0 <Horse::onLadder(bool)+0x104>
+  88024a:	483e      	ldr	r0, [pc, #248]	; (880344 <ResourcePackChunkDataPacket::read(BinaryStream&)+0x114>)
+  88024c:	4a3a      	ldr	r2, [pc, #232]	; (880338 <ResourcePackChunkDataPacket::read(BinaryStream&)+0x108>)
+  88024e:	4478      	add	r0, pc
+  880250:	9900      	ldr	r1, [sp, #0]
+  880252:	5812      	ldr	r2, [r2, r0]
+  880254:	f1a1 000c 	sub.w	r0, r1, #12
+  880258:	4290      	cmp	r0, r2
+  88025a:	d128      	bne.n	8802ae <ResourcePackChunkDataPacket::read(BinaryStream&)+0x7e>
+  88025c:	4620      	mov	r0, r4
+  88025e:	f612 ef80 	blx	693160 <ReadOnlyBinaryStream::getUnsignedInt()@plt>
+  880262:	6128      	str	r0, [r5, #16]
+  880264:	4620      	mov	r0, r4
+  880266:	f612 edcc 	blx	692e00 <ReadOnlyBinaryStream::getUnsignedInt64()@plt>
+  88026a:	e9c5 0106 	strd	r0, r1, [r5, #24]
+  88026e:	4620      	mov	r0, r4
+  880270:	f612 ef76 	blx	693160 <ReadOnlyBinaryStream::getUnsignedInt()@plt>
+  880274:	462f      	mov	r7, r5
+  880276:	4606      	mov	r6, r0
+  880278:	f857 0f20 	ldr.w	r0, [r7, #32]!
+  88027c:	6879      	ldr	r1, [r7, #4]
+  88027e:	1a09      	subs	r1, r1, r0
+  880280:	428e      	cmp	r6, r1
+  880282:	d904      	bls.n	88028e <ResourcePackChunkDataPacket::read(BinaryStream&)+0x5e>
+  880284:	1a71      	subs	r1, r6, r1
+  880286:	4638      	mov	r0, r7
+  880288:	f612 ef70 	blx	69316c <std::vector<unsigned char, std::allocator<unsigned char> >::_M_default_append(unsigned int)@plt>
+  88028c:	e002      	b.n	880294 <ResourcePackChunkDataPacket::read(BinaryStream&)+0x64>
+  88028e:	bf3c      	itt	cc
+  880290:	4430      	addcc	r0, r6
+  880292:	6268      	strcc	r0, [r5, #36]	; 0x24
+  880294:	2e01      	cmp	r6, #1
+  880296:	db08      	blt.n	8802aa <ResourcePackChunkDataPacket::read(BinaryStream&)+0x7a>
+  880298:	2500      	movs	r5, #0
+  88029a:	4620      	mov	r0, r4
+  88029c:	f612 ed6e 	blx	692d7c <ReadOnlyBinaryStream::getByte()@plt>
+  8802a0:	6839      	ldr	r1, [r7, #0]
+  8802a2:	5548      	strb	r0, [r1, r5]
+  8802a4:	3501      	adds	r5, #1
+  8802a6:	42ae      	cmp	r6, r5
+  8802a8:	d1f7      	bne.n	88029a <ResourcePackChunkDataPacket::read(BinaryStream&)+0x6a>
+  8802aa:	b003      	add	sp, #12
+  8802ac:	bdf0      	pop	{r4, r5, r6, r7, pc}
+  8802ae:	4a26      	ldr	r2, [pc, #152]	; (880348 <ResourcePackChunkDataPacket::read(BinaryStream&)+0x118>)
+  8802b0:	4b23      	ldr	r3, [pc, #140]	; (880340 <ResourcePackChunkDataPacket::read(BinaryStream&)+0x110>)
+  8802b2:	447a      	add	r2, pc
+  8802b4:	589b      	ldr	r3, [r3, r2]
+  8802b6:	1f0a      	subs	r2, r1, #4
+  8802b8:	b15b      	cbz	r3, 8802d2 <ResourcePackChunkDataPacket::read(BinaryStream&)+0xa2>
+  8802ba:	f3bf 8f5b 	dmb	ish
+  8802be:	e852 1f00 	ldrex	r1, [r2]
+  8802c2:	1e4b      	subs	r3, r1, #1
+  8802c4:	e842 3700 	strex	r7, r3, [r2]
+  8802c8:	2f00      	cmp	r7, #0
+  8802ca:	d1f8      	bne.n	8802be <ResourcePackChunkDataPacket::read(BinaryStream&)+0x8e>
+  8802cc:	f3bf 8f5b 	dmb	ish
+  8802d0:	e002      	b.n	8802d8 <ResourcePackChunkDataPacket::read(BinaryStream&)+0xa8>
+  8802d2:	6811      	ldr	r1, [r2, #0]
+  8802d4:	1e4b      	subs	r3, r1, #1
+  8802d6:	6013      	str	r3, [r2, #0]
+  8802d8:	2900      	cmp	r1, #0
+  8802da:	dcbf      	bgt.n	88025c <ResourcePackChunkDataPacket::read(BinaryStream&)+0x2c>
+  8802dc:	a901      	add	r1, sp, #4
+  8802de:	f278 e928 	blx	af8530 <Horse::onLadder(bool)+0x64>
+  8802e2:	e7bb      	b.n	88025c <ResourcePackChunkDataPacket::read(BinaryStream&)+0x2c>
+  8802e4:	4a13      	ldr	r2, [pc, #76]	; (880334 <ResourcePackChunkDataPacket::read(BinaryStream&)+0x104>)
+  8802e6:	4604      	mov	r4, r0
+  8802e8:	4b13      	ldr	r3, [pc, #76]	; (880338 <ResourcePackChunkDataPacket::read(BinaryStream&)+0x108>)
+  8802ea:	447a      	add	r2, pc
+  8802ec:	9900      	ldr	r1, [sp, #0]
+  8802ee:	f1a1 000c 	sub.w	r0, r1, #12
+  8802f2:	589a      	ldr	r2, [r3, r2]
+  8802f4:	4290      	cmp	r0, r2
+  8802f6:	d016      	beq.n	880326 <ResourcePackChunkDataPacket::read(BinaryStream&)+0xf6>
+  8802f8:	4a10      	ldr	r2, [pc, #64]	; (88033c <ResourcePackChunkDataPacket::read(BinaryStream&)+0x10c>)
+  8802fa:	4b11      	ldr	r3, [pc, #68]	; (880340 <ResourcePackChunkDataPacket::read(BinaryStream&)+0x110>)
+  8802fc:	447a      	add	r2, pc
+  8802fe:	589b      	ldr	r3, [r3, r2]
+  880300:	1f0a      	subs	r2, r1, #4
+  880302:	b19b      	cbz	r3, 88032c <ResourcePackChunkDataPacket::read(BinaryStream&)+0xfc>
+  880304:	f3bf 8f5b 	dmb	ish
+  880308:	e852 1f00 	ldrex	r1, [r2]
+  88030c:	1e4b      	subs	r3, r1, #1
+  88030e:	e842 3700 	strex	r7, r3, [r2]
+  880312:	2f00      	cmp	r7, #0
+  880314:	d1f8      	bne.n	880308 <ResourcePackChunkDataPacket::read(BinaryStream&)+0xd8>
+  880316:	f3bf 8f5b 	dmb	ish
+  88031a:	2900      	cmp	r1, #0
+  88031c:	bfdc      	itt	le
+  88031e:	f10d 0108 	addle.w	r1, sp, #8
+  880322:	f278 e906 	blxle	af8530 <Horse::onLadder(bool)+0x64>
+  880326:	4620      	mov	r0, r4
+  880328:	f610 e942 	blx	6905b0 <_Unwind_Resume@plt>
+  88032c:	6811      	ldr	r1, [r2, #0]
+  88032e:	1e4b      	subs	r3, r1, #1
+  880330:	6013      	str	r3, [r2, #0]
+  880332:	e7f2      	b.n	88031a <ResourcePackChunkDataPacket::read(BinaryStream&)+0xea>
+  880334:	31da      	adds	r1, #218	; 0xda
+  880336:	0159      	lsls	r1, r3, #5
+  880338:	8ae0      	ldrh	r0, [r4, #22]
+  88033a:	ffff 31c8 	vmla.f<illegal width 64>	<illegal reg q9.5>, <illegal reg q15.5>, d8[0]
+  88033e:	0159      	lsls	r1, r3, #5
+  880340:	8ae4      	ldrh	r4, [r4, #22]
+  880342:	ffff 3276 	vrshr.u32	<illegal reg q9.5>, q11, #1
+  880346:	0159      	lsls	r1, r3, #5
+  880348:	3212      	adds	r2, #18
+  88034a:	0159      	lsls	r1, r3, #5

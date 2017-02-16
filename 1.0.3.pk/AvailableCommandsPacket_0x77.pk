@@ -1,0 +1,158 @@
+  880854:	b5f0      	push	{r4, r5, r6, r7, lr}
+  880856:	b087      	sub	sp, #28
+  880858:	ae02      	add	r6, sp, #8
+  88085a:	4604      	mov	r4, r0
+  88085c:	460d      	mov	r5, r1
+  88085e:	4630      	mov	r0, r6
+  880860:	f611 ee18 	blx	692494 <ReadOnlyBinaryStream::getString()@plt>
+  880864:	f104 000c 	add.w	r0, r4, #12
+  880868:	4631      	mov	r1, r6
+  88086a:	f277 eeb2 	blx	af85d0 <Horse::onLadder(bool)+0x104>
+  88086e:	4852      	ldr	r0, [pc, #328]	; (8809b8 <AvailableCommandsPacket::read(BinaryStream&)+0x164>)
+  880870:	4f4e      	ldr	r7, [pc, #312]	; (8809ac <AvailableCommandsPacket::read(BinaryStream&)+0x158>)
+  880872:	4478      	add	r0, pc
+  880874:	9902      	ldr	r1, [sp, #8]
+  880876:	583a      	ldr	r2, [r7, r0]
+  880878:	f1a1 000c 	sub.w	r0, r1, #12
+  88087c:	4290      	cmp	r0, r2
+  88087e:	d113      	bne.n	8808a8 <AvailableCommandsPacket::read(BinaryStream&)+0x54>
+  880880:	ae01      	add	r6, sp, #4
+  880882:	4629      	mov	r1, r5
+  880884:	4630      	mov	r0, r6
+  880886:	f611 ee06 	blx	692494 <ReadOnlyBinaryStream::getString()@plt>
+  88088a:	f104 0010 	add.w	r0, r4, #16
+  88088e:	4631      	mov	r1, r6
+  880890:	f277 ee9e 	blx	af85d0 <Horse::onLadder(bool)+0x104>
+  880894:	484c      	ldr	r0, [pc, #304]	; (8809c8 <AvailableCommandsPacket::read(BinaryStream&)+0x174>)
+  880896:	9901      	ldr	r1, [sp, #4]
+  880898:	4478      	add	r0, pc
+  88089a:	583a      	ldr	r2, [r7, r0]
+  88089c:	f1a1 000c 	sub.w	r0, r1, #12
+  8808a0:	4290      	cmp	r0, r2
+  8808a2:	d113      	bne.n	8808cc <AvailableCommandsPacket::read(BinaryStream&)+0x78>
+  8808a4:	b007      	add	sp, #28
+  8808a6:	bdf0      	pop	{r4, r5, r6, r7, pc}
+  8808a8:	4a44      	ldr	r2, [pc, #272]	; (8809bc <AvailableCommandsPacket::read(BinaryStream&)+0x168>)
+  8808aa:	4b42      	ldr	r3, [pc, #264]	; (8809b4 <AvailableCommandsPacket::read(BinaryStream&)+0x160>)
+  8808ac:	447a      	add	r2, pc
+  8808ae:	589b      	ldr	r3, [r3, r2]
+  8808b0:	1f0a      	subs	r2, r1, #4
+  8808b2:	b1eb      	cbz	r3, 8808f0 <AvailableCommandsPacket::read(BinaryStream&)+0x9c>
+  8808b4:	f3bf 8f5b 	dmb	ish
+  8808b8:	e852 1f00 	ldrex	r1, [r2]
+  8808bc:	1e4b      	subs	r3, r1, #1
+  8808be:	e842 3600 	strex	r6, r3, [r2]
+  8808c2:	2e00      	cmp	r6, #0
+  8808c4:	d1f8      	bne.n	8808b8 <AvailableCommandsPacket::read(BinaryStream&)+0x64>
+  8808c6:	f3bf 8f5b 	dmb	ish
+  8808ca:	e014      	b.n	8808f6 <AvailableCommandsPacket::read(BinaryStream&)+0xa2>
+  8808cc:	4a3f      	ldr	r2, [pc, #252]	; (8809cc <AvailableCommandsPacket::read(BinaryStream&)+0x178>)
+  8808ce:	4b39      	ldr	r3, [pc, #228]	; (8809b4 <AvailableCommandsPacket::read(BinaryStream&)+0x160>)
+  8808d0:	447a      	add	r2, pc
+  8808d2:	589b      	ldr	r3, [r3, r2]
+  8808d4:	1f0a      	subs	r2, r1, #4
+  8808d6:	b1a3      	cbz	r3, 880902 <AvailableCommandsPacket::read(BinaryStream&)+0xae>
+  8808d8:	f3bf 8f5b 	dmb	ish
+  8808dc:	e852 1f00 	ldrex	r1, [r2]
+  8808e0:	1e4b      	subs	r3, r1, #1
+  8808e2:	e842 3700 	strex	r7, r3, [r2]
+  8808e6:	2f00      	cmp	r7, #0
+  8808e8:	d1f8      	bne.n	8808dc <AvailableCommandsPacket::read(BinaryStream&)+0x88>
+  8808ea:	f3bf 8f5b 	dmb	ish
+  8808ee:	e00b      	b.n	880908 <AvailableCommandsPacket::read(BinaryStream&)+0xb4>
+  8808f0:	6811      	ldr	r1, [r2, #0]
+  8808f2:	1e4b      	subs	r3, r1, #1
+  8808f4:	6013      	str	r3, [r2, #0]
+  8808f6:	2900      	cmp	r1, #0
+  8808f8:	dcc2      	bgt.n	880880 <AvailableCommandsPacket::read(BinaryStream&)+0x2c>
+  8808fa:	a903      	add	r1, sp, #12
+  8808fc:	f277 ee18 	blx	af8530 <Horse::onLadder(bool)+0x64>
+  880900:	e7be      	b.n	880880 <AvailableCommandsPacket::read(BinaryStream&)+0x2c>
+  880902:	6811      	ldr	r1, [r2, #0]
+  880904:	1e4b      	subs	r3, r1, #1
+  880906:	6013      	str	r3, [r2, #0]
+  880908:	2900      	cmp	r1, #0
+  88090a:	dccb      	bgt.n	8808a4 <AvailableCommandsPacket::read(BinaryStream&)+0x50>
+  88090c:	a904      	add	r1, sp, #16
+  88090e:	f277 ee10 	blx	af8530 <Horse::onLadder(bool)+0x64>
+  880912:	e7c7      	b.n	8808a4 <AvailableCommandsPacket::read(BinaryStream&)+0x50>
+  880914:	4a24      	ldr	r2, [pc, #144]	; (8809a8 <AvailableCommandsPacket::read(BinaryStream&)+0x154>)
+  880916:	4604      	mov	r4, r0
+  880918:	4b24      	ldr	r3, [pc, #144]	; (8809ac <AvailableCommandsPacket::read(BinaryStream&)+0x158>)
+  88091a:	447a      	add	r2, pc
+  88091c:	9902      	ldr	r1, [sp, #8]
+  88091e:	f1a1 000c 	sub.w	r0, r1, #12
+  880922:	589a      	ldr	r2, [r3, r2]
+  880924:	4290      	cmp	r0, r2
+  880926:	d033      	beq.n	880990 <AvailableCommandsPacket::read(BinaryStream&)+0x13c>
+  880928:	4a21      	ldr	r2, [pc, #132]	; (8809b0 <AvailableCommandsPacket::read(BinaryStream&)+0x15c>)
+  88092a:	4b22      	ldr	r3, [pc, #136]	; (8809b4 <AvailableCommandsPacket::read(BinaryStream&)+0x160>)
+  88092c:	447a      	add	r2, pc
+  88092e:	589b      	ldr	r3, [r3, r2]
+  880930:	1f0a      	subs	r2, r1, #4
+  880932:	b383      	cbz	r3, 880996 <AvailableCommandsPacket::read(BinaryStream&)+0x142>
+  880934:	f3bf 8f5b 	dmb	ish
+  880938:	e852 1f00 	ldrex	r1, [r2]
+  88093c:	1e4b      	subs	r3, r1, #1
+  88093e:	e842 3700 	strex	r7, r3, [r2]
+  880942:	2f00      	cmp	r7, #0
+  880944:	d1f8      	bne.n	880938 <AvailableCommandsPacket::read(BinaryStream&)+0xe4>
+  880946:	f3bf 8f5b 	dmb	ish
+  88094a:	2900      	cmp	r1, #0
+  88094c:	dc20      	bgt.n	880990 <AvailableCommandsPacket::read(BinaryStream&)+0x13c>
+  88094e:	a905      	add	r1, sp, #20
+  880950:	e01c      	b.n	88098c <AvailableCommandsPacket::read(BinaryStream&)+0x138>
+  880952:	4a1b      	ldr	r2, [pc, #108]	; (8809c0 <AvailableCommandsPacket::read(BinaryStream&)+0x16c>)
+  880954:	4604      	mov	r4, r0
+  880956:	9901      	ldr	r1, [sp, #4]
+  880958:	447a      	add	r2, pc
+  88095a:	f1a1 000c 	sub.w	r0, r1, #12
+  88095e:	58ba      	ldr	r2, [r7, r2]
+  880960:	4290      	cmp	r0, r2
+  880962:	d015      	beq.n	880990 <AvailableCommandsPacket::read(BinaryStream&)+0x13c>
+  880964:	4a17      	ldr	r2, [pc, #92]	; (8809c4 <AvailableCommandsPacket::read(BinaryStream&)+0x170>)
+  880966:	4b13      	ldr	r3, [pc, #76]	; (8809b4 <AvailableCommandsPacket::read(BinaryStream&)+0x160>)
+  880968:	447a      	add	r2, pc
+  88096a:	589b      	ldr	r3, [r3, r2]
+  88096c:	1f0a      	subs	r2, r1, #4
+  88096e:	b1b3      	cbz	r3, 88099e <AvailableCommandsPacket::read(BinaryStream&)+0x14a>
+  880970:	f3bf 8f5b 	dmb	ish
+  880974:	e852 1f00 	ldrex	r1, [r2]
+  880978:	1e4b      	subs	r3, r1, #1
+  88097a:	e842 3700 	strex	r7, r3, [r2]
+  88097e:	2f00      	cmp	r7, #0
+  880980:	d1f8      	bne.n	880974 <AvailableCommandsPacket::read(BinaryStream&)+0x120>
+  880982:	f3bf 8f5b 	dmb	ish
+  880986:	2900      	cmp	r1, #0
+  880988:	dc02      	bgt.n	880990 <AvailableCommandsPacket::read(BinaryStream&)+0x13c>
+  88098a:	a906      	add	r1, sp, #24
+  88098c:	f277 edd0 	blx	af8530 <Horse::onLadder(bool)+0x64>
+  880990:	4620      	mov	r0, r4
+  880992:	f60f ee0e 	blx	6905b0 <_Unwind_Resume@plt>
+  880996:	6811      	ldr	r1, [r2, #0]
+  880998:	1e4b      	subs	r3, r1, #1
+  88099a:	6013      	str	r3, [r2, #0]
+  88099c:	e7d5      	b.n	88094a <AvailableCommandsPacket::read(BinaryStream&)+0xf6>
+  88099e:	6811      	ldr	r1, [r2, #0]
+  8809a0:	1e4b      	subs	r3, r1, #1
+  8809a2:	6013      	str	r3, [r2, #0]
+  8809a4:	e7ef      	b.n	880986 <AvailableCommandsPacket::read(BinaryStream&)+0x132>
+  8809a6:	bf00      	nop
+  8809a8:	2baa      	cmp	r3, #170	; 0xaa
+  8809aa:	0159      	lsls	r1, r3, #5
+  8809ac:	8ae0      	ldrh	r0, [r4, #22]
+  8809ae:	ffff 2b98 			; <UNDEFINED> instruction: 0xffff2b98
+  8809b2:	0159      	lsls	r1, r3, #5
+  8809b4:	8ae4      	ldrh	r4, [r4, #22]
+  8809b6:	ffff 2c52 			; <UNDEFINED> instruction: 0xffff2c52
+  8809ba:	0159      	lsls	r1, r3, #5
+  8809bc:	2c18      	cmp	r4, #24
+  8809be:	0159      	lsls	r1, r3, #5
+  8809c0:	2b6c      	cmp	r3, #108	; 0x6c
+  8809c2:	0159      	lsls	r1, r3, #5
+  8809c4:	2b5c      	cmp	r3, #92	; 0x5c
+  8809c6:	0159      	lsls	r1, r3, #5
+  8809c8:	2c2c      	cmp	r4, #44	; 0x2c
+  8809ca:	0159      	lsls	r1, r3, #5
+  8809cc:	2bf4      	cmp	r3, #244	; 0xf4
+  8809ce:	0159      	lsls	r1, r3, #5

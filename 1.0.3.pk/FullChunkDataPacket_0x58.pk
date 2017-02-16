@@ -1,0 +1,92 @@
+  87df4c:	b570      	push	{r4, r5, r6, lr}
+  87df4e:	b086      	sub	sp, #24
+  87df50:	4605      	mov	r5, r0
+  87df52:	a802      	add	r0, sp, #8
+  87df54:	460c      	mov	r4, r1
+  87df56:	f615 e8b0 	blx	6930b8 <ChunkPos ReadOnlyBinaryStream::getType<ChunkPos>()@plt>
+  87df5a:	9802      	ldr	r0, [sp, #8]
+  87df5c:	ae01      	add	r6, sp, #4
+  87df5e:	60e8      	str	r0, [r5, #12]
+  87df60:	4621      	mov	r1, r4
+  87df62:	9803      	ldr	r0, [sp, #12]
+  87df64:	6128      	str	r0, [r5, #16]
+  87df66:	4630      	mov	r0, r6
+  87df68:	f614 ea94 	blx	692494 <ReadOnlyBinaryStream::getString()@plt>
+  87df6c:	f105 0014 	add.w	r0, r5, #20
+  87df70:	4631      	mov	r1, r6
+  87df72:	f27a eb2e 	blx	af85d0 <Horse::onLadder(bool)+0x104>
+  87df76:	482b      	ldr	r0, [pc, #172]	; (87e024 <FullChunkDataPacket::read(BinaryStream&)+0xd8>)
+  87df78:	4a27      	ldr	r2, [pc, #156]	; (87e018 <FullChunkDataPacket::read(BinaryStream&)+0xcc>)
+  87df7a:	4478      	add	r0, pc
+  87df7c:	9901      	ldr	r1, [sp, #4]
+  87df7e:	5812      	ldr	r2, [r2, r0]
+  87df80:	f1a1 000c 	sub.w	r0, r1, #12
+  87df84:	4290      	cmp	r0, r2
+  87df86:	d101      	bne.n	87df8c <FullChunkDataPacket::read(BinaryStream&)+0x40>
+  87df88:	b006      	add	sp, #24
+  87df8a:	bd70      	pop	{r4, r5, r6, pc}
+  87df8c:	4a26      	ldr	r2, [pc, #152]	; (87e028 <FullChunkDataPacket::read(BinaryStream&)+0xdc>)
+  87df8e:	4b24      	ldr	r3, [pc, #144]	; (87e020 <FullChunkDataPacket::read(BinaryStream&)+0xd4>)
+  87df90:	447a      	add	r2, pc
+  87df92:	589b      	ldr	r3, [r3, r2]
+  87df94:	1f0a      	subs	r2, r1, #4
+  87df96:	b15b      	cbz	r3, 87dfb0 <FullChunkDataPacket::read(BinaryStream&)+0x64>
+  87df98:	f3bf 8f5b 	dmb	ish
+  87df9c:	e852 1f00 	ldrex	r1, [r2]
+  87dfa0:	1e4b      	subs	r3, r1, #1
+  87dfa2:	e842 3600 	strex	r6, r3, [r2]
+  87dfa6:	2e00      	cmp	r6, #0
+  87dfa8:	d1f8      	bne.n	87df9c <FullChunkDataPacket::read(BinaryStream&)+0x50>
+  87dfaa:	f3bf 8f5b 	dmb	ish
+  87dfae:	e002      	b.n	87dfb6 <FullChunkDataPacket::read(BinaryStream&)+0x6a>
+  87dfb0:	6811      	ldr	r1, [r2, #0]
+  87dfb2:	1e4b      	subs	r3, r1, #1
+  87dfb4:	6013      	str	r3, [r2, #0]
+  87dfb6:	2900      	cmp	r1, #0
+  87dfb8:	dce6      	bgt.n	87df88 <FullChunkDataPacket::read(BinaryStream&)+0x3c>
+  87dfba:	a904      	add	r1, sp, #16
+  87dfbc:	f27a eab8 	blx	af8530 <Horse::onLadder(bool)+0x64>
+  87dfc0:	e7e2      	b.n	87df88 <FullChunkDataPacket::read(BinaryStream&)+0x3c>
+  87dfc2:	4a14      	ldr	r2, [pc, #80]	; (87e014 <FullChunkDataPacket::read(BinaryStream&)+0xc8>)
+  87dfc4:	4604      	mov	r4, r0
+  87dfc6:	4b14      	ldr	r3, [pc, #80]	; (87e018 <FullChunkDataPacket::read(BinaryStream&)+0xcc>)
+  87dfc8:	447a      	add	r2, pc
+  87dfca:	9901      	ldr	r1, [sp, #4]
+  87dfcc:	f1a1 000c 	sub.w	r0, r1, #12
+  87dfd0:	589a      	ldr	r2, [r3, r2]
+  87dfd2:	4290      	cmp	r0, r2
+  87dfd4:	d016      	beq.n	87e004 <FullChunkDataPacket::read(BinaryStream&)+0xb8>
+  87dfd6:	4a11      	ldr	r2, [pc, #68]	; (87e01c <FullChunkDataPacket::read(BinaryStream&)+0xd0>)
+  87dfd8:	4b11      	ldr	r3, [pc, #68]	; (87e020 <FullChunkDataPacket::read(BinaryStream&)+0xd4>)
+  87dfda:	447a      	add	r2, pc
+  87dfdc:	589b      	ldr	r3, [r3, r2]
+  87dfde:	1f0a      	subs	r2, r1, #4
+  87dfe0:	b19b      	cbz	r3, 87e00a <FullChunkDataPacket::read(BinaryStream&)+0xbe>
+  87dfe2:	f3bf 8f5b 	dmb	ish
+  87dfe6:	e852 1f00 	ldrex	r1, [r2]
+  87dfea:	1e4b      	subs	r3, r1, #1
+  87dfec:	e842 3600 	strex	r6, r3, [r2]
+  87dff0:	2e00      	cmp	r6, #0
+  87dff2:	d1f8      	bne.n	87dfe6 <FullChunkDataPacket::read(BinaryStream&)+0x9a>
+  87dff4:	f3bf 8f5b 	dmb	ish
+  87dff8:	2900      	cmp	r1, #0
+  87dffa:	bfdc      	itt	le
+  87dffc:	f10d 0114 	addle.w	r1, sp, #20
+  87e000:	f27a ea96 	blxle	af8530 <Horse::onLadder(bool)+0x64>
+  87e004:	4620      	mov	r0, r4
+  87e006:	f612 ead4 	blx	6905b0 <_Unwind_Resume@plt>
+  87e00a:	6811      	ldr	r1, [r2, #0]
+  87e00c:	1e4b      	subs	r3, r1, #1
+  87e00e:	6013      	str	r3, [r2, #0]
+  87e010:	e7f2      	b.n	87dff8 <FullChunkDataPacket::read(BinaryStream&)+0xac>
+  87e012:	bf00      	nop
+  87e014:	54fc      	strb	r4, [r7, r3]
+  87e016:	0159      	lsls	r1, r3, #5
+  87e018:	8ae0      	ldrh	r0, [r4, #22]
+  87e01a:	ffff 54ea 	vmls.i<illegal width 64>	<illegal reg q10.5>, <illegal reg q15.5>, d26[0]
+  87e01e:	0159      	lsls	r1, r3, #5
+  87e020:	8ae4      	ldrh	r4, [r4, #22]
+  87e022:	ffff 554a 	vmls.f<illegal width 64>	<illegal reg q10.5>, <illegal reg q7.5>, d10[0]
+  87e026:	0159      	lsls	r1, r3, #5
+  87e028:	5534      	strb	r4, [r6, r4]
+  87e02a:	0159      	lsls	r1, r3, #5

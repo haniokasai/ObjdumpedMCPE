@@ -1,0 +1,25 @@
+  87c9e2:	b5b0      	push	{r4, r5, r7, lr}
+  87c9e4:	b084      	sub	sp, #16
+  87c9e6:	4604      	mov	r4, r0
+  87c9e8:	4668      	mov	r0, sp
+  87c9ea:	460d      	mov	r5, r1
+  87c9ec:	f616 ea68 	blx	692ec0 <EntityRuntimeID ReadOnlyBinaryStream::getType<EntityRuntimeID>()@plt>
+  87c9f0:	e9dd 0100 	ldrd	r0, r1, [sp]
+  87c9f4:	e9c4 0108 	strd	r0, r1, [r4, #32]
+  87c9f8:	4628      	mov	r0, r5
+  87c9fa:	f616 ea32 	blx	692e60 <ReadOnlyBinaryStream::getVarInt()@plt>
+  87c9fe:	61e0      	str	r0, [r4, #28]
+  87ca00:	4668      	mov	r0, sp
+  87ca02:	4629      	mov	r1, r5
+  87ca04:	f616 eb16 	blx	693034 <NetworkBlockPosition ReadOnlyBinaryStream::getType<NetworkBlockPosition>()@plt>
+  87ca08:	9800      	ldr	r0, [sp, #0]
+  87ca0a:	60e0      	str	r0, [r4, #12]
+  87ca0c:	9801      	ldr	r0, [sp, #4]
+  87ca0e:	6120      	str	r0, [r4, #16]
+  87ca10:	9802      	ldr	r0, [sp, #8]
+  87ca12:	6160      	str	r0, [r4, #20]
+  87ca14:	4628      	mov	r0, r5
+  87ca16:	f616 ea24 	blx	692e60 <ReadOnlyBinaryStream::getVarInt()@plt>
+  87ca1a:	61a0      	str	r0, [r4, #24]
+  87ca1c:	b004      	add	sp, #16
+  87ca1e:	bdb0      	pop	{r4, r5, r7, pc}

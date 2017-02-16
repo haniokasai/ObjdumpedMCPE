@@ -1,0 +1,88 @@
+  88074c:	b570      	push	{r4, r5, r6, lr}
+  88074e:	b084      	sub	sp, #16
+  880750:	ae01      	add	r6, sp, #4
+  880752:	4604      	mov	r4, r0
+  880754:	460d      	mov	r5, r1
+  880756:	4630      	mov	r0, r6
+  880758:	f611 ee9c 	blx	692494 <ReadOnlyBinaryStream::getString()@plt>
+  88075c:	f104 000c 	add.w	r0, r4, #12
+  880760:	4631      	mov	r1, r6
+  880762:	f277 ef36 	blx	af85d0 <Horse::onLadder(bool)+0x104>
+  880766:	482d      	ldr	r0, [pc, #180]	; (88081c <TransferPacket::read(BinaryStream&)+0xd0>)
+  880768:	4a29      	ldr	r2, [pc, #164]	; (880810 <TransferPacket::read(BinaryStream&)+0xc4>)
+  88076a:	4478      	add	r0, pc
+  88076c:	9901      	ldr	r1, [sp, #4]
+  88076e:	5812      	ldr	r2, [r2, r0]
+  880770:	f1a1 000c 	sub.w	r0, r1, #12
+  880774:	4290      	cmp	r0, r2
+  880776:	d105      	bne.n	880784 <TransferPacket::read(BinaryStream&)+0x38>
+  880778:	4628      	mov	r0, r5
+  88077a:	f612 eb36 	blx	692de8 <ReadOnlyBinaryStream::getUnsignedShort()@plt>
+  88077e:	6120      	str	r0, [r4, #16]
+  880780:	b004      	add	sp, #16
+  880782:	bd70      	pop	{r4, r5, r6, pc}
+  880784:	4a26      	ldr	r2, [pc, #152]	; (880820 <TransferPacket::read(BinaryStream&)+0xd4>)
+  880786:	4b24      	ldr	r3, [pc, #144]	; (880818 <TransferPacket::read(BinaryStream&)+0xcc>)
+  880788:	447a      	add	r2, pc
+  88078a:	589b      	ldr	r3, [r3, r2]
+  88078c:	1f0a      	subs	r2, r1, #4
+  88078e:	b15b      	cbz	r3, 8807a8 <TransferPacket::read(BinaryStream&)+0x5c>
+  880790:	f3bf 8f5b 	dmb	ish
+  880794:	e852 1f00 	ldrex	r1, [r2]
+  880798:	1e4b      	subs	r3, r1, #1
+  88079a:	e842 3600 	strex	r6, r3, [r2]
+  88079e:	2e00      	cmp	r6, #0
+  8807a0:	d1f8      	bne.n	880794 <TransferPacket::read(BinaryStream&)+0x48>
+  8807a2:	f3bf 8f5b 	dmb	ish
+  8807a6:	e002      	b.n	8807ae <TransferPacket::read(BinaryStream&)+0x62>
+  8807a8:	6811      	ldr	r1, [r2, #0]
+  8807aa:	1e4b      	subs	r3, r1, #1
+  8807ac:	6013      	str	r3, [r2, #0]
+  8807ae:	2900      	cmp	r1, #0
+  8807b0:	dce2      	bgt.n	880778 <TransferPacket::read(BinaryStream&)+0x2c>
+  8807b2:	a902      	add	r1, sp, #8
+  8807b4:	f277 eebc 	blx	af8530 <Horse::onLadder(bool)+0x64>
+  8807b8:	e7de      	b.n	880778 <TransferPacket::read(BinaryStream&)+0x2c>
+  8807ba:	4a14      	ldr	r2, [pc, #80]	; (88080c <TransferPacket::read(BinaryStream&)+0xc0>)
+  8807bc:	4604      	mov	r4, r0
+  8807be:	4b14      	ldr	r3, [pc, #80]	; (880810 <TransferPacket::read(BinaryStream&)+0xc4>)
+  8807c0:	447a      	add	r2, pc
+  8807c2:	9901      	ldr	r1, [sp, #4]
+  8807c4:	f1a1 000c 	sub.w	r0, r1, #12
+  8807c8:	589a      	ldr	r2, [r3, r2]
+  8807ca:	4290      	cmp	r0, r2
+  8807cc:	d016      	beq.n	8807fc <TransferPacket::read(BinaryStream&)+0xb0>
+  8807ce:	4a11      	ldr	r2, [pc, #68]	; (880814 <TransferPacket::read(BinaryStream&)+0xc8>)
+  8807d0:	4b11      	ldr	r3, [pc, #68]	; (880818 <TransferPacket::read(BinaryStream&)+0xcc>)
+  8807d2:	447a      	add	r2, pc
+  8807d4:	589b      	ldr	r3, [r3, r2]
+  8807d6:	1f0a      	subs	r2, r1, #4
+  8807d8:	b19b      	cbz	r3, 880802 <TransferPacket::read(BinaryStream&)+0xb6>
+  8807da:	f3bf 8f5b 	dmb	ish
+  8807de:	e852 1f00 	ldrex	r1, [r2]
+  8807e2:	1e4b      	subs	r3, r1, #1
+  8807e4:	e842 3600 	strex	r6, r3, [r2]
+  8807e8:	2e00      	cmp	r6, #0
+  8807ea:	d1f8      	bne.n	8807de <TransferPacket::read(BinaryStream&)+0x92>
+  8807ec:	f3bf 8f5b 	dmb	ish
+  8807f0:	2900      	cmp	r1, #0
+  8807f2:	bfdc      	itt	le
+  8807f4:	f10d 010c 	addle.w	r1, sp, #12
+  8807f8:	f277 ee9a 	blxle	af8530 <Horse::onLadder(bool)+0x64>
+  8807fc:	4620      	mov	r0, r4
+  8807fe:	f60f eed8 	blx	6905b0 <_Unwind_Resume@plt>
+  880802:	6811      	ldr	r1, [r2, #0]
+  880804:	1e4b      	subs	r3, r1, #1
+  880806:	6013      	str	r3, [r2, #0]
+  880808:	e7f2      	b.n	8807f0 <TransferPacket::read(BinaryStream&)+0xa4>
+  88080a:	bf00      	nop
+  88080c:	2d04      	cmp	r5, #4
+  88080e:	0159      	lsls	r1, r3, #5
+  880810:	8ae0      	ldrh	r0, [r4, #22]
+  880812:	ffff 2cf2 			; <UNDEFINED> instruction: 0xffff2cf2
+  880816:	0159      	lsls	r1, r3, #5
+  880818:	8ae4      	ldrh	r4, [r4, #22]
+  88081a:	ffff 2d5a 			; <UNDEFINED> instruction: 0xffff2d5a
+  88081e:	0159      	lsls	r1, r3, #5
+  880820:	2d3c      	cmp	r5, #60	; 0x3c
+  880822:	0159      	lsls	r1, r3, #5

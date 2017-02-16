@@ -1,0 +1,4 @@
+  87fb88:	f100 020c 	add.w	r2, r0, #12
+  87fb8c:	4608      	mov	r0, r1
+  87fb8e:	4611      	mov	r1, r2
+  87fb90:	f279 b8c6 	b.w	af8d20 <Horse::onLadder(bool)+0x854>

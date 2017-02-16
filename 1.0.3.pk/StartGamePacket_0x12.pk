@@ -1,0 +1,205 @@
+  87a820:	b5f0      	push	{r4, r5, r6, r7, lr}
+  87a822:	b099      	sub	sp, #100	; 0x64
+  87a824:	4604      	mov	r4, r0
+  87a826:	a802      	add	r0, sp, #8
+  87a828:	460d      	mov	r5, r1
+  87a82a:	f618 eb44 	blx	692eb4 <EntityUniqueID ReadOnlyBinaryStream::getType<EntityUniqueID>()@plt>
+  87a82e:	e9dd 0102 	ldrd	r0, r1, [sp, #8]
+  87a832:	e9c4 011a 	strd	r0, r1, [r4, #104]	; 0x68
+  87a836:	a802      	add	r0, sp, #8
+  87a838:	4629      	mov	r1, r5
+  87a83a:	f618 eb42 	blx	692ec0 <EntityRuntimeID ReadOnlyBinaryStream::getType<EntityRuntimeID>()@plt>
+  87a83e:	e9dd 0102 	ldrd	r0, r1, [sp, #8]
+  87a842:	e9c4 011c 	strd	r0, r1, [r4, #112]	; 0x70
+  87a846:	a802      	add	r0, sp, #8
+  87a848:	4629      	mov	r1, r5
+  87a84a:	f618 eb40 	blx	692ecc <Vec3 ReadOnlyBinaryStream::getType<Vec3>()@plt>
+  87a84e:	9802      	ldr	r0, [sp, #8]
+  87a850:	ae02      	add	r6, sp, #8
+  87a852:	67a0      	str	r0, [r4, #120]	; 0x78
+  87a854:	4629      	mov	r1, r5
+  87a856:	9803      	ldr	r0, [sp, #12]
+  87a858:	67e0      	str	r0, [r4, #124]	; 0x7c
+  87a85a:	9804      	ldr	r0, [sp, #16]
+  87a85c:	f8c4 0080 	str.w	r0, [r4, #128]	; 0x80
+  87a860:	4630      	mov	r0, r6
+  87a862:	f618 eb3a 	blx	692ed8 <Vec2 ReadOnlyBinaryStream::getType<Vec2>()@plt>
+  87a866:	e9dd 0102 	ldrd	r0, r1, [sp, #8]
+  87a86a:	e9c4 0121 	strd	r0, r1, [r4, #132]	; 0x84
+  87a86e:	4630      	mov	r0, r6
+  87a870:	4629      	mov	r1, r5
+  87a872:	f618 eb38 	blx	692ee4 <LevelSettings ReadOnlyBinaryStream::getType<LevelSettings>()@plt>
+  87a876:	4630      	mov	r0, r6
+  87a878:	f106 0120 	add.w	r1, r6, #32
+  87a87c:	f960 0acd 	vld1.64	{d16-d17}, [r0]!
+  87a880:	f960 4acf 	vld1.64	{d20-d21}, [r0]
+  87a884:	f8bd 0038 	ldrh.w	r0, [sp, #56]	; 0x38
+  87a888:	f961 2acf 	vld1.64	{d18-d19}, [r1]
+  87a88c:	f106 0140 	add.w	r1, r6, #64	; 0x40
+  87a890:	87a0      	strh	r0, [r4, #60]	; 0x3c
+  87a892:	f104 002c 	add.w	r0, r4, #44	; 0x2c
+  87a896:	f940 2a8f 	vst1.32	{d18-d19}, [r0]
+  87a89a:	f104 000c 	add.w	r0, r4, #12
+  87a89e:	f940 0a8f 	vst1.32	{d16-d17}, [r0]
+  87a8a2:	f104 001c 	add.w	r0, r4, #28
+  87a8a6:	f940 4a8f 	vst1.32	{d20-d21}, [r0]
+  87a8aa:	980f      	ldr	r0, [sp, #60]	; 0x3c
+  87a8ac:	6420      	str	r0, [r4, #64]	; 0x40
+  87a8ae:	9810      	ldr	r0, [sp, #64]	; 0x40
+  87a8b0:	6460      	str	r0, [r4, #68]	; 0x44
+  87a8b2:	9811      	ldr	r0, [sp, #68]	; 0x44
+  87a8b4:	64a0      	str	r0, [r4, #72]	; 0x48
+  87a8b6:	f104 004c 	add.w	r0, r4, #76	; 0x4c
+  87a8ba:	f618 eb1a 	blx	692ef0 <std::vector<PackIdVersion, std::allocator<PackIdVersion> >::_M_move_assign(std::vector<PackIdVersion, std::allocator<PackIdVersion> >&&, std::integral_constant<bool, true>)@plt>
+  87a8be:	f104 0058 	add.w	r0, r4, #88	; 0x58
+  87a8c2:	f106 014c 	add.w	r1, r6, #76	; 0x4c
+  87a8c6:	f618 eb14 	blx	692ef0 <std::vector<PackIdVersion, std::allocator<PackIdVersion> >::_M_move_assign(std::vector<PackIdVersion, std::allocator<PackIdVersion> >&&, std::integral_constant<bool, true>)@plt>
+  87a8ca:	4630      	mov	r0, r6
+  87a8cc:	f617 edb8 	blx	692440 <LevelSettings::~LevelSettings()@plt>
+  87a8d0:	ae01      	add	r6, sp, #4
+  87a8d2:	4629      	mov	r1, r5
+  87a8d4:	4630      	mov	r0, r6
+  87a8d6:	f617 edde 	blx	692494 <ReadOnlyBinaryStream::getString()@plt>
+  87a8da:	f104 008c 	add.w	r0, r4, #140	; 0x8c
+  87a8de:	4631      	mov	r1, r6
+  87a8e0:	f27d ee76 	blx	af85d0 <Horse::onLadder(bool)+0x104>
+  87a8e4:	484e      	ldr	r0, [pc, #312]	; (87aa20 <StartGamePacket::read(BinaryStream&)+0x200>)
+  87a8e6:	4f4b      	ldr	r7, [pc, #300]	; (87aa14 <StartGamePacket::read(BinaryStream&)+0x1f4>)
+  87a8e8:	4478      	add	r0, pc
+  87a8ea:	9901      	ldr	r1, [sp, #4]
+  87a8ec:	583a      	ldr	r2, [r7, r0]
+  87a8ee:	f1a1 000c 	sub.w	r0, r1, #12
+  87a8f2:	4290      	cmp	r0, r2
+  87a8f4:	d113      	bne.n	87a91e <StartGamePacket::read(BinaryStream&)+0xfe>
+  87a8f6:	466e      	mov	r6, sp
+  87a8f8:	4629      	mov	r1, r5
+  87a8fa:	4630      	mov	r0, r6
+  87a8fc:	f617 edca 	blx	692494 <ReadOnlyBinaryStream::getString()@plt>
+  87a900:	f104 0090 	add.w	r0, r4, #144	; 0x90
+  87a904:	4631      	mov	r1, r6
+  87a906:	f27d ee64 	blx	af85d0 <Horse::onLadder(bool)+0x104>
+  87a90a:	4849      	ldr	r0, [pc, #292]	; (87aa30 <StartGamePacket::read(BinaryStream&)+0x210>)
+  87a90c:	9900      	ldr	r1, [sp, #0]
+  87a90e:	4478      	add	r0, pc
+  87a910:	583a      	ldr	r2, [r7, r0]
+  87a912:	f1a1 000c 	sub.w	r0, r1, #12
+  87a916:	4290      	cmp	r0, r2
+  87a918:	d113      	bne.n	87a942 <StartGamePacket::read(BinaryStream&)+0x122>
+  87a91a:	b019      	add	sp, #100	; 0x64
+  87a91c:	bdf0      	pop	{r4, r5, r6, r7, pc}
+  87a91e:	4a41      	ldr	r2, [pc, #260]	; (87aa24 <StartGamePacket::read(BinaryStream&)+0x204>)
+  87a920:	4b3e      	ldr	r3, [pc, #248]	; (87aa1c <StartGamePacket::read(BinaryStream&)+0x1fc>)
+  87a922:	447a      	add	r2, pc
+  87a924:	589b      	ldr	r3, [r3, r2]
+  87a926:	1f0a      	subs	r2, r1, #4
+  87a928:	b1eb      	cbz	r3, 87a966 <StartGamePacket::read(BinaryStream&)+0x146>
+  87a92a:	f3bf 8f5b 	dmb	ish
+  87a92e:	e852 1f00 	ldrex	r1, [r2]
+  87a932:	1e4b      	subs	r3, r1, #1
+  87a934:	e842 3600 	strex	r6, r3, [r2]
+  87a938:	2e00      	cmp	r6, #0
+  87a93a:	d1f8      	bne.n	87a92e <StartGamePacket::read(BinaryStream&)+0x10e>
+  87a93c:	f3bf 8f5b 	dmb	ish
+  87a940:	e014      	b.n	87a96c <StartGamePacket::read(BinaryStream&)+0x14c>
+  87a942:	4a3c      	ldr	r2, [pc, #240]	; (87aa34 <StartGamePacket::read(BinaryStream&)+0x214>)
+  87a944:	4b35      	ldr	r3, [pc, #212]	; (87aa1c <StartGamePacket::read(BinaryStream&)+0x1fc>)
+  87a946:	447a      	add	r2, pc
+  87a948:	589b      	ldr	r3, [r3, r2]
+  87a94a:	1f0a      	subs	r2, r1, #4
+  87a94c:	b1a3      	cbz	r3, 87a978 <StartGamePacket::read(BinaryStream&)+0x158>
+  87a94e:	f3bf 8f5b 	dmb	ish
+  87a952:	e852 1f00 	ldrex	r1, [r2]
+  87a956:	1e4b      	subs	r3, r1, #1
+  87a958:	e842 3700 	strex	r7, r3, [r2]
+  87a95c:	2f00      	cmp	r7, #0
+  87a95e:	d1f8      	bne.n	87a952 <StartGamePacket::read(BinaryStream&)+0x132>
+  87a960:	f3bf 8f5b 	dmb	ish
+  87a964:	e00b      	b.n	87a97e <StartGamePacket::read(BinaryStream&)+0x15e>
+  87a966:	6811      	ldr	r1, [r2, #0]
+  87a968:	1e4b      	subs	r3, r1, #1
+  87a96a:	6013      	str	r3, [r2, #0]
+  87a96c:	2900      	cmp	r1, #0
+  87a96e:	dcc2      	bgt.n	87a8f6 <StartGamePacket::read(BinaryStream&)+0xd6>
+  87a970:	a902      	add	r1, sp, #8
+  87a972:	f27d edde 	blx	af8530 <Horse::onLadder(bool)+0x64>
+  87a976:	e7be      	b.n	87a8f6 <StartGamePacket::read(BinaryStream&)+0xd6>
+  87a978:	6811      	ldr	r1, [r2, #0]
+  87a97a:	1e4b      	subs	r3, r1, #1
+  87a97c:	6013      	str	r3, [r2, #0]
+  87a97e:	2900      	cmp	r1, #0
+  87a980:	dccb      	bgt.n	87a91a <StartGamePacket::read(BinaryStream&)+0xfa>
+  87a982:	a902      	add	r1, sp, #8
+  87a984:	f27d edd4 	blx	af8530 <Horse::onLadder(bool)+0x64>
+  87a988:	e7c7      	b.n	87a91a <StartGamePacket::read(BinaryStream&)+0xfa>
+  87a98a:	4a21      	ldr	r2, [pc, #132]	; (87aa10 <StartGamePacket::read(BinaryStream&)+0x1f0>)
+  87a98c:	4604      	mov	r4, r0
+  87a98e:	4b21      	ldr	r3, [pc, #132]	; (87aa14 <StartGamePacket::read(BinaryStream&)+0x1f4>)
+  87a990:	447a      	add	r2, pc
+  87a992:	9901      	ldr	r1, [sp, #4]
+  87a994:	f1a1 000c 	sub.w	r0, r1, #12
+  87a998:	589a      	ldr	r2, [r3, r2]
+  87a99a:	4290      	cmp	r0, r2
+  87a99c:	d031      	beq.n	87aa02 <StartGamePacket::read(BinaryStream&)+0x1e2>
+  87a99e:	4a1e      	ldr	r2, [pc, #120]	; (87aa18 <StartGamePacket::read(BinaryStream&)+0x1f8>)
+  87a9a0:	4b1e      	ldr	r3, [pc, #120]	; (87aa1c <StartGamePacket::read(BinaryStream&)+0x1fc>)
+  87a9a2:	447a      	add	r2, pc
+  87a9a4:	589b      	ldr	r3, [r3, r2]
+  87a9a6:	1f0a      	subs	r2, r1, #4
+  87a9a8:	b373      	cbz	r3, 87aa08 <StartGamePacket::read(BinaryStream&)+0x1e8>
+  87a9aa:	f3bf 8f5b 	dmb	ish
+  87a9ae:	e852 1f00 	ldrex	r1, [r2]
+  87a9b2:	1e4b      	subs	r3, r1, #1
+  87a9b4:	e842 3700 	strex	r7, r3, [r2]
+  87a9b8:	2f00      	cmp	r7, #0
+  87a9ba:	d1f8      	bne.n	87a9ae <StartGamePacket::read(BinaryStream&)+0x18e>
+  87a9bc:	f3bf 8f5b 	dmb	ish
+  87a9c0:	e019      	b.n	87a9f6 <StartGamePacket::read(BinaryStream&)+0x1d6>
+  87a9c2:	4a19      	ldr	r2, [pc, #100]	; (87aa28 <StartGamePacket::read(BinaryStream&)+0x208>)
+  87a9c4:	4604      	mov	r4, r0
+  87a9c6:	9900      	ldr	r1, [sp, #0]
+  87a9c8:	447a      	add	r2, pc
+  87a9ca:	f1a1 000c 	sub.w	r0, r1, #12
+  87a9ce:	58ba      	ldr	r2, [r7, r2]
+  87a9d0:	4290      	cmp	r0, r2
+  87a9d2:	d016      	beq.n	87aa02 <StartGamePacket::read(BinaryStream&)+0x1e2>
+  87a9d4:	4a15      	ldr	r2, [pc, #84]	; (87aa2c <StartGamePacket::read(BinaryStream&)+0x20c>)
+  87a9d6:	4b11      	ldr	r3, [pc, #68]	; (87aa1c <StartGamePacket::read(BinaryStream&)+0x1fc>)
+  87a9d8:	447a      	add	r2, pc
+  87a9da:	589b      	ldr	r3, [r3, r2]
+  87a9dc:	1f0a      	subs	r2, r1, #4
+  87a9de:	b19b      	cbz	r3, 87aa08 <StartGamePacket::read(BinaryStream&)+0x1e8>
+  87a9e0:	f3bf 8f5b 	dmb	ish
+  87a9e4:	e852 1f00 	ldrex	r1, [r2]
+  87a9e8:	1e4b      	subs	r3, r1, #1
+  87a9ea:	e842 3700 	strex	r7, r3, [r2]
+  87a9ee:	2f00      	cmp	r7, #0
+  87a9f0:	d1f8      	bne.n	87a9e4 <StartGamePacket::read(BinaryStream&)+0x1c4>
+  87a9f2:	f3bf 8f5b 	dmb	ish
+  87a9f6:	2900      	cmp	r1, #0
+  87a9f8:	bfdc      	itt	le
+  87a9fa:	f10d 0108 	addle.w	r1, sp, #8
+  87a9fe:	f27d ed98 	blxle	af8530 <Horse::onLadder(bool)+0x64>
+  87aa02:	4620      	mov	r0, r4
+  87aa04:	f615 edd4 	blx	6905b0 <_Unwind_Resume@plt>
+  87aa08:	6811      	ldr	r1, [r2, #0]
+  87aa0a:	1e4b      	subs	r3, r1, #1
+  87aa0c:	6013      	str	r3, [r2, #0]
+  87aa0e:	e7f2      	b.n	87a9f6 <StartGamePacket::read(BinaryStream&)+0x1d6>
+  87aa10:	8b34      	ldrh	r4, [r6, #24]
+  87aa12:	0159      	lsls	r1, r3, #5
+  87aa14:	8ae0      	ldrh	r0, [r4, #22]
+  87aa16:	ffff 8b22 	vtbl.8	d24, {d15-d18}, d18
+  87aa1a:	0159      	lsls	r1, r3, #5
+  87aa1c:	8ae4      	ldrh	r4, [r4, #22]
+  87aa1e:	ffff 8bdc 			; <UNDEFINED> instruction: 0xffff8bdc
+  87aa22:	0159      	lsls	r1, r3, #5
+  87aa24:	8ba2      	ldrh	r2, [r4, #28]
+  87aa26:	0159      	lsls	r1, r3, #5
+  87aa28:	8afc      	ldrh	r4, [r7, #22]
+  87aa2a:	0159      	lsls	r1, r3, #5
+  87aa2c:	8aec      	ldrh	r4, [r5, #22]
+  87aa2e:	0159      	lsls	r1, r3, #5
+  87aa30:	8bb6      	ldrh	r6, [r6, #28]
+  87aa32:	0159      	lsls	r1, r3, #5
+  87aa34:	8b7e      	ldrh	r6, [r7, #26]
+  87aa36:	0159      	lsls	r1, r3, #5

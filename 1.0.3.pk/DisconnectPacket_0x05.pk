@@ -1,0 +1,90 @@
+  879e74:	b570      	push	{r4, r5, r6, lr}
+  879e76:	b084      	sub	sp, #16
+  879e78:	460d      	mov	r5, r1
+  879e7a:	4604      	mov	r4, r0
+  879e7c:	4628      	mov	r0, r5
+  879e7e:	f618 efae 	blx	692ddc <ReadOnlyBinaryStream::getBool()@plt>
+  879e82:	7320      	strb	r0, [r4, #12]
+  879e84:	b990      	cbnz	r0, 879eac <DisconnectPacket::read(BinaryStream&)+0x38>
+  879e86:	ae01      	add	r6, sp, #4
+  879e88:	4629      	mov	r1, r5
+  879e8a:	4630      	mov	r0, r6
+  879e8c:	f618 eb02 	blx	692494 <ReadOnlyBinaryStream::getString()@plt>
+  879e90:	f104 0010 	add.w	r0, r4, #16
+  879e94:	4631      	mov	r1, r6
+  879e96:	f27e eb9c 	blx	af85d0 <Horse::onLadder(bool)+0x104>
+  879e9a:	482b      	ldr	r0, [pc, #172]	; (879f48 <DisconnectPacket::read(BinaryStream&)+0xd4>)
+  879e9c:	4a27      	ldr	r2, [pc, #156]	; (879f3c <DisconnectPacket::read(BinaryStream&)+0xc8>)
+  879e9e:	4478      	add	r0, pc
+  879ea0:	9901      	ldr	r1, [sp, #4]
+  879ea2:	5812      	ldr	r2, [r2, r0]
+  879ea4:	f1a1 000c 	sub.w	r0, r1, #12
+  879ea8:	4290      	cmp	r0, r2
+  879eaa:	d101      	bne.n	879eb0 <DisconnectPacket::read(BinaryStream&)+0x3c>
+  879eac:	b004      	add	sp, #16
+  879eae:	bd70      	pop	{r4, r5, r6, pc}
+  879eb0:	4a26      	ldr	r2, [pc, #152]	; (879f4c <DisconnectPacket::read(BinaryStream&)+0xd8>)
+  879eb2:	4b24      	ldr	r3, [pc, #144]	; (879f44 <DisconnectPacket::read(BinaryStream&)+0xd0>)
+  879eb4:	447a      	add	r2, pc
+  879eb6:	589b      	ldr	r3, [r3, r2]
+  879eb8:	1f0a      	subs	r2, r1, #4
+  879eba:	b15b      	cbz	r3, 879ed4 <DisconnectPacket::read(BinaryStream&)+0x60>
+  879ebc:	f3bf 8f5b 	dmb	ish
+  879ec0:	e852 1f00 	ldrex	r1, [r2]
+  879ec4:	1e4b      	subs	r3, r1, #1
+  879ec6:	e842 3600 	strex	r6, r3, [r2]
+  879eca:	2e00      	cmp	r6, #0
+  879ecc:	d1f8      	bne.n	879ec0 <DisconnectPacket::read(BinaryStream&)+0x4c>
+  879ece:	f3bf 8f5b 	dmb	ish
+  879ed2:	e002      	b.n	879eda <DisconnectPacket::read(BinaryStream&)+0x66>
+  879ed4:	6811      	ldr	r1, [r2, #0]
+  879ed6:	1e4b      	subs	r3, r1, #1
+  879ed8:	6013      	str	r3, [r2, #0]
+  879eda:	2900      	cmp	r1, #0
+  879edc:	dce6      	bgt.n	879eac <DisconnectPacket::read(BinaryStream&)+0x38>
+  879ede:	a902      	add	r1, sp, #8
+  879ee0:	f27e eb26 	blx	af8530 <Horse::onLadder(bool)+0x64>
+  879ee4:	e7e2      	b.n	879eac <DisconnectPacket::read(BinaryStream&)+0x38>
+  879ee6:	4a14      	ldr	r2, [pc, #80]	; (879f38 <DisconnectPacket::read(BinaryStream&)+0xc4>)
+  879ee8:	4604      	mov	r4, r0
+  879eea:	4b14      	ldr	r3, [pc, #80]	; (879f3c <DisconnectPacket::read(BinaryStream&)+0xc8>)
+  879eec:	447a      	add	r2, pc
+  879eee:	9901      	ldr	r1, [sp, #4]
+  879ef0:	f1a1 000c 	sub.w	r0, r1, #12
+  879ef4:	589a      	ldr	r2, [r3, r2]
+  879ef6:	4290      	cmp	r0, r2
+  879ef8:	d016      	beq.n	879f28 <DisconnectPacket::read(BinaryStream&)+0xb4>
+  879efa:	4a11      	ldr	r2, [pc, #68]	; (879f40 <DisconnectPacket::read(BinaryStream&)+0xcc>)
+  879efc:	4b11      	ldr	r3, [pc, #68]	; (879f44 <DisconnectPacket::read(BinaryStream&)+0xd0>)
+  879efe:	447a      	add	r2, pc
+  879f00:	589b      	ldr	r3, [r3, r2]
+  879f02:	1f0a      	subs	r2, r1, #4
+  879f04:	b19b      	cbz	r3, 879f2e <DisconnectPacket::read(BinaryStream&)+0xba>
+  879f06:	f3bf 8f5b 	dmb	ish
+  879f0a:	e852 1f00 	ldrex	r1, [r2]
+  879f0e:	1e4b      	subs	r3, r1, #1
+  879f10:	e842 3600 	strex	r6, r3, [r2]
+  879f14:	2e00      	cmp	r6, #0
+  879f16:	d1f8      	bne.n	879f0a <DisconnectPacket::read(BinaryStream&)+0x96>
+  879f18:	f3bf 8f5b 	dmb	ish
+  879f1c:	2900      	cmp	r1, #0
+  879f1e:	bfdc      	itt	le
+  879f20:	f10d 010c 	addle.w	r1, sp, #12
+  879f24:	f27e eb04 	blxle	af8530 <Horse::onLadder(bool)+0x64>
+  879f28:	4620      	mov	r0, r4
+  879f2a:	f616 eb42 	blx	6905b0 <_Unwind_Resume@plt>
+  879f2e:	6811      	ldr	r1, [r2, #0]
+  879f30:	1e4b      	subs	r3, r1, #1
+  879f32:	6013      	str	r3, [r2, #0]
+  879f34:	e7f2      	b.n	879f1c <DisconnectPacket::read(BinaryStream&)+0xa8>
+  879f36:	bf00      	nop
+  879f38:	95d8      	str	r5, [sp, #864]	; 0x360
+  879f3a:	0159      	lsls	r1, r3, #5
+  879f3c:	8ae0      	ldrh	r0, [r4, #22]
+  879f3e:	ffff 95c6 	vmls.f<illegal width 64>	<illegal reg q12.5>, <illegal reg q15.5>, d6[0]
+  879f42:	0159      	lsls	r1, r3, #5
+  879f44:	8ae4      	ldrh	r4, [r4, #22]
+  879f46:	ffff 9626 	vcvt.f<illegal width 64>.s<illegal width 64>	d25, d22
+  879f4a:	0159      	lsls	r1, r3, #5
+  879f4c:	9610      	str	r6, [sp, #64]	; 0x40
+  879f4e:	0159      	lsls	r1, r3, #5

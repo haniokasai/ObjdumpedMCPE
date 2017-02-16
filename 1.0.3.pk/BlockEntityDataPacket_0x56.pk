@@ -1,0 +1,49 @@
+  87db30:	b5b0      	push	{r4, r5, r7, lr}
+  87db32:	b084      	sub	sp, #16
+  87db34:	4604      	mov	r4, r0
+  87db36:	a801      	add	r0, sp, #4
+  87db38:	460d      	mov	r5, r1
+  87db3a:	f615 ea7c 	blx	693034 <NetworkBlockPosition ReadOnlyBinaryStream::getType<NetworkBlockPosition>()@plt>
+  87db3e:	4816      	ldr	r0, [pc, #88]	; (87db98 <BlockEntityDataPacket::read(BinaryStream&)+0x68>)
+  87db40:	9a01      	ldr	r2, [sp, #4]
+  87db42:	4916      	ldr	r1, [pc, #88]	; (87db9c <BlockEntityDataPacket::read(BinaryStream&)+0x6c>)
+  87db44:	4478      	add	r0, pc
+  87db46:	60e2      	str	r2, [r4, #12]
+  87db48:	9a02      	ldr	r2, [sp, #8]
+  87db4a:	5808      	ldr	r0, [r1, r0]
+  87db4c:	6122      	str	r2, [r4, #16]
+  87db4e:	9903      	ldr	r1, [sp, #12]
+  87db50:	3008      	adds	r0, #8
+  87db52:	6161      	str	r1, [r4, #20]
+  87db54:	e9cd 0501 	strd	r0, r5, [sp, #4]
+  87db58:	a901      	add	r1, sp, #4
+  87db5a:	4668      	mov	r0, sp
+  87db5c:	f615 ea9a 	blx	693094 <NbtIo::read(IDataInput&)@plt>
+  87db60:	9d00      	ldr	r5, [sp, #0]
+  87db62:	f104 0018 	add.w	r0, r4, #24
+  87db66:	4629      	mov	r1, r5
+  87db68:	f615 ea9a 	blx	6930a0 <CompoundTag::operator=(CompoundTag&&)@plt>
+  87db6c:	b11d      	cbz	r5, 87db76 <BlockEntityDataPacket::read(BinaryStream&)+0x46>
+  87db6e:	6828      	ldr	r0, [r5, #0]
+  87db70:	6841      	ldr	r1, [r0, #4]
+  87db72:	4628      	mov	r0, r5
+  87db74:	4788      	blx	r1
+  87db76:	b004      	add	sp, #16
+  87db78:	bdb0      	pop	{r4, r5, r7, pc}
+  87db7a:	4604      	mov	r4, r0
+  87db7c:	f612 ed18 	blx	6905b0 <_Unwind_Resume@plt>
+  87db80:	4604      	mov	r4, r0
+  87db82:	b11d      	cbz	r5, 87db8c <BlockEntityDataPacket::read(BinaryStream&)+0x5c>
+  87db84:	6828      	ldr	r0, [r5, #0]
+  87db86:	6841      	ldr	r1, [r0, #4]
+  87db88:	4628      	mov	r0, r5
+  87db8a:	4788      	blx	r1
+  87db8c:	2000      	movs	r0, #0
+  87db8e:	9000      	str	r0, [sp, #0]
+  87db90:	4620      	mov	r0, r4
+  87db92:	f612 ed0e 	blx	6905b0 <_Unwind_Resume@plt>
+  87db96:	bf00      	nop
+  87db98:	5980      	ldr	r0, [r0, r6]
+  87db9a:	0159      	lsls	r1, r3, #5
+  87db9c:	8c4c      	ldrh	r4, [r1, #34]	; 0x22
+  87db9e:	ffff 4684 	vcvt.f<illegal width 64>.u<illegal width 64>	d20, d4

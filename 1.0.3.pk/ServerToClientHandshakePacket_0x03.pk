@@ -1,0 +1,158 @@
+  877f64:	b5f0      	push	{r4, r5, r6, r7, lr}
+  877f66:	b087      	sub	sp, #28
+  877f68:	ae02      	add	r6, sp, #8
+  877f6a:	4604      	mov	r4, r0
+  877f6c:	460d      	mov	r5, r1
+  877f6e:	4630      	mov	r0, r6
+  877f70:	f61a ea90 	blx	692494 <ReadOnlyBinaryStream::getString()@plt>
+  877f74:	f104 000c 	add.w	r0, r4, #12
+  877f78:	4631      	mov	r1, r6
+  877f7a:	f280 eb2a 	blx	af85d0 <Horse::onLadder(bool)+0x104>
+  877f7e:	4852      	ldr	r0, [pc, #328]	; (8780c8 <ServerToClientHandshakePacket::read(BinaryStream&)+0x164>)
+  877f80:	4f4e      	ldr	r7, [pc, #312]	; (8780bc <ServerToClientHandshakePacket::read(BinaryStream&)+0x158>)
+  877f82:	4478      	add	r0, pc
+  877f84:	9902      	ldr	r1, [sp, #8]
+  877f86:	583a      	ldr	r2, [r7, r0]
+  877f88:	f1a1 000c 	sub.w	r0, r1, #12
+  877f8c:	4290      	cmp	r0, r2
+  877f8e:	d113      	bne.n	877fb8 <ServerToClientHandshakePacket::read(BinaryStream&)+0x54>
+  877f90:	ae01      	add	r6, sp, #4
+  877f92:	4629      	mov	r1, r5
+  877f94:	4630      	mov	r0, r6
+  877f96:	f61a ea7e 	blx	692494 <ReadOnlyBinaryStream::getString()@plt>
+  877f9a:	f104 0010 	add.w	r0, r4, #16
+  877f9e:	4631      	mov	r1, r6
+  877fa0:	f280 eb16 	blx	af85d0 <Horse::onLadder(bool)+0x104>
+  877fa4:	484c      	ldr	r0, [pc, #304]	; (8780d8 <ServerToClientHandshakePacket::read(BinaryStream&)+0x174>)
+  877fa6:	9901      	ldr	r1, [sp, #4]
+  877fa8:	4478      	add	r0, pc
+  877faa:	583a      	ldr	r2, [r7, r0]
+  877fac:	f1a1 000c 	sub.w	r0, r1, #12
+  877fb0:	4290      	cmp	r0, r2
+  877fb2:	d113      	bne.n	877fdc <ServerToClientHandshakePacket::read(BinaryStream&)+0x78>
+  877fb4:	b007      	add	sp, #28
+  877fb6:	bdf0      	pop	{r4, r5, r6, r7, pc}
+  877fb8:	4a44      	ldr	r2, [pc, #272]	; (8780cc <ServerToClientHandshakePacket::read(BinaryStream&)+0x168>)
+  877fba:	4b42      	ldr	r3, [pc, #264]	; (8780c4 <ServerToClientHandshakePacket::read(BinaryStream&)+0x160>)
+  877fbc:	447a      	add	r2, pc
+  877fbe:	589b      	ldr	r3, [r3, r2]
+  877fc0:	1f0a      	subs	r2, r1, #4
+  877fc2:	b1eb      	cbz	r3, 878000 <ServerToClientHandshakePacket::read(BinaryStream&)+0x9c>
+  877fc4:	f3bf 8f5b 	dmb	ish
+  877fc8:	e852 1f00 	ldrex	r1, [r2]
+  877fcc:	1e4b      	subs	r3, r1, #1
+  877fce:	e842 3600 	strex	r6, r3, [r2]
+  877fd2:	2e00      	cmp	r6, #0
+  877fd4:	d1f8      	bne.n	877fc8 <ServerToClientHandshakePacket::read(BinaryStream&)+0x64>
+  877fd6:	f3bf 8f5b 	dmb	ish
+  877fda:	e014      	b.n	878006 <ServerToClientHandshakePacket::read(BinaryStream&)+0xa2>
+  877fdc:	4a3f      	ldr	r2, [pc, #252]	; (8780dc <ServerToClientHandshakePacket::read(BinaryStream&)+0x178>)
+  877fde:	4b39      	ldr	r3, [pc, #228]	; (8780c4 <ServerToClientHandshakePacket::read(BinaryStream&)+0x160>)
+  877fe0:	447a      	add	r2, pc
+  877fe2:	589b      	ldr	r3, [r3, r2]
+  877fe4:	1f0a      	subs	r2, r1, #4
+  877fe6:	b1a3      	cbz	r3, 878012 <ServerToClientHandshakePacket::read(BinaryStream&)+0xae>
+  877fe8:	f3bf 8f5b 	dmb	ish
+  877fec:	e852 1f00 	ldrex	r1, [r2]
+  877ff0:	1e4b      	subs	r3, r1, #1
+  877ff2:	e842 3700 	strex	r7, r3, [r2]
+  877ff6:	2f00      	cmp	r7, #0
+  877ff8:	d1f8      	bne.n	877fec <ServerToClientHandshakePacket::read(BinaryStream&)+0x88>
+  877ffa:	f3bf 8f5b 	dmb	ish
+  877ffe:	e00b      	b.n	878018 <ServerToClientHandshakePacket::read(BinaryStream&)+0xb4>
+  878000:	6811      	ldr	r1, [r2, #0]
+  878002:	1e4b      	subs	r3, r1, #1
+  878004:	6013      	str	r3, [r2, #0]
+  878006:	2900      	cmp	r1, #0
+  878008:	dcc2      	bgt.n	877f90 <ServerToClientHandshakePacket::read(BinaryStream&)+0x2c>
+  87800a:	a903      	add	r1, sp, #12
+  87800c:	f280 ea90 	blx	af8530 <Horse::onLadder(bool)+0x64>
+  878010:	e7be      	b.n	877f90 <ServerToClientHandshakePacket::read(BinaryStream&)+0x2c>
+  878012:	6811      	ldr	r1, [r2, #0]
+  878014:	1e4b      	subs	r3, r1, #1
+  878016:	6013      	str	r3, [r2, #0]
+  878018:	2900      	cmp	r1, #0
+  87801a:	dccb      	bgt.n	877fb4 <ServerToClientHandshakePacket::read(BinaryStream&)+0x50>
+  87801c:	a904      	add	r1, sp, #16
+  87801e:	f280 ea88 	blx	af8530 <Horse::onLadder(bool)+0x64>
+  878022:	e7c7      	b.n	877fb4 <ServerToClientHandshakePacket::read(BinaryStream&)+0x50>
+  878024:	4a24      	ldr	r2, [pc, #144]	; (8780b8 <ServerToClientHandshakePacket::read(BinaryStream&)+0x154>)
+  878026:	4604      	mov	r4, r0
+  878028:	4b24      	ldr	r3, [pc, #144]	; (8780bc <ServerToClientHandshakePacket::read(BinaryStream&)+0x158>)
+  87802a:	447a      	add	r2, pc
+  87802c:	9902      	ldr	r1, [sp, #8]
+  87802e:	f1a1 000c 	sub.w	r0, r1, #12
+  878032:	589a      	ldr	r2, [r3, r2]
+  878034:	4290      	cmp	r0, r2
+  878036:	d033      	beq.n	8780a0 <ServerToClientHandshakePacket::read(BinaryStream&)+0x13c>
+  878038:	4a21      	ldr	r2, [pc, #132]	; (8780c0 <ServerToClientHandshakePacket::read(BinaryStream&)+0x15c>)
+  87803a:	4b22      	ldr	r3, [pc, #136]	; (8780c4 <ServerToClientHandshakePacket::read(BinaryStream&)+0x160>)
+  87803c:	447a      	add	r2, pc
+  87803e:	589b      	ldr	r3, [r3, r2]
+  878040:	1f0a      	subs	r2, r1, #4
+  878042:	b383      	cbz	r3, 8780a6 <ServerToClientHandshakePacket::read(BinaryStream&)+0x142>
+  878044:	f3bf 8f5b 	dmb	ish
+  878048:	e852 1f00 	ldrex	r1, [r2]
+  87804c:	1e4b      	subs	r3, r1, #1
+  87804e:	e842 3700 	strex	r7, r3, [r2]
+  878052:	2f00      	cmp	r7, #0
+  878054:	d1f8      	bne.n	878048 <ServerToClientHandshakePacket::read(BinaryStream&)+0xe4>
+  878056:	f3bf 8f5b 	dmb	ish
+  87805a:	2900      	cmp	r1, #0
+  87805c:	dc20      	bgt.n	8780a0 <ServerToClientHandshakePacket::read(BinaryStream&)+0x13c>
+  87805e:	a905      	add	r1, sp, #20
+  878060:	e01c      	b.n	87809c <ServerToClientHandshakePacket::read(BinaryStream&)+0x138>
+  878062:	4a1b      	ldr	r2, [pc, #108]	; (8780d0 <ServerToClientHandshakePacket::read(BinaryStream&)+0x16c>)
+  878064:	4604      	mov	r4, r0
+  878066:	9901      	ldr	r1, [sp, #4]
+  878068:	447a      	add	r2, pc
+  87806a:	f1a1 000c 	sub.w	r0, r1, #12
+  87806e:	58ba      	ldr	r2, [r7, r2]
+  878070:	4290      	cmp	r0, r2
+  878072:	d015      	beq.n	8780a0 <ServerToClientHandshakePacket::read(BinaryStream&)+0x13c>
+  878074:	4a17      	ldr	r2, [pc, #92]	; (8780d4 <ServerToClientHandshakePacket::read(BinaryStream&)+0x170>)
+  878076:	4b13      	ldr	r3, [pc, #76]	; (8780c4 <ServerToClientHandshakePacket::read(BinaryStream&)+0x160>)
+  878078:	447a      	add	r2, pc
+  87807a:	589b      	ldr	r3, [r3, r2]
+  87807c:	1f0a      	subs	r2, r1, #4
+  87807e:	b1b3      	cbz	r3, 8780ae <ServerToClientHandshakePacket::read(BinaryStream&)+0x14a>
+  878080:	f3bf 8f5b 	dmb	ish
+  878084:	e852 1f00 	ldrex	r1, [r2]
+  878088:	1e4b      	subs	r3, r1, #1
+  87808a:	e842 3700 	strex	r7, r3, [r2]
+  87808e:	2f00      	cmp	r7, #0
+  878090:	d1f8      	bne.n	878084 <ServerToClientHandshakePacket::read(BinaryStream&)+0x120>
+  878092:	f3bf 8f5b 	dmb	ish
+  878096:	2900      	cmp	r1, #0
+  878098:	dc02      	bgt.n	8780a0 <ServerToClientHandshakePacket::read(BinaryStream&)+0x13c>
+  87809a:	a906      	add	r1, sp, #24
+  87809c:	f280 ea48 	blx	af8530 <Horse::onLadder(bool)+0x64>
+  8780a0:	4620      	mov	r0, r4
+  8780a2:	f618 ea86 	blx	6905b0 <_Unwind_Resume@plt>
+  8780a6:	6811      	ldr	r1, [r2, #0]
+  8780a8:	1e4b      	subs	r3, r1, #1
+  8780aa:	6013      	str	r3, [r2, #0]
+  8780ac:	e7d5      	b.n	87805a <ServerToClientHandshakePacket::read(BinaryStream&)+0xf6>
+  8780ae:	6811      	ldr	r1, [r2, #0]
+  8780b0:	1e4b      	subs	r3, r1, #1
+  8780b2:	6013      	str	r3, [r2, #0]
+  8780b4:	e7ef      	b.n	878096 <ServerToClientHandshakePacket::read(BinaryStream&)+0x132>
+  8780b6:	bf00      	nop
+  8780b8:	b49a      	push	{r1, r3, r4, r7}
+  8780ba:	0159      	lsls	r1, r3, #5
+  8780bc:	8ae0      	ldrh	r0, [r4, #22]
+  8780be:	ffff b488 	vraddhn.i<illegal width 128>	d27, <illegal reg q15.5>, q4
+  8780c2:	0159      	lsls	r1, r3, #5
+  8780c4:	8ae4      	ldrh	r4, [r4, #22]
+  8780c6:	ffff b542 	vmls.f<illegal width 64>	<illegal reg q13.5>, <illegal reg q7.5>, d2[0]
+  8780ca:	0159      	lsls	r1, r3, #5
+  8780cc:	b508      	push	{r3, lr}
+  8780ce:	0159      	lsls	r1, r3, #5
+  8780d0:	b45c      	push	{r2, r3, r4, r6}
+  8780d2:	0159      	lsls	r1, r3, #5
+  8780d4:	b44c      	push	{r2, r3, r6}
+  8780d6:	0159      	lsls	r1, r3, #5
+  8780d8:	b51c      	push	{r2, r3, r4, lr}
+  8780da:	0159      	lsls	r1, r3, #5
+  8780dc:	b4e4      	push	{r2, r5, r6, r7}
+  8780de:	0159      	lsls	r1, r3, #5

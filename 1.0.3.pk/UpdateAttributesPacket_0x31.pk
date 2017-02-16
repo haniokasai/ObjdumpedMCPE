@@ -1,0 +1,132 @@
+  886038:	e92d 4ff0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, lr}
+  88603c:	b081      	sub	sp, #4
+  88603e:	ed2d 8b04 	vpush	{d8-d9}
+  886042:	b088      	sub	sp, #32
+  886044:	ae02      	add	r6, sp, #8
+  886046:	4605      	mov	r5, r0
+  886048:	4689      	mov	r9, r1
+  88604a:	4630      	mov	r0, r6
+  88604c:	f60c ef38 	blx	692ec0 <EntityRuntimeID ReadOnlyBinaryStream::getType<EntityRuntimeID>()@plt>
+  886050:	e9dd 0102 	ldrd	r0, r1, [sp, #8]
+  886054:	e9c5 0104 	strd	r0, r1, [r5, #16]
+  886058:	4648      	mov	r0, r9
+  88605a:	f60c ed4c 	blx	692af4 <ReadOnlyBinaryStream::getUnsignedVarInt()@plt>
+  88605e:	f105 0718 	add.w	r7, r5, #24
+  886062:	4680      	mov	r8, r0
+  886064:	4641      	mov	r1, r8
+  886066:	4638      	mov	r0, r7
+  886068:	f60e ee54 	blx	694d14 <std::vector<UpdateAttributesPacket::AttributeData, std::allocator<UpdateAttributesPacket::AttributeData> >::reserve(unsigned int)@plt>
+  88606c:	f1b8 0f00 	cmp.w	r8, #0
+  886070:	d053      	beq.n	88611a <UpdateAttributesPacket::read(BinaryStream&)+0xe2>
+  886072:	4841      	ldr	r0, [pc, #260]	; (886178 <UpdateAttributesPacket::read(BinaryStream&)+0x140>)
+  886074:	ef80 8050 	vmov.i32	q4, #0	; 0x00000000
+  886078:	4940      	ldr	r1, [pc, #256]	; (88617c <UpdateAttributesPacket::read(BinaryStream&)+0x144>)
+  88607a:	f106 0410 	add.w	r4, r6, #16
+  88607e:	4478      	add	r0, pc
+  886080:	f04f 0b00 	mov.w	fp, #0
+  886084:	eb01 0a00 	add.w	sl, r1, r0
+  886088:	493e      	ldr	r1, [pc, #248]	; (886184 <UpdateAttributesPacket::read(BinaryStream&)+0x14c>)
+  88608a:	5809      	ldr	r1, [r1, r0]
+  88608c:	9101      	str	r1, [sp, #4]
+  88608e:	493f      	ldr	r1, [pc, #252]	; (88618c <UpdateAttributesPacket::read(BinaryStream&)+0x154>)
+  886090:	5808      	ldr	r0, [r1, r0]
+  886092:	9000      	str	r0, [sp, #0]
+  886094:	e019      	b.n	8860ca <UpdateAttributesPacket::read(BinaryStream&)+0x92>
+  886096:	1f0a      	subs	r2, r1, #4
+  886098:	9900      	ldr	r1, [sp, #0]
+  88609a:	b169      	cbz	r1, 8860b8 <UpdateAttributesPacket::read(BinaryStream&)+0x80>
+  88609c:	46bc      	mov	ip, r7
+  88609e:	f3bf 8f5b 	dmb	ish
+  8860a2:	e852 1f00 	ldrex	r1, [r2]
+  8860a6:	1e4b      	subs	r3, r1, #1
+  8860a8:	e842 3700 	strex	r7, r3, [r2]
+  8860ac:	2f00      	cmp	r7, #0
+  8860ae:	d1f8      	bne.n	8860a2 <UpdateAttributesPacket::read(BinaryStream&)+0x6a>
+  8860b0:	f3bf 8f5b 	dmb	ish
+  8860b4:	4667      	mov	r7, ip
+  8860b6:	e002      	b.n	8860be <UpdateAttributesPacket::read(BinaryStream&)+0x86>
+  8860b8:	6811      	ldr	r1, [r2, #0]
+  8860ba:	1e4b      	subs	r3, r1, #1
+  8860bc:	6013      	str	r3, [r2, #0]
+  8860be:	2900      	cmp	r1, #0
+  8860c0:	dc27      	bgt.n	886112 <UpdateAttributesPacket::read(BinaryStream&)+0xda>
+  8860c2:	a907      	add	r1, sp, #28
+  8860c4:	f272 ea34 	blx	af8530 <Horse::onLadder(bool)+0x64>
+  8860c8:	e023      	b.n	886112 <UpdateAttributesPacket::read(BinaryStream&)+0xda>
+  8860ca:	aa07      	add	r2, sp, #28
+  8860cc:	4620      	mov	r0, r4
+  8860ce:	4651      	mov	r1, sl
+  8860d0:	f906 8acf 	vst1.64	{d8-d9}, [r6]
+  8860d4:	f272 ea34 	blx	af8540 <Horse::onLadder(bool)+0x74>
+  8860d8:	4630      	mov	r0, r6
+  8860da:	4649      	mov	r1, r9
+  8860dc:	f60e ee20 	blx	694d20 <UpdateAttributesPacket::AttributeData::read(BinaryStream&)@plt>
+  8860e0:	e9d5 0107 	ldrd	r0, r1, [r5, #28]
+  8860e4:	4288      	cmp	r0, r1
+  8860e6:	d00a      	beq.n	8860fe <UpdateAttributesPacket::read(BinaryStream&)+0xc6>
+  8860e8:	f966 0acf 	vld1.64	{d16-d17}, [r6]
+  8860ec:	f940 0a8d 	vst1.32	{d16-d17}, [r0]!
+  8860f0:	4621      	mov	r1, r4
+  8860f2:	f272 ea16 	blx	af8520 <Horse::onLadder(bool)+0x54>
+  8860f6:	69e8      	ldr	r0, [r5, #28]
+  8860f8:	3014      	adds	r0, #20
+  8860fa:	61e8      	str	r0, [r5, #28]
+  8860fc:	e003      	b.n	886106 <UpdateAttributesPacket::read(BinaryStream&)+0xce>
+  8860fe:	4638      	mov	r0, r7
+  886100:	4631      	mov	r1, r6
+  886102:	f60e ee14 	blx	694d2c <void std::vector<UpdateAttributesPacket::AttributeData, std::allocator<UpdateAttributesPacket::AttributeData> >::_M_emplace_back_aux<UpdateAttributesPacket::AttributeData const&>(UpdateAttributesPacket::AttributeData const&)@plt>
+  886106:	9906      	ldr	r1, [sp, #24]
+  886108:	9a01      	ldr	r2, [sp, #4]
+  88610a:	f1a1 000c 	sub.w	r0, r1, #12
+  88610e:	4290      	cmp	r0, r2
+  886110:	d1c1      	bne.n	886096 <UpdateAttributesPacket::read(BinaryStream&)+0x5e>
+  886112:	f10b 0b01 	add.w	fp, fp, #1
+  886116:	45c3      	cmp	fp, r8
+  886118:	d3d7      	bcc.n	8860ca <UpdateAttributesPacket::read(BinaryStream&)+0x92>
+  88611a:	b008      	add	sp, #32
+  88611c:	ecbd 8b04 	vpop	{d8-d9}
+  886120:	b001      	add	sp, #4
+  886122:	e8bd 8ff0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, pc}
+  886126:	4a16      	ldr	r2, [pc, #88]	; (886180 <UpdateAttributesPacket::read(BinaryStream&)+0x148>)
+  886128:	4604      	mov	r4, r0
+  88612a:	4b16      	ldr	r3, [pc, #88]	; (886184 <UpdateAttributesPacket::read(BinaryStream&)+0x14c>)
+  88612c:	447a      	add	r2, pc
+  88612e:	9906      	ldr	r1, [sp, #24]
+  886130:	f1a1 000c 	sub.w	r0, r1, #12
+  886134:	589a      	ldr	r2, [r3, r2]
+  886136:	4290      	cmp	r0, r2
+  886138:	d016      	beq.n	886168 <UpdateAttributesPacket::read(BinaryStream&)+0x130>
+  88613a:	4a13      	ldr	r2, [pc, #76]	; (886188 <UpdateAttributesPacket::read(BinaryStream&)+0x150>)
+  88613c:	4b13      	ldr	r3, [pc, #76]	; (88618c <UpdateAttributesPacket::read(BinaryStream&)+0x154>)
+  88613e:	447a      	add	r2, pc
+  886140:	589b      	ldr	r3, [r3, r2]
+  886142:	1f0a      	subs	r2, r1, #4
+  886144:	b19b      	cbz	r3, 88616e <UpdateAttributesPacket::read(BinaryStream&)+0x136>
+  886146:	f3bf 8f5b 	dmb	ish
+  88614a:	e852 1f00 	ldrex	r1, [r2]
+  88614e:	1e4b      	subs	r3, r1, #1
+  886150:	e842 3700 	strex	r7, r3, [r2]
+  886154:	2f00      	cmp	r7, #0
+  886156:	d1f8      	bne.n	88614a <UpdateAttributesPacket::read(BinaryStream&)+0x112>
+  886158:	f3bf 8f5b 	dmb	ish
+  88615c:	2900      	cmp	r1, #0
+  88615e:	bfdc      	itt	le
+  886160:	f10d 011c 	addle.w	r1, sp, #28
+  886164:	f272 e9e4 	blxle	af8530 <Horse::onLadder(bool)+0x64>
+  886168:	4620      	mov	r0, r4
+  88616a:	f60a ea22 	blx	6905b0 <_Unwind_Resume@plt>
+  88616e:	6811      	ldr	r1, [r2, #0]
+  886170:	1e4b      	subs	r3, r1, #1
+  886172:	6013      	str	r3, [r2, #0]
+  886174:	e7f2      	b.n	88615c <UpdateAttributesPacket::read(BinaryStream&)+0x124>
+  886176:	bf00      	nop
+  886178:	d446      	bmi.n	886208 <std::vector<UpdateAttributesPacket::AttributeData, std::allocator<UpdateAttributesPacket::AttributeData> >::reserve(unsigned int)+0x78>
+  88617a:	0158      	lsls	r0, r3, #5
+  88617c:	fbea ffe6 			; <UNDEFINED> instruction: 0xfbeaffe6
+  886180:	d398      	bcc.n	8860b4 <UpdateAttributesPacket::read(BinaryStream&)+0x7c>
+  886182:	0158      	lsls	r0, r3, #5
+  886184:	8ae0      	ldrh	r0, [r4, #22]
+  886186:	ffff d386 	vsubw.u<illegal width 64>	<illegal reg q14.5>, <illegal reg q15.5>, d6
+  88618a:	0158      	lsls	r0, r3, #5
+  88618c:	8ae4      	ldrh	r4, [r4, #22]
+  88618e:	ffff e92d 	vtbl.8	d30, {d15-d16}, d29

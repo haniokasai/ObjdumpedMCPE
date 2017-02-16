@@ -1,0 +1,83 @@
+  880d40:	b5b0      	push	{r4, r5, r7, lr}
+  880d42:	b084      	sub	sp, #16
+  880d44:	ad01      	add	r5, sp, #4
+  880d46:	4604      	mov	r4, r0
+  880d48:	4628      	mov	r0, r5
+  880d4a:	f611 eba4 	blx	692494 <ReadOnlyBinaryStream::getString()@plt>
+  880d4e:	f104 000c 	add.w	r0, r4, #12
+  880d52:	4629      	mov	r1, r5
+  880d54:	f277 ec3c 	blx	af85d0 <Horse::onLadder(bool)+0x104>
+  880d58:	482a      	ldr	r0, [pc, #168]	; (880e04 <BatchPacket::read(BinaryStream&)+0xc4>)
+  880d5a:	4a27      	ldr	r2, [pc, #156]	; (880df8 <BatchPacket::read(BinaryStream&)+0xb8>)
+  880d5c:	4478      	add	r0, pc
+  880d5e:	9901      	ldr	r1, [sp, #4]
+  880d60:	5812      	ldr	r2, [r2, r0]
+  880d62:	f1a1 000c 	sub.w	r0, r1, #12
+  880d66:	4290      	cmp	r0, r2
+  880d68:	d101      	bne.n	880d6e <BatchPacket::read(BinaryStream&)+0x2e>
+  880d6a:	b004      	add	sp, #16
+  880d6c:	bdb0      	pop	{r4, r5, r7, pc}
+  880d6e:	4a26      	ldr	r2, [pc, #152]	; (880e08 <BatchPacket::read(BinaryStream&)+0xc8>)
+  880d70:	4b23      	ldr	r3, [pc, #140]	; (880e00 <BatchPacket::read(BinaryStream&)+0xc0>)
+  880d72:	447a      	add	r2, pc
+  880d74:	589b      	ldr	r3, [r3, r2]
+  880d76:	1f0a      	subs	r2, r1, #4
+  880d78:	b15b      	cbz	r3, 880d92 <BatchPacket::read(BinaryStream&)+0x52>
+  880d7a:	f3bf 8f5b 	dmb	ish
+  880d7e:	e852 1f00 	ldrex	r1, [r2]
+  880d82:	1e4b      	subs	r3, r1, #1
+  880d84:	e842 3500 	strex	r5, r3, [r2]
+  880d88:	2d00      	cmp	r5, #0
+  880d8a:	d1f8      	bne.n	880d7e <BatchPacket::read(BinaryStream&)+0x3e>
+  880d8c:	f3bf 8f5b 	dmb	ish
+  880d90:	e002      	b.n	880d98 <BatchPacket::read(BinaryStream&)+0x58>
+  880d92:	6811      	ldr	r1, [r2, #0]
+  880d94:	1e4b      	subs	r3, r1, #1
+  880d96:	6013      	str	r3, [r2, #0]
+  880d98:	2900      	cmp	r1, #0
+  880d9a:	dce6      	bgt.n	880d6a <BatchPacket::read(BinaryStream&)+0x2a>
+  880d9c:	a902      	add	r1, sp, #8
+  880d9e:	f277 ebc8 	blx	af8530 <Horse::onLadder(bool)+0x64>
+  880da2:	e7e2      	b.n	880d6a <BatchPacket::read(BinaryStream&)+0x2a>
+  880da4:	4a13      	ldr	r2, [pc, #76]	; (880df4 <BatchPacket::read(BinaryStream&)+0xb4>)
+  880da6:	4604      	mov	r4, r0
+  880da8:	4b13      	ldr	r3, [pc, #76]	; (880df8 <BatchPacket::read(BinaryStream&)+0xb8>)
+  880daa:	447a      	add	r2, pc
+  880dac:	9901      	ldr	r1, [sp, #4]
+  880dae:	f1a1 000c 	sub.w	r0, r1, #12
+  880db2:	589a      	ldr	r2, [r3, r2]
+  880db4:	4290      	cmp	r0, r2
+  880db6:	d016      	beq.n	880de6 <BatchPacket::read(BinaryStream&)+0xa6>
+  880db8:	4a10      	ldr	r2, [pc, #64]	; (880dfc <BatchPacket::read(BinaryStream&)+0xbc>)
+  880dba:	4b11      	ldr	r3, [pc, #68]	; (880e00 <BatchPacket::read(BinaryStream&)+0xc0>)
+  880dbc:	447a      	add	r2, pc
+  880dbe:	589b      	ldr	r3, [r3, r2]
+  880dc0:	1f0a      	subs	r2, r1, #4
+  880dc2:	b19b      	cbz	r3, 880dec <BatchPacket::read(BinaryStream&)+0xac>
+  880dc4:	f3bf 8f5b 	dmb	ish
+  880dc8:	e852 1f00 	ldrex	r1, [r2]
+  880dcc:	1e4b      	subs	r3, r1, #1
+  880dce:	e842 3500 	strex	r5, r3, [r2]
+  880dd2:	2d00      	cmp	r5, #0
+  880dd4:	d1f8      	bne.n	880dc8 <BatchPacket::read(BinaryStream&)+0x88>
+  880dd6:	f3bf 8f5b 	dmb	ish
+  880dda:	2900      	cmp	r1, #0
+  880ddc:	bfdc      	itt	le
+  880dde:	f10d 010c 	addle.w	r1, sp, #12
+  880de2:	f277 eba6 	blxle	af8530 <Horse::onLadder(bool)+0x64>
+  880de6:	4620      	mov	r0, r4
+  880de8:	f60f ebe2 	blx	6905b0 <_Unwind_Resume@plt>
+  880dec:	6811      	ldr	r1, [r2, #0]
+  880dee:	1e4b      	subs	r3, r1, #1
+  880df0:	6013      	str	r3, [r2, #0]
+  880df2:	e7f2      	b.n	880dda <BatchPacket::read(BinaryStream&)+0x9a>
+  880df4:	271a      	movs	r7, #26
+  880df6:	0159      	lsls	r1, r3, #5
+  880df8:	8ae0      	ldrh	r0, [r4, #22]
+  880dfa:	ffff 2708 	vcvt.s<illegal width 64>.f<illegal width 64>	d18, d8
+  880dfe:	0159      	lsls	r1, r3, #5
+  880e00:	8ae4      	ldrh	r4, [r4, #22]
+  880e02:	ffff 2768 	vcvt.s<illegal width 64>.f<illegal width 64>	q9, q12
+  880e06:	0159      	lsls	r1, r3, #5
+  880e08:	2752      	movs	r7, #82	; 0x52
+  880e0a:	0159      	lsls	r1, r3, #5

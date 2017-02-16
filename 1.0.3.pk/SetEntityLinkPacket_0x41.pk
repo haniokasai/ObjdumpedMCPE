@@ -1,0 +1,15 @@
+  87da44:	b5b0      	push	{r4, r5, r7, lr}
+  87da46:	b088      	sub	sp, #32
+  87da48:	466d      	mov	r5, sp
+  87da4a:	4604      	mov	r4, r0
+  87da4c:	4628      	mov	r0, r5
+  87da4e:	f615 eab0 	blx	692fb0 <EntityLink ReadOnlyBinaryStream::getType<EntityLink>()@plt>
+  87da52:	f105 0009 	add.w	r0, r5, #9
+  87da56:	f965 0acf 	vld1.64	{d16-d17}, [r5]
+  87da5a:	f960 2a0f 	vld1.8	{d18-d19}, [r0]
+  87da5e:	f104 0019 	add.w	r0, r4, #25
+  87da62:	f940 2a0f 	vst1.8	{d18-d19}, [r0]
+  87da66:	f104 0010 	add.w	r0, r4, #16
+  87da6a:	f940 0acf 	vst1.64	{d16-d17}, [r0]
+  87da6e:	b008      	add	sp, #32
+  87da70:	bdb0      	pop	{r4, r5, r7, pc}

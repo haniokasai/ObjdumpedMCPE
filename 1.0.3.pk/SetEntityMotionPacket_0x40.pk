@@ -1,0 +1,19 @@
+  87cc76:	b5b0      	push	{r4, r5, r7, lr}
+  87cc78:	b084      	sub	sp, #16
+  87cc7a:	4605      	mov	r5, r0
+  87cc7c:	4668      	mov	r0, sp
+  87cc7e:	460c      	mov	r4, r1
+  87cc80:	f616 e91e 	blx	692ec0 <EntityRuntimeID ReadOnlyBinaryStream::getType<EntityRuntimeID>()@plt>
+  87cc84:	e9dd 0100 	ldrd	r0, r1, [sp]
+  87cc88:	e9c5 0104 	strd	r0, r1, [r5, #16]
+  87cc8c:	4668      	mov	r0, sp
+  87cc8e:	4621      	mov	r1, r4
+  87cc90:	f616 e91c 	blx	692ecc <Vec3 ReadOnlyBinaryStream::getType<Vec3>()@plt>
+  87cc94:	9800      	ldr	r0, [sp, #0]
+  87cc96:	61a8      	str	r0, [r5, #24]
+  87cc98:	9801      	ldr	r0, [sp, #4]
+  87cc9a:	61e8      	str	r0, [r5, #28]
+  87cc9c:	9802      	ldr	r0, [sp, #8]
+  87cc9e:	6228      	str	r0, [r5, #32]
+  87cca0:	b004      	add	sp, #16
+  87cca2:	bdb0      	pop	{r4, r5, r7, pc}

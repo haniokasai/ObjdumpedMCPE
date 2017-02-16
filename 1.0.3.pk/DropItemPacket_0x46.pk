@@ -1,0 +1,29 @@
+  87cec0:	b570      	push	{r4, r5, r6, lr}
+  87cec2:	b086      	sub	sp, #24
+  87cec4:	460c      	mov	r4, r1
+  87cec6:	4605      	mov	r5, r0
+  87cec8:	4620      	mov	r0, r4
+  87ceca:	f615 ef58 	blx	692d7c <ReadOnlyBinaryStream::getByte()@plt>
+  87cece:	ae01      	add	r6, sp, #4
+  87ced0:	7328      	strb	r0, [r5, #12]
+  87ced2:	4621      	mov	r1, r4
+  87ced4:	4630      	mov	r0, r6
+  87ced6:	f616 e884 	blx	692fe0 <ItemInstance ReadOnlyBinaryStream::getType<ItemInstance>()@plt>
+  87ceda:	f105 0010 	add.w	r0, r5, #16
+  87cede:	4631      	mov	r1, r6
+  87cee0:	f615 eb62 	blx	6925a8 <ItemInstance::operator=(ItemInstance const&)@plt>
+  87cee4:	9803      	ldr	r0, [sp, #12]
+  87cee6:	b110      	cbz	r0, 87ceee <DropItemPacket::read(BinaryStream&)+0x2e>
+  87cee8:	6801      	ldr	r1, [r0, #0]
+  87ceea:	6849      	ldr	r1, [r1, #4]
+  87ceec:	4788      	blx	r1
+  87ceee:	b006      	add	sp, #24
+  87cef0:	bd70      	pop	{r4, r5, r6, pc}
+  87cef2:	4604      	mov	r4, r0
+  87cef4:	9803      	ldr	r0, [sp, #12]
+  87cef6:	b110      	cbz	r0, 87cefe <DropItemPacket::read(BinaryStream&)+0x3e>
+  87cef8:	6801      	ldr	r1, [r0, #0]
+  87cefa:	6849      	ldr	r1, [r1, #4]
+  87cefc:	4788      	blx	r1
+  87cefe:	4620      	mov	r0, r4
+  87cf00:	f613 eb56 	blx	6905b0 <_Unwind_Resume@plt>

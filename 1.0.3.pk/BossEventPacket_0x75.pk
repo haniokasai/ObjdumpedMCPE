@@ -1,0 +1,193 @@
+  87f668:	b570      	push	{r4, r5, r6, lr}
+  87f66a:	b084      	sub	sp, #16
+  87f66c:	4604      	mov	r4, r0
+  87f66e:	a802      	add	r0, sp, #8
+  87f670:	460d      	mov	r5, r1
+  87f672:	f613 ec20 	blx	692eb4 <EntityUniqueID ReadOnlyBinaryStream::getType<EntityUniqueID>()@plt>
+  87f676:	e9dd 0102 	ldrd	r0, r1, [sp, #8]
+  87f67a:	e9c4 0106 	strd	r0, r1, [r4, #24]
+  87f67e:	4628      	mov	r0, r5
+  87f680:	f613 ea38 	blx	692af4 <ReadOnlyBinaryStream::getUnsignedVarInt()@plt>
+  87f684:	62a0      	str	r0, [r4, #40]	; 0x28
+  87f686:	2807      	cmp	r0, #7
+  87f688:	d84d      	bhi.n	87f726 <BossEventPacket::read(BinaryStream&)+0xbe>
+  87f68a:	e8df f000 	tbb	[pc, r0]
+  87f68e:	040d      	lsls	r5, r1, #16
+  87f690:	044c      	lsls	r4, r1, #17
+  87f692:	3933      	subs	r1, #51	; 0x33
+  87f694:	2924      	cmp	r1, #36	; 0x24
+  87f696:	a802      	add	r0, sp, #8
+  87f698:	4629      	mov	r1, r5
+  87f69a:	f613 ec0c 	blx	692eb4 <EntityUniqueID ReadOnlyBinaryStream::getType<EntityUniqueID>()@plt>
+  87f69e:	e9dd 0102 	ldrd	r0, r1, [sp, #8]
+  87f6a2:	e9c4 0108 	strd	r0, r1, [r4, #32]
+  87f6a6:	e03e      	b.n	87f726 <BossEventPacket::read(BinaryStream&)+0xbe>
+  87f6a8:	ae01      	add	r6, sp, #4
+  87f6aa:	4629      	mov	r1, r5
+  87f6ac:	4630      	mov	r0, r6
+  87f6ae:	f612 eef2 	blx	692494 <ReadOnlyBinaryStream::getString()@plt>
+  87f6b2:	f104 002c 	add.w	r0, r4, #44	; 0x2c
+  87f6b6:	4631      	mov	r1, r6
+  87f6b8:	f278 ef8a 	blx	af85d0 <Horse::onLadder(bool)+0x104>
+  87f6bc:	4860      	ldr	r0, [pc, #384]	; (87f840 <BossEventPacket::read(BinaryStream&)+0x1d8>)
+  87f6be:	4a59      	ldr	r2, [pc, #356]	; (87f824 <BossEventPacket::read(BinaryStream&)+0x1bc>)
+  87f6c0:	4478      	add	r0, pc
+  87f6c2:	9901      	ldr	r1, [sp, #4]
+  87f6c4:	5812      	ldr	r2, [r2, r0]
+  87f6c6:	f1a1 000c 	sub.w	r0, r1, #12
+  87f6ca:	4290      	cmp	r0, r2
+  87f6cc:	d12d      	bne.n	87f72a <BossEventPacket::read(BinaryStream&)+0xc2>
+  87f6ce:	4628      	mov	r0, r5
+  87f6d0:	f613 ec5c 	blx	692f8c <ReadOnlyBinaryStream::getFloat()@plt>
+  87f6d4:	6320      	str	r0, [r4, #48]	; 0x30
+  87f6d6:	4628      	mov	r0, r5
+  87f6d8:	f613 eb86 	blx	692de8 <ReadOnlyBinaryStream::getUnsignedShort()@plt>
+  87f6dc:	f884 003c 	strb.w	r0, [r4, #60]	; 0x3c
+  87f6e0:	4628      	mov	r0, r5
+  87f6e2:	f613 ea08 	blx	692af4 <ReadOnlyBinaryStream::getUnsignedVarInt()@plt>
+  87f6e6:	6360      	str	r0, [r4, #52]	; 0x34
+  87f6e8:	4628      	mov	r0, r5
+  87f6ea:	f613 ea04 	blx	692af4 <ReadOnlyBinaryStream::getUnsignedVarInt()@plt>
+  87f6ee:	63a0      	str	r0, [r4, #56]	; 0x38
+  87f6f0:	b004      	add	sp, #16
+  87f6f2:	bd70      	pop	{r4, r5, r6, pc}
+  87f6f4:	4628      	mov	r0, r5
+  87f6f6:	f613 ec4a 	blx	692f8c <ReadOnlyBinaryStream::getFloat()@plt>
+  87f6fa:	6320      	str	r0, [r4, #48]	; 0x30
+  87f6fc:	b004      	add	sp, #16
+  87f6fe:	bd70      	pop	{r4, r5, r6, pc}
+  87f700:	466e      	mov	r6, sp
+  87f702:	4629      	mov	r1, r5
+  87f704:	4630      	mov	r0, r6
+  87f706:	f612 eec6 	blx	692494 <ReadOnlyBinaryStream::getString()@plt>
+  87f70a:	f104 002c 	add.w	r0, r4, #44	; 0x2c
+  87f70e:	4631      	mov	r1, r6
+  87f710:	f278 ef5e 	blx	af85d0 <Horse::onLadder(bool)+0x104>
+  87f714:	4846      	ldr	r0, [pc, #280]	; (87f830 <BossEventPacket::read(BinaryStream&)+0x1c8>)
+  87f716:	4a43      	ldr	r2, [pc, #268]	; (87f824 <BossEventPacket::read(BinaryStream&)+0x1bc>)
+  87f718:	4478      	add	r0, pc
+  87f71a:	9900      	ldr	r1, [sp, #0]
+  87f71c:	5812      	ldr	r2, [r2, r0]
+  87f71e:	f1a1 000c 	sub.w	r0, r1, #12
+  87f722:	4290      	cmp	r0, r2
+  87f724:	d113      	bne.n	87f74e <BossEventPacket::read(BinaryStream&)+0xe6>
+  87f726:	b004      	add	sp, #16
+  87f728:	bd70      	pop	{r4, r5, r6, pc}
+  87f72a:	4a46      	ldr	r2, [pc, #280]	; (87f844 <BossEventPacket::read(BinaryStream&)+0x1dc>)
+  87f72c:	4b3f      	ldr	r3, [pc, #252]	; (87f82c <BossEventPacket::read(BinaryStream&)+0x1c4>)
+  87f72e:	447a      	add	r2, pc
+  87f730:	589b      	ldr	r3, [r3, r2]
+  87f732:	1f0a      	subs	r2, r1, #4
+  87f734:	b1eb      	cbz	r3, 87f772 <BossEventPacket::read(BinaryStream&)+0x10a>
+  87f736:	f3bf 8f5b 	dmb	ish
+  87f73a:	e852 1f00 	ldrex	r1, [r2]
+  87f73e:	1e4b      	subs	r3, r1, #1
+  87f740:	e842 3600 	strex	r6, r3, [r2]
+  87f744:	2e00      	cmp	r6, #0
+  87f746:	d1f8      	bne.n	87f73a <BossEventPacket::read(BinaryStream&)+0xd2>
+  87f748:	f3bf 8f5b 	dmb	ish
+  87f74c:	e014      	b.n	87f778 <BossEventPacket::read(BinaryStream&)+0x110>
+  87f74e:	4a39      	ldr	r2, [pc, #228]	; (87f834 <BossEventPacket::read(BinaryStream&)+0x1cc>)
+  87f750:	4b36      	ldr	r3, [pc, #216]	; (87f82c <BossEventPacket::read(BinaryStream&)+0x1c4>)
+  87f752:	447a      	add	r2, pc
+  87f754:	589b      	ldr	r3, [r3, r2]
+  87f756:	1f0a      	subs	r2, r1, #4
+  87f758:	b1a3      	cbz	r3, 87f784 <BossEventPacket::read(BinaryStream&)+0x11c>
+  87f75a:	f3bf 8f5b 	dmb	ish
+  87f75e:	e852 1f00 	ldrex	r1, [r2]
+  87f762:	1e4b      	subs	r3, r1, #1
+  87f764:	e842 3600 	strex	r6, r3, [r2]
+  87f768:	2e00      	cmp	r6, #0
+  87f76a:	d1f8      	bne.n	87f75e <BossEventPacket::read(BinaryStream&)+0xf6>
+  87f76c:	f3bf 8f5b 	dmb	ish
+  87f770:	e00b      	b.n	87f78a <BossEventPacket::read(BinaryStream&)+0x122>
+  87f772:	6811      	ldr	r1, [r2, #0]
+  87f774:	1e4b      	subs	r3, r1, #1
+  87f776:	6013      	str	r3, [r2, #0]
+  87f778:	2900      	cmp	r1, #0
+  87f77a:	dca8      	bgt.n	87f6ce <BossEventPacket::read(BinaryStream&)+0x66>
+  87f77c:	a902      	add	r1, sp, #8
+  87f77e:	f278 eed8 	blx	af8530 <Horse::onLadder(bool)+0x64>
+  87f782:	e7a4      	b.n	87f6ce <BossEventPacket::read(BinaryStream&)+0x66>
+  87f784:	6811      	ldr	r1, [r2, #0]
+  87f786:	1e4b      	subs	r3, r1, #1
+  87f788:	6013      	str	r3, [r2, #0]
+  87f78a:	2900      	cmp	r1, #0
+  87f78c:	dccb      	bgt.n	87f726 <BossEventPacket::read(BinaryStream&)+0xbe>
+  87f78e:	a902      	add	r1, sp, #8
+  87f790:	f278 eece 	blx	af8530 <Horse::onLadder(bool)+0x64>
+  87f794:	b004      	add	sp, #16
+  87f796:	bd70      	pop	{r4, r5, r6, pc}
+  87f798:	4a27      	ldr	r2, [pc, #156]	; (87f838 <BossEventPacket::read(BinaryStream&)+0x1d0>)
+  87f79a:	4604      	mov	r4, r0
+  87f79c:	4b21      	ldr	r3, [pc, #132]	; (87f824 <BossEventPacket::read(BinaryStream&)+0x1bc>)
+  87f79e:	447a      	add	r2, pc
+  87f7a0:	9901      	ldr	r1, [sp, #4]
+  87f7a2:	f1a1 000c 	sub.w	r0, r1, #12
+  87f7a6:	589a      	ldr	r2, [r3, r2]
+  87f7a8:	4290      	cmp	r0, r2
+  87f7aa:	d032      	beq.n	87f812 <BossEventPacket::read(BinaryStream&)+0x1aa>
+  87f7ac:	4a23      	ldr	r2, [pc, #140]	; (87f83c <BossEventPacket::read(BinaryStream&)+0x1d4>)
+  87f7ae:	4b1f      	ldr	r3, [pc, #124]	; (87f82c <BossEventPacket::read(BinaryStream&)+0x1c4>)
+  87f7b0:	447a      	add	r2, pc
+  87f7b2:	589b      	ldr	r3, [r3, r2]
+  87f7b4:	1f0a      	subs	r2, r1, #4
+  87f7b6:	b37b      	cbz	r3, 87f818 <BossEventPacket::read(BinaryStream&)+0x1b0>
+  87f7b8:	f3bf 8f5b 	dmb	ish
+  87f7bc:	e852 1f00 	ldrex	r1, [r2]
+  87f7c0:	1e4b      	subs	r3, r1, #1
+  87f7c2:	e842 3600 	strex	r6, r3, [r2]
+  87f7c6:	2e00      	cmp	r6, #0
+  87f7c8:	d1f8      	bne.n	87f7bc <BossEventPacket::read(BinaryStream&)+0x154>
+  87f7ca:	f3bf 8f5b 	dmb	ish
+  87f7ce:	e01a      	b.n	87f806 <BossEventPacket::read(BinaryStream&)+0x19e>
+  87f7d0:	4a13      	ldr	r2, [pc, #76]	; (87f820 <BossEventPacket::read(BinaryStream&)+0x1b8>)
+  87f7d2:	4604      	mov	r4, r0
+  87f7d4:	4b13      	ldr	r3, [pc, #76]	; (87f824 <BossEventPacket::read(BinaryStream&)+0x1bc>)
+  87f7d6:	447a      	add	r2, pc
+  87f7d8:	9900      	ldr	r1, [sp, #0]
+  87f7da:	f1a1 000c 	sub.w	r0, r1, #12
+  87f7de:	589a      	ldr	r2, [r3, r2]
+  87f7e0:	4290      	cmp	r0, r2
+  87f7e2:	d016      	beq.n	87f812 <BossEventPacket::read(BinaryStream&)+0x1aa>
+  87f7e4:	4a10      	ldr	r2, [pc, #64]	; (87f828 <BossEventPacket::read(BinaryStream&)+0x1c0>)
+  87f7e6:	4b11      	ldr	r3, [pc, #68]	; (87f82c <BossEventPacket::read(BinaryStream&)+0x1c4>)
+  87f7e8:	447a      	add	r2, pc
+  87f7ea:	589b      	ldr	r3, [r3, r2]
+  87f7ec:	1f0a      	subs	r2, r1, #4
+  87f7ee:	b19b      	cbz	r3, 87f818 <BossEventPacket::read(BinaryStream&)+0x1b0>
+  87f7f0:	f3bf 8f5b 	dmb	ish
+  87f7f4:	e852 1f00 	ldrex	r1, [r2]
+  87f7f8:	1e4b      	subs	r3, r1, #1
+  87f7fa:	e842 3600 	strex	r6, r3, [r2]
+  87f7fe:	2e00      	cmp	r6, #0
+  87f800:	d1f8      	bne.n	87f7f4 <BossEventPacket::read(BinaryStream&)+0x18c>
+  87f802:	f3bf 8f5b 	dmb	ish
+  87f806:	2900      	cmp	r1, #0
+  87f808:	bfdc      	itt	le
+  87f80a:	f10d 0108 	addle.w	r1, sp, #8
+  87f80e:	f278 ee90 	blxle	af8530 <Horse::onLadder(bool)+0x64>
+  87f812:	4620      	mov	r0, r4
+  87f814:	f610 eecc 	blx	6905b0 <_Unwind_Resume@plt>
+  87f818:	6811      	ldr	r1, [r2, #0]
+  87f81a:	1e4b      	subs	r3, r1, #1
+  87f81c:	6013      	str	r3, [r2, #0]
+  87f81e:	e7f2      	b.n	87f806 <BossEventPacket::read(BinaryStream&)+0x19e>
+  87f820:	3cee      	subs	r4, #238	; 0xee
+  87f822:	0159      	lsls	r1, r3, #5
+  87f824:	8ae0      	ldrh	r0, [r4, #22]
+  87f826:	ffff 3cdc 			; <UNDEFINED> instruction: 0xffff3cdc
+  87f82a:	0159      	lsls	r1, r3, #5
+  87f82c:	8ae4      	ldrh	r4, [r4, #22]
+  87f82e:	ffff 3dac 			; <UNDEFINED> instruction: 0xffff3dac
+  87f832:	0159      	lsls	r1, r3, #5
+  87f834:	3d72      	subs	r5, #114	; 0x72
+  87f836:	0159      	lsls	r1, r3, #5
+  87f838:	3d26      	subs	r5, #38	; 0x26
+  87f83a:	0159      	lsls	r1, r3, #5
+  87f83c:	3d14      	subs	r5, #20
+  87f83e:	0159      	lsls	r1, r3, #5
+  87f840:	3e04      	subs	r6, #4
+  87f842:	0159      	lsls	r1, r3, #5
+  87f844:	3d96      	subs	r5, #150	; 0x96
+  87f846:	0159      	lsls	r1, r3, #5

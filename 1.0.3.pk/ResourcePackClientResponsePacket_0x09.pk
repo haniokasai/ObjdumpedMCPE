@@ -1,0 +1,161 @@
+  8799e0:	e92d 4ff0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, lr}
+  8799e4:	b085      	sub	sp, #20
+  8799e6:	468b      	mov	fp, r1
+  8799e8:	4605      	mov	r5, r0
+  8799ea:	4658      	mov	r0, fp
+  8799ec:	f619 e9c6 	blx	692d7c <ReadOnlyBinaryStream::getByte()@plt>
+  8799f0:	7628      	strb	r0, [r5, #24]
+  8799f2:	4658      	mov	r0, fp
+  8799f4:	f619 e9f8 	blx	692de8 <ReadOnlyBinaryStream::getUnsignedShort()@plt>
+  8799f8:	46aa      	mov	sl, r5
+  8799fa:	f85a 1f0c 	ldr.w	r1, [sl, #12]!
+  8799fe:	f8da 4004 	ldr.w	r4, [sl, #4]
+  879a02:	1a63      	subs	r3, r4, r1
+  879a04:	109a      	asrs	r2, r3, #2
+  879a06:	ebb0 0fa3 	cmp.w	r0, r3, asr #2
+  879a0a:	d906      	bls.n	879a1a <ResourcePackClientResponsePacket::read(BinaryStream&)+0x3a>
+  879a0c:	1a81      	subs	r1, r0, r2
+  879a0e:	4650      	mov	r0, sl
+  879a10:	f619 ea1a 	blx	692e48 <std::vector<std::string, std::allocator<std::string> >::_M_default_append(unsigned int)@plt>
+  879a14:	f8d5 e010 	ldr.w	lr, [r5, #16]
+  879a18:	e03e      	b.n	879a98 <ResourcePackClientResponsePacket::read(BinaryStream&)+0xb8>
+  879a1a:	4290      	cmp	r0, r2
+  879a1c:	d23b      	bcs.n	879a96 <ResourcePackClientResponsePacket::read(BinaryStream&)+0xb6>
+  879a1e:	eb01 0e80 	add.w	lr, r1, r0, lsl #2
+  879a22:	4574      	cmp	r4, lr
+  879a24:	d034      	beq.n	879a90 <ResourcePackClientResponsePacket::read(BinaryStream&)+0xb0>
+  879a26:	4852      	ldr	r0, [pc, #328]	; (879b70 <ResourcePackClientResponsePacket::read(BinaryStream&)+0x190>)
+  879a28:	46f1      	mov	r9, lr
+  879a2a:	4952      	ldr	r1, [pc, #328]	; (879b74 <ResourcePackClientResponsePacket::read(BinaryStream&)+0x194>)
+  879a2c:	4478      	add	r0, pc
+  879a2e:	f851 8000 	ldr.w	r8, [r1, r0]
+  879a32:	4951      	ldr	r1, [pc, #324]	; (879b78 <ResourcePackClientResponsePacket::read(BinaryStream&)+0x198>)
+  879a34:	f851 c000 	ldr.w	ip, [r1, r0]
+  879a38:	a902      	add	r1, sp, #8
+  879a3a:	e01f      	b.n	879a7c <ResourcePackClientResponsePacket::read(BinaryStream&)+0x9c>
+  879a3c:	3a04      	subs	r2, #4
+  879a3e:	f1bc 0f00 	cmp.w	ip, #0
+  879a42:	d00b      	beq.n	879a5c <ResourcePackClientResponsePacket::read(BinaryStream&)+0x7c>
+  879a44:	f3bf 8f5b 	dmb	ish
+  879a48:	e852 7f00 	ldrex	r7, [r2]
+  879a4c:	1e7b      	subs	r3, r7, #1
+  879a4e:	e842 3600 	strex	r6, r3, [r2]
+  879a52:	2e00      	cmp	r6, #0
+  879a54:	d1f8      	bne.n	879a48 <ResourcePackClientResponsePacket::read(BinaryStream&)+0x68>
+  879a56:	f3bf 8f5b 	dmb	ish
+  879a5a:	e002      	b.n	879a62 <ResourcePackClientResponsePacket::read(BinaryStream&)+0x82>
+  879a5c:	6817      	ldr	r7, [r2, #0]
+  879a5e:	1e7b      	subs	r3, r7, #1
+  879a60:	6013      	str	r3, [r2, #0]
+  879a62:	2f00      	cmp	r7, #0
+  879a64:	dc10      	bgt.n	879a88 <ResourcePackClientResponsePacket::read(BinaryStream&)+0xa8>
+  879a66:	4666      	mov	r6, ip
+  879a68:	460f      	mov	r7, r1
+  879a6a:	f8cd e000 	str.w	lr, [sp]
+  879a6e:	f27e ed60 	blx	af8530 <Horse::onLadder(bool)+0x64>
+  879a72:	f8dd e000 	ldr.w	lr, [sp]
+  879a76:	4639      	mov	r1, r7
+  879a78:	46b4      	mov	ip, r6
+  879a7a:	e005      	b.n	879a88 <ResourcePackClientResponsePacket::read(BinaryStream&)+0xa8>
+  879a7c:	f8d9 2000 	ldr.w	r2, [r9]
+  879a80:	f1a2 000c 	sub.w	r0, r2, #12
+  879a84:	4540      	cmp	r0, r8
+  879a86:	d1d9      	bne.n	879a3c <ResourcePackClientResponsePacket::read(BinaryStream&)+0x5c>
+  879a88:	f109 0904 	add.w	r9, r9, #4
+  879a8c:	45a1      	cmp	r9, r4
+  879a8e:	d1f5      	bne.n	879a7c <ResourcePackClientResponsePacket::read(BinaryStream&)+0x9c>
+  879a90:	f8c5 e010 	str.w	lr, [r5, #16]
+  879a94:	e000      	b.n	879a98 <ResourcePackClientResponsePacket::read(BinaryStream&)+0xb8>
+  879a96:	46a6      	mov	lr, r4
+  879a98:	f8da 9000 	ldr.w	r9, [sl]
+  879a9c:	ebae 0009 	sub.w	r0, lr, r9
+  879aa0:	2801      	cmp	r0, #1
+  879aa2:	db3b      	blt.n	879b1c <ResourcePackClientResponsePacket::read(BinaryStream&)+0x13c>
+  879aa4:	4837      	ldr	r0, [pc, #220]	; (879b84 <ResourcePackClientResponsePacket::read(BinaryStream&)+0x1a4>)
+  879aa6:	f10d 0a04 	add.w	sl, sp, #4
+  879aaa:	4932      	ldr	r1, [pc, #200]	; (879b74 <ResourcePackClientResponsePacket::read(BinaryStream&)+0x194>)
+  879aac:	2700      	movs	r7, #0
+  879aae:	4e32      	ldr	r6, [pc, #200]	; (879b78 <ResourcePackClientResponsePacket::read(BinaryStream&)+0x198>)
+  879ab0:	4478      	add	r0, pc
+  879ab2:	580c      	ldr	r4, [r1, r0]
+  879ab4:	f856 8000 	ldr.w	r8, [r6, r0]
+  879ab8:	e01a      	b.n	879af0 <ResourcePackClientResponsePacket::read(BinaryStream&)+0x110>
+  879aba:	1f0a      	subs	r2, r1, #4
+  879abc:	f1b8 0f00 	cmp.w	r8, #0
+  879ac0:	d00d      	beq.n	879ade <ResourcePackClientResponsePacket::read(BinaryStream&)+0xfe>
+  879ac2:	46b4      	mov	ip, r6
+  879ac4:	f3bf 8f5b 	dmb	ish
+  879ac8:	e852 1f00 	ldrex	r1, [r2]
+  879acc:	1e4b      	subs	r3, r1, #1
+  879ace:	e842 3600 	strex	r6, r3, [r2]
+  879ad2:	2e00      	cmp	r6, #0
+  879ad4:	d1f8      	bne.n	879ac8 <ResourcePackClientResponsePacket::read(BinaryStream&)+0xe8>
+  879ad6:	f3bf 8f5b 	dmb	ish
+  879ada:	4666      	mov	r6, ip
+  879adc:	e002      	b.n	879ae4 <ResourcePackClientResponsePacket::read(BinaryStream&)+0x104>
+  879ade:	6811      	ldr	r1, [r2, #0]
+  879ae0:	1e4b      	subs	r3, r1, #1
+  879ae2:	6013      	str	r3, [r2, #0]
+  879ae4:	2900      	cmp	r1, #0
+  879ae6:	dc11      	bgt.n	879b0c <ResourcePackClientResponsePacket::read(BinaryStream&)+0x12c>
+  879ae8:	a904      	add	r1, sp, #16
+  879aea:	f27e ed22 	blx	af8530 <Horse::onLadder(bool)+0x64>
+  879aee:	e00d      	b.n	879b0c <ResourcePackClientResponsePacket::read(BinaryStream&)+0x12c>
+  879af0:	4650      	mov	r0, sl
+  879af2:	4659      	mov	r1, fp
+  879af4:	f618 ecce 	blx	692494 <ReadOnlyBinaryStream::getString()@plt>
+  879af8:	eb09 0087 	add.w	r0, r9, r7, lsl #2
+  879afc:	4651      	mov	r1, sl
+  879afe:	f27e ed68 	blx	af85d0 <Horse::onLadder(bool)+0x104>
+  879b02:	9901      	ldr	r1, [sp, #4]
+  879b04:	f1a1 000c 	sub.w	r0, r1, #12
+  879b08:	42a0      	cmp	r0, r4
+  879b0a:	d1d6      	bne.n	879aba <ResourcePackClientResponsePacket::read(BinaryStream&)+0xda>
+  879b0c:	e9d5 9003 	ldrd	r9, r0, [r5, #12]
+  879b10:	3701      	adds	r7, #1
+  879b12:	eba0 0009 	sub.w	r0, r0, r9
+  879b16:	ebb7 0fa0 	cmp.w	r7, r0, asr #2
+  879b1a:	dbe9      	blt.n	879af0 <ResourcePackClientResponsePacket::read(BinaryStream&)+0x110>
+  879b1c:	b005      	add	sp, #20
+  879b1e:	e8bd 8ff0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, pc}
+  879b22:	4a16      	ldr	r2, [pc, #88]	; (879b7c <ResourcePackClientResponsePacket::read(BinaryStream&)+0x19c>)
+  879b24:	4604      	mov	r4, r0
+  879b26:	4b13      	ldr	r3, [pc, #76]	; (879b74 <ResourcePackClientResponsePacket::read(BinaryStream&)+0x194>)
+  879b28:	447a      	add	r2, pc
+  879b2a:	9901      	ldr	r1, [sp, #4]
+  879b2c:	f1a1 000c 	sub.w	r0, r1, #12
+  879b30:	589a      	ldr	r2, [r3, r2]
+  879b32:	4290      	cmp	r0, r2
+  879b34:	d015      	beq.n	879b62 <ResourcePackClientResponsePacket::read(BinaryStream&)+0x182>
+  879b36:	4a12      	ldr	r2, [pc, #72]	; (879b80 <ResourcePackClientResponsePacket::read(BinaryStream&)+0x1a0>)
+  879b38:	447a      	add	r2, pc
+  879b3a:	58b3      	ldr	r3, [r6, r2]
+  879b3c:	1f0a      	subs	r2, r1, #4
+  879b3e:	b19b      	cbz	r3, 879b68 <ResourcePackClientResponsePacket::read(BinaryStream&)+0x188>
+  879b40:	f3bf 8f5b 	dmb	ish
+  879b44:	e852 1f00 	ldrex	r1, [r2]
+  879b48:	1e4b      	subs	r3, r1, #1
+  879b4a:	e842 3700 	strex	r7, r3, [r2]
+  879b4e:	2f00      	cmp	r7, #0
+  879b50:	d1f8      	bne.n	879b44 <ResourcePackClientResponsePacket::read(BinaryStream&)+0x164>
+  879b52:	f3bf 8f5b 	dmb	ish
+  879b56:	2900      	cmp	r1, #0
+  879b58:	bfdc      	itt	le
+  879b5a:	f10d 010c 	addle.w	r1, sp, #12
+  879b5e:	f27e ece8 	blxle	af8530 <Horse::onLadder(bool)+0x64>
+  879b62:	4620      	mov	r0, r4
+  879b64:	f616 ed24 	blx	6905b0 <_Unwind_Resume@plt>
+  879b68:	6811      	ldr	r1, [r2, #0]
+  879b6a:	1e4b      	subs	r3, r1, #1
+  879b6c:	6013      	str	r3, [r2, #0]
+  879b6e:	e7f2      	b.n	879b56 <ResourcePackClientResponsePacket::read(BinaryStream&)+0x176>
+  879b70:	9a98      	ldr	r2, [sp, #608]	; 0x260
+  879b72:	0159      	lsls	r1, r3, #5
+  879b74:	8ae0      	ldrh	r0, [r4, #22]
+  879b76:	ffff 8ae4 	vtbx.8	d24, {d31-<overflow reg d33}, d20
+  879b7a:	ffff 999c 			; <UNDEFINED> instruction: 0xffff999c
+  879b7e:	0159      	lsls	r1, r3, #5
+  879b80:	998c      	ldr	r1, [sp, #560]	; 0x230
+  879b82:	0159      	lsls	r1, r3, #5
+  879b84:	9a14      	ldr	r2, [sp, #80]	; 0x50
+  879b86:	0159      	lsls	r1, r3, #5

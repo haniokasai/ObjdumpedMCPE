@@ -1,0 +1,107 @@
+  87d890:	b570      	push	{r4, r5, r6, lr}
+  87d892:	b086      	sub	sp, #24
+  87d894:	4604      	mov	r4, r0
+  87d896:	a802      	add	r0, sp, #8
+  87d898:	460d      	mov	r5, r1
+  87d89a:	f615 eb0c 	blx	692eb4 <EntityUniqueID ReadOnlyBinaryStream::getType<EntityUniqueID>()@plt>
+  87d89e:	e9dd 0102 	ldrd	r0, r1, [sp, #8]
+  87d8a2:	e9c4 0104 	strd	r0, r1, [r4, #16]
+  87d8a6:	a802      	add	r0, sp, #8
+  87d8a8:	4629      	mov	r1, r5
+  87d8aa:	f615 eb0a 	blx	692ec0 <EntityRuntimeID ReadOnlyBinaryStream::getType<EntityRuntimeID>()@plt>
+  87d8ae:	e9dd 0102 	ldrd	r0, r1, [sp, #8]
+  87d8b2:	e9c4 0106 	strd	r0, r1, [r4, #24]
+  87d8b6:	a802      	add	r0, sp, #8
+  87d8b8:	4629      	mov	r1, r5
+  87d8ba:	f615 ebbc 	blx	693034 <NetworkBlockPosition ReadOnlyBinaryStream::getType<NetworkBlockPosition>()@plt>
+  87d8be:	9802      	ldr	r0, [sp, #8]
+  87d8c0:	6220      	str	r0, [r4, #32]
+  87d8c2:	9803      	ldr	r0, [sp, #12]
+  87d8c4:	6260      	str	r0, [r4, #36]	; 0x24
+  87d8c6:	9804      	ldr	r0, [sp, #16]
+  87d8c8:	62a0      	str	r0, [r4, #40]	; 0x28
+  87d8ca:	4628      	mov	r0, r5
+  87d8cc:	f615 eac8 	blx	692e60 <ReadOnlyBinaryStream::getVarInt()@plt>
+  87d8d0:	ae01      	add	r6, sp, #4
+  87d8d2:	62e0      	str	r0, [r4, #44]	; 0x2c
+  87d8d4:	4629      	mov	r1, r5
+  87d8d6:	4630      	mov	r0, r6
+  87d8d8:	f614 eddc 	blx	692494 <ReadOnlyBinaryStream::getString()@plt>
+  87d8dc:	f104 0030 	add.w	r0, r4, #48	; 0x30
+  87d8e0:	4631      	mov	r1, r6
+  87d8e2:	f27a ee76 	blx	af85d0 <Horse::onLadder(bool)+0x104>
+  87d8e6:	482b      	ldr	r0, [pc, #172]	; (87d994 <AddPaintingPacket::read(BinaryStream&)+0x104>)
+  87d8e8:	4a27      	ldr	r2, [pc, #156]	; (87d988 <AddPaintingPacket::read(BinaryStream&)+0xf8>)
+  87d8ea:	4478      	add	r0, pc
+  87d8ec:	9901      	ldr	r1, [sp, #4]
+  87d8ee:	5812      	ldr	r2, [r2, r0]
+  87d8f0:	f1a1 000c 	sub.w	r0, r1, #12
+  87d8f4:	4290      	cmp	r0, r2
+  87d8f6:	d101      	bne.n	87d8fc <AddPaintingPacket::read(BinaryStream&)+0x6c>
+  87d8f8:	b006      	add	sp, #24
+  87d8fa:	bd70      	pop	{r4, r5, r6, pc}
+  87d8fc:	4a26      	ldr	r2, [pc, #152]	; (87d998 <AddPaintingPacket::read(BinaryStream&)+0x108>)
+  87d8fe:	4b24      	ldr	r3, [pc, #144]	; (87d990 <AddPaintingPacket::read(BinaryStream&)+0x100>)
+  87d900:	447a      	add	r2, pc
+  87d902:	589b      	ldr	r3, [r3, r2]
+  87d904:	1f0a      	subs	r2, r1, #4
+  87d906:	b15b      	cbz	r3, 87d920 <AddPaintingPacket::read(BinaryStream&)+0x90>
+  87d908:	f3bf 8f5b 	dmb	ish
+  87d90c:	e852 1f00 	ldrex	r1, [r2]
+  87d910:	1e4b      	subs	r3, r1, #1
+  87d912:	e842 3600 	strex	r6, r3, [r2]
+  87d916:	2e00      	cmp	r6, #0
+  87d918:	d1f8      	bne.n	87d90c <AddPaintingPacket::read(BinaryStream&)+0x7c>
+  87d91a:	f3bf 8f5b 	dmb	ish
+  87d91e:	e002      	b.n	87d926 <AddPaintingPacket::read(BinaryStream&)+0x96>
+  87d920:	6811      	ldr	r1, [r2, #0]
+  87d922:	1e4b      	subs	r3, r1, #1
+  87d924:	6013      	str	r3, [r2, #0]
+  87d926:	2900      	cmp	r1, #0
+  87d928:	dce6      	bgt.n	87d8f8 <AddPaintingPacket::read(BinaryStream&)+0x68>
+  87d92a:	a902      	add	r1, sp, #8
+  87d92c:	f27a ee00 	blx	af8530 <Horse::onLadder(bool)+0x64>
+  87d930:	e7e2      	b.n	87d8f8 <AddPaintingPacket::read(BinaryStream&)+0x68>
+  87d932:	4a14      	ldr	r2, [pc, #80]	; (87d984 <AddPaintingPacket::read(BinaryStream&)+0xf4>)
+  87d934:	4604      	mov	r4, r0
+  87d936:	4b14      	ldr	r3, [pc, #80]	; (87d988 <AddPaintingPacket::read(BinaryStream&)+0xf8>)
+  87d938:	447a      	add	r2, pc
+  87d93a:	9901      	ldr	r1, [sp, #4]
+  87d93c:	f1a1 000c 	sub.w	r0, r1, #12
+  87d940:	589a      	ldr	r2, [r3, r2]
+  87d942:	4290      	cmp	r0, r2
+  87d944:	d016      	beq.n	87d974 <AddPaintingPacket::read(BinaryStream&)+0xe4>
+  87d946:	4a11      	ldr	r2, [pc, #68]	; (87d98c <AddPaintingPacket::read(BinaryStream&)+0xfc>)
+  87d948:	4b11      	ldr	r3, [pc, #68]	; (87d990 <AddPaintingPacket::read(BinaryStream&)+0x100>)
+  87d94a:	447a      	add	r2, pc
+  87d94c:	589b      	ldr	r3, [r3, r2]
+  87d94e:	1f0a      	subs	r2, r1, #4
+  87d950:	b19b      	cbz	r3, 87d97a <AddPaintingPacket::read(BinaryStream&)+0xea>
+  87d952:	f3bf 8f5b 	dmb	ish
+  87d956:	e852 1f00 	ldrex	r1, [r2]
+  87d95a:	1e4b      	subs	r3, r1, #1
+  87d95c:	e842 3600 	strex	r6, r3, [r2]
+  87d960:	2e00      	cmp	r6, #0
+  87d962:	d1f8      	bne.n	87d956 <AddPaintingPacket::read(BinaryStream&)+0xc6>
+  87d964:	f3bf 8f5b 	dmb	ish
+  87d968:	2900      	cmp	r1, #0
+  87d96a:	bfdc      	itt	le
+  87d96c:	f10d 0108 	addle.w	r1, sp, #8
+  87d970:	f27a edde 	blxle	af8530 <Horse::onLadder(bool)+0x64>
+  87d974:	4620      	mov	r0, r4
+  87d976:	f612 ee1c 	blx	6905b0 <_Unwind_Resume@plt>
+  87d97a:	6811      	ldr	r1, [r2, #0]
+  87d97c:	1e4b      	subs	r3, r1, #1
+  87d97e:	6013      	str	r3, [r2, #0]
+  87d980:	e7f2      	b.n	87d968 <AddPaintingPacket::read(BinaryStream&)+0xd8>
+  87d982:	bf00      	nop
+  87d984:	5b8c      	ldrh	r4, [r1, r6]
+  87d986:	0159      	lsls	r1, r3, #5
+  87d988:	8ae0      	ldrh	r0, [r4, #22]
+  87d98a:	ffff 5b7a 			; <UNDEFINED> instruction: 0xffff5b7a
+  87d98e:	0159      	lsls	r1, r3, #5
+  87d990:	8ae4      	ldrh	r4, [r4, #22]
+  87d992:	ffff 5bda 			; <UNDEFINED> instruction: 0xffff5bda
+  87d996:	0159      	lsls	r1, r3, #5
+  87d998:	5bc4      	ldrh	r4, [r0, r7]
+  87d99a:	0159      	lsls	r1, r3, #5

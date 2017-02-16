@@ -1,0 +1,38 @@
+  87d1a2:	b570      	push	{r4, r5, r6, lr}
+  87d1a4:	b086      	sub	sp, #24
+  87d1a6:	460d      	mov	r5, r1
+  87d1a8:	4604      	mov	r4, r0
+  87d1aa:	4628      	mov	r0, r5
+  87d1ac:	f615 ede6 	blx	692d7c <ReadOnlyBinaryStream::getByte()@plt>
+  87d1b0:	7320      	strb	r0, [r4, #12]
+  87d1b2:	4628      	mov	r0, r5
+  87d1b4:	f615 ee54 	blx	692e60 <ReadOnlyBinaryStream::getVarInt()@plt>
+  87d1b8:	6120      	str	r0, [r4, #16]
+  87d1ba:	4628      	mov	r0, r5
+  87d1bc:	f615 ee50 	blx	692e60 <ReadOnlyBinaryStream::getVarInt()@plt>
+  87d1c0:	ae01      	add	r6, sp, #4
+  87d1c2:	6160      	str	r0, [r4, #20]
+  87d1c4:	4629      	mov	r1, r5
+  87d1c6:	4630      	mov	r0, r6
+  87d1c8:	f615 ef0a 	blx	692fe0 <ItemInstance ReadOnlyBinaryStream::getType<ItemInstance>()@plt>
+  87d1cc:	f104 0018 	add.w	r0, r4, #24
+  87d1d0:	4631      	mov	r1, r6
+  87d1d2:	f615 e9ea 	blx	6925a8 <ItemInstance::operator=(ItemInstance const&)@plt>
+  87d1d6:	9803      	ldr	r0, [sp, #12]
+  87d1d8:	b110      	cbz	r0, 87d1e0 <ContainerSetSlotPacket::read(BinaryStream&)+0x3e>
+  87d1da:	6801      	ldr	r1, [r0, #0]
+  87d1dc:	6849      	ldr	r1, [r1, #4]
+  87d1de:	4788      	blx	r1
+  87d1e0:	4628      	mov	r0, r5
+  87d1e2:	f615 edcc 	blx	692d7c <ReadOnlyBinaryStream::getByte()@plt>
+  87d1e6:	f884 002c 	strb.w	r0, [r4, #44]	; 0x2c
+  87d1ea:	b006      	add	sp, #24
+  87d1ec:	bd70      	pop	{r4, r5, r6, pc}
+  87d1ee:	4604      	mov	r4, r0
+  87d1f0:	9803      	ldr	r0, [sp, #12]
+  87d1f2:	b110      	cbz	r0, 87d1fa <ContainerSetSlotPacket::read(BinaryStream&)+0x58>
+  87d1f4:	6801      	ldr	r1, [r0, #0]
+  87d1f6:	6849      	ldr	r1, [r1, #4]
+  87d1f8:	4788      	blx	r1
+  87d1fa:	4620      	mov	r0, r4
+  87d1fc:	f613 e9d8 	blx	6905b0 <_Unwind_Resume@plt>
