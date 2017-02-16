@@ -1,0 +1,107 @@
+  99799c:	b570      	push	{r4, r5, r6, lr}
+  99799e:	b086      	sub	sp, #24
+  9979a0:	4604      	mov	r4, r0
+  9979a2:	a802      	add	r0, sp, #8
+  9979a4:	460d      	mov	r5, r1
+  9979a6:	f505 e94e 	blx	69cc44 <EntityUniqueID ReadOnlyBinaryStream::getType<EntityUniqueID>()@plt>
+  9979aa:	e9dd 0102 	ldrd	r0, r1, [sp, #8]
+  9979ae:	e9c4 0104 	strd	r0, r1, [r4, #16]
+  9979b2:	a802      	add	r0, sp, #8
+  9979b4:	4629      	mov	r1, r5
+  9979b6:	f505 e94c 	blx	69cc50 <EntityRuntimeID ReadOnlyBinaryStream::getType<EntityRuntimeID>()@plt>
+  9979ba:	e9dd 0102 	ldrd	r0, r1, [sp, #8]
+  9979be:	e9c4 0106 	strd	r0, r1, [r4, #24]
+  9979c2:	a802      	add	r0, sp, #8
+  9979c4:	4629      	mov	r1, r5
+  9979c6:	f505 ea0a 	blx	69cddc <NetworkBlockPosition ReadOnlyBinaryStream::getType<NetworkBlockPosition>()@plt>
+  9979ca:	9802      	ldr	r0, [sp, #8]
+  9979cc:	6220      	str	r0, [r4, #32]
+  9979ce:	9803      	ldr	r0, [sp, #12]
+  9979d0:	6260      	str	r0, [r4, #36]	; 0x24
+  9979d2:	9804      	ldr	r0, [sp, #16]
+  9979d4:	62a0      	str	r0, [r4, #40]	; 0x28
+  9979d6:	4628      	mov	r0, r5
+  9979d8:	f505 e904 	blx	69cbe4 <ReadOnlyBinaryStream::getVarInt()@plt>
+  9979dc:	ae01      	add	r6, sp, #4
+  9979de:	62e0      	str	r0, [r4, #44]	; 0x2c
+  9979e0:	4629      	mov	r1, r5
+  9979e2:	4630      	mov	r0, r6
+  9979e4:	f504 ec06 	blx	69c1f4 <ReadOnlyBinaryStream::getString()@plt>
+  9979e8:	f104 0030 	add.w	r0, r4, #48	; 0x30
+  9979ec:	4631      	mov	r1, r6
+  9979ee:	f16b e894 	blx	b02b18 <std::_Hashtable<int, std::pair<int const, GameType>, std::allocator<std::pair<int const, GameType> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned int, std::integral_constant<bool, true>)+0x251a>
+  9979f2:	482b      	ldr	r0, [pc, #172]	; (997aa0 <AddPaintingPacket::read(BinaryStream&)+0x104>)
+  9979f4:	4a27      	ldr	r2, [pc, #156]	; (997a94 <AddPaintingPacket::read(BinaryStream&)+0xf8>)
+  9979f6:	4478      	add	r0, pc
+  9979f8:	9901      	ldr	r1, [sp, #4]
+  9979fa:	5812      	ldr	r2, [r2, r0]
+  9979fc:	f1a1 000c 	sub.w	r0, r1, #12
+  997a00:	4290      	cmp	r0, r2
+  997a02:	d101      	bne.n	997a08 <AddPaintingPacket::read(BinaryStream&)+0x6c>
+  997a04:	b006      	add	sp, #24
+  997a06:	bd70      	pop	{r4, r5, r6, pc}
+  997a08:	4a26      	ldr	r2, [pc, #152]	; (997aa4 <AddPaintingPacket::read(BinaryStream&)+0x108>)
+  997a0a:	4b24      	ldr	r3, [pc, #144]	; (997a9c <AddPaintingPacket::read(BinaryStream&)+0x100>)
+  997a0c:	447a      	add	r2, pc
+  997a0e:	589b      	ldr	r3, [r3, r2]
+  997a10:	1f0a      	subs	r2, r1, #4
+  997a12:	b15b      	cbz	r3, 997a2c <AddPaintingPacket::read(BinaryStream&)+0x90>
+  997a14:	f3bf 8f5b 	dmb	ish
+  997a18:	e852 1f00 	ldrex	r1, [r2]
+  997a1c:	1e4b      	subs	r3, r1, #1
+  997a1e:	e842 3600 	strex	r6, r3, [r2]
+  997a22:	2e00      	cmp	r6, #0
+  997a24:	d1f8      	bne.n	997a18 <AddPaintingPacket::read(BinaryStream&)+0x7c>
+  997a26:	f3bf 8f5b 	dmb	ish
+  997a2a:	e002      	b.n	997a32 <AddPaintingPacket::read(BinaryStream&)+0x96>
+  997a2c:	6811      	ldr	r1, [r2, #0]
+  997a2e:	1e4b      	subs	r3, r1, #1
+  997a30:	6013      	str	r3, [r2, #0]
+  997a32:	2900      	cmp	r1, #0
+  997a34:	dce6      	bgt.n	997a04 <AddPaintingPacket::read(BinaryStream&)+0x68>
+  997a36:	a902      	add	r1, sp, #8
+  997a38:	f16b e81e 	blx	b02a78 <std::_Hashtable<int, std::pair<int const, GameType>, std::allocator<std::pair<int const, GameType> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned int, std::integral_constant<bool, true>)+0x247a>
+  997a3c:	e7e2      	b.n	997a04 <AddPaintingPacket::read(BinaryStream&)+0x68>
+  997a3e:	4a14      	ldr	r2, [pc, #80]	; (997a90 <AddPaintingPacket::read(BinaryStream&)+0xf4>)
+  997a40:	4604      	mov	r4, r0
+  997a42:	4b14      	ldr	r3, [pc, #80]	; (997a94 <AddPaintingPacket::read(BinaryStream&)+0xf8>)
+  997a44:	447a      	add	r2, pc
+  997a46:	9901      	ldr	r1, [sp, #4]
+  997a48:	f1a1 000c 	sub.w	r0, r1, #12
+  997a4c:	589a      	ldr	r2, [r3, r2]
+  997a4e:	4290      	cmp	r0, r2
+  997a50:	d016      	beq.n	997a80 <AddPaintingPacket::read(BinaryStream&)+0xe4>
+  997a52:	4a11      	ldr	r2, [pc, #68]	; (997a98 <AddPaintingPacket::read(BinaryStream&)+0xfc>)
+  997a54:	4b11      	ldr	r3, [pc, #68]	; (997a9c <AddPaintingPacket::read(BinaryStream&)+0x100>)
+  997a56:	447a      	add	r2, pc
+  997a58:	589b      	ldr	r3, [r3, r2]
+  997a5a:	1f0a      	subs	r2, r1, #4
+  997a5c:	b19b      	cbz	r3, 997a86 <AddPaintingPacket::read(BinaryStream&)+0xea>
+  997a5e:	f3bf 8f5b 	dmb	ish
+  997a62:	e852 1f00 	ldrex	r1, [r2]
+  997a66:	1e4b      	subs	r3, r1, #1
+  997a68:	e842 3600 	strex	r6, r3, [r2]
+  997a6c:	2e00      	cmp	r6, #0
+  997a6e:	d1f8      	bne.n	997a62 <AddPaintingPacket::read(BinaryStream&)+0xc6>
+  997a70:	f3bf 8f5b 	dmb	ish
+  997a74:	2900      	cmp	r1, #0
+  997a76:	bfdc      	itt	le
+  997a78:	f10d 0108 	addle.w	r1, sp, #8
+  997a7c:	f16a effc 	blxle	b02a78 <std::_Hashtable<int, std::pair<int const, GameType>, std::allocator<std::pair<int const, GameType> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned int, std::integral_constant<bool, true>)+0x247a>
+  997a80:	4620      	mov	r0, r4
+  997a82:	f502 ebec 	blx	69a25c <_Unwind_Resume@plt>
+  997a86:	6811      	ldr	r1, [r2, #0]
+  997a88:	1e4b      	subs	r3, r1, #1
+  997a8a:	6013      	str	r3, [r2, #0]
+  997a8c:	e7f2      	b.n	997a74 <AddPaintingPacket::read(BinaryStream&)+0xd8>
+  997a8e:	bf00      	nop
+  997a90:	3590      	adds	r5, #144	; 0x90
+  997a92:	015f      	lsls	r7, r3, #5
+  997a94:	8a98      	ldrh	r0, [r3, #20]
+  997a96:	ffff 357e 	vsli.32	<illegal reg q9.5>, q15, #31
+  997a9a:	015f      	lsls	r7, r3, #5
+  997a9c:	8a9c      	ldrh	r4, [r3, #20]
+  997a9e:	ffff 35de 	vsli.64	<illegal reg q9.5>, q7, #63	; 0x3f
+  997aa2:	015f      	lsls	r7, r3, #5
+  997aa4:	35c8      	adds	r5, #200	; 0xc8
+  997aa6:	015f      	lsls	r7, r3, #5

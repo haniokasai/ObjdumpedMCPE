@@ -1,0 +1,193 @@
+  999624:	b570      	push	{r4, r5, r6, lr}
+  999626:	b084      	sub	sp, #16
+  999628:	4604      	mov	r4, r0
+  99962a:	a802      	add	r0, sp, #8
+  99962c:	460d      	mov	r5, r1
+  99962e:	f503 eb0a 	blx	69cc44 <EntityUniqueID ReadOnlyBinaryStream::getType<EntityUniqueID>()@plt>
+  999632:	e9dd 0102 	ldrd	r0, r1, [sp, #8]
+  999636:	e9c4 0106 	strd	r0, r1, [r4, #24]
+  99963a:	4628      	mov	r0, r5
+  99963c:	f503 e90a 	blx	69c854 <ReadOnlyBinaryStream::getUnsignedVarInt()@plt>
+  999640:	62a0      	str	r0, [r4, #40]	; 0x28
+  999642:	2807      	cmp	r0, #7
+  999644:	d84d      	bhi.n	9996e2 <BossEventPacket::read(BinaryStream&)+0xbe>
+  999646:	e8df f000 	tbb	[pc, r0]
+  99964a:	040d      	lsls	r5, r1, #16
+  99964c:	044c      	lsls	r4, r1, #17
+  99964e:	3933      	subs	r1, #51	; 0x33
+  999650:	2924      	cmp	r1, #36	; 0x24
+  999652:	a802      	add	r0, sp, #8
+  999654:	4629      	mov	r1, r5
+  999656:	f503 eaf6 	blx	69cc44 <EntityUniqueID ReadOnlyBinaryStream::getType<EntityUniqueID>()@plt>
+  99965a:	e9dd 0102 	ldrd	r0, r1, [sp, #8]
+  99965e:	e9c4 0108 	strd	r0, r1, [r4, #32]
+  999662:	e03e      	b.n	9996e2 <BossEventPacket::read(BinaryStream&)+0xbe>
+  999664:	ae01      	add	r6, sp, #4
+  999666:	4629      	mov	r1, r5
+  999668:	4630      	mov	r0, r6
+  99966a:	f502 edc4 	blx	69c1f4 <ReadOnlyBinaryStream::getString()@plt>
+  99966e:	f104 002c 	add.w	r0, r4, #44	; 0x2c
+  999672:	4631      	mov	r1, r6
+  999674:	f169 ea50 	blx	b02b18 <std::_Hashtable<int, std::pair<int const, GameType>, std::allocator<std::pair<int const, GameType> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned int, std::integral_constant<bool, true>)+0x251a>
+  999678:	4860      	ldr	r0, [pc, #384]	; (9997fc <BossEventPacket::read(BinaryStream&)+0x1d8>)
+  99967a:	4a59      	ldr	r2, [pc, #356]	; (9997e0 <BossEventPacket::read(BinaryStream&)+0x1bc>)
+  99967c:	4478      	add	r0, pc
+  99967e:	9901      	ldr	r1, [sp, #4]
+  999680:	5812      	ldr	r2, [r2, r0]
+  999682:	f1a1 000c 	sub.w	r0, r1, #12
+  999686:	4290      	cmp	r0, r2
+  999688:	d12d      	bne.n	9996e6 <BossEventPacket::read(BinaryStream&)+0xc2>
+  99968a:	4628      	mov	r0, r5
+  99968c:	f503 eb46 	blx	69cd1c <ReadOnlyBinaryStream::getFloat()@plt>
+  999690:	6320      	str	r0, [r4, #48]	; 0x30
+  999692:	4628      	mov	r0, r5
+  999694:	f503 ea58 	blx	69cb48 <ReadOnlyBinaryStream::getUnsignedShort()@plt>
+  999698:	f884 003c 	strb.w	r0, [r4, #60]	; 0x3c
+  99969c:	4628      	mov	r0, r5
+  99969e:	f503 e8da 	blx	69c854 <ReadOnlyBinaryStream::getUnsignedVarInt()@plt>
+  9996a2:	6360      	str	r0, [r4, #52]	; 0x34
+  9996a4:	4628      	mov	r0, r5
+  9996a6:	f503 e8d6 	blx	69c854 <ReadOnlyBinaryStream::getUnsignedVarInt()@plt>
+  9996aa:	63a0      	str	r0, [r4, #56]	; 0x38
+  9996ac:	b004      	add	sp, #16
+  9996ae:	bd70      	pop	{r4, r5, r6, pc}
+  9996b0:	4628      	mov	r0, r5
+  9996b2:	f503 eb34 	blx	69cd1c <ReadOnlyBinaryStream::getFloat()@plt>
+  9996b6:	6320      	str	r0, [r4, #48]	; 0x30
+  9996b8:	b004      	add	sp, #16
+  9996ba:	bd70      	pop	{r4, r5, r6, pc}
+  9996bc:	466e      	mov	r6, sp
+  9996be:	4629      	mov	r1, r5
+  9996c0:	4630      	mov	r0, r6
+  9996c2:	f502 ed98 	blx	69c1f4 <ReadOnlyBinaryStream::getString()@plt>
+  9996c6:	f104 002c 	add.w	r0, r4, #44	; 0x2c
+  9996ca:	4631      	mov	r1, r6
+  9996cc:	f169 ea24 	blx	b02b18 <std::_Hashtable<int, std::pair<int const, GameType>, std::allocator<std::pair<int const, GameType> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned int, std::integral_constant<bool, true>)+0x251a>
+  9996d0:	4846      	ldr	r0, [pc, #280]	; (9997ec <BossEventPacket::read(BinaryStream&)+0x1c8>)
+  9996d2:	4a43      	ldr	r2, [pc, #268]	; (9997e0 <BossEventPacket::read(BinaryStream&)+0x1bc>)
+  9996d4:	4478      	add	r0, pc
+  9996d6:	9900      	ldr	r1, [sp, #0]
+  9996d8:	5812      	ldr	r2, [r2, r0]
+  9996da:	f1a1 000c 	sub.w	r0, r1, #12
+  9996de:	4290      	cmp	r0, r2
+  9996e0:	d113      	bne.n	99970a <BossEventPacket::read(BinaryStream&)+0xe6>
+  9996e2:	b004      	add	sp, #16
+  9996e4:	bd70      	pop	{r4, r5, r6, pc}
+  9996e6:	4a46      	ldr	r2, [pc, #280]	; (999800 <BossEventPacket::read(BinaryStream&)+0x1dc>)
+  9996e8:	4b3f      	ldr	r3, [pc, #252]	; (9997e8 <BossEventPacket::read(BinaryStream&)+0x1c4>)
+  9996ea:	447a      	add	r2, pc
+  9996ec:	589b      	ldr	r3, [r3, r2]
+  9996ee:	1f0a      	subs	r2, r1, #4
+  9996f0:	b1eb      	cbz	r3, 99972e <BossEventPacket::read(BinaryStream&)+0x10a>
+  9996f2:	f3bf 8f5b 	dmb	ish
+  9996f6:	e852 1f00 	ldrex	r1, [r2]
+  9996fa:	1e4b      	subs	r3, r1, #1
+  9996fc:	e842 3600 	strex	r6, r3, [r2]
+  999700:	2e00      	cmp	r6, #0
+  999702:	d1f8      	bne.n	9996f6 <BossEventPacket::read(BinaryStream&)+0xd2>
+  999704:	f3bf 8f5b 	dmb	ish
+  999708:	e014      	b.n	999734 <BossEventPacket::read(BinaryStream&)+0x110>
+  99970a:	4a39      	ldr	r2, [pc, #228]	; (9997f0 <BossEventPacket::read(BinaryStream&)+0x1cc>)
+  99970c:	4b36      	ldr	r3, [pc, #216]	; (9997e8 <BossEventPacket::read(BinaryStream&)+0x1c4>)
+  99970e:	447a      	add	r2, pc
+  999710:	589b      	ldr	r3, [r3, r2]
+  999712:	1f0a      	subs	r2, r1, #4
+  999714:	b1a3      	cbz	r3, 999740 <BossEventPacket::read(BinaryStream&)+0x11c>
+  999716:	f3bf 8f5b 	dmb	ish
+  99971a:	e852 1f00 	ldrex	r1, [r2]
+  99971e:	1e4b      	subs	r3, r1, #1
+  999720:	e842 3600 	strex	r6, r3, [r2]
+  999724:	2e00      	cmp	r6, #0
+  999726:	d1f8      	bne.n	99971a <BossEventPacket::read(BinaryStream&)+0xf6>
+  999728:	f3bf 8f5b 	dmb	ish
+  99972c:	e00b      	b.n	999746 <BossEventPacket::read(BinaryStream&)+0x122>
+  99972e:	6811      	ldr	r1, [r2, #0]
+  999730:	1e4b      	subs	r3, r1, #1
+  999732:	6013      	str	r3, [r2, #0]
+  999734:	2900      	cmp	r1, #0
+  999736:	dca8      	bgt.n	99968a <BossEventPacket::read(BinaryStream&)+0x66>
+  999738:	a902      	add	r1, sp, #8
+  99973a:	f169 e99e 	blx	b02a78 <std::_Hashtable<int, std::pair<int const, GameType>, std::allocator<std::pair<int const, GameType> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned int, std::integral_constant<bool, true>)+0x247a>
+  99973e:	e7a4      	b.n	99968a <BossEventPacket::read(BinaryStream&)+0x66>
+  999740:	6811      	ldr	r1, [r2, #0]
+  999742:	1e4b      	subs	r3, r1, #1
+  999744:	6013      	str	r3, [r2, #0]
+  999746:	2900      	cmp	r1, #0
+  999748:	dccb      	bgt.n	9996e2 <BossEventPacket::read(BinaryStream&)+0xbe>
+  99974a:	a902      	add	r1, sp, #8
+  99974c:	f169 e994 	blx	b02a78 <std::_Hashtable<int, std::pair<int const, GameType>, std::allocator<std::pair<int const, GameType> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned int, std::integral_constant<bool, true>)+0x247a>
+  999750:	b004      	add	sp, #16
+  999752:	bd70      	pop	{r4, r5, r6, pc}
+  999754:	4a27      	ldr	r2, [pc, #156]	; (9997f4 <BossEventPacket::read(BinaryStream&)+0x1d0>)
+  999756:	4604      	mov	r4, r0
+  999758:	4b21      	ldr	r3, [pc, #132]	; (9997e0 <BossEventPacket::read(BinaryStream&)+0x1bc>)
+  99975a:	447a      	add	r2, pc
+  99975c:	9901      	ldr	r1, [sp, #4]
+  99975e:	f1a1 000c 	sub.w	r0, r1, #12
+  999762:	589a      	ldr	r2, [r3, r2]
+  999764:	4290      	cmp	r0, r2
+  999766:	d032      	beq.n	9997ce <BossEventPacket::read(BinaryStream&)+0x1aa>
+  999768:	4a23      	ldr	r2, [pc, #140]	; (9997f8 <BossEventPacket::read(BinaryStream&)+0x1d4>)
+  99976a:	4b1f      	ldr	r3, [pc, #124]	; (9997e8 <BossEventPacket::read(BinaryStream&)+0x1c4>)
+  99976c:	447a      	add	r2, pc
+  99976e:	589b      	ldr	r3, [r3, r2]
+  999770:	1f0a      	subs	r2, r1, #4
+  999772:	b37b      	cbz	r3, 9997d4 <BossEventPacket::read(BinaryStream&)+0x1b0>
+  999774:	f3bf 8f5b 	dmb	ish
+  999778:	e852 1f00 	ldrex	r1, [r2]
+  99977c:	1e4b      	subs	r3, r1, #1
+  99977e:	e842 3600 	strex	r6, r3, [r2]
+  999782:	2e00      	cmp	r6, #0
+  999784:	d1f8      	bne.n	999778 <BossEventPacket::read(BinaryStream&)+0x154>
+  999786:	f3bf 8f5b 	dmb	ish
+  99978a:	e01a      	b.n	9997c2 <BossEventPacket::read(BinaryStream&)+0x19e>
+  99978c:	4a13      	ldr	r2, [pc, #76]	; (9997dc <BossEventPacket::read(BinaryStream&)+0x1b8>)
+  99978e:	4604      	mov	r4, r0
+  999790:	4b13      	ldr	r3, [pc, #76]	; (9997e0 <BossEventPacket::read(BinaryStream&)+0x1bc>)
+  999792:	447a      	add	r2, pc
+  999794:	9900      	ldr	r1, [sp, #0]
+  999796:	f1a1 000c 	sub.w	r0, r1, #12
+  99979a:	589a      	ldr	r2, [r3, r2]
+  99979c:	4290      	cmp	r0, r2
+  99979e:	d016      	beq.n	9997ce <BossEventPacket::read(BinaryStream&)+0x1aa>
+  9997a0:	4a10      	ldr	r2, [pc, #64]	; (9997e4 <BossEventPacket::read(BinaryStream&)+0x1c0>)
+  9997a2:	4b11      	ldr	r3, [pc, #68]	; (9997e8 <BossEventPacket::read(BinaryStream&)+0x1c4>)
+  9997a4:	447a      	add	r2, pc
+  9997a6:	589b      	ldr	r3, [r3, r2]
+  9997a8:	1f0a      	subs	r2, r1, #4
+  9997aa:	b19b      	cbz	r3, 9997d4 <BossEventPacket::read(BinaryStream&)+0x1b0>
+  9997ac:	f3bf 8f5b 	dmb	ish
+  9997b0:	e852 1f00 	ldrex	r1, [r2]
+  9997b4:	1e4b      	subs	r3, r1, #1
+  9997b6:	e842 3600 	strex	r6, r3, [r2]
+  9997ba:	2e00      	cmp	r6, #0
+  9997bc:	d1f8      	bne.n	9997b0 <BossEventPacket::read(BinaryStream&)+0x18c>
+  9997be:	f3bf 8f5b 	dmb	ish
+  9997c2:	2900      	cmp	r1, #0
+  9997c4:	bfdc      	itt	le
+  9997c6:	f10d 0108 	addle.w	r1, sp, #8
+  9997ca:	f169 e956 	blxle	b02a78 <std::_Hashtable<int, std::pair<int const, GameType>, std::allocator<std::pair<int const, GameType> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned int, std::integral_constant<bool, true>)+0x247a>
+  9997ce:	4620      	mov	r0, r4
+  9997d0:	f500 ed44 	blx	69a25c <_Unwind_Resume@plt>
+  9997d4:	6811      	ldr	r1, [r2, #0]
+  9997d6:	1e4b      	subs	r3, r1, #1
+  9997d8:	6013      	str	r3, [r2, #0]
+  9997da:	e7f2      	b.n	9997c2 <BossEventPacket::read(BinaryStream&)+0x19e>
+  9997dc:	1842      	adds	r2, r0, r1
+  9997de:	015f      	lsls	r7, r3, #5
+  9997e0:	8a98      	ldrh	r0, [r3, #20]
+  9997e2:	ffff 1830 	vqshrun.s64	d17, q8, #1
+  9997e6:	015f      	lsls	r7, r3, #5
+  9997e8:	8a9c      	ldrh	r4, [r3, #20]
+  9997ea:	ffff 1900 	vtbl.8	d17, {d15-d16}, d0
+  9997ee:	015f      	lsls	r7, r3, #5
+  9997f0:	18c6      	adds	r6, r0, r3
+  9997f2:	015f      	lsls	r7, r3, #5
+  9997f4:	187a      	adds	r2, r7, r1
+  9997f6:	015f      	lsls	r7, r3, #5
+  9997f8:	1868      	adds	r0, r5, r1
+  9997fa:	015f      	lsls	r7, r3, #5
+  9997fc:	1958      	adds	r0, r3, r5
+  9997fe:	015f      	lsls	r7, r3, #5
+  999800:	18ea      	adds	r2, r5, r3
+  999802:	015f      	lsls	r7, r3, #5

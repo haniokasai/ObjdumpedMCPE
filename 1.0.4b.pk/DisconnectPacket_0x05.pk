@@ -1,0 +1,90 @@
+  993e84:	b570      	push	{r4, r5, r6, lr}
+  993e86:	b084      	sub	sp, #16
+  993e88:	460d      	mov	r5, r1
+  993e8a:	4604      	mov	r4, r0
+  993e8c:	4628      	mov	r0, r5
+  993e8e:	f508 ee56 	blx	69cb3c <ReadOnlyBinaryStream::getBool()@plt>
+  993e92:	7320      	strb	r0, [r4, #12]
+  993e94:	b990      	cbnz	r0, 993ebc <DisconnectPacket::read(BinaryStream&)+0x38>
+  993e96:	ae01      	add	r6, sp, #4
+  993e98:	4629      	mov	r1, r5
+  993e9a:	4630      	mov	r0, r6
+  993e9c:	f508 e9aa 	blx	69c1f4 <ReadOnlyBinaryStream::getString()@plt>
+  993ea0:	f104 0010 	add.w	r0, r4, #16
+  993ea4:	4631      	mov	r1, r6
+  993ea6:	f16e ee38 	blx	b02b18 <std::_Hashtable<int, std::pair<int const, GameType>, std::allocator<std::pair<int const, GameType> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned int, std::integral_constant<bool, true>)+0x251a>
+  993eaa:	482b      	ldr	r0, [pc, #172]	; (993f58 <DisconnectPacket::read(BinaryStream&)+0xd4>)
+  993eac:	4a27      	ldr	r2, [pc, #156]	; (993f4c <DisconnectPacket::read(BinaryStream&)+0xc8>)
+  993eae:	4478      	add	r0, pc
+  993eb0:	9901      	ldr	r1, [sp, #4]
+  993eb2:	5812      	ldr	r2, [r2, r0]
+  993eb4:	f1a1 000c 	sub.w	r0, r1, #12
+  993eb8:	4290      	cmp	r0, r2
+  993eba:	d101      	bne.n	993ec0 <DisconnectPacket::read(BinaryStream&)+0x3c>
+  993ebc:	b004      	add	sp, #16
+  993ebe:	bd70      	pop	{r4, r5, r6, pc}
+  993ec0:	4a26      	ldr	r2, [pc, #152]	; (993f5c <DisconnectPacket::read(BinaryStream&)+0xd8>)
+  993ec2:	4b24      	ldr	r3, [pc, #144]	; (993f54 <DisconnectPacket::read(BinaryStream&)+0xd0>)
+  993ec4:	447a      	add	r2, pc
+  993ec6:	589b      	ldr	r3, [r3, r2]
+  993ec8:	1f0a      	subs	r2, r1, #4
+  993eca:	b15b      	cbz	r3, 993ee4 <DisconnectPacket::read(BinaryStream&)+0x60>
+  993ecc:	f3bf 8f5b 	dmb	ish
+  993ed0:	e852 1f00 	ldrex	r1, [r2]
+  993ed4:	1e4b      	subs	r3, r1, #1
+  993ed6:	e842 3600 	strex	r6, r3, [r2]
+  993eda:	2e00      	cmp	r6, #0
+  993edc:	d1f8      	bne.n	993ed0 <DisconnectPacket::read(BinaryStream&)+0x4c>
+  993ede:	f3bf 8f5b 	dmb	ish
+  993ee2:	e002      	b.n	993eea <DisconnectPacket::read(BinaryStream&)+0x66>
+  993ee4:	6811      	ldr	r1, [r2, #0]
+  993ee6:	1e4b      	subs	r3, r1, #1
+  993ee8:	6013      	str	r3, [r2, #0]
+  993eea:	2900      	cmp	r1, #0
+  993eec:	dce6      	bgt.n	993ebc <DisconnectPacket::read(BinaryStream&)+0x38>
+  993eee:	a902      	add	r1, sp, #8
+  993ef0:	f16e edc2 	blx	b02a78 <std::_Hashtable<int, std::pair<int const, GameType>, std::allocator<std::pair<int const, GameType> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned int, std::integral_constant<bool, true>)+0x247a>
+  993ef4:	e7e2      	b.n	993ebc <DisconnectPacket::read(BinaryStream&)+0x38>
+  993ef6:	4a14      	ldr	r2, [pc, #80]	; (993f48 <DisconnectPacket::read(BinaryStream&)+0xc4>)
+  993ef8:	4604      	mov	r4, r0
+  993efa:	4b14      	ldr	r3, [pc, #80]	; (993f4c <DisconnectPacket::read(BinaryStream&)+0xc8>)
+  993efc:	447a      	add	r2, pc
+  993efe:	9901      	ldr	r1, [sp, #4]
+  993f00:	f1a1 000c 	sub.w	r0, r1, #12
+  993f04:	589a      	ldr	r2, [r3, r2]
+  993f06:	4290      	cmp	r0, r2
+  993f08:	d016      	beq.n	993f38 <DisconnectPacket::read(BinaryStream&)+0xb4>
+  993f0a:	4a11      	ldr	r2, [pc, #68]	; (993f50 <DisconnectPacket::read(BinaryStream&)+0xcc>)
+  993f0c:	4b11      	ldr	r3, [pc, #68]	; (993f54 <DisconnectPacket::read(BinaryStream&)+0xd0>)
+  993f0e:	447a      	add	r2, pc
+  993f10:	589b      	ldr	r3, [r3, r2]
+  993f12:	1f0a      	subs	r2, r1, #4
+  993f14:	b19b      	cbz	r3, 993f3e <DisconnectPacket::read(BinaryStream&)+0xba>
+  993f16:	f3bf 8f5b 	dmb	ish
+  993f1a:	e852 1f00 	ldrex	r1, [r2]
+  993f1e:	1e4b      	subs	r3, r1, #1
+  993f20:	e842 3600 	strex	r6, r3, [r2]
+  993f24:	2e00      	cmp	r6, #0
+  993f26:	d1f8      	bne.n	993f1a <DisconnectPacket::read(BinaryStream&)+0x96>
+  993f28:	f3bf 8f5b 	dmb	ish
+  993f2c:	2900      	cmp	r1, #0
+  993f2e:	bfdc      	itt	le
+  993f30:	f10d 010c 	addle.w	r1, sp, #12
+  993f34:	f16e eda0 	blxle	b02a78 <std::_Hashtable<int, std::pair<int const, GameType>, std::allocator<std::pair<int const, GameType> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned int, std::integral_constant<bool, true>)+0x247a>
+  993f38:	4620      	mov	r0, r4
+  993f3a:	f506 e990 	blx	69a25c <_Unwind_Resume@plt>
+  993f3e:	6811      	ldr	r1, [r2, #0]
+  993f40:	1e4b      	subs	r3, r1, #1
+  993f42:	6013      	str	r3, [r2, #0]
+  993f44:	e7f2      	b.n	993f2c <DisconnectPacket::read(BinaryStream&)+0xa8>
+  993f46:	bf00      	nop
+  993f48:	70d8      	strb	r0, [r3, #3]
+  993f4a:	015f      	lsls	r7, r3, #5
+  993f4c:	8a98      	ldrh	r0, [r3, #20]
+  993f4e:	ffff 70c6 	vmla.i<illegal width 64>	<illegal reg q11.5>, <illegal reg q15.5>, d6[0]
+  993f52:	015f      	lsls	r7, r3, #5
+  993f54:	8a9c      	ldrh	r4, [r3, #20]
+  993f56:	ffff 7126 	vaddw.u<illegal width 64>	<illegal reg q11.5>, <illegal reg q7.5>, d22
+  993f5a:	015f      	lsls	r7, r3, #5
+  993f5c:	7110      	strb	r0, [r2, #4]
+  993f5e:	015f      	lsls	r7, r3, #5

@@ -1,0 +1,53 @@
+  995464:	b570      	push	{r4, r5, r6, lr}
+  995466:	b086      	sub	sp, #24
+  995468:	4604      	mov	r4, r0
+  99546a:	4668      	mov	r0, sp
+  99546c:	460d      	mov	r5, r1
+  99546e:	f507 ebea 	blx	69cc44 <EntityUniqueID ReadOnlyBinaryStream::getType<EntityUniqueID>()@plt>
+  995472:	e9dd 0100 	ldrd	r0, r1, [sp]
+  995476:	e9c4 0104 	strd	r0, r1, [r4, #16]
+  99547a:	4668      	mov	r0, sp
+  99547c:	4629      	mov	r1, r5
+  99547e:	f507 ebe8 	blx	69cc50 <EntityRuntimeID ReadOnlyBinaryStream::getType<EntityRuntimeID>()@plt>
+  995482:	e9dd 0100 	ldrd	r0, r1, [sp]
+  995486:	466e      	mov	r6, sp
+  995488:	e9c4 0106 	strd	r0, r1, [r4, #24]
+  99548c:	4630      	mov	r0, r6
+  99548e:	4629      	mov	r1, r5
+  995490:	f507 ec6e 	blx	69cd70 <ItemInstance ReadOnlyBinaryStream::getType<ItemInstance>()@plt>
+  995494:	f104 0020 	add.w	r0, r4, #32
+  995498:	4631      	mov	r1, r6
+  99549a:	f506 ef36 	blx	69c308 <ItemInstance::operator=(ItemInstance const&)@plt>
+  99549e:	9802      	ldr	r0, [sp, #8]
+  9954a0:	b110      	cbz	r0, 9954a8 <AddItemEntityPacket::read(BinaryStream&)+0x44>
+  9954a2:	6801      	ldr	r1, [r0, #0]
+  9954a4:	6849      	ldr	r1, [r1, #4]
+  9954a6:	4788      	blx	r1
+  9954a8:	4668      	mov	r0, sp
+  9954aa:	4629      	mov	r1, r5
+  9954ac:	f507 ebd6 	blx	69cc5c <Vec3 ReadOnlyBinaryStream::getType<Vec3>()@plt>
+  9954b0:	9800      	ldr	r0, [sp, #0]
+  9954b2:	4629      	mov	r1, r5
+  9954b4:	6360      	str	r0, [r4, #52]	; 0x34
+  9954b6:	9801      	ldr	r0, [sp, #4]
+  9954b8:	63a0      	str	r0, [r4, #56]	; 0x38
+  9954ba:	9802      	ldr	r0, [sp, #8]
+  9954bc:	63e0      	str	r0, [r4, #60]	; 0x3c
+  9954be:	4668      	mov	r0, sp
+  9954c0:	f507 ebcc 	blx	69cc5c <Vec3 ReadOnlyBinaryStream::getType<Vec3>()@plt>
+  9954c4:	9800      	ldr	r0, [sp, #0]
+  9954c6:	6420      	str	r0, [r4, #64]	; 0x40
+  9954c8:	9801      	ldr	r0, [sp, #4]
+  9954ca:	6460      	str	r0, [r4, #68]	; 0x44
+  9954cc:	9802      	ldr	r0, [sp, #8]
+  9954ce:	64a0      	str	r0, [r4, #72]	; 0x48
+  9954d0:	b006      	add	sp, #24
+  9954d2:	bd70      	pop	{r4, r5, r6, pc}
+  9954d4:	4604      	mov	r4, r0
+  9954d6:	9802      	ldr	r0, [sp, #8]
+  9954d8:	b110      	cbz	r0, 9954e0 <AddItemEntityPacket::read(BinaryStream&)+0x7c>
+  9954da:	6801      	ldr	r1, [r0, #0]
+  9954dc:	6849      	ldr	r1, [r1, #4]
+  9954de:	4788      	blx	r1
+  9954e0:	4620      	mov	r0, r4
+  9954e2:	f504 eebc 	blx	69a25c <_Unwind_Resume@plt>

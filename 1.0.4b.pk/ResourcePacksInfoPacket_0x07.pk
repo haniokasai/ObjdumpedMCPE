@@ -1,0 +1,989 @@
+  9921d0:	e92d 4ff0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, lr}
+  9921d4:	b0c3      	sub	sp, #268	; 0x10c
+  9921d6:	4688      	mov	r8, r1
+  9921d8:	4607      	mov	r7, r0
+  9921da:	4640      	mov	r0, r8
+  9921dc:	f8cd 8020 	str.w	r8, [sp, #32]
+  9921e0:	f50a ecac 	blx	69cb3c <ReadOnlyBinaryStream::getBool()@plt>
+  9921e4:	7338      	strb	r0, [r7, #12]
+  9921e6:	4640      	mov	r0, r8
+  9921e8:	f50a ecae 	blx	69cb48 <ReadOnlyBinaryStream::getUnsignedShort()@plt>
+  9921ec:	463e      	mov	r6, r7
+  9921ee:	f646 53b7 	movw	r3, #28087	; 0x6db7
+  9921f2:	f856 1f10 	ldr.w	r1, [r6, #16]!
+  9921f6:	f2cb 63db 	movt	r3, #46811	; 0xb6db
+  9921fa:	6874      	ldr	r4, [r6, #4]
+  9921fc:	1a62      	subs	r2, r4, r1
+  9921fe:	10d2      	asrs	r2, r2, #3
+  992200:	435a      	muls	r2, r3
+  992202:	4290      	cmp	r0, r2
+  992204:	d905      	bls.n	992212 <ResourcePacksInfoPacket::read(BinaryStream&)+0x42>
+  992206:	1a81      	subs	r1, r0, r2
+  992208:	4630      	mov	r0, r6
+  99220a:	f50a eca4 	blx	69cb54 <std::vector<ResourcePackInfoData, std::allocator<ResourcePackInfoData> >::_M_default_append(unsigned int)@plt>
+  99220e:	697c      	ldr	r4, [r7, #20]
+  992210:	e00e      	b.n	992230 <ResourcePacksInfoPacket::read(BinaryStream&)+0x60>
+  992212:	d20d      	bcs.n	992230 <ResourcePacksInfoPacket::read(BinaryStream&)+0x60>
+  992214:	ebc0 00c0 	rsb	r0, r0, r0, lsl #3
+  992218:	eb01 05c0 	add.w	r5, r1, r0, lsl #3
+  99221c:	42ac      	cmp	r4, r5
+  99221e:	d005      	beq.n	99222c <ResourcePacksInfoPacket::read(BinaryStream&)+0x5c>
+  992220:	4628      	mov	r0, r5
+  992222:	f508 efba 	blx	69b198 <PackIdVersion::~PackIdVersion()@plt>
+  992226:	3038      	adds	r0, #56	; 0x38
+  992228:	4284      	cmp	r4, r0
+  99222a:	d1fa      	bne.n	992222 <ResourcePacksInfoPacket::read(BinaryStream&)+0x52>
+  99222c:	462c      	mov	r4, r5
+  99222e:	617d      	str	r5, [r7, #20]
+  992230:	9702      	str	r7, [sp, #8]
+  992232:	6837      	ldr	r7, [r6, #0]
+  992234:	9409      	str	r4, [sp, #36]	; 0x24
+  992236:	42a7      	cmp	r7, r4
+  992238:	f000 8144 	beq.w	9924c4 <ResourcePacksInfoPacket::read(BinaryStream&)+0x2f4>
+  99223c:	f10d 0a98 	add.w	sl, sp, #152	; 0x98
+  992240:	f8df 192c 	ldr.w	r1, [pc, #2348]	; 992b70 <ResourcePacksInfoPacket::read(BinaryStream&)+0x9a0>
+  992244:	f10a 0028 	add.w	r0, sl, #40	; 0x28
+  992248:	9004      	str	r0, [sp, #16]
+  99224a:	f10a 0024 	add.w	r0, sl, #36	; 0x24
+  99224e:	9005      	str	r0, [sp, #20]
+  992250:	f10a 0020 	add.w	r0, sl, #32
+  992254:	9006      	str	r0, [sp, #24]
+  992256:	f10a 0010 	add.w	r0, sl, #16
+  99225a:	9007      	str	r0, [sp, #28]
+  99225c:	f8df 0944 	ldr.w	r0, [pc, #2372]	; 992ba4 <ResourcePacksInfoPacket::read(BinaryStream&)+0x9d4>
+  992260:	f10a 0918 	add.w	r9, sl, #24
+  992264:	f10a 0530 	add.w	r5, sl, #48	; 0x30
+  992268:	ac34      	add	r4, sp, #208	; 0xd0
+  99226a:	4478      	add	r0, pc
+  99226c:	5809      	ldr	r1, [r1, r0]
+  99226e:	9103      	str	r1, [sp, #12]
+  992270:	f8df 1904 	ldr.w	r1, [pc, #2308]	; 992b78 <ResourcePacksInfoPacket::read(BinaryStream&)+0x9a8>
+  992274:	5808      	ldr	r0, [r1, r0]
+  992276:	9001      	str	r0, [sp, #4]
+  992278:	e0af      	b.n	9923da <ResourcePacksInfoPacket::read(BinaryStream&)+0x20a>
+  99227a:	1f0a      	subs	r2, r1, #4
+  99227c:	9901      	ldr	r1, [sp, #4]
+  99227e:	2900      	cmp	r1, #0
+  992280:	d05b      	beq.n	99233a <ResourcePacksInfoPacket::read(BinaryStream&)+0x16a>
+  992282:	f3bf 8f5b 	dmb	ish
+  992286:	e852 1f00 	ldrex	r1, [r2]
+  99228a:	1e4b      	subs	r3, r1, #1
+  99228c:	e842 3600 	strex	r6, r3, [r2]
+  992290:	2e00      	cmp	r6, #0
+  992292:	d1f8      	bne.n	992286 <ResourcePacksInfoPacket::read(BinaryStream&)+0xb6>
+  992294:	f3bf 8f5b 	dmb	ish
+  992298:	e052      	b.n	992340 <ResourcePacksInfoPacket::read(BinaryStream&)+0x170>
+  99229a:	1f0a      	subs	r2, r1, #4
+  99229c:	9901      	ldr	r1, [sp, #4]
+  99229e:	2900      	cmp	r1, #0
+  9922a0:	d059      	beq.n	992356 <ResourcePacksInfoPacket::read(BinaryStream&)+0x186>
+  9922a2:	f3bf 8f5b 	dmb	ish
+  9922a6:	e852 1f00 	ldrex	r1, [r2]
+  9922aa:	1e4b      	subs	r3, r1, #1
+  9922ac:	e842 3600 	strex	r6, r3, [r2]
+  9922b0:	2e00      	cmp	r6, #0
+  9922b2:	d1f8      	bne.n	9922a6 <ResourcePacksInfoPacket::read(BinaryStream&)+0xd6>
+  9922b4:	f3bf 8f5b 	dmb	ish
+  9922b8:	e050      	b.n	99235c <ResourcePacksInfoPacket::read(BinaryStream&)+0x18c>
+  9922ba:	1f0a      	subs	r2, r1, #4
+  9922bc:	9901      	ldr	r1, [sp, #4]
+  9922be:	2900      	cmp	r1, #0
+  9922c0:	d057      	beq.n	992372 <ResourcePacksInfoPacket::read(BinaryStream&)+0x1a2>
+  9922c2:	f3bf 8f5b 	dmb	ish
+  9922c6:	e852 1f00 	ldrex	r1, [r2]
+  9922ca:	1e4b      	subs	r3, r1, #1
+  9922cc:	e842 3600 	strex	r6, r3, [r2]
+  9922d0:	2e00      	cmp	r6, #0
+  9922d2:	d1f8      	bne.n	9922c6 <ResourcePacksInfoPacket::read(BinaryStream&)+0xf6>
+  9922d4:	f3bf 8f5b 	dmb	ish
+  9922d8:	e04e      	b.n	992378 <ResourcePacksInfoPacket::read(BinaryStream&)+0x1a8>
+  9922da:	1f0a      	subs	r2, r1, #4
+  9922dc:	9901      	ldr	r1, [sp, #4]
+  9922de:	2900      	cmp	r1, #0
+  9922e0:	d055      	beq.n	99238e <ResourcePacksInfoPacket::read(BinaryStream&)+0x1be>
+  9922e2:	f3bf 8f5b 	dmb	ish
+  9922e6:	e852 1f00 	ldrex	r1, [r2]
+  9922ea:	1e4b      	subs	r3, r1, #1
+  9922ec:	e842 3600 	strex	r6, r3, [r2]
+  9922f0:	2e00      	cmp	r6, #0
+  9922f2:	d1f8      	bne.n	9922e6 <ResourcePacksInfoPacket::read(BinaryStream&)+0x116>
+  9922f4:	f3bf 8f5b 	dmb	ish
+  9922f8:	e04c      	b.n	992394 <ResourcePacksInfoPacket::read(BinaryStream&)+0x1c4>
+  9922fa:	1f0a      	subs	r2, r1, #4
+  9922fc:	9901      	ldr	r1, [sp, #4]
+  9922fe:	2900      	cmp	r1, #0
+  992300:	d053      	beq.n	9923aa <ResourcePacksInfoPacket::read(BinaryStream&)+0x1da>
+  992302:	f3bf 8f5b 	dmb	ish
+  992306:	e852 1f00 	ldrex	r1, [r2]
+  99230a:	1e4b      	subs	r3, r1, #1
+  99230c:	e842 3600 	strex	r6, r3, [r2]
+  992310:	2e00      	cmp	r6, #0
+  992312:	d1f8      	bne.n	992306 <ResourcePacksInfoPacket::read(BinaryStream&)+0x136>
+  992314:	f3bf 8f5b 	dmb	ish
+  992318:	e04a      	b.n	9923b0 <ResourcePacksInfoPacket::read(BinaryStream&)+0x1e0>
+  99231a:	1f0a      	subs	r2, r1, #4
+  99231c:	9901      	ldr	r1, [sp, #4]
+  99231e:	2900      	cmp	r1, #0
+  992320:	d050      	beq.n	9923c4 <ResourcePacksInfoPacket::read(BinaryStream&)+0x1f4>
+  992322:	f3bf 8f5b 	dmb	ish
+  992326:	e852 1f00 	ldrex	r1, [r2]
+  99232a:	1e4b      	subs	r3, r1, #1
+  99232c:	e842 3600 	strex	r6, r3, [r2]
+  992330:	2e00      	cmp	r6, #0
+  992332:	d1f8      	bne.n	992326 <ResourcePacksInfoPacket::read(BinaryStream&)+0x156>
+  992334:	f3bf 8f5b 	dmb	ish
+  992338:	e047      	b.n	9923ca <ResourcePacksInfoPacket::read(BinaryStream&)+0x1fa>
+  99233a:	6811      	ldr	r1, [r2, #0]
+  99233c:	1e4b      	subs	r3, r1, #1
+  99233e:	6013      	str	r3, [r2, #0]
+  992340:	2900      	cmp	r1, #0
+  992342:	f300 809d 	bgt.w	992480 <ResourcePacksInfoPacket::read(BinaryStream&)+0x2b0>
+  992346:	a942      	add	r1, sp, #264	; 0x108
+  992348:	4664      	mov	r4, ip
+  99234a:	4676      	mov	r6, lr
+  99234c:	f170 eb94 	blx	b02a78 <std::_Hashtable<int, std::pair<int const, GameType>, std::allocator<std::pair<int const, GameType> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned int, std::integral_constant<bool, true>)+0x247a>
+  992350:	46b6      	mov	lr, r6
+  992352:	46a4      	mov	ip, r4
+  992354:	e094      	b.n	992480 <ResourcePacksInfoPacket::read(BinaryStream&)+0x2b0>
+  992356:	6811      	ldr	r1, [r2, #0]
+  992358:	1e4b      	subs	r3, r1, #1
+  99235a:	6013      	str	r3, [r2, #0]
+  99235c:	2900      	cmp	r1, #0
+  99235e:	f300 8096 	bgt.w	99248e <ResourcePacksInfoPacket::read(BinaryStream&)+0x2be>
+  992362:	a942      	add	r1, sp, #264	; 0x108
+  992364:	46e3      	mov	fp, ip
+  992366:	4676      	mov	r6, lr
+  992368:	f170 eb86 	blx	b02a78 <std::_Hashtable<int, std::pair<int const, GameType>, std::allocator<std::pair<int const, GameType> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned int, std::integral_constant<bool, true>)+0x247a>
+  99236c:	46b6      	mov	lr, r6
+  99236e:	46dc      	mov	ip, fp
+  992370:	e08d      	b.n	99248e <ResourcePacksInfoPacket::read(BinaryStream&)+0x2be>
+  992372:	6811      	ldr	r1, [r2, #0]
+  992374:	1e4b      	subs	r3, r1, #1
+  992376:	6013      	str	r3, [r2, #0]
+  992378:	2900      	cmp	r1, #0
+  99237a:	f300 808e 	bgt.w	99249a <ResourcePacksInfoPacket::read(BinaryStream&)+0x2ca>
+  99237e:	a942      	add	r1, sp, #264	; 0x108
+  992380:	46e3      	mov	fp, ip
+  992382:	4676      	mov	r6, lr
+  992384:	f170 eb78 	blx	b02a78 <std::_Hashtable<int, std::pair<int const, GameType>, std::allocator<std::pair<int const, GameType> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned int, std::integral_constant<bool, true>)+0x247a>
+  992388:	46b6      	mov	lr, r6
+  99238a:	46dc      	mov	ip, fp
+  99238c:	e085      	b.n	99249a <ResourcePacksInfoPacket::read(BinaryStream&)+0x2ca>
+  99238e:	6811      	ldr	r1, [r2, #0]
+  992390:	1e4b      	subs	r3, r1, #1
+  992392:	6013      	str	r3, [r2, #0]
+  992394:	2900      	cmp	r1, #0
+  992396:	f300 8086 	bgt.w	9924a6 <ResourcePacksInfoPacket::read(BinaryStream&)+0x2d6>
+  99239a:	a942      	add	r1, sp, #264	; 0x108
+  99239c:	46e3      	mov	fp, ip
+  99239e:	4676      	mov	r6, lr
+  9923a0:	f170 eb6a 	blx	b02a78 <std::_Hashtable<int, std::pair<int const, GameType>, std::allocator<std::pair<int const, GameType> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned int, std::integral_constant<bool, true>)+0x247a>
+  9923a4:	46b6      	mov	lr, r6
+  9923a6:	46dc      	mov	ip, fp
+  9923a8:	e07d      	b.n	9924a6 <ResourcePacksInfoPacket::read(BinaryStream&)+0x2d6>
+  9923aa:	6811      	ldr	r1, [r2, #0]
+  9923ac:	1e4b      	subs	r3, r1, #1
+  9923ae:	6013      	str	r3, [r2, #0]
+  9923b0:	2900      	cmp	r1, #0
+  9923b2:	dc7e      	bgt.n	9924b2 <ResourcePacksInfoPacket::read(BinaryStream&)+0x2e2>
+  9923b4:	a942      	add	r1, sp, #264	; 0x108
+  9923b6:	46e3      	mov	fp, ip
+  9923b8:	4676      	mov	r6, lr
+  9923ba:	f170 eb5e 	blx	b02a78 <std::_Hashtable<int, std::pair<int const, GameType>, std::allocator<std::pair<int const, GameType> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned int, std::integral_constant<bool, true>)+0x247a>
+  9923be:	46b6      	mov	lr, r6
+  9923c0:	46dc      	mov	ip, fp
+  9923c2:	e076      	b.n	9924b2 <ResourcePacksInfoPacket::read(BinaryStream&)+0x2e2>
+  9923c4:	6811      	ldr	r1, [r2, #0]
+  9923c6:	1e4b      	subs	r3, r1, #1
+  9923c8:	6013      	str	r3, [r2, #0]
+  9923ca:	2900      	cmp	r1, #0
+  9923cc:	dc77      	bgt.n	9924be <ResourcePacksInfoPacket::read(BinaryStream&)+0x2ee>
+  9923ce:	a942      	add	r1, sp, #264	; 0x108
+  9923d0:	4676      	mov	r6, lr
+  9923d2:	f170 eb52 	blx	b02a78 <std::_Hashtable<int, std::pair<int const, GameType>, std::allocator<std::pair<int const, GameType> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned int, std::integral_constant<bool, true>)+0x247a>
+  9923d6:	46b6      	mov	lr, r6
+  9923d8:	e071      	b.n	9924be <ResourcePacksInfoPacket::read(BinaryStream&)+0x2ee>
+  9923da:	a841      	add	r0, sp, #260	; 0x104
+  9923dc:	4641      	mov	r1, r8
+  9923de:	f509 ef0a 	blx	69c1f4 <ReadOnlyBinaryStream::getString()@plt>
+  9923e2:	a840      	add	r0, sp, #256	; 0x100
+  9923e4:	4641      	mov	r1, r8
+  9923e6:	f509 ef06 	blx	69c1f4 <ReadOnlyBinaryStream::getString()@plt>
+  9923ea:	4640      	mov	r0, r8
+  9923ec:	463e      	mov	r6, r7
+  9923ee:	f50a ebb8 	blx	69cb60 <ReadOnlyBinaryStream::getUnsignedInt64()@plt>
+  9923f2:	4607      	mov	r7, r0
+  9923f4:	4688      	mov	r8, r1
+  9923f6:	a83a      	add	r0, sp, #232	; 0xe8
+  9923f8:	a941      	add	r1, sp, #260	; 0x104
+  9923fa:	f50a ebb8 	blx	69cb6c <mce::UUID::fromString(std::string const&)@plt>
+  9923fe:	46a3      	mov	fp, r4
+  992400:	4658      	mov	r0, fp
+  992402:	f50a ebba 	blx	69cb78 <SemVersion::SemVersion()@plt>
+  992406:	a840      	add	r0, sp, #256	; 0x100
+  992408:	4659      	mov	r1, fp
+  99240a:	f50a ebbc 	blx	69cb84 <SemVersion::fromString(std::string const&, SemVersion&)@plt>
+  99240e:	a93a      	add	r1, sp, #232	; 0xe8
+  992410:	4650      	mov	r0, sl
+  992412:	465a      	mov	r2, fp
+  992414:	f50a ebbc 	blx	69cb90 <PackIdVersion::PackIdVersion(mce::UUID const&, SemVersion const&)@plt>
+  992418:	e9c5 7800 	strd	r7, r8, [r5]
+  99241c:	4637      	mov	r7, r6
+  99241e:	f96a 0acf 	vld1.64	{d16-d17}, [sl]
+  992422:	4638      	mov	r0, r7
+  992424:	f940 0acd 	vst1.64	{d16-d17}, [r0]!
+  992428:	9907      	ldr	r1, [sp, #28]
+  99242a:	f170 eb76 	blx	b02b18 <std::_Hashtable<int, std::pair<int const, GameType>, std::allocator<std::pair<int const, GameType> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned int, std::integral_constant<bool, true>)+0x251a>
+  99242e:	f8d9 0000 	ldr.w	r0, [r9]
+  992432:	f8b9 1004 	ldrh.w	r1, [r9, #4]
+  992436:	83b9      	strh	r1, [r7, #28]
+  992438:	61b8      	str	r0, [r7, #24]
+  99243a:	9906      	ldr	r1, [sp, #24]
+  99243c:	f107 0020 	add.w	r0, r7, #32
+  992440:	f170 eb62 	blx	b02b08 <std::_Hashtable<int, std::pair<int const, GameType>, std::allocator<std::pair<int const, GameType> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned int, std::integral_constant<bool, true>)+0x250a>
+  992444:	9905      	ldr	r1, [sp, #20]
+  992446:	f107 0024 	add.w	r0, r7, #36	; 0x24
+  99244a:	f170 eb5e 	blx	b02b08 <std::_Hashtable<int, std::pair<int const, GameType>, std::allocator<std::pair<int const, GameType> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned int, std::integral_constant<bool, true>)+0x250a>
+  99244e:	9904      	ldr	r1, [sp, #16]
+  992450:	f107 0028 	add.w	r0, r7, #40	; 0x28
+  992454:	f170 eb58 	blx	b02b08 <std::_Hashtable<int, std::pair<int const, GameType>, std::allocator<std::pair<int const, GameType> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned int, std::integral_constant<bool, true>)+0x250a>
+  992458:	f8bd 00c4 	ldrh.w	r0, [sp, #196]	; 0xc4
+  99245c:	85b8      	strh	r0, [r7, #44]	; 0x2c
+  99245e:	e9d5 0100 	ldrd	r0, r1, [r5]
+  992462:	e9c7 010c 	strd	r0, r1, [r7, #48]	; 0x30
+  992466:	4650      	mov	r0, sl
+  992468:	f508 ee96 	blx	69b198 <PackIdVersion::~PackIdVersion()@plt>
+  99246c:	9938      	ldr	r1, [sp, #224]	; 0xe0
+  99246e:	f8dd c00c 	ldr.w	ip, [sp, #12]
+  992472:	e9dd 8e08 	ldrd	r8, lr, [sp, #32]
+  992476:	f1a1 000c 	sub.w	r0, r1, #12
+  99247a:	4560      	cmp	r0, ip
+  99247c:	f47f aefd 	bne.w	99227a <ResourcePacksInfoPacket::read(BinaryStream&)+0xaa>
+  992480:	9937      	ldr	r1, [sp, #220]	; 0xdc
+  992482:	465c      	mov	r4, fp
+  992484:	f1a1 000c 	sub.w	r0, r1, #12
+  992488:	4560      	cmp	r0, ip
+  99248a:	f47f af06 	bne.w	99229a <ResourcePacksInfoPacket::read(BinaryStream&)+0xca>
+  99248e:	9936      	ldr	r1, [sp, #216]	; 0xd8
+  992490:	f1a1 000c 	sub.w	r0, r1, #12
+  992494:	4560      	cmp	r0, ip
+  992496:	f47f af10 	bne.w	9922ba <ResourcePacksInfoPacket::read(BinaryStream&)+0xea>
+  99249a:	993e      	ldr	r1, [sp, #248]	; 0xf8
+  99249c:	f1a1 000c 	sub.w	r0, r1, #12
+  9924a0:	4560      	cmp	r0, ip
+  9924a2:	f47f af1a 	bne.w	9922da <ResourcePacksInfoPacket::read(BinaryStream&)+0x10a>
+  9924a6:	9940      	ldr	r1, [sp, #256]	; 0x100
+  9924a8:	f1a1 000c 	sub.w	r0, r1, #12
+  9924ac:	4560      	cmp	r0, ip
+  9924ae:	f47f af24 	bne.w	9922fa <ResourcePacksInfoPacket::read(BinaryStream&)+0x12a>
+  9924b2:	9941      	ldr	r1, [sp, #260]	; 0x104
+  9924b4:	f1a1 000c 	sub.w	r0, r1, #12
+  9924b8:	4560      	cmp	r0, ip
+  9924ba:	f47f af2e 	bne.w	99231a <ResourcePacksInfoPacket::read(BinaryStream&)+0x14a>
+  9924be:	3738      	adds	r7, #56	; 0x38
+  9924c0:	4577      	cmp	r7, lr
+  9924c2:	d18a      	bne.n	9923da <ResourcePacksInfoPacket::read(BinaryStream&)+0x20a>
+  9924c4:	4640      	mov	r0, r8
+  9924c6:	f50a eb40 	blx	69cb48 <ReadOnlyBinaryStream::getUnsignedShort()@plt>
+  9924ca:	9f02      	ldr	r7, [sp, #8]
+  9924cc:	f646 53b7 	movw	r3, #28087	; 0x6db7
+  9924d0:	f2cb 63db 	movt	r3, #46811	; 0xb6db
+  9924d4:	463e      	mov	r6, r7
+  9924d6:	f856 1f1c 	ldr.w	r1, [r6, #28]!
+  9924da:	6874      	ldr	r4, [r6, #4]
+  9924dc:	1a62      	subs	r2, r4, r1
+  9924de:	10d2      	asrs	r2, r2, #3
+  9924e0:	435a      	muls	r2, r3
+  9924e2:	4290      	cmp	r0, r2
+  9924e4:	d905      	bls.n	9924f2 <ResourcePacksInfoPacket::read(BinaryStream&)+0x322>
+  9924e6:	1a81      	subs	r1, r0, r2
+  9924e8:	4630      	mov	r0, r6
+  9924ea:	f50a eb34 	blx	69cb54 <std::vector<ResourcePackInfoData, std::allocator<ResourcePackInfoData> >::_M_default_append(unsigned int)@plt>
+  9924ee:	6a3c      	ldr	r4, [r7, #32]
+  9924f0:	e00e      	b.n	992510 <ResourcePacksInfoPacket::read(BinaryStream&)+0x340>
+  9924f2:	d20d      	bcs.n	992510 <ResourcePacksInfoPacket::read(BinaryStream&)+0x340>
+  9924f4:	ebc0 00c0 	rsb	r0, r0, r0, lsl #3
+  9924f8:	eb01 05c0 	add.w	r5, r1, r0, lsl #3
+  9924fc:	42ac      	cmp	r4, r5
+  9924fe:	d005      	beq.n	99250c <ResourcePacksInfoPacket::read(BinaryStream&)+0x33c>
+  992500:	4628      	mov	r0, r5
+  992502:	f508 ee4a 	blx	69b198 <PackIdVersion::~PackIdVersion()@plt>
+  992506:	3038      	adds	r0, #56	; 0x38
+  992508:	4284      	cmp	r4, r0
+  99250a:	d1fa      	bne.n	992502 <ResourcePacksInfoPacket::read(BinaryStream&)+0x332>
+  99250c:	462c      	mov	r4, r5
+  99250e:	623d      	str	r5, [r7, #32]
+  992510:	6837      	ldr	r7, [r6, #0]
+  992512:	9407      	str	r4, [sp, #28]
+  992514:	42a7      	cmp	r7, r4
+  992516:	f000 81a7 	beq.w	992868 <ResourcePacksInfoPacket::read(BinaryStream&)+0x698>
+  99251a:	f10d 0a28 	add.w	sl, sp, #40	; 0x28
+  99251e:	f8df 1650 	ldr.w	r1, [pc, #1616]	; 992b70 <ResourcePacksInfoPacket::read(BinaryStream&)+0x9a0>
+  992522:	f10a 0028 	add.w	r0, sl, #40	; 0x28
+  992526:	9003      	str	r0, [sp, #12]
+  992528:	f10a 0024 	add.w	r0, sl, #36	; 0x24
+  99252c:	9004      	str	r0, [sp, #16]
+  99252e:	f10a 0020 	add.w	r0, sl, #32
+  992532:	9005      	str	r0, [sp, #20]
+  992534:	f10a 0010 	add.w	r0, sl, #16
+  992538:	9006      	str	r0, [sp, #24]
+  99253a:	f10a 0030 	add.w	r0, sl, #48	; 0x30
+  99253e:	9009      	str	r0, [sp, #36]	; 0x24
+  992540:	f8df 0694 	ldr.w	r0, [pc, #1684]	; 992bd8 <ResourcePacksInfoPacket::read(BinaryStream&)+0xa08>
+  992544:	f10a 0518 	add.w	r5, sl, #24
+  992548:	ac18      	add	r4, sp, #96	; 0x60
+  99254a:	4478      	add	r0, pc
+  99254c:	5809      	ldr	r1, [r1, r0]
+  99254e:	9102      	str	r1, [sp, #8]
+  992550:	f8df 1624 	ldr.w	r1, [pc, #1572]	; 992b78 <ResourcePacksInfoPacket::read(BinaryStream&)+0x9a8>
+  992554:	5808      	ldr	r0, [r1, r0]
+  992556:	9001      	str	r0, [sp, #4]
+  992558:	e10f      	b.n	99277a <ResourcePacksInfoPacket::read(BinaryStream&)+0x5aa>
+  99255a:	4604      	mov	r4, r0
+  99255c:	a826      	add	r0, sp, #152	; 0x98
+  99255e:	f508 ee1c 	blx	69b198 <PackIdVersion::~PackIdVersion()@plt>
+  992562:	e006      	b.n	992572 <ResourcePacksInfoPacket::read(BinaryStream&)+0x3a2>
+  992564:	4604      	mov	r4, r0
+  992566:	f8df 5608 	ldr.w	r5, [pc, #1544]	; 992b70 <ResourcePacksInfoPacket::read(BinaryStream&)+0x9a0>
+  99256a:	f8df 660c 	ldr.w	r6, [pc, #1548]	; 992b78 <ResourcePacksInfoPacket::read(BinaryStream&)+0x9a8>
+  99256e:	e02c      	b.n	9925ca <ResourcePacksInfoPacket::read(BinaryStream&)+0x3fa>
+  992570:	4604      	mov	r4, r0
+  992572:	f8df 05f8 	ldr.w	r0, [pc, #1528]	; 992b6c <ResourcePacksInfoPacket::read(BinaryStream&)+0x99c>
+  992576:	f8df 55f8 	ldr.w	r5, [pc, #1528]	; 992b70 <ResourcePacksInfoPacket::read(BinaryStream&)+0x9a0>
+  99257a:	4478      	add	r0, pc
+  99257c:	9938      	ldr	r1, [sp, #224]	; 0xe0
+  99257e:	f8df 65f8 	ldr.w	r6, [pc, #1528]	; 992b78 <ResourcePacksInfoPacket::read(BinaryStream&)+0x9a8>
+  992582:	582a      	ldr	r2, [r5, r0]
+  992584:	f1a1 000c 	sub.w	r0, r1, #12
+  992588:	4290      	cmp	r0, r2
+  99258a:	f040 81f8 	bne.w	99297e <ResourcePacksInfoPacket::read(BinaryStream&)+0x7ae>
+  99258e:	f8df 05ec 	ldr.w	r0, [pc, #1516]	; 992b7c <ResourcePacksInfoPacket::read(BinaryStream&)+0x9ac>
+  992592:	9937      	ldr	r1, [sp, #220]	; 0xdc
+  992594:	4478      	add	r0, pc
+  992596:	582a      	ldr	r2, [r5, r0]
+  992598:	f1a1 000c 	sub.w	r0, r1, #12
+  99259c:	4290      	cmp	r0, r2
+  99259e:	f040 8200 	bne.w	9929a2 <ResourcePacksInfoPacket::read(BinaryStream&)+0x7d2>
+  9925a2:	f8df 05e0 	ldr.w	r0, [pc, #1504]	; 992b84 <ResourcePacksInfoPacket::read(BinaryStream&)+0x9b4>
+  9925a6:	9936      	ldr	r1, [sp, #216]	; 0xd8
+  9925a8:	4478      	add	r0, pc
+  9925aa:	582a      	ldr	r2, [r5, r0]
+  9925ac:	f1a1 000c 	sub.w	r0, r1, #12
+  9925b0:	4290      	cmp	r0, r2
+  9925b2:	f040 8208 	bne.w	9929c6 <ResourcePacksInfoPacket::read(BinaryStream&)+0x7f6>
+  9925b6:	f8df 05d4 	ldr.w	r0, [pc, #1492]	; 992b8c <ResourcePacksInfoPacket::read(BinaryStream&)+0x9bc>
+  9925ba:	993e      	ldr	r1, [sp, #248]	; 0xf8
+  9925bc:	4478      	add	r0, pc
+  9925be:	582a      	ldr	r2, [r5, r0]
+  9925c0:	f1a1 000c 	sub.w	r0, r1, #12
+  9925c4:	4290      	cmp	r0, r2
+  9925c6:	f040 81c8 	bne.w	99295a <ResourcePacksInfoPacket::read(BinaryStream&)+0x78a>
+  9925ca:	f8df 05c8 	ldr.w	r0, [pc, #1480]	; 992b94 <ResourcePacksInfoPacket::read(BinaryStream&)+0x9c4>
+  9925ce:	9940      	ldr	r1, [sp, #256]	; 0x100
+  9925d0:	4478      	add	r0, pc
+  9925d2:	582a      	ldr	r2, [r5, r0]
+  9925d4:	f1a1 000c 	sub.w	r0, r1, #12
+  9925d8:	4290      	cmp	r0, r2
+  9925da:	f040 81a4 	bne.w	992926 <ResourcePacksInfoPacket::read(BinaryStream&)+0x756>
+  9925de:	f8df 05bc 	ldr.w	r0, [pc, #1468]	; 992b9c <ResourcePacksInfoPacket::read(BinaryStream&)+0x9cc>
+  9925e2:	9941      	ldr	r1, [sp, #260]	; 0x104
+  9925e4:	4478      	add	r0, pc
+  9925e6:	582a      	ldr	r2, [r5, r0]
+  9925e8:	f1a1 000c 	sub.w	r0, r1, #12
+  9925ec:	4290      	cmp	r0, r2
+  9925ee:	f000 8197 	beq.w	992920 <ResourcePacksInfoPacket::read(BinaryStream&)+0x750>
+  9925f2:	f8df 25ac 	ldr.w	r2, [pc, #1452]	; 992ba0 <ResourcePacksInfoPacket::read(BinaryStream&)+0x9d0>
+  9925f6:	447a      	add	r2, pc
+  9925f8:	58b3      	ldr	r3, [r6, r2]
+  9925fa:	1f0a      	subs	r2, r1, #4
+  9925fc:	2b00      	cmp	r3, #0
+  9925fe:	f000 82b0 	beq.w	992b62 <ResourcePacksInfoPacket::read(BinaryStream&)+0x992>
+  992602:	f3bf 8f5b 	dmb	ish
+  992606:	e852 1f00 	ldrex	r1, [r2]
+  99260a:	1e4b      	subs	r3, r1, #1
+  99260c:	e842 3700 	strex	r7, r3, [r2]
+  992610:	2f00      	cmp	r7, #0
+  992612:	d1f8      	bne.n	992606 <ResourcePacksInfoPacket::read(BinaryStream&)+0x436>
+  992614:	f3bf 8f5b 	dmb	ish
+  992618:	e17c      	b.n	992914 <ResourcePacksInfoPacket::read(BinaryStream&)+0x744>
+  99261a:	4604      	mov	r4, r0
+  99261c:	f8df 5550 	ldr.w	r5, [pc, #1360]	; 992b70 <ResourcePacksInfoPacket::read(BinaryStream&)+0x9a0>
+  992620:	f8df 6554 	ldr.w	r6, [pc, #1364]	; 992b78 <ResourcePacksInfoPacket::read(BinaryStream&)+0x9a8>
+  992624:	e7db      	b.n	9925de <ResourcePacksInfoPacket::read(BinaryStream&)+0x40e>
+  992626:	4604      	mov	r4, r0
+  992628:	f8df 5544 	ldr.w	r5, [pc, #1348]	; 992b70 <ResourcePacksInfoPacket::read(BinaryStream&)+0x9a0>
+  99262c:	f8df 6548 	ldr.w	r6, [pc, #1352]	; 992b78 <ResourcePacksInfoPacket::read(BinaryStream&)+0x9a8>
+  992630:	e7c1      	b.n	9925b6 <ResourcePacksInfoPacket::read(BinaryStream&)+0x3e6>
+  992632:	1f0a      	subs	r2, r1, #4
+  992634:	9901      	ldr	r1, [sp, #4]
+  992636:	2900      	cmp	r1, #0
+  992638:	d05b      	beq.n	9926f2 <ResourcePacksInfoPacket::read(BinaryStream&)+0x522>
+  99263a:	f3bf 8f5b 	dmb	ish
+  99263e:	e852 1f00 	ldrex	r1, [r2]
+  992642:	1e4b      	subs	r3, r1, #1
+  992644:	e842 3600 	strex	r6, r3, [r2]
+  992648:	2e00      	cmp	r6, #0
+  99264a:	d1f8      	bne.n	99263e <ResourcePacksInfoPacket::read(BinaryStream&)+0x46e>
+  99264c:	f3bf 8f5b 	dmb	ish
+  992650:	e052      	b.n	9926f8 <ResourcePacksInfoPacket::read(BinaryStream&)+0x528>
+  992652:	1f0a      	subs	r2, r1, #4
+  992654:	9901      	ldr	r1, [sp, #4]
+  992656:	2900      	cmp	r1, #0
+  992658:	d057      	beq.n	99270a <ResourcePacksInfoPacket::read(BinaryStream&)+0x53a>
+  99265a:	f3bf 8f5b 	dmb	ish
+  99265e:	e852 1f00 	ldrex	r1, [r2]
+  992662:	1e4b      	subs	r3, r1, #1
+  992664:	e842 3600 	strex	r6, r3, [r2]
+  992668:	2e00      	cmp	r6, #0
+  99266a:	d1f8      	bne.n	99265e <ResourcePacksInfoPacket::read(BinaryStream&)+0x48e>
+  99266c:	f3bf 8f5b 	dmb	ish
+  992670:	e04e      	b.n	992710 <ResourcePacksInfoPacket::read(BinaryStream&)+0x540>
+  992672:	1f0a      	subs	r2, r1, #4
+  992674:	9901      	ldr	r1, [sp, #4]
+  992676:	2900      	cmp	r1, #0
+  992678:	d053      	beq.n	992722 <ResourcePacksInfoPacket::read(BinaryStream&)+0x552>
+  99267a:	f3bf 8f5b 	dmb	ish
+  99267e:	e852 1f00 	ldrex	r1, [r2]
+  992682:	1e4b      	subs	r3, r1, #1
+  992684:	e842 3600 	strex	r6, r3, [r2]
+  992688:	2e00      	cmp	r6, #0
+  99268a:	d1f8      	bne.n	99267e <ResourcePacksInfoPacket::read(BinaryStream&)+0x4ae>
+  99268c:	f3bf 8f5b 	dmb	ish
+  992690:	e04a      	b.n	992728 <ResourcePacksInfoPacket::read(BinaryStream&)+0x558>
+  992692:	1f0a      	subs	r2, r1, #4
+  992694:	9901      	ldr	r1, [sp, #4]
+  992696:	2900      	cmp	r1, #0
+  992698:	d04f      	beq.n	99273a <ResourcePacksInfoPacket::read(BinaryStream&)+0x56a>
+  99269a:	f3bf 8f5b 	dmb	ish
+  99269e:	e852 1f00 	ldrex	r1, [r2]
+  9926a2:	1e4b      	subs	r3, r1, #1
+  9926a4:	e842 3600 	strex	r6, r3, [r2]
+  9926a8:	2e00      	cmp	r6, #0
+  9926aa:	d1f8      	bne.n	99269e <ResourcePacksInfoPacket::read(BinaryStream&)+0x4ce>
+  9926ac:	f3bf 8f5b 	dmb	ish
+  9926b0:	e046      	b.n	992740 <ResourcePacksInfoPacket::read(BinaryStream&)+0x570>
+  9926b2:	1f0a      	subs	r2, r1, #4
+  9926b4:	9901      	ldr	r1, [sp, #4]
+  9926b6:	2900      	cmp	r1, #0
+  9926b8:	d04b      	beq.n	992752 <ResourcePacksInfoPacket::read(BinaryStream&)+0x582>
+  9926ba:	f3bf 8f5b 	dmb	ish
+  9926be:	e852 1f00 	ldrex	r1, [r2]
+  9926c2:	1e4b      	subs	r3, r1, #1
+  9926c4:	e842 3600 	strex	r6, r3, [r2]
+  9926c8:	2e00      	cmp	r6, #0
+  9926ca:	d1f8      	bne.n	9926be <ResourcePacksInfoPacket::read(BinaryStream&)+0x4ee>
+  9926cc:	f3bf 8f5b 	dmb	ish
+  9926d0:	e042      	b.n	992758 <ResourcePacksInfoPacket::read(BinaryStream&)+0x588>
+  9926d2:	1f0a      	subs	r2, r1, #4
+  9926d4:	9901      	ldr	r1, [sp, #4]
+  9926d6:	2900      	cmp	r1, #0
+  9926d8:	d046      	beq.n	992768 <ResourcePacksInfoPacket::read(BinaryStream&)+0x598>
+  9926da:	f3bf 8f5b 	dmb	ish
+  9926de:	e852 1f00 	ldrex	r1, [r2]
+  9926e2:	1e4b      	subs	r3, r1, #1
+  9926e4:	e842 3600 	strex	r6, r3, [r2]
+  9926e8:	2e00      	cmp	r6, #0
+  9926ea:	d1f8      	bne.n	9926de <ResourcePacksInfoPacket::read(BinaryStream&)+0x50e>
+  9926ec:	f3bf 8f5b 	dmb	ish
+  9926f0:	e03d      	b.n	99276e <ResourcePacksInfoPacket::read(BinaryStream&)+0x59e>
+  9926f2:	6811      	ldr	r1, [r2, #0]
+  9926f4:	1e4b      	subs	r3, r1, #1
+  9926f6:	6013      	str	r3, [r2, #0]
+  9926f8:	2900      	cmp	r1, #0
+  9926fa:	f300 8091 	bgt.w	992820 <ResourcePacksInfoPacket::read(BinaryStream&)+0x650>
+  9926fe:	a942      	add	r1, sp, #264	; 0x108
+  992700:	4664      	mov	r4, ip
+  992702:	f170 e9ba 	blx	b02a78 <std::_Hashtable<int, std::pair<int const, GameType>, std::allocator<std::pair<int const, GameType> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned int, std::integral_constant<bool, true>)+0x247a>
+  992706:	46a4      	mov	ip, r4
+  992708:	e08a      	b.n	992820 <ResourcePacksInfoPacket::read(BinaryStream&)+0x650>
+  99270a:	6811      	ldr	r1, [r2, #0]
+  99270c:	1e4b      	subs	r3, r1, #1
+  99270e:	6013      	str	r3, [r2, #0]
+  992710:	2900      	cmp	r1, #0
+  992712:	f300 808c 	bgt.w	99282e <ResourcePacksInfoPacket::read(BinaryStream&)+0x65e>
+  992716:	a942      	add	r1, sp, #264	; 0x108
+  992718:	4666      	mov	r6, ip
+  99271a:	f170 e9ae 	blx	b02a78 <std::_Hashtable<int, std::pair<int const, GameType>, std::allocator<std::pair<int const, GameType> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned int, std::integral_constant<bool, true>)+0x247a>
+  99271e:	46b4      	mov	ip, r6
+  992720:	e085      	b.n	99282e <ResourcePacksInfoPacket::read(BinaryStream&)+0x65e>
+  992722:	6811      	ldr	r1, [r2, #0]
+  992724:	1e4b      	subs	r3, r1, #1
+  992726:	6013      	str	r3, [r2, #0]
+  992728:	2900      	cmp	r1, #0
+  99272a:	f300 8088 	bgt.w	99283e <ResourcePacksInfoPacket::read(BinaryStream&)+0x66e>
+  99272e:	a942      	add	r1, sp, #264	; 0x108
+  992730:	4666      	mov	r6, ip
+  992732:	f170 e9a2 	blx	b02a78 <std::_Hashtable<int, std::pair<int const, GameType>, std::allocator<std::pair<int const, GameType> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned int, std::integral_constant<bool, true>)+0x247a>
+  992736:	46b4      	mov	ip, r6
+  992738:	e081      	b.n	99283e <ResourcePacksInfoPacket::read(BinaryStream&)+0x66e>
+  99273a:	6811      	ldr	r1, [r2, #0]
+  99273c:	1e4b      	subs	r3, r1, #1
+  99273e:	6013      	str	r3, [r2, #0]
+  992740:	2900      	cmp	r1, #0
+  992742:	f300 8082 	bgt.w	99284a <ResourcePacksInfoPacket::read(BinaryStream&)+0x67a>
+  992746:	a942      	add	r1, sp, #264	; 0x108
+  992748:	4666      	mov	r6, ip
+  99274a:	f170 e996 	blx	b02a78 <std::_Hashtable<int, std::pair<int const, GameType>, std::allocator<std::pair<int const, GameType> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned int, std::integral_constant<bool, true>)+0x247a>
+  99274e:	46b4      	mov	ip, r6
+  992750:	e07b      	b.n	99284a <ResourcePacksInfoPacket::read(BinaryStream&)+0x67a>
+  992752:	6811      	ldr	r1, [r2, #0]
+  992754:	1e4b      	subs	r3, r1, #1
+  992756:	6013      	str	r3, [r2, #0]
+  992758:	2900      	cmp	r1, #0
+  99275a:	dc7c      	bgt.n	992856 <ResourcePacksInfoPacket::read(BinaryStream&)+0x686>
+  99275c:	a942      	add	r1, sp, #264	; 0x108
+  99275e:	4666      	mov	r6, ip
+  992760:	f170 e98a 	blx	b02a78 <std::_Hashtable<int, std::pair<int const, GameType>, std::allocator<std::pair<int const, GameType> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned int, std::integral_constant<bool, true>)+0x247a>
+  992764:	46b4      	mov	ip, r6
+  992766:	e076      	b.n	992856 <ResourcePacksInfoPacket::read(BinaryStream&)+0x686>
+  992768:	6811      	ldr	r1, [r2, #0]
+  99276a:	1e4b      	subs	r3, r1, #1
+  99276c:	6013      	str	r3, [r2, #0]
+  99276e:	2900      	cmp	r1, #0
+  992770:	dc77      	bgt.n	992862 <ResourcePacksInfoPacket::read(BinaryStream&)+0x692>
+  992772:	a942      	add	r1, sp, #264	; 0x108
+  992774:	f170 e980 	blx	b02a78 <std::_Hashtable<int, std::pair<int const, GameType>, std::allocator<std::pair<int const, GameType> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned int, std::integral_constant<bool, true>)+0x247a>
+  992778:	e073      	b.n	992862 <ResourcePacksInfoPacket::read(BinaryStream&)+0x692>
+  99277a:	a825      	add	r0, sp, #148	; 0x94
+  99277c:	4641      	mov	r1, r8
+  99277e:	f509 ed3a 	blx	69c1f4 <ReadOnlyBinaryStream::getString()@plt>
+  992782:	a824      	add	r0, sp, #144	; 0x90
+  992784:	4641      	mov	r1, r8
+  992786:	f509 ed36 	blx	69c1f4 <ReadOnlyBinaryStream::getString()@plt>
+  99278a:	4640      	mov	r0, r8
+  99278c:	4656      	mov	r6, sl
+  99278e:	46c1      	mov	r9, r8
+  992790:	f50a e9e6 	blx	69cb60 <ReadOnlyBinaryStream::getUnsignedInt64()@plt>
+  992794:	4680      	mov	r8, r0
+  992796:	468a      	mov	sl, r1
+  992798:	a81e      	add	r0, sp, #120	; 0x78
+  99279a:	a925      	add	r1, sp, #148	; 0x94
+  99279c:	f50a e9e6 	blx	69cb6c <mce::UUID::fromString(std::string const&)@plt>
+  9927a0:	46a3      	mov	fp, r4
+  9927a2:	4658      	mov	r0, fp
+  9927a4:	f50a e9e8 	blx	69cb78 <SemVersion::SemVersion()@plt>
+  9927a8:	a824      	add	r0, sp, #144	; 0x90
+  9927aa:	4659      	mov	r1, fp
+  9927ac:	f50a e9ea 	blx	69cb84 <SemVersion::fromString(std::string const&, SemVersion&)@plt>
+  9927b0:	a91e      	add	r1, sp, #120	; 0x78
+  9927b2:	4630      	mov	r0, r6
+  9927b4:	465a      	mov	r2, fp
+  9927b6:	f50a e9ec 	blx	69cb90 <PackIdVersion::PackIdVersion(mce::UUID const&, SemVersion const&)@plt>
+  9927ba:	9809      	ldr	r0, [sp, #36]	; 0x24
+  9927bc:	e9c0 8a00 	strd	r8, sl, [r0]
+  9927c0:	4638      	mov	r0, r7
+  9927c2:	f966 0acf 	vld1.64	{d16-d17}, [r6]
+  9927c6:	f940 0acd 	vst1.64	{d16-d17}, [r0]!
+  9927ca:	9906      	ldr	r1, [sp, #24]
+  9927cc:	f170 e9a4 	blx	b02b18 <std::_Hashtable<int, std::pair<int const, GameType>, std::allocator<std::pair<int const, GameType> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned int, std::integral_constant<bool, true>)+0x251a>
+  9927d0:	46b2      	mov	sl, r6
+  9927d2:	6828      	ldr	r0, [r5, #0]
+  9927d4:	88a9      	ldrh	r1, [r5, #4]
+  9927d6:	83b9      	strh	r1, [r7, #28]
+  9927d8:	61b8      	str	r0, [r7, #24]
+  9927da:	9905      	ldr	r1, [sp, #20]
+  9927dc:	f107 0020 	add.w	r0, r7, #32
+  9927e0:	f170 e992 	blx	b02b08 <std::_Hashtable<int, std::pair<int const, GameType>, std::allocator<std::pair<int const, GameType> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned int, std::integral_constant<bool, true>)+0x250a>
+  9927e4:	9904      	ldr	r1, [sp, #16]
+  9927e6:	f107 0024 	add.w	r0, r7, #36	; 0x24
+  9927ea:	f170 e98e 	blx	b02b08 <std::_Hashtable<int, std::pair<int const, GameType>, std::allocator<std::pair<int const, GameType> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned int, std::integral_constant<bool, true>)+0x250a>
+  9927ee:	9903      	ldr	r1, [sp, #12]
+  9927f0:	f107 0028 	add.w	r0, r7, #40	; 0x28
+  9927f4:	f170 e988 	blx	b02b08 <std::_Hashtable<int, std::pair<int const, GameType>, std::allocator<std::pair<int const, GameType> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned int, std::integral_constant<bool, true>)+0x250a>
+  9927f8:	f8bd 0054 	ldrh.w	r0, [sp, #84]	; 0x54
+  9927fc:	85b8      	strh	r0, [r7, #44]	; 0x2c
+  9927fe:	9809      	ldr	r0, [sp, #36]	; 0x24
+  992800:	e9d0 0100 	ldrd	r0, r1, [r0]
+  992804:	e9c7 010c 	strd	r0, r1, [r7, #48]	; 0x30
+  992808:	4650      	mov	r0, sl
+  99280a:	f508 ecc6 	blx	69b198 <PackIdVersion::~PackIdVersion()@plt>
+  99280e:	991c      	ldr	r1, [sp, #112]	; 0x70
+  992810:	46c8      	mov	r8, r9
+  992812:	f8dd c008 	ldr.w	ip, [sp, #8]
+  992816:	f1a1 000c 	sub.w	r0, r1, #12
+  99281a:	4560      	cmp	r0, ip
+  99281c:	f47f af09 	bne.w	992632 <ResourcePacksInfoPacket::read(BinaryStream&)+0x462>
+  992820:	991b      	ldr	r1, [sp, #108]	; 0x6c
+  992822:	465c      	mov	r4, fp
+  992824:	f1a1 000c 	sub.w	r0, r1, #12
+  992828:	4560      	cmp	r0, ip
+  99282a:	f47f af12 	bne.w	992652 <ResourcePacksInfoPacket::read(BinaryStream&)+0x482>
+  99282e:	991a      	ldr	r1, [sp, #104]	; 0x68
+  992830:	f8dd 901c 	ldr.w	r9, [sp, #28]
+  992834:	f1a1 000c 	sub.w	r0, r1, #12
+  992838:	4560      	cmp	r0, ip
+  99283a:	f47f af1a 	bne.w	992672 <ResourcePacksInfoPacket::read(BinaryStream&)+0x4a2>
+  99283e:	9922      	ldr	r1, [sp, #136]	; 0x88
+  992840:	f1a1 000c 	sub.w	r0, r1, #12
+  992844:	4560      	cmp	r0, ip
+  992846:	f47f af24 	bne.w	992692 <ResourcePacksInfoPacket::read(BinaryStream&)+0x4c2>
+  99284a:	9924      	ldr	r1, [sp, #144]	; 0x90
+  99284c:	f1a1 000c 	sub.w	r0, r1, #12
+  992850:	4560      	cmp	r0, ip
+  992852:	f47f af2e 	bne.w	9926b2 <ResourcePacksInfoPacket::read(BinaryStream&)+0x4e2>
+  992856:	9925      	ldr	r1, [sp, #148]	; 0x94
+  992858:	f1a1 000c 	sub.w	r0, r1, #12
+  99285c:	4560      	cmp	r0, ip
+  99285e:	f47f af38 	bne.w	9926d2 <ResourcePacksInfoPacket::read(BinaryStream&)+0x502>
+  992862:	3738      	adds	r7, #56	; 0x38
+  992864:	454f      	cmp	r7, r9
+  992866:	d188      	bne.n	99277a <ResourcePacksInfoPacket::read(BinaryStream&)+0x5aa>
+  992868:	b043      	add	sp, #268	; 0x10c
+  99286a:	e8bd 8ff0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, pc}
+  99286e:	4604      	mov	r4, r0
+  992870:	a80a      	add	r0, sp, #40	; 0x28
+  992872:	f508 ec92 	blx	69b198 <PackIdVersion::~PackIdVersion()@plt>
+  992876:	e004      	b.n	992882 <ResourcePacksInfoPacket::read(BinaryStream&)+0x6b2>
+  992878:	4604      	mov	r4, r0
+  99287a:	4dbd      	ldr	r5, [pc, #756]	; (992b70 <ResourcePacksInfoPacket::read(BinaryStream&)+0x9a0>)
+  99287c:	4ebe      	ldr	r6, [pc, #760]	; (992b78 <ResourcePacksInfoPacket::read(BinaryStream&)+0x9a8>)
+  99287e:	e026      	b.n	9928ce <ResourcePacksInfoPacket::read(BinaryStream&)+0x6fe>
+  992880:	4604      	mov	r4, r0
+  992882:	48c9      	ldr	r0, [pc, #804]	; (992ba8 <ResourcePacksInfoPacket::read(BinaryStream&)+0x9d8>)
+  992884:	4dba      	ldr	r5, [pc, #744]	; (992b70 <ResourcePacksInfoPacket::read(BinaryStream&)+0x9a0>)
+  992886:	4478      	add	r0, pc
+  992888:	991c      	ldr	r1, [sp, #112]	; 0x70
+  99288a:	4ebb      	ldr	r6, [pc, #748]	; (992b78 <ResourcePacksInfoPacket::read(BinaryStream&)+0x9a8>)
+  99288c:	582a      	ldr	r2, [r5, r0]
+  99288e:	f1a1 000c 	sub.w	r0, r1, #12
+  992892:	4290      	cmp	r0, r2
+  992894:	f040 80ff 	bne.w	992a96 <ResourcePacksInfoPacket::read(BinaryStream&)+0x8c6>
+  992898:	48c5      	ldr	r0, [pc, #788]	; (992bb0 <ResourcePacksInfoPacket::read(BinaryStream&)+0x9e0>)
+  99289a:	991b      	ldr	r1, [sp, #108]	; 0x6c
+  99289c:	4478      	add	r0, pc
+  99289e:	582a      	ldr	r2, [r5, r0]
+  9928a0:	f1a1 000c 	sub.w	r0, r1, #12
+  9928a4:	4290      	cmp	r0, r2
+  9928a6:	f040 8108 	bne.w	992aba <ResourcePacksInfoPacket::read(BinaryStream&)+0x8ea>
+  9928aa:	48c3      	ldr	r0, [pc, #780]	; (992bb8 <ResourcePacksInfoPacket::read(BinaryStream&)+0x9e8>)
+  9928ac:	991a      	ldr	r1, [sp, #104]	; 0x68
+  9928ae:	4478      	add	r0, pc
+  9928b0:	582a      	ldr	r2, [r5, r0]
+  9928b2:	f1a1 000c 	sub.w	r0, r1, #12
+  9928b6:	4290      	cmp	r0, r2
+  9928b8:	f040 8110 	bne.w	992adc <ResourcePacksInfoPacket::read(BinaryStream&)+0x90c>
+  9928bc:	48c0      	ldr	r0, [pc, #768]	; (992bc0 <ResourcePacksInfoPacket::read(BinaryStream&)+0x9f0>)
+  9928be:	9922      	ldr	r1, [sp, #136]	; 0x88
+  9928c0:	4478      	add	r0, pc
+  9928c2:	582a      	ldr	r2, [r5, r0]
+  9928c4:	f1a1 000c 	sub.w	r0, r1, #12
+  9928c8:	4290      	cmp	r0, r2
+  9928ca:	f040 80b4 	bne.w	992a36 <ResourcePacksInfoPacket::read(BinaryStream&)+0x866>
+  9928ce:	48be      	ldr	r0, [pc, #760]	; (992bc8 <ResourcePacksInfoPacket::read(BinaryStream&)+0x9f8>)
+  9928d0:	9924      	ldr	r1, [sp, #144]	; 0x90
+  9928d2:	4478      	add	r0, pc
+  9928d4:	582a      	ldr	r2, [r5, r0]
+  9928d6:	f1a1 000c 	sub.w	r0, r1, #12
+  9928da:	4290      	cmp	r0, r2
+  9928dc:	f040 808f 	bne.w	9929fe <ResourcePacksInfoPacket::read(BinaryStream&)+0x82e>
+  9928e0:	48bb      	ldr	r0, [pc, #748]	; (992bd0 <ResourcePacksInfoPacket::read(BinaryStream&)+0xa00>)
+  9928e2:	9925      	ldr	r1, [sp, #148]	; 0x94
+  9928e4:	4478      	add	r0, pc
+  9928e6:	582a      	ldr	r2, [r5, r0]
+  9928e8:	f1a1 000c 	sub.w	r0, r1, #12
+  9928ec:	4290      	cmp	r0, r2
+  9928ee:	d017      	beq.n	992920 <ResourcePacksInfoPacket::read(BinaryStream&)+0x750>
+  9928f0:	4ab8      	ldr	r2, [pc, #736]	; (992bd4 <ResourcePacksInfoPacket::read(BinaryStream&)+0xa04>)
+  9928f2:	447a      	add	r2, pc
+  9928f4:	58b3      	ldr	r3, [r6, r2]
+  9928f6:	1f0a      	subs	r2, r1, #4
+  9928f8:	2b00      	cmp	r3, #0
+  9928fa:	f000 8132 	beq.w	992b62 <ResourcePacksInfoPacket::read(BinaryStream&)+0x992>
+  9928fe:	f3bf 8f5b 	dmb	ish
+  992902:	e852 1f00 	ldrex	r1, [r2]
+  992906:	1e4b      	subs	r3, r1, #1
+  992908:	e842 3700 	strex	r7, r3, [r2]
+  99290c:	2f00      	cmp	r7, #0
+  99290e:	d1f8      	bne.n	992902 <ResourcePacksInfoPacket::read(BinaryStream&)+0x732>
+  992910:	f3bf 8f5b 	dmb	ish
+  992914:	2900      	cmp	r1, #0
+  992916:	bfdc      	itt	le
+  992918:	f50d 7184 	addle.w	r1, sp, #264	; 0x108
+  99291c:	f170 e8ac 	blxle	b02a78 <std::_Hashtable<int, std::pair<int const, GameType>, std::allocator<std::pair<int const, GameType> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned int, std::integral_constant<bool, true>)+0x247a>
+  992920:	4620      	mov	r0, r4
+  992922:	f507 ec9c 	blx	69a25c <_Unwind_Resume@plt>
+  992926:	4a9c      	ldr	r2, [pc, #624]	; (992b98 <ResourcePacksInfoPacket::read(BinaryStream&)+0x9c8>)
+  992928:	447a      	add	r2, pc
+  99292a:	58b3      	ldr	r3, [r6, r2]
+  99292c:	1f0a      	subs	r2, r1, #4
+  99292e:	2b00      	cmp	r3, #0
+  992930:	d05b      	beq.n	9929ea <ResourcePacksInfoPacket::read(BinaryStream&)+0x81a>
+  992932:	f3bf 8f5b 	dmb	ish
+  992936:	e852 1f00 	ldrex	r1, [r2]
+  99293a:	1e4b      	subs	r3, r1, #1
+  99293c:	e842 3700 	strex	r7, r3, [r2]
+  992940:	2f00      	cmp	r7, #0
+  992942:	d1f8      	bne.n	992936 <ResourcePacksInfoPacket::read(BinaryStream&)+0x766>
+  992944:	f3bf 8f5b 	dmb	ish
+  992948:	e052      	b.n	9929f0 <ResourcePacksInfoPacket::read(BinaryStream&)+0x820>
+  99294a:	4604      	mov	r4, r0
+  99294c:	4d88      	ldr	r5, [pc, #544]	; (992b70 <ResourcePacksInfoPacket::read(BinaryStream&)+0x9a0>)
+  99294e:	4e8a      	ldr	r6, [pc, #552]	; (992b78 <ResourcePacksInfoPacket::read(BinaryStream&)+0x9a8>)
+  992950:	e7c6      	b.n	9928e0 <ResourcePacksInfoPacket::read(BinaryStream&)+0x710>
+  992952:	4604      	mov	r4, r0
+  992954:	4d86      	ldr	r5, [pc, #536]	; (992b70 <ResourcePacksInfoPacket::read(BinaryStream&)+0x9a0>)
+  992956:	4e88      	ldr	r6, [pc, #544]	; (992b78 <ResourcePacksInfoPacket::read(BinaryStream&)+0x9a8>)
+  992958:	e7b0      	b.n	9928bc <ResourcePacksInfoPacket::read(BinaryStream&)+0x6ec>
+  99295a:	4a8d      	ldr	r2, [pc, #564]	; (992b90 <ResourcePacksInfoPacket::read(BinaryStream&)+0x9c0>)
+  99295c:	447a      	add	r2, pc
+  99295e:	58b3      	ldr	r3, [r6, r2]
+  992960:	1f0a      	subs	r2, r1, #4
+  992962:	2b00      	cmp	r3, #0
+  992964:	d05d      	beq.n	992a22 <ResourcePacksInfoPacket::read(BinaryStream&)+0x852>
+  992966:	f3bf 8f5b 	dmb	ish
+  99296a:	e852 1f00 	ldrex	r1, [r2]
+  99296e:	1e4b      	subs	r3, r1, #1
+  992970:	e842 3700 	strex	r7, r3, [r2]
+  992974:	2f00      	cmp	r7, #0
+  992976:	d1f8      	bne.n	99296a <ResourcePacksInfoPacket::read(BinaryStream&)+0x79a>
+  992978:	f3bf 8f5b 	dmb	ish
+  99297c:	e054      	b.n	992a28 <ResourcePacksInfoPacket::read(BinaryStream&)+0x858>
+  99297e:	4a7d      	ldr	r2, [pc, #500]	; (992b74 <ResourcePacksInfoPacket::read(BinaryStream&)+0x9a4>)
+  992980:	447a      	add	r2, pc
+  992982:	58b3      	ldr	r3, [r6, r2]
+  992984:	1f0a      	subs	r2, r1, #4
+  992986:	2b00      	cmp	r3, #0
+  992988:	d067      	beq.n	992a5a <ResourcePacksInfoPacket::read(BinaryStream&)+0x88a>
+  99298a:	f3bf 8f5b 	dmb	ish
+  99298e:	e852 1f00 	ldrex	r1, [r2]
+  992992:	1e4b      	subs	r3, r1, #1
+  992994:	e842 3700 	strex	r7, r3, [r2]
+  992998:	2f00      	cmp	r7, #0
+  99299a:	d1f8      	bne.n	99298e <ResourcePacksInfoPacket::read(BinaryStream&)+0x7be>
+  99299c:	f3bf 8f5b 	dmb	ish
+  9929a0:	e05e      	b.n	992a60 <ResourcePacksInfoPacket::read(BinaryStream&)+0x890>
+  9929a2:	4a77      	ldr	r2, [pc, #476]	; (992b80 <ResourcePacksInfoPacket::read(BinaryStream&)+0x9b0>)
+  9929a4:	447a      	add	r2, pc
+  9929a6:	58b3      	ldr	r3, [r6, r2]
+  9929a8:	1f0a      	subs	r2, r1, #4
+  9929aa:	2b00      	cmp	r3, #0
+  9929ac:	d05f      	beq.n	992a6e <ResourcePacksInfoPacket::read(BinaryStream&)+0x89e>
+  9929ae:	f3bf 8f5b 	dmb	ish
+  9929b2:	e852 1f00 	ldrex	r1, [r2]
+  9929b6:	1e4b      	subs	r3, r1, #1
+  9929b8:	e842 3700 	strex	r7, r3, [r2]
+  9929bc:	2f00      	cmp	r7, #0
+  9929be:	d1f8      	bne.n	9929b2 <ResourcePacksInfoPacket::read(BinaryStream&)+0x7e2>
+  9929c0:	f3bf 8f5b 	dmb	ish
+  9929c4:	e056      	b.n	992a74 <ResourcePacksInfoPacket::read(BinaryStream&)+0x8a4>
+  9929c6:	4a70      	ldr	r2, [pc, #448]	; (992b88 <ResourcePacksInfoPacket::read(BinaryStream&)+0x9b8>)
+  9929c8:	447a      	add	r2, pc
+  9929ca:	58b3      	ldr	r3, [r6, r2]
+  9929cc:	1f0a      	subs	r2, r1, #4
+  9929ce:	2b00      	cmp	r3, #0
+  9929d0:	d057      	beq.n	992a82 <ResourcePacksInfoPacket::read(BinaryStream&)+0x8b2>
+  9929d2:	f3bf 8f5b 	dmb	ish
+  9929d6:	e852 1f00 	ldrex	r1, [r2]
+  9929da:	1e4b      	subs	r3, r1, #1
+  9929dc:	e842 3700 	strex	r7, r3, [r2]
+  9929e0:	2f00      	cmp	r7, #0
+  9929e2:	d1f8      	bne.n	9929d6 <ResourcePacksInfoPacket::read(BinaryStream&)+0x806>
+  9929e4:	f3bf 8f5b 	dmb	ish
+  9929e8:	e04e      	b.n	992a88 <ResourcePacksInfoPacket::read(BinaryStream&)+0x8b8>
+  9929ea:	6811      	ldr	r1, [r2, #0]
+  9929ec:	1e4b      	subs	r3, r1, #1
+  9929ee:	6013      	str	r3, [r2, #0]
+  9929f0:	2900      	cmp	r1, #0
+  9929f2:	f73f adf4 	bgt.w	9925de <ResourcePacksInfoPacket::read(BinaryStream&)+0x40e>
+  9929f6:	a942      	add	r1, sp, #264	; 0x108
+  9929f8:	f170 e83e 	blx	b02a78 <std::_Hashtable<int, std::pair<int const, GameType>, std::allocator<std::pair<int const, GameType> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned int, std::integral_constant<bool, true>)+0x247a>
+  9929fc:	e5ef      	b.n	9925de <ResourcePacksInfoPacket::read(BinaryStream&)+0x40e>
+  9929fe:	4a73      	ldr	r2, [pc, #460]	; (992bcc <ResourcePacksInfoPacket::read(BinaryStream&)+0x9fc>)
+  992a00:	447a      	add	r2, pc
+  992a02:	58b3      	ldr	r3, [r6, r2]
+  992a04:	1f0a      	subs	r2, r1, #4
+  992a06:	2b00      	cmp	r3, #0
+  992a08:	d079      	beq.n	992afe <ResourcePacksInfoPacket::read(BinaryStream&)+0x92e>
+  992a0a:	f3bf 8f5b 	dmb	ish
+  992a0e:	e852 1f00 	ldrex	r1, [r2]
+  992a12:	1e4b      	subs	r3, r1, #1
+  992a14:	e842 3700 	strex	r7, r3, [r2]
+  992a18:	2f00      	cmp	r7, #0
+  992a1a:	d1f8      	bne.n	992a0e <ResourcePacksInfoPacket::read(BinaryStream&)+0x83e>
+  992a1c:	f3bf 8f5b 	dmb	ish
+  992a20:	e070      	b.n	992b04 <ResourcePacksInfoPacket::read(BinaryStream&)+0x934>
+  992a22:	6811      	ldr	r1, [r2, #0]
+  992a24:	1e4b      	subs	r3, r1, #1
+  992a26:	6013      	str	r3, [r2, #0]
+  992a28:	2900      	cmp	r1, #0
+  992a2a:	f73f adce 	bgt.w	9925ca <ResourcePacksInfoPacket::read(BinaryStream&)+0x3fa>
+  992a2e:	a942      	add	r1, sp, #264	; 0x108
+  992a30:	f170 e822 	blx	b02a78 <std::_Hashtable<int, std::pair<int const, GameType>, std::allocator<std::pair<int const, GameType> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned int, std::integral_constant<bool, true>)+0x247a>
+  992a34:	e5c9      	b.n	9925ca <ResourcePacksInfoPacket::read(BinaryStream&)+0x3fa>
+  992a36:	4a63      	ldr	r2, [pc, #396]	; (992bc4 <ResourcePacksInfoPacket::read(BinaryStream&)+0x9f4>)
+  992a38:	447a      	add	r2, pc
+  992a3a:	58b3      	ldr	r3, [r6, r2]
+  992a3c:	1f0a      	subs	r2, r1, #4
+  992a3e:	2b00      	cmp	r3, #0
+  992a40:	d067      	beq.n	992b12 <ResourcePacksInfoPacket::read(BinaryStream&)+0x942>
+  992a42:	f3bf 8f5b 	dmb	ish
+  992a46:	e852 1f00 	ldrex	r1, [r2]
+  992a4a:	1e4b      	subs	r3, r1, #1
+  992a4c:	e842 3700 	strex	r7, r3, [r2]
+  992a50:	2f00      	cmp	r7, #0
+  992a52:	d1f8      	bne.n	992a46 <ResourcePacksInfoPacket::read(BinaryStream&)+0x876>
+  992a54:	f3bf 8f5b 	dmb	ish
+  992a58:	e05e      	b.n	992b18 <ResourcePacksInfoPacket::read(BinaryStream&)+0x948>
+  992a5a:	6811      	ldr	r1, [r2, #0]
+  992a5c:	1e4b      	subs	r3, r1, #1
+  992a5e:	6013      	str	r3, [r2, #0]
+  992a60:	2900      	cmp	r1, #0
+  992a62:	f73f ad94 	bgt.w	99258e <ResourcePacksInfoPacket::read(BinaryStream&)+0x3be>
+  992a66:	a942      	add	r1, sp, #264	; 0x108
+  992a68:	f170 e806 	blx	b02a78 <std::_Hashtable<int, std::pair<int const, GameType>, std::allocator<std::pair<int const, GameType> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned int, std::integral_constant<bool, true>)+0x247a>
+  992a6c:	e58f      	b.n	99258e <ResourcePacksInfoPacket::read(BinaryStream&)+0x3be>
+  992a6e:	6811      	ldr	r1, [r2, #0]
+  992a70:	1e4b      	subs	r3, r1, #1
+  992a72:	6013      	str	r3, [r2, #0]
+  992a74:	2900      	cmp	r1, #0
+  992a76:	f73f ad94 	bgt.w	9925a2 <ResourcePacksInfoPacket::read(BinaryStream&)+0x3d2>
+  992a7a:	a942      	add	r1, sp, #264	; 0x108
+  992a7c:	f16f effc 	blx	b02a78 <std::_Hashtable<int, std::pair<int const, GameType>, std::allocator<std::pair<int const, GameType> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned int, std::integral_constant<bool, true>)+0x247a>
+  992a80:	e58f      	b.n	9925a2 <ResourcePacksInfoPacket::read(BinaryStream&)+0x3d2>
+  992a82:	6811      	ldr	r1, [r2, #0]
+  992a84:	1e4b      	subs	r3, r1, #1
+  992a86:	6013      	str	r3, [r2, #0]
+  992a88:	2900      	cmp	r1, #0
+  992a8a:	f73f ad94 	bgt.w	9925b6 <ResourcePacksInfoPacket::read(BinaryStream&)+0x3e6>
+  992a8e:	a942      	add	r1, sp, #264	; 0x108
+  992a90:	f16f eff2 	blx	b02a78 <std::_Hashtable<int, std::pair<int const, GameType>, std::allocator<std::pair<int const, GameType> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned int, std::integral_constant<bool, true>)+0x247a>
+  992a94:	e58f      	b.n	9925b6 <ResourcePacksInfoPacket::read(BinaryStream&)+0x3e6>
+  992a96:	4a45      	ldr	r2, [pc, #276]	; (992bac <ResourcePacksInfoPacket::read(BinaryStream&)+0x9dc>)
+  992a98:	447a      	add	r2, pc
+  992a9a:	58b3      	ldr	r3, [r6, r2]
+  992a9c:	1f0a      	subs	r2, r1, #4
+  992a9e:	2b00      	cmp	r3, #0
+  992aa0:	d041      	beq.n	992b26 <ResourcePacksInfoPacket::read(BinaryStream&)+0x956>
+  992aa2:	f3bf 8f5b 	dmb	ish
+  992aa6:	e852 1f00 	ldrex	r1, [r2]
+  992aaa:	1e4b      	subs	r3, r1, #1
+  992aac:	e842 3700 	strex	r7, r3, [r2]
+  992ab0:	2f00      	cmp	r7, #0
+  992ab2:	d1f8      	bne.n	992aa6 <ResourcePacksInfoPacket::read(BinaryStream&)+0x8d6>
+  992ab4:	f3bf 8f5b 	dmb	ish
+  992ab8:	e038      	b.n	992b2c <ResourcePacksInfoPacket::read(BinaryStream&)+0x95c>
+  992aba:	4a3e      	ldr	r2, [pc, #248]	; (992bb4 <ResourcePacksInfoPacket::read(BinaryStream&)+0x9e4>)
+  992abc:	447a      	add	r2, pc
+  992abe:	58b3      	ldr	r3, [r6, r2]
+  992ac0:	1f0a      	subs	r2, r1, #4
+  992ac2:	b3d3      	cbz	r3, 992b3a <ResourcePacksInfoPacket::read(BinaryStream&)+0x96a>
+  992ac4:	f3bf 8f5b 	dmb	ish
+  992ac8:	e852 1f00 	ldrex	r1, [r2]
+  992acc:	1e4b      	subs	r3, r1, #1
+  992ace:	e842 3700 	strex	r7, r3, [r2]
+  992ad2:	2f00      	cmp	r7, #0
+  992ad4:	d1f8      	bne.n	992ac8 <ResourcePacksInfoPacket::read(BinaryStream&)+0x8f8>
+  992ad6:	f3bf 8f5b 	dmb	ish
+  992ada:	e031      	b.n	992b40 <ResourcePacksInfoPacket::read(BinaryStream&)+0x970>
+  992adc:	4a37      	ldr	r2, [pc, #220]	; (992bbc <ResourcePacksInfoPacket::read(BinaryStream&)+0x9ec>)
+  992ade:	447a      	add	r2, pc
+  992ae0:	58b3      	ldr	r3, [r6, r2]
+  992ae2:	1f0a      	subs	r2, r1, #4
+  992ae4:	b39b      	cbz	r3, 992b4e <ResourcePacksInfoPacket::read(BinaryStream&)+0x97e>
+  992ae6:	f3bf 8f5b 	dmb	ish
+  992aea:	e852 1f00 	ldrex	r1, [r2]
+  992aee:	1e4b      	subs	r3, r1, #1
+  992af0:	e842 3700 	strex	r7, r3, [r2]
+  992af4:	2f00      	cmp	r7, #0
+  992af6:	d1f8      	bne.n	992aea <ResourcePacksInfoPacket::read(BinaryStream&)+0x91a>
+  992af8:	f3bf 8f5b 	dmb	ish
+  992afc:	e02a      	b.n	992b54 <ResourcePacksInfoPacket::read(BinaryStream&)+0x984>
+  992afe:	6811      	ldr	r1, [r2, #0]
+  992b00:	1e4b      	subs	r3, r1, #1
+  992b02:	6013      	str	r3, [r2, #0]
+  992b04:	2900      	cmp	r1, #0
+  992b06:	f73f aeeb 	bgt.w	9928e0 <ResourcePacksInfoPacket::read(BinaryStream&)+0x710>
+  992b0a:	a942      	add	r1, sp, #264	; 0x108
+  992b0c:	f16f efb4 	blx	b02a78 <std::_Hashtable<int, std::pair<int const, GameType>, std::allocator<std::pair<int const, GameType> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned int, std::integral_constant<bool, true>)+0x247a>
+  992b10:	e6e6      	b.n	9928e0 <ResourcePacksInfoPacket::read(BinaryStream&)+0x710>
+  992b12:	6811      	ldr	r1, [r2, #0]
+  992b14:	1e4b      	subs	r3, r1, #1
+  992b16:	6013      	str	r3, [r2, #0]
+  992b18:	2900      	cmp	r1, #0
+  992b1a:	f73f aed8 	bgt.w	9928ce <ResourcePacksInfoPacket::read(BinaryStream&)+0x6fe>
+  992b1e:	a942      	add	r1, sp, #264	; 0x108
+  992b20:	f16f efaa 	blx	b02a78 <std::_Hashtable<int, std::pair<int const, GameType>, std::allocator<std::pair<int const, GameType> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned int, std::integral_constant<bool, true>)+0x247a>
+  992b24:	e6d3      	b.n	9928ce <ResourcePacksInfoPacket::read(BinaryStream&)+0x6fe>
+  992b26:	6811      	ldr	r1, [r2, #0]
+  992b28:	1e4b      	subs	r3, r1, #1
+  992b2a:	6013      	str	r3, [r2, #0]
+  992b2c:	2900      	cmp	r1, #0
+  992b2e:	f73f aeb3 	bgt.w	992898 <ResourcePacksInfoPacket::read(BinaryStream&)+0x6c8>
+  992b32:	a942      	add	r1, sp, #264	; 0x108
+  992b34:	f16f efa0 	blx	b02a78 <std::_Hashtable<int, std::pair<int const, GameType>, std::allocator<std::pair<int const, GameType> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned int, std::integral_constant<bool, true>)+0x247a>
+  992b38:	e6ae      	b.n	992898 <ResourcePacksInfoPacket::read(BinaryStream&)+0x6c8>
+  992b3a:	6811      	ldr	r1, [r2, #0]
+  992b3c:	1e4b      	subs	r3, r1, #1
+  992b3e:	6013      	str	r3, [r2, #0]
+  992b40:	2900      	cmp	r1, #0
+  992b42:	f73f aeb2 	bgt.w	9928aa <ResourcePacksInfoPacket::read(BinaryStream&)+0x6da>
+  992b46:	a942      	add	r1, sp, #264	; 0x108
+  992b48:	f16f ef96 	blx	b02a78 <std::_Hashtable<int, std::pair<int const, GameType>, std::allocator<std::pair<int const, GameType> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned int, std::integral_constant<bool, true>)+0x247a>
+  992b4c:	e6ad      	b.n	9928aa <ResourcePacksInfoPacket::read(BinaryStream&)+0x6da>
+  992b4e:	6811      	ldr	r1, [r2, #0]
+  992b50:	1e4b      	subs	r3, r1, #1
+  992b52:	6013      	str	r3, [r2, #0]
+  992b54:	2900      	cmp	r1, #0
+  992b56:	f73f aeb1 	bgt.w	9928bc <ResourcePacksInfoPacket::read(BinaryStream&)+0x6ec>
+  992b5a:	a942      	add	r1, sp, #264	; 0x108
+  992b5c:	f16f ef8c 	blx	b02a78 <std::_Hashtable<int, std::pair<int const, GameType>, std::allocator<std::pair<int const, GameType> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned int, std::integral_constant<bool, true>)+0x247a>
+  992b60:	e6ac      	b.n	9928bc <ResourcePacksInfoPacket::read(BinaryStream&)+0x6ec>
+  992b62:	6811      	ldr	r1, [r2, #0]
+  992b64:	1e4b      	subs	r3, r1, #1
+  992b66:	6013      	str	r3, [r2, #0]
+  992b68:	e6d4      	b.n	992914 <ResourcePacksInfoPacket::read(BinaryStream&)+0x744>
+  992b6a:	bf00      	nop
+  992b6c:	8a5a      	ldrh	r2, [r3, #18]
+  992b6e:	015f      	lsls	r7, r3, #5
+  992b70:	8a98      	ldrh	r0, [r3, #20]
+  992b72:	ffff 8654 	vqshlu.s32	q12, q2, #31
+  992b76:	015f      	lsls	r7, r3, #5
+  992b78:	8a9c      	ldrh	r4, [r3, #20]
+  992b7a:	ffff 8a40 	vtbx.8	d24, {d15-d17}, d0
+  992b7e:	015f      	lsls	r7, r3, #5
+  992b80:	8630      	strh	r0, [r6, #48]	; 0x30
+  992b82:	015f      	lsls	r7, r3, #5
+  992b84:	8a2c      	ldrh	r4, [r5, #16]
+  992b86:	015f      	lsls	r7, r3, #5
+  992b88:	860c      	strh	r4, [r1, #48]	; 0x30
+  992b8a:	015f      	lsls	r7, r3, #5
+  992b8c:	8a18      	ldrh	r0, [r3, #16]
+  992b8e:	015f      	lsls	r7, r3, #5
+  992b90:	8678      	strh	r0, [r7, #50]	; 0x32
+  992b92:	015f      	lsls	r7, r3, #5
+  992b94:	8a04      	ldrh	r4, [r0, #16]
+  992b96:	015f      	lsls	r7, r3, #5
+  992b98:	86ac      	strh	r4, [r5, #52]	; 0x34
+  992b9a:	015f      	lsls	r7, r3, #5
+  992b9c:	89f0      	ldrh	r0, [r6, #14]
+  992b9e:	015f      	lsls	r7, r3, #5
+  992ba0:	89de      	ldrh	r6, [r3, #14]
+  992ba2:	015f      	lsls	r7, r3, #5
+  992ba4:	8d6a      	ldrh	r2, [r5, #42]	; 0x2a
+  992ba6:	015f      	lsls	r7, r3, #5
+  992ba8:	874e      	strh	r6, [r1, #58]	; 0x3a
+  992baa:	015f      	lsls	r7, r3, #5
+  992bac:	853c      	strh	r4, [r7, #40]	; 0x28
+  992bae:	015f      	lsls	r7, r3, #5
+  992bb0:	8738      	strh	r0, [r7, #56]	; 0x38
+  992bb2:	015f      	lsls	r7, r3, #5
+  992bb4:	8518      	strh	r0, [r3, #40]	; 0x28
+  992bb6:	015f      	lsls	r7, r3, #5
+  992bb8:	8726      	strh	r6, [r4, #56]	; 0x38
+  992bba:	015f      	lsls	r7, r3, #5
+  992bbc:	84f6      	strh	r6, [r6, #38]	; 0x26
+  992bbe:	015f      	lsls	r7, r3, #5
+  992bc0:	8714      	strh	r4, [r2, #56]	; 0x38
+  992bc2:	015f      	lsls	r7, r3, #5
+  992bc4:	859c      	strh	r4, [r3, #44]	; 0x2c
+  992bc6:	015f      	lsls	r7, r3, #5
+  992bc8:	8702      	strh	r2, [r0, #56]	; 0x38
+  992bca:	015f      	lsls	r7, r3, #5
+  992bcc:	85d4      	strh	r4, [r2, #46]	; 0x2e
+  992bce:	015f      	lsls	r7, r3, #5
+  992bd0:	86f0      	strh	r0, [r6, #54]	; 0x36
+  992bd2:	015f      	lsls	r7, r3, #5
+  992bd4:	86e2      	strh	r2, [r4, #54]	; 0x36
+  992bd6:	015f      	lsls	r7, r3, #5
+  992bd8:	8a8a      	ldrh	r2, [r1, #20]
+  992bda:	015f      	lsls	r7, r3, #5

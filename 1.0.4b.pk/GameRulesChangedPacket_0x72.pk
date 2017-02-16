@@ -1,0 +1,4 @@
+  999b44:	f100 020c 	add.w	r2, r0, #12
+  999b48:	4608      	mov	r0, r1
+  999b4a:	4611      	mov	r1, r2
+  999b4c:	f169 bb84 	b.w	b03258 <std::_Hashtable<int, std::pair<int const, GameType>, std::allocator<std::pair<int const, GameType> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned int, std::integral_constant<bool, true>)+0x2c5a>

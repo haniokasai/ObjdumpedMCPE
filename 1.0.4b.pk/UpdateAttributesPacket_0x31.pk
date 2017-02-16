@@ -1,0 +1,132 @@
+  9a0120:	e92d 4ff0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, lr}
+  9a0124:	b081      	sub	sp, #4
+  9a0126:	ed2d 8b04 	vpush	{d8-d9}
+  9a012a:	b088      	sub	sp, #32
+  9a012c:	ae02      	add	r6, sp, #8
+  9a012e:	4605      	mov	r5, r0
+  9a0130:	4689      	mov	r9, r1
+  9a0132:	4630      	mov	r0, r6
+  9a0134:	f4fc ed8c 	blx	69cc50 <EntityRuntimeID ReadOnlyBinaryStream::getType<EntityRuntimeID>()@plt>
+  9a0138:	e9dd 0102 	ldrd	r0, r1, [sp, #8]
+  9a013c:	e9c5 0104 	strd	r0, r1, [r5, #16]
+  9a0140:	4648      	mov	r0, r9
+  9a0142:	f4fc eb88 	blx	69c854 <ReadOnlyBinaryStream::getUnsignedVarInt()@plt>
+  9a0146:	f105 0718 	add.w	r7, r5, #24
+  9a014a:	4680      	mov	r8, r0
+  9a014c:	4641      	mov	r1, r8
+  9a014e:	4638      	mov	r0, r7
+  9a0150:	f4fe ecd2 	blx	69eaf8 <std::vector<UpdateAttributesPacket::AttributeData, std::allocator<UpdateAttributesPacket::AttributeData> >::reserve(unsigned int)@plt>
+  9a0154:	f1b8 0f00 	cmp.w	r8, #0
+  9a0158:	d053      	beq.n	9a0202 <UpdateAttributesPacket::read(BinaryStream&)+0xe2>
+  9a015a:	4841      	ldr	r0, [pc, #260]	; (9a0260 <UpdateAttributesPacket::read(BinaryStream&)+0x140>)
+  9a015c:	ef80 8050 	vmov.i32	q4, #0	; 0x00000000
+  9a0160:	4940      	ldr	r1, [pc, #256]	; (9a0264 <UpdateAttributesPacket::read(BinaryStream&)+0x144>)
+  9a0162:	f106 0410 	add.w	r4, r6, #16
+  9a0166:	4478      	add	r0, pc
+  9a0168:	f04f 0b00 	mov.w	fp, #0
+  9a016c:	eb01 0a00 	add.w	sl, r1, r0
+  9a0170:	493e      	ldr	r1, [pc, #248]	; (9a026c <UpdateAttributesPacket::read(BinaryStream&)+0x14c>)
+  9a0172:	5809      	ldr	r1, [r1, r0]
+  9a0174:	9101      	str	r1, [sp, #4]
+  9a0176:	493f      	ldr	r1, [pc, #252]	; (9a0274 <UpdateAttributesPacket::read(BinaryStream&)+0x154>)
+  9a0178:	5808      	ldr	r0, [r1, r0]
+  9a017a:	9000      	str	r0, [sp, #0]
+  9a017c:	e019      	b.n	9a01b2 <UpdateAttributesPacket::read(BinaryStream&)+0x92>
+  9a017e:	1f0a      	subs	r2, r1, #4
+  9a0180:	9900      	ldr	r1, [sp, #0]
+  9a0182:	b169      	cbz	r1, 9a01a0 <UpdateAttributesPacket::read(BinaryStream&)+0x80>
+  9a0184:	46bc      	mov	ip, r7
+  9a0186:	f3bf 8f5b 	dmb	ish
+  9a018a:	e852 1f00 	ldrex	r1, [r2]
+  9a018e:	1e4b      	subs	r3, r1, #1
+  9a0190:	e842 3700 	strex	r7, r3, [r2]
+  9a0194:	2f00      	cmp	r7, #0
+  9a0196:	d1f8      	bne.n	9a018a <UpdateAttributesPacket::read(BinaryStream&)+0x6a>
+  9a0198:	f3bf 8f5b 	dmb	ish
+  9a019c:	4667      	mov	r7, ip
+  9a019e:	e002      	b.n	9a01a6 <UpdateAttributesPacket::read(BinaryStream&)+0x86>
+  9a01a0:	6811      	ldr	r1, [r2, #0]
+  9a01a2:	1e4b      	subs	r3, r1, #1
+  9a01a4:	6013      	str	r3, [r2, #0]
+  9a01a6:	2900      	cmp	r1, #0
+  9a01a8:	dc27      	bgt.n	9a01fa <UpdateAttributesPacket::read(BinaryStream&)+0xda>
+  9a01aa:	a907      	add	r1, sp, #28
+  9a01ac:	f162 ec64 	blx	b02a78 <std::_Hashtable<int, std::pair<int const, GameType>, std::allocator<std::pair<int const, GameType> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned int, std::integral_constant<bool, true>)+0x247a>
+  9a01b0:	e023      	b.n	9a01fa <UpdateAttributesPacket::read(BinaryStream&)+0xda>
+  9a01b2:	aa07      	add	r2, sp, #28
+  9a01b4:	4620      	mov	r0, r4
+  9a01b6:	4651      	mov	r1, sl
+  9a01b8:	f906 8acf 	vst1.64	{d8-d9}, [r6]
+  9a01bc:	f162 ec64 	blx	b02a88 <std::_Hashtable<int, std::pair<int const, GameType>, std::allocator<std::pair<int const, GameType> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned int, std::integral_constant<bool, true>)+0x248a>
+  9a01c0:	4630      	mov	r0, r6
+  9a01c2:	4649      	mov	r1, r9
+  9a01c4:	f4fe ec9e 	blx	69eb04 <UpdateAttributesPacket::AttributeData::read(BinaryStream&)@plt>
+  9a01c8:	e9d5 0107 	ldrd	r0, r1, [r5, #28]
+  9a01cc:	4288      	cmp	r0, r1
+  9a01ce:	d00a      	beq.n	9a01e6 <UpdateAttributesPacket::read(BinaryStream&)+0xc6>
+  9a01d0:	f966 0acf 	vld1.64	{d16-d17}, [r6]
+  9a01d4:	f940 0a8d 	vst1.32	{d16-d17}, [r0]!
+  9a01d8:	4621      	mov	r1, r4
+  9a01da:	f162 ec46 	blx	b02a68 <std::_Hashtable<int, std::pair<int const, GameType>, std::allocator<std::pair<int const, GameType> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned int, std::integral_constant<bool, true>)+0x246a>
+  9a01de:	69e8      	ldr	r0, [r5, #28]
+  9a01e0:	3014      	adds	r0, #20
+  9a01e2:	61e8      	str	r0, [r5, #28]
+  9a01e4:	e003      	b.n	9a01ee <UpdateAttributesPacket::read(BinaryStream&)+0xce>
+  9a01e6:	4638      	mov	r0, r7
+  9a01e8:	4631      	mov	r1, r6
+  9a01ea:	f4fe ec92 	blx	69eb10 <void std::vector<UpdateAttributesPacket::AttributeData, std::allocator<UpdateAttributesPacket::AttributeData> >::_M_emplace_back_aux<UpdateAttributesPacket::AttributeData const&>(UpdateAttributesPacket::AttributeData const&)@plt>
+  9a01ee:	9906      	ldr	r1, [sp, #24]
+  9a01f0:	9a01      	ldr	r2, [sp, #4]
+  9a01f2:	f1a1 000c 	sub.w	r0, r1, #12
+  9a01f6:	4290      	cmp	r0, r2
+  9a01f8:	d1c1      	bne.n	9a017e <UpdateAttributesPacket::read(BinaryStream&)+0x5e>
+  9a01fa:	f10b 0b01 	add.w	fp, fp, #1
+  9a01fe:	45c3      	cmp	fp, r8
+  9a0200:	d3d7      	bcc.n	9a01b2 <UpdateAttributesPacket::read(BinaryStream&)+0x92>
+  9a0202:	b008      	add	sp, #32
+  9a0204:	ecbd 8b04 	vpop	{d8-d9}
+  9a0208:	b001      	add	sp, #4
+  9a020a:	e8bd 8ff0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, pc}
+  9a020e:	4a16      	ldr	r2, [pc, #88]	; (9a0268 <UpdateAttributesPacket::read(BinaryStream&)+0x148>)
+  9a0210:	4604      	mov	r4, r0
+  9a0212:	4b16      	ldr	r3, [pc, #88]	; (9a026c <UpdateAttributesPacket::read(BinaryStream&)+0x14c>)
+  9a0214:	447a      	add	r2, pc
+  9a0216:	9906      	ldr	r1, [sp, #24]
+  9a0218:	f1a1 000c 	sub.w	r0, r1, #12
+  9a021c:	589a      	ldr	r2, [r3, r2]
+  9a021e:	4290      	cmp	r0, r2
+  9a0220:	d016      	beq.n	9a0250 <UpdateAttributesPacket::read(BinaryStream&)+0x130>
+  9a0222:	4a13      	ldr	r2, [pc, #76]	; (9a0270 <UpdateAttributesPacket::read(BinaryStream&)+0x150>)
+  9a0224:	4b13      	ldr	r3, [pc, #76]	; (9a0274 <UpdateAttributesPacket::read(BinaryStream&)+0x154>)
+  9a0226:	447a      	add	r2, pc
+  9a0228:	589b      	ldr	r3, [r3, r2]
+  9a022a:	1f0a      	subs	r2, r1, #4
+  9a022c:	b19b      	cbz	r3, 9a0256 <UpdateAttributesPacket::read(BinaryStream&)+0x136>
+  9a022e:	f3bf 8f5b 	dmb	ish
+  9a0232:	e852 1f00 	ldrex	r1, [r2]
+  9a0236:	1e4b      	subs	r3, r1, #1
+  9a0238:	e842 3700 	strex	r7, r3, [r2]
+  9a023c:	2f00      	cmp	r7, #0
+  9a023e:	d1f8      	bne.n	9a0232 <UpdateAttributesPacket::read(BinaryStream&)+0x112>
+  9a0240:	f3bf 8f5b 	dmb	ish
+  9a0244:	2900      	cmp	r1, #0
+  9a0246:	bfdc      	itt	le
+  9a0248:	f10d 011c 	addle.w	r1, sp, #28
+  9a024c:	f162 ec14 	blxle	b02a78 <std::_Hashtable<int, std::pair<int const, GameType>, std::allocator<std::pair<int const, GameType> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned int, std::integral_constant<bool, true>)+0x247a>
+  9a0250:	4620      	mov	r0, r4
+  9a0252:	f4fa e804 	blx	69a25c <_Unwind_Resume@plt>
+  9a0256:	6811      	ldr	r1, [r2, #0]
+  9a0258:	1e4b      	subs	r3, r1, #1
+  9a025a:	6013      	str	r3, [r2, #0]
+  9a025c:	e7f2      	b.n	9a0244 <UpdateAttributesPacket::read(BinaryStream&)+0x124>
+  9a025e:	bf00      	nop
+  9a0260:	ae6e      	add	r6, sp, #440	; 0x1b8
+  9a0262:	015e      	lsls	r6, r3, #5
+  9a0264:	f7dd ffe6 	bl	97e234 <IntArrayTag::~IntArrayTag()>
+  9a0268:	adc0      	add	r5, sp, #768	; 0x300
+  9a026a:	015e      	lsls	r6, r3, #5
+  9a026c:	8a98      	ldrh	r0, [r3, #20]
+  9a026e:	ffff adae 			; <UNDEFINED> instruction: 0xffffadae
+  9a0272:	015e      	lsls	r6, r3, #5
+  9a0274:	8a9c      	ldrh	r4, [r3, #20]
+  9a0276:	ffff e92d 	vtbl.8	d30, {d15-d16}, d29

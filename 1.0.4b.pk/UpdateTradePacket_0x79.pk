@@ -1,0 +1,145 @@
+  9992f0:	b570      	push	{r4, r5, r6, lr}
+  9992f2:	b086      	sub	sp, #24
+  9992f4:	460d      	mov	r5, r1
+  9992f6:	4604      	mov	r4, r0
+  9992f8:	4628      	mov	r0, r5
+  9992fa:	f503 ebf6 	blx	69cae8 <ReadOnlyBinaryStream::getByte()@plt>
+  9992fe:	7320      	strb	r0, [r4, #12]
+  999300:	4628      	mov	r0, r5
+  999302:	f503 ebf2 	blx	69cae8 <ReadOnlyBinaryStream::getByte()@plt>
+  999306:	7360      	strb	r0, [r4, #13]
+  999308:	4628      	mov	r0, r5
+  99930a:	f503 ec6c 	blx	69cbe4 <ReadOnlyBinaryStream::getVarInt()@plt>
+  99930e:	6160      	str	r0, [r4, #20]
+  999310:	4628      	mov	r0, r5
+  999312:	f503 ec68 	blx	69cbe4 <ReadOnlyBinaryStream::getVarInt()@plt>
+  999316:	61a0      	str	r0, [r4, #24]
+  999318:	4628      	mov	r0, r5
+  99931a:	f503 ec10 	blx	69cb3c <ReadOnlyBinaryStream::getBool()@plt>
+  99931e:	7720      	strb	r0, [r4, #28]
+  999320:	a804      	add	r0, sp, #16
+  999322:	4629      	mov	r1, r5
+  999324:	f503 ec8e 	blx	69cc44 <EntityUniqueID ReadOnlyBinaryStream::getType<EntityUniqueID>()@plt>
+  999328:	e9dd 0104 	ldrd	r0, r1, [sp, #16]
+  99932c:	e9c4 0108 	strd	r0, r1, [r4, #32]
+  999330:	a804      	add	r0, sp, #16
+  999332:	4629      	mov	r1, r5
+  999334:	f503 ec86 	blx	69cc44 <EntityUniqueID ReadOnlyBinaryStream::getType<EntityUniqueID>()@plt>
+  999338:	ae03      	add	r6, sp, #12
+  99933a:	e9dd 0104 	ldrd	r0, r1, [sp, #16]
+  99933e:	e9c4 010a 	strd	r0, r1, [r4, #40]	; 0x28
+  999342:	4629      	mov	r1, r5
+  999344:	4630      	mov	r0, r6
+  999346:	f502 ef56 	blx	69c1f4 <ReadOnlyBinaryStream::getString()@plt>
+  99934a:	f104 0010 	add.w	r0, r4, #16
+  99934e:	4631      	mov	r1, r6
+  999350:	f169 ebe2 	blx	b02b18 <std::_Hashtable<int, std::pair<int const, GameType>, std::allocator<std::pair<int const, GameType> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned int, std::integral_constant<bool, true>)+0x251a>
+  999354:	483c      	ldr	r0, [pc, #240]	; (999448 <UpdateTradePacket::read(BinaryStream&)+0x158>)
+  999356:	4a39      	ldr	r2, [pc, #228]	; (99943c <UpdateTradePacket::read(BinaryStream&)+0x14c>)
+  999358:	4478      	add	r0, pc
+  99935a:	9903      	ldr	r1, [sp, #12]
+  99935c:	5812      	ldr	r2, [r2, r0]
+  99935e:	f1a1 000c 	sub.w	r0, r1, #12
+  999362:	4290      	cmp	r0, r2
+  999364:	d117      	bne.n	999396 <UpdateTradePacket::read(BinaryStream&)+0xa6>
+  999366:	483a      	ldr	r0, [pc, #232]	; (999450 <UpdateTradePacket::read(BinaryStream&)+0x160>)
+  999368:	493a      	ldr	r1, [pc, #232]	; (999454 <UpdateTradePacket::read(BinaryStream&)+0x164>)
+  99936a:	4478      	add	r0, pc
+  99936c:	5808      	ldr	r0, [r1, r0]
+  99936e:	3008      	adds	r0, #8
+  999370:	e9cd 0501 	strd	r0, r5, [sp, #4]
+  999374:	a901      	add	r1, sp, #4
+  999376:	4668      	mov	r0, sp
+  999378:	f503 ed66 	blx	69ce48 <NbtIo::read(IDataInput&)@plt>
+  99937c:	9d00      	ldr	r5, [sp, #0]
+  99937e:	f104 0030 	add.w	r0, r4, #48	; 0x30
+  999382:	4629      	mov	r1, r5
+  999384:	f503 ed66 	blx	69ce54 <CompoundTag::operator=(CompoundTag&&)@plt>
+  999388:	b11d      	cbz	r5, 999392 <UpdateTradePacket::read(BinaryStream&)+0xa2>
+  99938a:	6828      	ldr	r0, [r5, #0]
+  99938c:	6841      	ldr	r1, [r0, #4]
+  99938e:	4628      	mov	r0, r5
+  999390:	4788      	blx	r1
+  999392:	b006      	add	sp, #24
+  999394:	bd70      	pop	{r4, r5, r6, pc}
+  999396:	4a2d      	ldr	r2, [pc, #180]	; (99944c <UpdateTradePacket::read(BinaryStream&)+0x15c>)
+  999398:	4b2a      	ldr	r3, [pc, #168]	; (999444 <UpdateTradePacket::read(BinaryStream&)+0x154>)
+  99939a:	447a      	add	r2, pc
+  99939c:	589b      	ldr	r3, [r3, r2]
+  99939e:	1f0a      	subs	r2, r1, #4
+  9993a0:	b15b      	cbz	r3, 9993ba <UpdateTradePacket::read(BinaryStream&)+0xca>
+  9993a2:	f3bf 8f5b 	dmb	ish
+  9993a6:	e852 1f00 	ldrex	r1, [r2]
+  9993aa:	1e4b      	subs	r3, r1, #1
+  9993ac:	e842 3600 	strex	r6, r3, [r2]
+  9993b0:	2e00      	cmp	r6, #0
+  9993b2:	d1f8      	bne.n	9993a6 <UpdateTradePacket::read(BinaryStream&)+0xb6>
+  9993b4:	f3bf 8f5b 	dmb	ish
+  9993b8:	e002      	b.n	9993c0 <UpdateTradePacket::read(BinaryStream&)+0xd0>
+  9993ba:	6811      	ldr	r1, [r2, #0]
+  9993bc:	1e4b      	subs	r3, r1, #1
+  9993be:	6013      	str	r3, [r2, #0]
+  9993c0:	2900      	cmp	r1, #0
+  9993c2:	dcd0      	bgt.n	999366 <UpdateTradePacket::read(BinaryStream&)+0x76>
+  9993c4:	a904      	add	r1, sp, #16
+  9993c6:	f169 eb58 	blx	b02a78 <std::_Hashtable<int, std::pair<int const, GameType>, std::allocator<std::pair<int const, GameType> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned int, std::integral_constant<bool, true>)+0x247a>
+  9993ca:	e7cc      	b.n	999366 <UpdateTradePacket::read(BinaryStream&)+0x76>
+  9993cc:	4a1a      	ldr	r2, [pc, #104]	; (999438 <UpdateTradePacket::read(BinaryStream&)+0x148>)
+  9993ce:	4604      	mov	r4, r0
+  9993d0:	4b1a      	ldr	r3, [pc, #104]	; (99943c <UpdateTradePacket::read(BinaryStream&)+0x14c>)
+  9993d2:	447a      	add	r2, pc
+  9993d4:	9903      	ldr	r1, [sp, #12]
+  9993d6:	f1a1 000c 	sub.w	r0, r1, #12
+  9993da:	589a      	ldr	r2, [r3, r2]
+  9993dc:	4290      	cmp	r0, r2
+  9993de:	d023      	beq.n	999428 <UpdateTradePacket::read(BinaryStream&)+0x138>
+  9993e0:	4a17      	ldr	r2, [pc, #92]	; (999440 <UpdateTradePacket::read(BinaryStream&)+0x150>)
+  9993e2:	4b18      	ldr	r3, [pc, #96]	; (999444 <UpdateTradePacket::read(BinaryStream&)+0x154>)
+  9993e4:	447a      	add	r2, pc
+  9993e6:	589b      	ldr	r3, [r3, r2]
+  9993e8:	1f0a      	subs	r2, r1, #4
+  9993ea:	b303      	cbz	r3, 99942e <UpdateTradePacket::read(BinaryStream&)+0x13e>
+  9993ec:	f3bf 8f5b 	dmb	ish
+  9993f0:	e852 1f00 	ldrex	r1, [r2]
+  9993f4:	1e4b      	subs	r3, r1, #1
+  9993f6:	e842 3600 	strex	r6, r3, [r2]
+  9993fa:	2e00      	cmp	r6, #0
+  9993fc:	d1f8      	bne.n	9993f0 <UpdateTradePacket::read(BinaryStream&)+0x100>
+  9993fe:	f3bf 8f5b 	dmb	ish
+  999402:	2900      	cmp	r1, #0
+  999404:	dc10      	bgt.n	999428 <UpdateTradePacket::read(BinaryStream&)+0x138>
+  999406:	a904      	add	r1, sp, #16
+  999408:	f169 eb36 	blx	b02a78 <std::_Hashtable<int, std::pair<int const, GameType>, std::allocator<std::pair<int const, GameType> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned int, std::integral_constant<bool, true>)+0x247a>
+  99940c:	4620      	mov	r0, r4
+  99940e:	f500 ef26 	blx	69a25c <_Unwind_Resume@plt>
+  999412:	4604      	mov	r4, r0
+  999414:	f500 ef22 	blx	69a25c <_Unwind_Resume@plt>
+  999418:	4604      	mov	r4, r0
+  99941a:	b11d      	cbz	r5, 999424 <UpdateTradePacket::read(BinaryStream&)+0x134>
+  99941c:	6828      	ldr	r0, [r5, #0]
+  99941e:	6841      	ldr	r1, [r0, #4]
+  999420:	4628      	mov	r0, r5
+  999422:	4788      	blx	r1
+  999424:	2000      	movs	r0, #0
+  999426:	9000      	str	r0, [sp, #0]
+  999428:	4620      	mov	r0, r4
+  99942a:	f500 ef18 	blx	69a25c <_Unwind_Resume@plt>
+  99942e:	6811      	ldr	r1, [r2, #0]
+  999430:	1e4b      	subs	r3, r1, #1
+  999432:	6013      	str	r3, [r2, #0]
+  999434:	e7e5      	b.n	999402 <UpdateTradePacket::read(BinaryStream&)+0x112>
+  999436:	bf00      	nop
+  999438:	1c02      	adds	r2, r0, #0
+  99943a:	015f      	lsls	r7, r3, #5
+  99943c:	8a98      	ldrh	r0, [r3, #20]
+  99943e:	ffff 1bf0 			; <UNDEFINED> instruction: 0xffff1bf0
+  999442:	015f      	lsls	r7, r3, #5
+  999444:	8a9c      	ldrh	r4, [r3, #20]
+  999446:	ffff 1c7c 			; <UNDEFINED> instruction: 0xffff1c7c
+  99944a:	015f      	lsls	r7, r3, #5
+  99944c:	1c3a      	adds	r2, r7, #0
+  99944e:	015f      	lsls	r7, r3, #5
+  999450:	1c6a      	adds	r2, r5, #1
+  999452:	015f      	lsls	r7, r3, #5
+  999454:	8c0c      	ldrh	r4, [r1, #32]
+  999456:	ffff 4684 	vcvt.f<illegal width 64>.u<illegal width 64>	d20, d4

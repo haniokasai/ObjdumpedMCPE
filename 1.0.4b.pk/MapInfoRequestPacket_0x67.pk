@@ -1,0 +1,9 @@
+  998f84:	b510      	push	{r4, lr}
+  998f86:	b082      	sub	sp, #8
+  998f88:	4604      	mov	r4, r0
+  998f8a:	4668      	mov	r0, sp
+  998f8c:	f503 ee5a 	blx	69cc44 <EntityUniqueID ReadOnlyBinaryStream::getType<EntityUniqueID>()@plt>
+  998f90:	e9dd 0100 	ldrd	r0, r1, [sp]
+  998f94:	e9c4 0104 	strd	r0, r1, [r4, #16]
+  998f98:	b002      	add	sp, #8
+  998f9a:	bd10      	pop	{r4, pc}

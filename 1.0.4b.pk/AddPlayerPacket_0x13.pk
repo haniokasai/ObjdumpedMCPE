@@ -1,0 +1,149 @@
+  995928:	b570      	push	{r4, r5, r6, lr}
+  99592a:	b088      	sub	sp, #32
+  99592c:	460c      	mov	r4, r1
+  99592e:	4605      	mov	r5, r0
+  995930:	f105 0110 	add.w	r1, r5, #16
+  995934:	4620      	mov	r0, r4
+  995936:	f507 ea34 	blx	69cda0 <void ReadOnlyBinaryStream::readType<mce::UUID>(mce::UUID&)@plt>
+  99593a:	ae01      	add	r6, sp, #4
+  99593c:	4621      	mov	r1, r4
+  99593e:	4630      	mov	r0, r6
+  995940:	f506 ec58 	blx	69c1f4 <ReadOnlyBinaryStream::getString()@plt>
+  995944:	f105 000c 	add.w	r0, r5, #12
+  995948:	4631      	mov	r1, r6
+  99594a:	f16d e8e6 	blx	b02b18 <std::_Hashtable<int, std::pair<int const, GameType>, std::allocator<std::pair<int const, GameType> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned int, std::integral_constant<bool, true>)+0x251a>
+  99594e:	4852      	ldr	r0, [pc, #328]	; (995a98 <AddPlayerPacket::read(BinaryStream&)+0x170>)
+  995950:	4a4e      	ldr	r2, [pc, #312]	; (995a8c <AddPlayerPacket::read(BinaryStream&)+0x164>)
+  995952:	4478      	add	r0, pc
+  995954:	9901      	ldr	r1, [sp, #4]
+  995956:	5812      	ldr	r2, [r2, r0]
+  995958:	f1a1 000c 	sub.w	r0, r1, #12
+  99595c:	4290      	cmp	r0, r2
+  99595e:	d145      	bne.n	9959ec <AddPlayerPacket::read(BinaryStream&)+0xc4>
+  995960:	a802      	add	r0, sp, #8
+  995962:	4621      	mov	r1, r4
+  995964:	f507 e96e 	blx	69cc44 <EntityUniqueID ReadOnlyBinaryStream::getType<EntityUniqueID>()@plt>
+  995968:	e9dd 0102 	ldrd	r0, r1, [sp, #8]
+  99596c:	e9c5 010a 	strd	r0, r1, [r5, #40]	; 0x28
+  995970:	a802      	add	r0, sp, #8
+  995972:	4621      	mov	r1, r4
+  995974:	f507 e96c 	blx	69cc50 <EntityRuntimeID ReadOnlyBinaryStream::getType<EntityRuntimeID>()@plt>
+  995978:	e9dd 0102 	ldrd	r0, r1, [sp, #8]
+  99597c:	e9c5 010c 	strd	r0, r1, [r5, #48]	; 0x30
+  995980:	a802      	add	r0, sp, #8
+  995982:	4621      	mov	r1, r4
+  995984:	f507 e96a 	blx	69cc5c <Vec3 ReadOnlyBinaryStream::getType<Vec3>()@plt>
+  995988:	9802      	ldr	r0, [sp, #8]
+  99598a:	4621      	mov	r1, r4
+  99598c:	63a8      	str	r0, [r5, #56]	; 0x38
+  99598e:	9803      	ldr	r0, [sp, #12]
+  995990:	63e8      	str	r0, [r5, #60]	; 0x3c
+  995992:	9804      	ldr	r0, [sp, #16]
+  995994:	6428      	str	r0, [r5, #64]	; 0x40
+  995996:	a802      	add	r0, sp, #8
+  995998:	f507 e960 	blx	69cc5c <Vec3 ReadOnlyBinaryStream::getType<Vec3>()@plt>
+  99599c:	9802      	ldr	r0, [sp, #8]
+  99599e:	4621      	mov	r1, r4
+  9959a0:	6468      	str	r0, [r5, #68]	; 0x44
+  9959a2:	9803      	ldr	r0, [sp, #12]
+  9959a4:	64a8      	str	r0, [r5, #72]	; 0x48
+  9959a6:	9804      	ldr	r0, [sp, #16]
+  9959a8:	64e8      	str	r0, [r5, #76]	; 0x4c
+  9959aa:	a802      	add	r0, sp, #8
+  9959ac:	f507 e95c 	blx	69cc68 <Vec2 ReadOnlyBinaryStream::getType<Vec2>()@plt>
+  9959b0:	e9dd 0102 	ldrd	r0, r1, [sp, #8]
+  9959b4:	e9c5 0114 	strd	r0, r1, [r5, #80]	; 0x50
+  9959b8:	4620      	mov	r0, r4
+  9959ba:	f507 e9b0 	blx	69cd1c <ReadOnlyBinaryStream::getFloat()@plt>
+  9959be:	ae02      	add	r6, sp, #8
+  9959c0:	65a8      	str	r0, [r5, #88]	; 0x58
+  9959c2:	4621      	mov	r1, r4
+  9959c4:	4630      	mov	r0, r6
+  9959c6:	f507 e9d4 	blx	69cd70 <ItemInstance ReadOnlyBinaryStream::getType<ItemInstance>()@plt>
+  9959ca:	f105 005c 	add.w	r0, r5, #92	; 0x5c
+  9959ce:	4631      	mov	r1, r6
+  9959d0:	f506 ec9a 	blx	69c308 <ItemInstance::operator=(ItemInstance const&)@plt>
+  9959d4:	9804      	ldr	r0, [sp, #16]
+  9959d6:	b110      	cbz	r0, 9959de <AddPlayerPacket::read(BinaryStream&)+0xb6>
+  9959d8:	6801      	ldr	r1, [r0, #0]
+  9959da:	6849      	ldr	r1, [r1, #4]
+  9959dc:	4788      	blx	r1
+  9959de:	f105 0170 	add.w	r1, r5, #112	; 0x70
+  9959e2:	4620      	mov	r0, r4
+  9959e4:	f507 e9a6 	blx	69cd34 <void ReadOnlyBinaryStream::readType<std::vector<std::unique_ptr<DataItem, std::default_delete<DataItem> >, std::allocator<std::unique_ptr<DataItem, std::default_delete<DataItem> > > > >(std::vector<std::unique_ptr<DataItem, std::default_delete<DataItem> >, std::allocator<std::unique_ptr<DataItem, std::default_delete<DataItem> > > >&)@plt>
+  9959e8:	b008      	add	sp, #32
+  9959ea:	bd70      	pop	{r4, r5, r6, pc}
+  9959ec:	4a2b      	ldr	r2, [pc, #172]	; (995a9c <AddPlayerPacket::read(BinaryStream&)+0x174>)
+  9959ee:	4b29      	ldr	r3, [pc, #164]	; (995a94 <AddPlayerPacket::read(BinaryStream&)+0x16c>)
+  9959f0:	447a      	add	r2, pc
+  9959f2:	589b      	ldr	r3, [r3, r2]
+  9959f4:	1f0a      	subs	r2, r1, #4
+  9959f6:	b15b      	cbz	r3, 995a10 <AddPlayerPacket::read(BinaryStream&)+0xe8>
+  9959f8:	f3bf 8f5b 	dmb	ish
+  9959fc:	e852 1f00 	ldrex	r1, [r2]
+  995a00:	1e4b      	subs	r3, r1, #1
+  995a02:	e842 3600 	strex	r6, r3, [r2]
+  995a06:	2e00      	cmp	r6, #0
+  995a08:	d1f8      	bne.n	9959fc <AddPlayerPacket::read(BinaryStream&)+0xd4>
+  995a0a:	f3bf 8f5b 	dmb	ish
+  995a0e:	e002      	b.n	995a16 <AddPlayerPacket::read(BinaryStream&)+0xee>
+  995a10:	6811      	ldr	r1, [r2, #0]
+  995a12:	1e4b      	subs	r3, r1, #1
+  995a14:	6013      	str	r3, [r2, #0]
+  995a16:	2900      	cmp	r1, #0
+  995a18:	dca2      	bgt.n	995960 <AddPlayerPacket::read(BinaryStream&)+0x38>
+  995a1a:	a907      	add	r1, sp, #28
+  995a1c:	f16d e82c 	blx	b02a78 <std::_Hashtable<int, std::pair<int const, GameType>, std::allocator<std::pair<int const, GameType> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned int, std::integral_constant<bool, true>)+0x247a>
+  995a20:	e79e      	b.n	995960 <AddPlayerPacket::read(BinaryStream&)+0x38>
+  995a22:	4a19      	ldr	r2, [pc, #100]	; (995a88 <AddPlayerPacket::read(BinaryStream&)+0x160>)
+  995a24:	4604      	mov	r4, r0
+  995a26:	4b19      	ldr	r3, [pc, #100]	; (995a8c <AddPlayerPacket::read(BinaryStream&)+0x164>)
+  995a28:	447a      	add	r2, pc
+  995a2a:	9901      	ldr	r1, [sp, #4]
+  995a2c:	f1a1 000c 	sub.w	r0, r1, #12
+  995a30:	589a      	ldr	r2, [r3, r2]
+  995a32:	4290      	cmp	r0, r2
+  995a34:	d01a      	beq.n	995a6c <AddPlayerPacket::read(BinaryStream&)+0x144>
+  995a36:	4a16      	ldr	r2, [pc, #88]	; (995a90 <AddPlayerPacket::read(BinaryStream&)+0x168>)
+  995a38:	4b16      	ldr	r3, [pc, #88]	; (995a94 <AddPlayerPacket::read(BinaryStream&)+0x16c>)
+  995a3a:	447a      	add	r2, pc
+  995a3c:	589b      	ldr	r3, [r3, r2]
+  995a3e:	1f0a      	subs	r2, r1, #4
+  995a40:	b1eb      	cbz	r3, 995a7e <AddPlayerPacket::read(BinaryStream&)+0x156>
+  995a42:	f3bf 8f5b 	dmb	ish
+  995a46:	e852 1f00 	ldrex	r1, [r2]
+  995a4a:	1e4b      	subs	r3, r1, #1
+  995a4c:	e842 3600 	strex	r6, r3, [r2]
+  995a50:	2e00      	cmp	r6, #0
+  995a52:	d1f8      	bne.n	995a46 <AddPlayerPacket::read(BinaryStream&)+0x11e>
+  995a54:	f3bf 8f5b 	dmb	ish
+  995a58:	2900      	cmp	r1, #0
+  995a5a:	bfdc      	itt	le
+  995a5c:	f10d 011c 	addle.w	r1, sp, #28
+  995a60:	f16d e80a 	blxle	b02a78 <std::_Hashtable<int, std::pair<int const, GameType>, std::allocator<std::pair<int const, GameType> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned int, std::integral_constant<bool, true>)+0x247a>
+  995a64:	e002      	b.n	995a6c <AddPlayerPacket::read(BinaryStream&)+0x144>
+  995a66:	4604      	mov	r4, r0
+  995a68:	9804      	ldr	r0, [sp, #16]
+  995a6a:	b910      	cbnz	r0, 995a72 <AddPlayerPacket::read(BinaryStream&)+0x14a>
+  995a6c:	4620      	mov	r0, r4
+  995a6e:	f504 ebf6 	blx	69a25c <_Unwind_Resume@plt>
+  995a72:	6801      	ldr	r1, [r0, #0]
+  995a74:	6849      	ldr	r1, [r1, #4]
+  995a76:	4788      	blx	r1
+  995a78:	4620      	mov	r0, r4
+  995a7a:	f504 ebf0 	blx	69a25c <_Unwind_Resume@plt>
+  995a7e:	6811      	ldr	r1, [r2, #0]
+  995a80:	1e4b      	subs	r3, r1, #1
+  995a82:	6013      	str	r3, [r2, #0]
+  995a84:	e7e8      	b.n	995a58 <AddPlayerPacket::read(BinaryStream&)+0x130>
+  995a86:	bf00      	nop
+  995a88:	55ac      	strb	r4, [r5, r6]
+  995a8a:	015f      	lsls	r7, r3, #5
+  995a8c:	8a98      	ldrh	r0, [r3, #20]
+  995a8e:	ffff 559a 	vsli.64	d21, d10, #63	; 0x3f
+  995a92:	015f      	lsls	r7, r3, #5
+  995a94:	8a9c      	ldrh	r4, [r3, #20]
+  995a96:	ffff 5682 	vcvt.f<illegal width 64>.u<illegal width 64>	d21, d2
+  995a9a:	015f      	lsls	r7, r3, #5
+  995a9c:	55e4      	strb	r4, [r4, r7]
+  995a9e:	015f      	lsls	r7, r3, #5

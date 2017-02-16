@@ -1,0 +1,204 @@
+  991a78:	b570      	push	{r4, r5, r6, lr}
+  991a7a:	b088      	sub	sp, #32
+  991a7c:	4604      	mov	r4, r0
+  991a7e:	486e      	ldr	r0, [pc, #440]	; (991c38 <LoginPacket::read(BinaryStream&)+0x1c0>)
+  991a80:	460d      	mov	r5, r1
+  991a82:	496e      	ldr	r1, [pc, #440]	; (991c3c <LoginPacket::read(BinaryStream&)+0x1c4>)
+  991a84:	4478      	add	r0, pc
+  991a86:	5808      	ldr	r0, [r1, r0]
+  991a88:	6806      	ldr	r6, [r0, #0]
+  991a8a:	4628      	mov	r0, r5
+  991a8c:	f50b e826 	blx	69cadc <ReadOnlyBinaryStream::getSignedBigEndianInt()@plt>
+  991a90:	6120      	str	r0, [r4, #16]
+  991a92:	42b0      	cmp	r0, r6
+  991a94:	d13a      	bne.n	991b0c <LoginPacket::read(BinaryStream&)+0x94>
+  991a96:	4628      	mov	r0, r5
+  991a98:	f50b e826 	blx	69cae8 <ReadOnlyBinaryStream::getByte()@plt>
+  991a9c:	ae06      	add	r6, sp, #24
+  991a9e:	7320      	strb	r0, [r4, #12]
+  991aa0:	4629      	mov	r1, r5
+  991aa2:	4630      	mov	r0, r6
+  991aa4:	f50a eba6 	blx	69c1f4 <ReadOnlyBinaryStream::getString()@plt>
+  991aa8:	a804      	add	r0, sp, #16
+  991aaa:	f10d 0217 	add.w	r2, sp, #23
+  991aae:	4631      	mov	r1, r6
+  991ab0:	f50b e820 	blx	69caf4 <Util::decompress(std::string const&, bool&)@plt>
+  991ab4:	f89d 0017 	ldrb.w	r0, [sp, #23]
+  991ab8:	b1a8      	cbz	r0, 991ae6 <LoginPacket::read(BinaryStream&)+0x6e>
+  991aba:	a801      	add	r0, sp, #4
+  991abc:	a904      	add	r1, sp, #16
+  991abe:	f50b e820 	blx	69cb00 <ConnectionRequest::fromString(std::string const&)@plt>
+  991ac2:	200c      	movs	r0, #12
+  991ac4:	f508 ebd0 	blx	69a268 <operator new(unsigned int)@plt>
+  991ac8:	4605      	mov	r5, r0
+  991aca:	a901      	add	r1, sp, #4
+  991acc:	4628      	mov	r0, r5
+  991ace:	f50b e81e 	blx	69cb0c <ConnectionRequest::ConnectionRequest(ConnectionRequest const&)@plt>
+  991ad2:	6960      	ldr	r0, [r4, #20]
+  991ad4:	6165      	str	r5, [r4, #20]
+  991ad6:	b118      	cbz	r0, 991ae0 <LoginPacket::read(BinaryStream&)+0x68>
+  991ad8:	f50a efdc 	blx	69ca94 <ConnectionRequest::~ConnectionRequest()@plt>
+  991adc:	f508 eaec 	blx	69a0b8 <operator delete(void*)@plt>
+  991ae0:	a801      	add	r0, sp, #4
+  991ae2:	f50a efd8 	blx	69ca94 <ConnectionRequest::~ConnectionRequest()@plt>
+  991ae6:	485c      	ldr	r0, [pc, #368]	; (991c58 <LoginPacket::read(BinaryStream&)+0x1e0>)
+  991ae8:	4c56      	ldr	r4, [pc, #344]	; (991c44 <LoginPacket::read(BinaryStream&)+0x1cc>)
+  991aea:	4478      	add	r0, pc
+  991aec:	9904      	ldr	r1, [sp, #16]
+  991aee:	5822      	ldr	r2, [r4, r0]
+  991af0:	f1a1 000c 	sub.w	r0, r1, #12
+  991af4:	4290      	cmp	r0, r2
+  991af6:	d110      	bne.n	991b1a <LoginPacket::read(BinaryStream&)+0xa2>
+  991af8:	4859      	ldr	r0, [pc, #356]	; (991c60 <LoginPacket::read(BinaryStream&)+0x1e8>)
+  991afa:	9906      	ldr	r1, [sp, #24]
+  991afc:	4478      	add	r0, pc
+  991afe:	5822      	ldr	r2, [r4, r0]
+  991b00:	f1a1 000c 	sub.w	r0, r1, #12
+  991b04:	4290      	cmp	r0, r2
+  991b06:	d11a      	bne.n	991b3e <LoginPacket::read(BinaryStream&)+0xc6>
+  991b08:	b008      	add	sp, #32
+  991b0a:	bd70      	pop	{r4, r5, r6, pc}
+  991b0c:	68e8      	ldr	r0, [r5, #12]
+  991b0e:	6800      	ldr	r0, [r0, #0]
+  991b10:	f850 0c0c 	ldr.w	r0, [r0, #-12]
+  991b14:	6068      	str	r0, [r5, #4]
+  991b16:	b008      	add	sp, #32
+  991b18:	bd70      	pop	{r4, r5, r6, pc}
+  991b1a:	4a50      	ldr	r2, [pc, #320]	; (991c5c <LoginPacket::read(BinaryStream&)+0x1e4>)
+  991b1c:	4b4b      	ldr	r3, [pc, #300]	; (991c4c <LoginPacket::read(BinaryStream&)+0x1d4>)
+  991b1e:	447a      	add	r2, pc
+  991b20:	589b      	ldr	r3, [r3, r2]
+  991b22:	1f0a      	subs	r2, r1, #4
+  991b24:	b1eb      	cbz	r3, 991b62 <LoginPacket::read(BinaryStream&)+0xea>
+  991b26:	f3bf 8f5b 	dmb	ish
+  991b2a:	e852 1f00 	ldrex	r1, [r2]
+  991b2e:	1e4b      	subs	r3, r1, #1
+  991b30:	e842 3600 	strex	r6, r3, [r2]
+  991b34:	2e00      	cmp	r6, #0
+  991b36:	d1f8      	bne.n	991b2a <LoginPacket::read(BinaryStream&)+0xb2>
+  991b38:	f3bf 8f5b 	dmb	ish
+  991b3c:	e014      	b.n	991b68 <LoginPacket::read(BinaryStream&)+0xf0>
+  991b3e:	4a49      	ldr	r2, [pc, #292]	; (991c64 <LoginPacket::read(BinaryStream&)+0x1ec>)
+  991b40:	4b42      	ldr	r3, [pc, #264]	; (991c4c <LoginPacket::read(BinaryStream&)+0x1d4>)
+  991b42:	447a      	add	r2, pc
+  991b44:	589b      	ldr	r3, [r3, r2]
+  991b46:	1f0a      	subs	r2, r1, #4
+  991b48:	b1a3      	cbz	r3, 991b74 <LoginPacket::read(BinaryStream&)+0xfc>
+  991b4a:	f3bf 8f5b 	dmb	ish
+  991b4e:	e852 1f00 	ldrex	r1, [r2]
+  991b52:	1e4b      	subs	r3, r1, #1
+  991b54:	e842 3600 	strex	r6, r3, [r2]
+  991b58:	2e00      	cmp	r6, #0
+  991b5a:	d1f8      	bne.n	991b4e <LoginPacket::read(BinaryStream&)+0xd6>
+  991b5c:	f3bf 8f5b 	dmb	ish
+  991b60:	e00b      	b.n	991b7a <LoginPacket::read(BinaryStream&)+0x102>
+  991b62:	6811      	ldr	r1, [r2, #0]
+  991b64:	1e4b      	subs	r3, r1, #1
+  991b66:	6013      	str	r3, [r2, #0]
+  991b68:	2900      	cmp	r1, #0
+  991b6a:	dcc5      	bgt.n	991af8 <LoginPacket::read(BinaryStream&)+0x80>
+  991b6c:	a907      	add	r1, sp, #28
+  991b6e:	f170 ef84 	blx	b02a78 <std::_Hashtable<int, std::pair<int const, GameType>, std::allocator<std::pair<int const, GameType> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned int, std::integral_constant<bool, true>)+0x247a>
+  991b72:	e7c1      	b.n	991af8 <LoginPacket::read(BinaryStream&)+0x80>
+  991b74:	6811      	ldr	r1, [r2, #0]
+  991b76:	1e4b      	subs	r3, r1, #1
+  991b78:	6013      	str	r3, [r2, #0]
+  991b7a:	2900      	cmp	r1, #0
+  991b7c:	dcc4      	bgt.n	991b08 <LoginPacket::read(BinaryStream&)+0x90>
+  991b7e:	a904      	add	r1, sp, #16
+  991b80:	f170 ef7a 	blx	b02a78 <std::_Hashtable<int, std::pair<int const, GameType>, std::allocator<std::pair<int const, GameType> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned int, std::integral_constant<bool, true>)+0x247a>
+  991b84:	e7c0      	b.n	991b08 <LoginPacket::read(BinaryStream&)+0x90>
+  991b86:	4604      	mov	r4, r0
+  991b88:	e013      	b.n	991bb2 <LoginPacket::read(BinaryStream&)+0x13a>
+  991b8a:	4604      	mov	r4, r0
+  991b8c:	e008      	b.n	991ba0 <LoginPacket::read(BinaryStream&)+0x128>
+  991b8e:	4604      	mov	r4, r0
+  991b90:	e003      	b.n	991b9a <LoginPacket::read(BinaryStream&)+0x122>
+  991b92:	4604      	mov	r4, r0
+  991b94:	4628      	mov	r0, r5
+  991b96:	f508 ea90 	blx	69a0b8 <operator delete(void*)@plt>
+  991b9a:	a801      	add	r0, sp, #4
+  991b9c:	f50a ef7a 	blx	69ca94 <ConnectionRequest::~ConnectionRequest()@plt>
+  991ba0:	4827      	ldr	r0, [pc, #156]	; (991c40 <LoginPacket::read(BinaryStream&)+0x1c8>)
+  991ba2:	4a28      	ldr	r2, [pc, #160]	; (991c44 <LoginPacket::read(BinaryStream&)+0x1cc>)
+  991ba4:	4478      	add	r0, pc
+  991ba6:	9904      	ldr	r1, [sp, #16]
+  991ba8:	5812      	ldr	r2, [r2, r0]
+  991baa:	f1a1 000c 	sub.w	r0, r1, #12
+  991bae:	4290      	cmp	r0, r2
+  991bb0:	d122      	bne.n	991bf8 <LoginPacket::read(BinaryStream&)+0x180>
+  991bb2:	4827      	ldr	r0, [pc, #156]	; (991c50 <LoginPacket::read(BinaryStream&)+0x1d8>)
+  991bb4:	4a23      	ldr	r2, [pc, #140]	; (991c44 <LoginPacket::read(BinaryStream&)+0x1cc>)
+  991bb6:	4478      	add	r0, pc
+  991bb8:	9906      	ldr	r1, [sp, #24]
+  991bba:	5812      	ldr	r2, [r2, r0]
+  991bbc:	f1a1 000c 	sub.w	r0, r1, #12
+  991bc0:	4290      	cmp	r0, r2
+  991bc2:	d016      	beq.n	991bf2 <LoginPacket::read(BinaryStream&)+0x17a>
+  991bc4:	4a23      	ldr	r2, [pc, #140]	; (991c54 <LoginPacket::read(BinaryStream&)+0x1dc>)
+  991bc6:	4b21      	ldr	r3, [pc, #132]	; (991c4c <LoginPacket::read(BinaryStream&)+0x1d4>)
+  991bc8:	447a      	add	r2, pc
+  991bca:	589b      	ldr	r3, [r3, r2]
+  991bcc:	1f0a      	subs	r2, r1, #4
+  991bce:	b373      	cbz	r3, 991c2e <LoginPacket::read(BinaryStream&)+0x1b6>
+  991bd0:	f3bf 8f5b 	dmb	ish
+  991bd4:	e852 1f00 	ldrex	r1, [r2]
+  991bd8:	1e4b      	subs	r3, r1, #1
+  991bda:	e842 3600 	strex	r6, r3, [r2]
+  991bde:	2e00      	cmp	r6, #0
+  991be0:	d1f8      	bne.n	991bd4 <LoginPacket::read(BinaryStream&)+0x15c>
+  991be2:	f3bf 8f5b 	dmb	ish
+  991be6:	2900      	cmp	r1, #0
+  991be8:	bfdc      	itt	le
+  991bea:	f10d 011c 	addle.w	r1, sp, #28
+  991bee:	f170 ef44 	blxle	b02a78 <std::_Hashtable<int, std::pair<int const, GameType>, std::allocator<std::pair<int const, GameType> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned int, std::integral_constant<bool, true>)+0x247a>
+  991bf2:	4620      	mov	r0, r4
+  991bf4:	f508 eb32 	blx	69a25c <_Unwind_Resume@plt>
+  991bf8:	4a13      	ldr	r2, [pc, #76]	; (991c48 <LoginPacket::read(BinaryStream&)+0x1d0>)
+  991bfa:	4b14      	ldr	r3, [pc, #80]	; (991c4c <LoginPacket::read(BinaryStream&)+0x1d4>)
+  991bfc:	447a      	add	r2, pc
+  991bfe:	589b      	ldr	r3, [r3, r2]
+  991c00:	1f0a      	subs	r2, r1, #4
+  991c02:	b15b      	cbz	r3, 991c1c <LoginPacket::read(BinaryStream&)+0x1a4>
+  991c04:	f3bf 8f5b 	dmb	ish
+  991c08:	e852 1f00 	ldrex	r1, [r2]
+  991c0c:	1e4b      	subs	r3, r1, #1
+  991c0e:	e842 3600 	strex	r6, r3, [r2]
+  991c12:	2e00      	cmp	r6, #0
+  991c14:	d1f8      	bne.n	991c08 <LoginPacket::read(BinaryStream&)+0x190>
+  991c16:	f3bf 8f5b 	dmb	ish
+  991c1a:	e002      	b.n	991c22 <LoginPacket::read(BinaryStream&)+0x1aa>
+  991c1c:	6811      	ldr	r1, [r2, #0]
+  991c1e:	1e4b      	subs	r3, r1, #1
+  991c20:	6013      	str	r3, [r2, #0]
+  991c22:	2900      	cmp	r1, #0
+  991c24:	dcc5      	bgt.n	991bb2 <LoginPacket::read(BinaryStream&)+0x13a>
+  991c26:	a907      	add	r1, sp, #28
+  991c28:	f170 ef26 	blx	b02a78 <std::_Hashtable<int, std::pair<int const, GameType>, std::allocator<std::pair<int const, GameType> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned int, std::integral_constant<bool, true>)+0x247a>
+  991c2c:	e7c1      	b.n	991bb2 <LoginPacket::read(BinaryStream&)+0x13a>
+  991c2e:	6811      	ldr	r1, [r2, #0]
+  991c30:	1e4b      	subs	r3, r1, #1
+  991c32:	6013      	str	r3, [r2, #0]
+  991c34:	e7d7      	b.n	991be6 <LoginPacket::read(BinaryStream&)+0x16e>
+  991c36:	bf00      	nop
+  991c38:	9550      	str	r5, [sp, #320]	; 0x140
+  991c3a:	015f      	lsls	r7, r3, #5
+  991c3c:	8d64      	ldrh	r4, [r4, #42]	; 0x2a
+  991c3e:	ffff 9430 	vsri.32	d25, d16, #1
+  991c42:	015f      	lsls	r7, r3, #5
+  991c44:	8a98      	ldrh	r0, [r3, #20]
+  991c46:	ffff 93d8 	vrsra.u64	<illegal reg q12.5>, q4, #1
+  991c4a:	015f      	lsls	r7, r3, #5
+  991c4c:	8a9c      	ldrh	r4, [r3, #20]
+  991c4e:	ffff 941e 	vsri.32	d25, d14, #1
+  991c52:	015f      	lsls	r7, r3, #5
+  991c54:	940c      	str	r4, [sp, #48]	; 0x30
+  991c56:	015f      	lsls	r7, r3, #5
+  991c58:	94ea      	str	r4, [sp, #936]	; 0x3a8
+  991c5a:	015f      	lsls	r7, r3, #5
+  991c5c:	94b6      	str	r4, [sp, #728]	; 0x2d8
+  991c5e:	015f      	lsls	r7, r3, #5
+  991c60:	94d8      	str	r4, [sp, #864]	; 0x360
+  991c62:	015f      	lsls	r7, r3, #5
+  991c64:	9492      	str	r4, [sp, #584]	; 0x248
+  991c66:	015f      	lsls	r7, r3, #5

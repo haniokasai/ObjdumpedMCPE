@@ -1,0 +1,116 @@
+  99a1ec:	b5f0      	push	{r4, r5, r6, r7, lr}
+  99a1ee:	b083      	sub	sp, #12
+  99a1f0:	466e      	mov	r6, sp
+  99a1f2:	4605      	mov	r5, r0
+  99a1f4:	4630      	mov	r0, r6
+  99a1f6:	460c      	mov	r4, r1
+  99a1f8:	f501 effc 	blx	69c1f4 <ReadOnlyBinaryStream::getString()@plt>
+  99a1fc:	f105 000c 	add.w	r0, r5, #12
+  99a200:	4631      	mov	r1, r6
+  99a202:	f168 ec8a 	blx	b02b18 <std::_Hashtable<int, std::pair<int const, GameType>, std::allocator<std::pair<int const, GameType> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned int, std::integral_constant<bool, true>)+0x251a>
+  99a206:	483e      	ldr	r0, [pc, #248]	; (99a300 <ResourcePackChunkDataPacket::read(BinaryStream&)+0x114>)
+  99a208:	4a3a      	ldr	r2, [pc, #232]	; (99a2f4 <ResourcePackChunkDataPacket::read(BinaryStream&)+0x108>)
+  99a20a:	4478      	add	r0, pc
+  99a20c:	9900      	ldr	r1, [sp, #0]
+  99a20e:	5812      	ldr	r2, [r2, r0]
+  99a210:	f1a1 000c 	sub.w	r0, r1, #12
+  99a214:	4290      	cmp	r0, r2
+  99a216:	d128      	bne.n	99a26a <ResourcePackChunkDataPacket::read(BinaryStream&)+0x7e>
+  99a218:	4620      	mov	r0, r4
+  99a21a:	f502 ee76 	blx	69cf08 <ReadOnlyBinaryStream::getUnsignedInt()@plt>
+  99a21e:	6128      	str	r0, [r5, #16]
+  99a220:	4620      	mov	r0, r4
+  99a222:	f502 ec9e 	blx	69cb60 <ReadOnlyBinaryStream::getUnsignedInt64()@plt>
+  99a226:	e9c5 0106 	strd	r0, r1, [r5, #24]
+  99a22a:	4620      	mov	r0, r4
+  99a22c:	f502 ee6c 	blx	69cf08 <ReadOnlyBinaryStream::getUnsignedInt()@plt>
+  99a230:	462f      	mov	r7, r5
+  99a232:	4606      	mov	r6, r0
+  99a234:	f857 0f20 	ldr.w	r0, [r7, #32]!
+  99a238:	6879      	ldr	r1, [r7, #4]
+  99a23a:	1a09      	subs	r1, r1, r0
+  99a23c:	428e      	cmp	r6, r1
+  99a23e:	d904      	bls.n	99a24a <ResourcePackChunkDataPacket::read(BinaryStream&)+0x5e>
+  99a240:	1a71      	subs	r1, r6, r1
+  99a242:	4638      	mov	r0, r7
+  99a244:	f502 ee66 	blx	69cf14 <std::vector<unsigned char, std::allocator<unsigned char> >::_M_default_append(unsigned int)@plt>
+  99a248:	e002      	b.n	99a250 <ResourcePackChunkDataPacket::read(BinaryStream&)+0x64>
+  99a24a:	bf3c      	itt	cc
+  99a24c:	4430      	addcc	r0, r6
+  99a24e:	6268      	strcc	r0, [r5, #36]	; 0x24
+  99a250:	2e01      	cmp	r6, #1
+  99a252:	db08      	blt.n	99a266 <ResourcePackChunkDataPacket::read(BinaryStream&)+0x7a>
+  99a254:	2500      	movs	r5, #0
+  99a256:	4620      	mov	r0, r4
+  99a258:	f502 ec46 	blx	69cae8 <ReadOnlyBinaryStream::getByte()@plt>
+  99a25c:	6839      	ldr	r1, [r7, #0]
+  99a25e:	5548      	strb	r0, [r1, r5]
+  99a260:	3501      	adds	r5, #1
+  99a262:	42ae      	cmp	r6, r5
+  99a264:	d1f7      	bne.n	99a256 <ResourcePackChunkDataPacket::read(BinaryStream&)+0x6a>
+  99a266:	b003      	add	sp, #12
+  99a268:	bdf0      	pop	{r4, r5, r6, r7, pc}
+  99a26a:	4a26      	ldr	r2, [pc, #152]	; (99a304 <ResourcePackChunkDataPacket::read(BinaryStream&)+0x118>)
+  99a26c:	4b23      	ldr	r3, [pc, #140]	; (99a2fc <ResourcePackChunkDataPacket::read(BinaryStream&)+0x110>)
+  99a26e:	447a      	add	r2, pc
+  99a270:	589b      	ldr	r3, [r3, r2]
+  99a272:	1f0a      	subs	r2, r1, #4
+  99a274:	b15b      	cbz	r3, 99a28e <ResourcePackChunkDataPacket::read(BinaryStream&)+0xa2>
+  99a276:	f3bf 8f5b 	dmb	ish
+  99a27a:	e852 1f00 	ldrex	r1, [r2]
+  99a27e:	1e4b      	subs	r3, r1, #1
+  99a280:	e842 3700 	strex	r7, r3, [r2]
+  99a284:	2f00      	cmp	r7, #0
+  99a286:	d1f8      	bne.n	99a27a <ResourcePackChunkDataPacket::read(BinaryStream&)+0x8e>
+  99a288:	f3bf 8f5b 	dmb	ish
+  99a28c:	e002      	b.n	99a294 <ResourcePackChunkDataPacket::read(BinaryStream&)+0xa8>
+  99a28e:	6811      	ldr	r1, [r2, #0]
+  99a290:	1e4b      	subs	r3, r1, #1
+  99a292:	6013      	str	r3, [r2, #0]
+  99a294:	2900      	cmp	r1, #0
+  99a296:	dcbf      	bgt.n	99a218 <ResourcePackChunkDataPacket::read(BinaryStream&)+0x2c>
+  99a298:	a901      	add	r1, sp, #4
+  99a29a:	f168 ebee 	blx	b02a78 <std::_Hashtable<int, std::pair<int const, GameType>, std::allocator<std::pair<int const, GameType> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned int, std::integral_constant<bool, true>)+0x247a>
+  99a29e:	e7bb      	b.n	99a218 <ResourcePackChunkDataPacket::read(BinaryStream&)+0x2c>
+  99a2a0:	4a13      	ldr	r2, [pc, #76]	; (99a2f0 <ResourcePackChunkDataPacket::read(BinaryStream&)+0x104>)
+  99a2a2:	4604      	mov	r4, r0
+  99a2a4:	4b13      	ldr	r3, [pc, #76]	; (99a2f4 <ResourcePackChunkDataPacket::read(BinaryStream&)+0x108>)
+  99a2a6:	447a      	add	r2, pc
+  99a2a8:	9900      	ldr	r1, [sp, #0]
+  99a2aa:	f1a1 000c 	sub.w	r0, r1, #12
+  99a2ae:	589a      	ldr	r2, [r3, r2]
+  99a2b0:	4290      	cmp	r0, r2
+  99a2b2:	d016      	beq.n	99a2e2 <ResourcePackChunkDataPacket::read(BinaryStream&)+0xf6>
+  99a2b4:	4a10      	ldr	r2, [pc, #64]	; (99a2f8 <ResourcePackChunkDataPacket::read(BinaryStream&)+0x10c>)
+  99a2b6:	4b11      	ldr	r3, [pc, #68]	; (99a2fc <ResourcePackChunkDataPacket::read(BinaryStream&)+0x110>)
+  99a2b8:	447a      	add	r2, pc
+  99a2ba:	589b      	ldr	r3, [r3, r2]
+  99a2bc:	1f0a      	subs	r2, r1, #4
+  99a2be:	b19b      	cbz	r3, 99a2e8 <ResourcePackChunkDataPacket::read(BinaryStream&)+0xfc>
+  99a2c0:	f3bf 8f5b 	dmb	ish
+  99a2c4:	e852 1f00 	ldrex	r1, [r2]
+  99a2c8:	1e4b      	subs	r3, r1, #1
+  99a2ca:	e842 3700 	strex	r7, r3, [r2]
+  99a2ce:	2f00      	cmp	r7, #0
+  99a2d0:	d1f8      	bne.n	99a2c4 <ResourcePackChunkDataPacket::read(BinaryStream&)+0xd8>
+  99a2d2:	f3bf 8f5b 	dmb	ish
+  99a2d6:	2900      	cmp	r1, #0
+  99a2d8:	bfdc      	itt	le
+  99a2da:	f10d 0108 	addle.w	r1, sp, #8
+  99a2de:	f168 ebcc 	blxle	b02a78 <std::_Hashtable<int, std::pair<int const, GameType>, std::allocator<std::pair<int const, GameType> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned int, std::integral_constant<bool, true>)+0x247a>
+  99a2e2:	4620      	mov	r0, r4
+  99a2e4:	f4ff efba 	blx	69a25c <_Unwind_Resume@plt>
+  99a2e8:	6811      	ldr	r1, [r2, #0]
+  99a2ea:	1e4b      	subs	r3, r1, #1
+  99a2ec:	6013      	str	r3, [r2, #0]
+  99a2ee:	e7f2      	b.n	99a2d6 <ResourcePackChunkDataPacket::read(BinaryStream&)+0xea>
+  99a2f0:	0d2e      	lsrs	r6, r5, #20
+  99a2f2:	015f      	lsls	r7, r3, #5
+  99a2f4:	8a98      	ldrh	r0, [r3, #20]
+  99a2f6:	ffff 0d1c 			; <UNDEFINED> instruction: 0xffff0d1c
+  99a2fa:	015f      	lsls	r7, r3, #5
+  99a2fc:	8a9c      	ldrh	r4, [r3, #20]
+  99a2fe:	ffff 0dca 	vqrdmulh.s<illegal width 64>	q8, <illegal reg q15.5>, d10[0]
+  99a302:	015f      	lsls	r7, r3, #5
+  99a304:	0d66      	lsrs	r6, r4, #21
+  99a306:	015f      	lsls	r7, r3, #5

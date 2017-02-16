@@ -1,0 +1,254 @@
+  994d30:	e92d 4ff0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, lr}
+  994d34:	b093      	sub	sp, #76	; 0x4c
+  994d36:	4605      	mov	r5, r0
+  994d38:	a80e      	add	r0, sp, #56	; 0x38
+  994d3a:	460c      	mov	r4, r1
+  994d3c:	f507 ef82 	blx	69cc44 <EntityUniqueID ReadOnlyBinaryStream::getType<EntityUniqueID>()@plt>
+  994d40:	e9dd 010e 	ldrd	r0, r1, [sp, #56]	; 0x38
+  994d44:	e9c5 010c 	strd	r0, r1, [r5, #48]	; 0x30
+  994d48:	a80e      	add	r0, sp, #56	; 0x38
+  994d4a:	4621      	mov	r1, r4
+  994d4c:	f507 ef80 	blx	69cc50 <EntityRuntimeID ReadOnlyBinaryStream::getType<EntityRuntimeID>()@plt>
+  994d50:	e9dd 010e 	ldrd	r0, r1, [sp, #56]	; 0x38
+  994d54:	e9c5 010e 	strd	r0, r1, [r5, #56]	; 0x38
+  994d58:	4620      	mov	r0, r4
+  994d5a:	f507 ed7c 	blx	69c854 <ReadOnlyBinaryStream::getUnsignedVarInt()@plt>
+  994d5e:	6468      	str	r0, [r5, #68]	; 0x44
+  994d60:	a80e      	add	r0, sp, #56	; 0x38
+  994d62:	4621      	mov	r1, r4
+  994d64:	f507 ef7a 	blx	69cc5c <Vec3 ReadOnlyBinaryStream::getType<Vec3>()@plt>
+  994d68:	980e      	ldr	r0, [sp, #56]	; 0x38
+  994d6a:	4621      	mov	r1, r4
+  994d6c:	64a8      	str	r0, [r5, #72]	; 0x48
+  994d6e:	980f      	ldr	r0, [sp, #60]	; 0x3c
+  994d70:	64e8      	str	r0, [r5, #76]	; 0x4c
+  994d72:	9810      	ldr	r0, [sp, #64]	; 0x40
+  994d74:	6528      	str	r0, [r5, #80]	; 0x50
+  994d76:	a80e      	add	r0, sp, #56	; 0x38
+  994d78:	f507 ef70 	blx	69cc5c <Vec3 ReadOnlyBinaryStream::getType<Vec3>()@plt>
+  994d7c:	980e      	ldr	r0, [sp, #56]	; 0x38
+  994d7e:	f10d 0b38 	add.w	fp, sp, #56	; 0x38
+  994d82:	6568      	str	r0, [r5, #84]	; 0x54
+  994d84:	4621      	mov	r1, r4
+  994d86:	980f      	ldr	r0, [sp, #60]	; 0x3c
+  994d88:	65a8      	str	r0, [r5, #88]	; 0x58
+  994d8a:	9810      	ldr	r0, [sp, #64]	; 0x40
+  994d8c:	65e8      	str	r0, [r5, #92]	; 0x5c
+  994d8e:	4658      	mov	r0, fp
+  994d90:	f507 ef6a 	blx	69cc68 <Vec2 ReadOnlyBinaryStream::getType<Vec2>()@plt>
+  994d94:	e9dd 010e 	ldrd	r0, r1, [sp, #56]	; 0x38
+  994d98:	e9c5 0109 	strd	r0, r1, [r5, #36]	; 0x24
+  994d9c:	4620      	mov	r0, r4
+  994d9e:	f507 ed5a 	blx	69c854 <ReadOnlyBinaryStream::getUnsignedVarInt()@plt>
+  994da2:	4607      	mov	r7, r0
+  994da4:	f105 006c 	add.w	r0, r5, #108	; 0x6c
+  994da8:	4639      	mov	r1, r7
+  994daa:	9002      	str	r0, [sp, #8]
+  994dac:	f507 efb0 	blx	69cd10 <std::vector<SyncedAttribute, std::allocator<SyncedAttribute> >::reserve(unsigned int)@plt>
+  994db0:	2f00      	cmp	r7, #0
+  994db2:	f000 8087 	beq.w	994ec4 <AddEntityPacket::read(BinaryStream&)+0x194>
+  994db6:	487e      	ldr	r0, [pc, #504]	; (994fb0 <AddEntityPacket::read(BinaryStream&)+0x280>)
+  994db8:	f10b 0904 	add.w	r9, fp, #4
+  994dbc:	497d      	ldr	r1, [pc, #500]	; (994fb4 <AddEntityPacket::read(BinaryStream&)+0x284>)
+  994dbe:	f04f 0a00 	mov.w	sl, #0
+  994dc2:	4478      	add	r0, pc
+  994dc4:	4e7e      	ldr	r6, [pc, #504]	; (994fc0 <AddEntityPacket::read(BinaryStream&)+0x290>)
+  994dc6:	f851 8000 	ldr.w	r8, [r1, r0]
+  994dca:	5830      	ldr	r0, [r6, r0]
+  994dcc:	f108 010c 	add.w	r1, r8, #12
+  994dd0:	9103      	str	r1, [sp, #12]
+  994dd2:	9001      	str	r0, [sp, #4]
+  994dd4:	e033      	b.n	994e3e <AddEntityPacket::read(BinaryStream&)+0x10e>
+  994dd6:	1f0a      	subs	r2, r1, #4
+  994dd8:	9901      	ldr	r1, [sp, #4]
+  994dda:	b1f1      	cbz	r1, 994e1a <AddEntityPacket::read(BinaryStream&)+0xea>
+  994ddc:	46b4      	mov	ip, r6
+  994dde:	f3bf 8f5b 	dmb	ish
+  994de2:	e852 1f00 	ldrex	r1, [r2]
+  994de6:	1e4b      	subs	r3, r1, #1
+  994de8:	e842 3600 	strex	r6, r3, [r2]
+  994dec:	2e00      	cmp	r6, #0
+  994dee:	d1f8      	bne.n	994de2 <AddEntityPacket::read(BinaryStream&)+0xb2>
+  994df0:	f3bf 8f5b 	dmb	ish
+  994df4:	4666      	mov	r6, ip
+  994df6:	e013      	b.n	994e20 <AddEntityPacket::read(BinaryStream&)+0xf0>
+  994df8:	1f0a      	subs	r2, r1, #4
+  994dfa:	9901      	ldr	r1, [sp, #4]
+  994dfc:	b1b1      	cbz	r1, 994e2c <AddEntityPacket::read(BinaryStream&)+0xfc>
+  994dfe:	46b4      	mov	ip, r6
+  994e00:	f3bf 8f5b 	dmb	ish
+  994e04:	e852 1f00 	ldrex	r1, [r2]
+  994e08:	1e4b      	subs	r3, r1, #1
+  994e0a:	e842 3600 	strex	r6, r3, [r2]
+  994e0e:	2e00      	cmp	r6, #0
+  994e10:	d1f8      	bne.n	994e04 <AddEntityPacket::read(BinaryStream&)+0xd4>
+  994e12:	f3bf 8f5b 	dmb	ish
+  994e16:	4666      	mov	r6, ip
+  994e18:	e00b      	b.n	994e32 <AddEntityPacket::read(BinaryStream&)+0x102>
+  994e1a:	6811      	ldr	r1, [r2, #0]
+  994e1c:	1e4b      	subs	r3, r1, #1
+  994e1e:	6013      	str	r3, [r2, #0]
+  994e20:	2900      	cmp	r1, #0
+  994e22:	dc1b      	bgt.n	994e5c <AddEntityPacket::read(BinaryStream&)+0x12c>
+  994e24:	a912      	add	r1, sp, #72	; 0x48
+  994e26:	f16d ee28 	blx	b02a78 <std::_Hashtable<int, std::pair<int const, GameType>, std::allocator<std::pair<int const, GameType> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned int, std::integral_constant<bool, true>)+0x247a>
+  994e2a:	e017      	b.n	994e5c <AddEntityPacket::read(BinaryStream&)+0x12c>
+  994e2c:	6811      	ldr	r1, [r2, #0]
+  994e2e:	1e4b      	subs	r3, r1, #1
+  994e30:	6013      	str	r3, [r2, #0]
+  994e32:	2900      	cmp	r1, #0
+  994e34:	dc42      	bgt.n	994ebc <AddEntityPacket::read(BinaryStream&)+0x18c>
+  994e36:	a912      	add	r1, sp, #72	; 0x48
+  994e38:	f16d ee1e 	blx	b02a78 <std::_Hashtable<int, std::pair<int const, GameType>, std::allocator<std::pair<int const, GameType> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned int, std::integral_constant<bool, true>)+0x247a>
+  994e3c:	e03e      	b.n	994ebc <AddEntityPacket::read(BinaryStream&)+0x18c>
+  994e3e:	9803      	ldr	r0, [sp, #12]
+  994e40:	900e      	str	r0, [sp, #56]	; 0x38
+  994e42:	a80d      	add	r0, sp, #52	; 0x34
+  994e44:	4621      	mov	r1, r4
+  994e46:	f507 e9d6 	blx	69c1f4 <ReadOnlyBinaryStream::getString()@plt>
+  994e4a:	a90d      	add	r1, sp, #52	; 0x34
+  994e4c:	4658      	mov	r0, fp
+  994e4e:	f16d ee64 	blx	b02b18 <std::_Hashtable<int, std::pair<int const, GameType>, std::allocator<std::pair<int const, GameType> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned int, std::integral_constant<bool, true>)+0x251a>
+  994e52:	990d      	ldr	r1, [sp, #52]	; 0x34
+  994e54:	f1a1 000c 	sub.w	r0, r1, #12
+  994e58:	4540      	cmp	r0, r8
+  994e5a:	d1bc      	bne.n	994dd6 <AddEntityPacket::read(BinaryStream&)+0xa6>
+  994e5c:	4620      	mov	r0, r4
+  994e5e:	f507 ef5e 	blx	69cd1c <ReadOnlyBinaryStream::getFloat()@plt>
+  994e62:	ec40 0b10 	vmov	d0, r0, r0
+  994e66:	ed8d 0a0f 	vstr	s0, [sp, #60]	; 0x3c
+  994e6a:	4620      	mov	r0, r4
+  994e6c:	f507 ef56 	blx	69cd1c <ReadOnlyBinaryStream::getFloat()@plt>
+  994e70:	ec40 0b10 	vmov	d0, r0, r0
+  994e74:	ed8d 0a10 	vstr	s0, [sp, #64]	; 0x40
+  994e78:	4620      	mov	r0, r4
+  994e7a:	f507 ef50 	blx	69cd1c <ReadOnlyBinaryStream::getFloat()@plt>
+  994e7e:	ec40 0b10 	vmov	d0, r0, r0
+  994e82:	ed8d 0a11 	vstr	s0, [sp, #68]	; 0x44
+  994e86:	e9d5 011c 	ldrd	r0, r1, [r5, #112]	; 0x70
+  994e8a:	4288      	cmp	r0, r1
+  994e8c:	d00d      	beq.n	994eaa <AddEntityPacket::read(BinaryStream&)+0x17a>
+  994e8e:	4659      	mov	r1, fp
+  994e90:	f16d edea 	blx	b02a68 <std::_Hashtable<int, std::pair<int const, GameType>, std::allocator<std::pair<int const, GameType> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned int, std::integral_constant<bool, true>)+0x246a>
+  994e94:	edd9 0b00 	vldr	d16, [r9]
+  994e98:	f8d9 1008 	ldr.w	r1, [r9, #8]
+  994e9c:	60c1      	str	r1, [r0, #12]
+  994e9e:	edc0 0b01 	vstr	d16, [r0, #4]
+  994ea2:	6f28      	ldr	r0, [r5, #112]	; 0x70
+  994ea4:	3010      	adds	r0, #16
+  994ea6:	6728      	str	r0, [r5, #112]	; 0x70
+  994ea8:	e003      	b.n	994eb2 <AddEntityPacket::read(BinaryStream&)+0x182>
+  994eaa:	9802      	ldr	r0, [sp, #8]
+  994eac:	4659      	mov	r1, fp
+  994eae:	f507 ef3c 	blx	69cd28 <void std::vector<SyncedAttribute, std::allocator<SyncedAttribute> >::_M_emplace_back_aux<SyncedAttribute&>(SyncedAttribute&)@plt>
+  994eb2:	990e      	ldr	r1, [sp, #56]	; 0x38
+  994eb4:	f1a1 000c 	sub.w	r0, r1, #12
+  994eb8:	4540      	cmp	r0, r8
+  994eba:	d19d      	bne.n	994df8 <AddEntityPacket::read(BinaryStream&)+0xc8>
+  994ebc:	f10a 0a01 	add.w	sl, sl, #1
+  994ec0:	45ba      	cmp	sl, r7
+  994ec2:	d1bc      	bne.n	994e3e <AddEntityPacket::read(BinaryStream&)+0x10e>
+  994ec4:	f105 0118 	add.w	r1, r5, #24
+  994ec8:	4620      	mov	r0, r4
+  994eca:	f507 ef34 	blx	69cd34 <void ReadOnlyBinaryStream::readType<std::vector<std::unique_ptr<DataItem, std::default_delete<DataItem> >, std::allocator<std::unique_ptr<DataItem, std::default_delete<DataItem> > > > >(std::vector<std::unique_ptr<DataItem, std::default_delete<DataItem> >, std::allocator<std::unique_ptr<DataItem, std::default_delete<DataItem> > > >&)@plt>
+  994ece:	4620      	mov	r0, r4
+  994ed0:	f507 ecc0 	blx	69c854 <ReadOnlyBinaryStream::getUnsignedVarInt()@plt>
+  994ed4:	4606      	mov	r6, r0
+  994ed6:	b1ee      	cbz	r6, 994f14 <AddEntityPacket::read(BinaryStream&)+0x1e4>
+  994ed8:	f105 080c 	add.w	r8, r5, #12
+  994edc:	af04      	add	r7, sp, #16
+  994ede:	4638      	mov	r0, r7
+  994ee0:	4621      	mov	r1, r4
+  994ee2:	f507 ef2e 	blx	69cd40 <EntityLink ReadOnlyBinaryStream::getType<EntityLink>()@plt>
+  994ee6:	e9d5 0104 	ldrd	r0, r1, [r5, #16]
+  994eea:	4288      	cmp	r0, r1
+  994eec:	d00c      	beq.n	994f08 <AddEntityPacket::read(BinaryStream&)+0x1d8>
+  994eee:	4639      	mov	r1, r7
+  994ef0:	f961 0acd 	vld1.64	{d16-d17}, [r1]!
+  994ef4:	f961 2acf 	vld1.64	{d18-d19}, [r1]
+  994ef8:	f940 0acd 	vst1.64	{d16-d17}, [r0]!
+  994efc:	f940 2acf 	vst1.64	{d18-d19}, [r0]
+  994f00:	6928      	ldr	r0, [r5, #16]
+  994f02:	3020      	adds	r0, #32
+  994f04:	6128      	str	r0, [r5, #16]
+  994f06:	e003      	b.n	994f10 <AddEntityPacket::read(BinaryStream&)+0x1e0>
+  994f08:	4640      	mov	r0, r8
+  994f0a:	4639      	mov	r1, r7
+  994f0c:	f507 ef1e 	blx	69cd4c <void std::vector<EntityLink, std::allocator<EntityLink> >::_M_emplace_back_aux<EntityLink>(EntityLink&&)@plt>
+  994f10:	3e01      	subs	r6, #1
+  994f12:	d1e4      	bne.n	994ede <AddEntityPacket::read(BinaryStream&)+0x1ae>
+  994f14:	b013      	add	sp, #76	; 0x4c
+  994f16:	e8bd 8ff0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, pc}
+  994f1a:	4604      	mov	r4, r0
+  994f1c:	4d25      	ldr	r5, [pc, #148]	; (994fb4 <AddEntityPacket::read(BinaryStream&)+0x284>)
+  994f1e:	4829      	ldr	r0, [pc, #164]	; (994fc4 <AddEntityPacket::read(BinaryStream&)+0x294>)
+  994f20:	990e      	ldr	r1, [sp, #56]	; 0x38
+  994f22:	4478      	add	r0, pc
+  994f24:	582a      	ldr	r2, [r5, r0]
+  994f26:	f1a1 000c 	sub.w	r0, r1, #12
+  994f2a:	4290      	cmp	r0, r2
+  994f2c:	d015      	beq.n	994f5a <AddEntityPacket::read(BinaryStream&)+0x22a>
+  994f2e:	4a26      	ldr	r2, [pc, #152]	; (994fc8 <AddEntityPacket::read(BinaryStream&)+0x298>)
+  994f30:	447a      	add	r2, pc
+  994f32:	58b3      	ldr	r3, [r6, r2]
+  994f34:	1f0a      	subs	r2, r1, #4
+  994f36:	b3bb      	cbz	r3, 994fa8 <AddEntityPacket::read(BinaryStream&)+0x278>
+  994f38:	f3bf 8f5b 	dmb	ish
+  994f3c:	e852 1f00 	ldrex	r1, [r2]
+  994f40:	1e4b      	subs	r3, r1, #1
+  994f42:	e842 3700 	strex	r7, r3, [r2]
+  994f46:	2f00      	cmp	r7, #0
+  994f48:	d1f8      	bne.n	994f3c <AddEntityPacket::read(BinaryStream&)+0x20c>
+  994f4a:	f3bf 8f5b 	dmb	ish
+  994f4e:	2900      	cmp	r1, #0
+  994f50:	bfdc      	itt	le
+  994f52:	f10d 0148 	addle.w	r1, sp, #72	; 0x48
+  994f56:	f16d ed90 	blxle	b02a78 <std::_Hashtable<int, std::pair<int const, GameType>, std::allocator<std::pair<int const, GameType> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned int, std::integral_constant<bool, true>)+0x247a>
+  994f5a:	4620      	mov	r0, r4
+  994f5c:	f505 e97e 	blx	69a25c <_Unwind_Resume@plt>
+  994f60:	4a15      	ldr	r2, [pc, #84]	; (994fb8 <AddEntityPacket::read(BinaryStream&)+0x288>)
+  994f62:	4604      	mov	r4, r0
+  994f64:	4d13      	ldr	r5, [pc, #76]	; (994fb4 <AddEntityPacket::read(BinaryStream&)+0x284>)
+  994f66:	447a      	add	r2, pc
+  994f68:	990d      	ldr	r1, [sp, #52]	; 0x34
+  994f6a:	f1a1 000c 	sub.w	r0, r1, #12
+  994f6e:	58aa      	ldr	r2, [r5, r2]
+  994f70:	4290      	cmp	r0, r2
+  994f72:	d0d4      	beq.n	994f1e <AddEntityPacket::read(BinaryStream&)+0x1ee>
+  994f74:	4a11      	ldr	r2, [pc, #68]	; (994fbc <AddEntityPacket::read(BinaryStream&)+0x28c>)
+  994f76:	447a      	add	r2, pc
+  994f78:	58b3      	ldr	r3, [r6, r2]
+  994f7a:	1f0a      	subs	r2, r1, #4
+  994f7c:	b15b      	cbz	r3, 994f96 <AddEntityPacket::read(BinaryStream&)+0x266>
+  994f7e:	f3bf 8f5b 	dmb	ish
+  994f82:	e852 1f00 	ldrex	r1, [r2]
+  994f86:	1e4b      	subs	r3, r1, #1
+  994f88:	e842 3700 	strex	r7, r3, [r2]
+  994f8c:	2f00      	cmp	r7, #0
+  994f8e:	d1f8      	bne.n	994f82 <AddEntityPacket::read(BinaryStream&)+0x252>
+  994f90:	f3bf 8f5b 	dmb	ish
+  994f94:	e002      	b.n	994f9c <AddEntityPacket::read(BinaryStream&)+0x26c>
+  994f96:	6811      	ldr	r1, [r2, #0]
+  994f98:	1e4b      	subs	r3, r1, #1
+  994f9a:	6013      	str	r3, [r2, #0]
+  994f9c:	2900      	cmp	r1, #0
+  994f9e:	dcbe      	bgt.n	994f1e <AddEntityPacket::read(BinaryStream&)+0x1ee>
+  994fa0:	a912      	add	r1, sp, #72	; 0x48
+  994fa2:	f16d ed6a 	blx	b02a78 <std::_Hashtable<int, std::pair<int const, GameType>, std::allocator<std::pair<int const, GameType> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned int, std::integral_constant<bool, true>)+0x247a>
+  994fa6:	e7ba      	b.n	994f1e <AddEntityPacket::read(BinaryStream&)+0x1ee>
+  994fa8:	6811      	ldr	r1, [r2, #0]
+  994faa:	1e4b      	subs	r3, r1, #1
+  994fac:	6013      	str	r3, [r2, #0]
+  994fae:	e7ce      	b.n	994f4e <AddEntityPacket::read(BinaryStream&)+0x21e>
+  994fb0:	6212      	str	r2, [r2, #32]
+  994fb2:	015f      	lsls	r7, r3, #5
+  994fb4:	8a98      	ldrh	r0, [r3, #20]
+  994fb6:	ffff 606e 	vmla.i<illegal width 64>	q11, <illegal reg q7.5>, d30[0]
+  994fba:	015f      	lsls	r7, r3, #5
+  994fbc:	605e      	str	r6, [r3, #4]
+  994fbe:	015f      	lsls	r7, r3, #5
+  994fc0:	8a9c      	ldrh	r4, [r3, #20]
+  994fc2:	ffff 60b2 	vshr.u64	d22, d18, #1
+  994fc6:	015f      	lsls	r7, r3, #5
+  994fc8:	60a4      	str	r4, [r4, #8]
+  994fca:	015f      	lsls	r7, r3, #5

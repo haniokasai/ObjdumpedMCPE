@@ -1,0 +1,13 @@
+  996d26:	b5b0      	push	{r4, r5, r7, lr}
+  996d28:	b082      	sub	sp, #8
+  996d2a:	4605      	mov	r5, r0
+  996d2c:	4668      	mov	r0, sp
+  996d2e:	460c      	mov	r4, r1
+  996d30:	f505 ef8e 	blx	69cc50 <EntityRuntimeID ReadOnlyBinaryStream::getType<EntityRuntimeID>()@plt>
+  996d34:	e9dd 0100 	ldrd	r0, r1, [sp]
+  996d38:	e9c5 0104 	strd	r0, r1, [r5, #16]
+  996d3c:	f105 0118 	add.w	r1, r5, #24
+  996d40:	4620      	mov	r0, r4
+  996d42:	f505 eff8 	blx	69cd34 <void ReadOnlyBinaryStream::readType<std::vector<std::unique_ptr<DataItem, std::default_delete<DataItem> >, std::allocator<std::unique_ptr<DataItem, std::default_delete<DataItem> > > > >(std::vector<std::unique_ptr<DataItem, std::default_delete<DataItem> >, std::allocator<std::unique_ptr<DataItem, std::default_delete<DataItem> > > >&)@plt>
+  996d46:	b002      	add	sp, #8
+  996d48:	bdb0      	pop	{r4, r5, r7, pc}

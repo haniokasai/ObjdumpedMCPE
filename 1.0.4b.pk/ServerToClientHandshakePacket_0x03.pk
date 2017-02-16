@@ -1,0 +1,158 @@
+  991e90:	b5f0      	push	{r4, r5, r6, r7, lr}
+  991e92:	b087      	sub	sp, #28
+  991e94:	ae02      	add	r6, sp, #8
+  991e96:	4604      	mov	r4, r0
+  991e98:	460d      	mov	r5, r1
+  991e9a:	4630      	mov	r0, r6
+  991e9c:	f50a e9aa 	blx	69c1f4 <ReadOnlyBinaryStream::getString()@plt>
+  991ea0:	f104 000c 	add.w	r0, r4, #12
+  991ea4:	4631      	mov	r1, r6
+  991ea6:	f170 ee38 	blx	b02b18 <std::_Hashtable<int, std::pair<int const, GameType>, std::allocator<std::pair<int const, GameType> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned int, std::integral_constant<bool, true>)+0x251a>
+  991eaa:	4852      	ldr	r0, [pc, #328]	; (991ff4 <ServerToClientHandshakePacket::read(BinaryStream&)+0x164>)
+  991eac:	4f4e      	ldr	r7, [pc, #312]	; (991fe8 <ServerToClientHandshakePacket::read(BinaryStream&)+0x158>)
+  991eae:	4478      	add	r0, pc
+  991eb0:	9902      	ldr	r1, [sp, #8]
+  991eb2:	583a      	ldr	r2, [r7, r0]
+  991eb4:	f1a1 000c 	sub.w	r0, r1, #12
+  991eb8:	4290      	cmp	r0, r2
+  991eba:	d113      	bne.n	991ee4 <ServerToClientHandshakePacket::read(BinaryStream&)+0x54>
+  991ebc:	ae01      	add	r6, sp, #4
+  991ebe:	4629      	mov	r1, r5
+  991ec0:	4630      	mov	r0, r6
+  991ec2:	f50a e998 	blx	69c1f4 <ReadOnlyBinaryStream::getString()@plt>
+  991ec6:	f104 0010 	add.w	r0, r4, #16
+  991eca:	4631      	mov	r1, r6
+  991ecc:	f170 ee24 	blx	b02b18 <std::_Hashtable<int, std::pair<int const, GameType>, std::allocator<std::pair<int const, GameType> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned int, std::integral_constant<bool, true>)+0x251a>
+  991ed0:	484c      	ldr	r0, [pc, #304]	; (992004 <ServerToClientHandshakePacket::read(BinaryStream&)+0x174>)
+  991ed2:	9901      	ldr	r1, [sp, #4]
+  991ed4:	4478      	add	r0, pc
+  991ed6:	583a      	ldr	r2, [r7, r0]
+  991ed8:	f1a1 000c 	sub.w	r0, r1, #12
+  991edc:	4290      	cmp	r0, r2
+  991ede:	d113      	bne.n	991f08 <ServerToClientHandshakePacket::read(BinaryStream&)+0x78>
+  991ee0:	b007      	add	sp, #28
+  991ee2:	bdf0      	pop	{r4, r5, r6, r7, pc}
+  991ee4:	4a44      	ldr	r2, [pc, #272]	; (991ff8 <ServerToClientHandshakePacket::read(BinaryStream&)+0x168>)
+  991ee6:	4b42      	ldr	r3, [pc, #264]	; (991ff0 <ServerToClientHandshakePacket::read(BinaryStream&)+0x160>)
+  991ee8:	447a      	add	r2, pc
+  991eea:	589b      	ldr	r3, [r3, r2]
+  991eec:	1f0a      	subs	r2, r1, #4
+  991eee:	b1eb      	cbz	r3, 991f2c <ServerToClientHandshakePacket::read(BinaryStream&)+0x9c>
+  991ef0:	f3bf 8f5b 	dmb	ish
+  991ef4:	e852 1f00 	ldrex	r1, [r2]
+  991ef8:	1e4b      	subs	r3, r1, #1
+  991efa:	e842 3600 	strex	r6, r3, [r2]
+  991efe:	2e00      	cmp	r6, #0
+  991f00:	d1f8      	bne.n	991ef4 <ServerToClientHandshakePacket::read(BinaryStream&)+0x64>
+  991f02:	f3bf 8f5b 	dmb	ish
+  991f06:	e014      	b.n	991f32 <ServerToClientHandshakePacket::read(BinaryStream&)+0xa2>
+  991f08:	4a3f      	ldr	r2, [pc, #252]	; (992008 <ServerToClientHandshakePacket::read(BinaryStream&)+0x178>)
+  991f0a:	4b39      	ldr	r3, [pc, #228]	; (991ff0 <ServerToClientHandshakePacket::read(BinaryStream&)+0x160>)
+  991f0c:	447a      	add	r2, pc
+  991f0e:	589b      	ldr	r3, [r3, r2]
+  991f10:	1f0a      	subs	r2, r1, #4
+  991f12:	b1a3      	cbz	r3, 991f3e <ServerToClientHandshakePacket::read(BinaryStream&)+0xae>
+  991f14:	f3bf 8f5b 	dmb	ish
+  991f18:	e852 1f00 	ldrex	r1, [r2]
+  991f1c:	1e4b      	subs	r3, r1, #1
+  991f1e:	e842 3700 	strex	r7, r3, [r2]
+  991f22:	2f00      	cmp	r7, #0
+  991f24:	d1f8      	bne.n	991f18 <ServerToClientHandshakePacket::read(BinaryStream&)+0x88>
+  991f26:	f3bf 8f5b 	dmb	ish
+  991f2a:	e00b      	b.n	991f44 <ServerToClientHandshakePacket::read(BinaryStream&)+0xb4>
+  991f2c:	6811      	ldr	r1, [r2, #0]
+  991f2e:	1e4b      	subs	r3, r1, #1
+  991f30:	6013      	str	r3, [r2, #0]
+  991f32:	2900      	cmp	r1, #0
+  991f34:	dcc2      	bgt.n	991ebc <ServerToClientHandshakePacket::read(BinaryStream&)+0x2c>
+  991f36:	a903      	add	r1, sp, #12
+  991f38:	f170 ed9e 	blx	b02a78 <std::_Hashtable<int, std::pair<int const, GameType>, std::allocator<std::pair<int const, GameType> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned int, std::integral_constant<bool, true>)+0x247a>
+  991f3c:	e7be      	b.n	991ebc <ServerToClientHandshakePacket::read(BinaryStream&)+0x2c>
+  991f3e:	6811      	ldr	r1, [r2, #0]
+  991f40:	1e4b      	subs	r3, r1, #1
+  991f42:	6013      	str	r3, [r2, #0]
+  991f44:	2900      	cmp	r1, #0
+  991f46:	dccb      	bgt.n	991ee0 <ServerToClientHandshakePacket::read(BinaryStream&)+0x50>
+  991f48:	a904      	add	r1, sp, #16
+  991f4a:	f170 ed96 	blx	b02a78 <std::_Hashtable<int, std::pair<int const, GameType>, std::allocator<std::pair<int const, GameType> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned int, std::integral_constant<bool, true>)+0x247a>
+  991f4e:	e7c7      	b.n	991ee0 <ServerToClientHandshakePacket::read(BinaryStream&)+0x50>
+  991f50:	4a24      	ldr	r2, [pc, #144]	; (991fe4 <ServerToClientHandshakePacket::read(BinaryStream&)+0x154>)
+  991f52:	4604      	mov	r4, r0
+  991f54:	4b24      	ldr	r3, [pc, #144]	; (991fe8 <ServerToClientHandshakePacket::read(BinaryStream&)+0x158>)
+  991f56:	447a      	add	r2, pc
+  991f58:	9902      	ldr	r1, [sp, #8]
+  991f5a:	f1a1 000c 	sub.w	r0, r1, #12
+  991f5e:	589a      	ldr	r2, [r3, r2]
+  991f60:	4290      	cmp	r0, r2
+  991f62:	d033      	beq.n	991fcc <ServerToClientHandshakePacket::read(BinaryStream&)+0x13c>
+  991f64:	4a21      	ldr	r2, [pc, #132]	; (991fec <ServerToClientHandshakePacket::read(BinaryStream&)+0x15c>)
+  991f66:	4b22      	ldr	r3, [pc, #136]	; (991ff0 <ServerToClientHandshakePacket::read(BinaryStream&)+0x160>)
+  991f68:	447a      	add	r2, pc
+  991f6a:	589b      	ldr	r3, [r3, r2]
+  991f6c:	1f0a      	subs	r2, r1, #4
+  991f6e:	b383      	cbz	r3, 991fd2 <ServerToClientHandshakePacket::read(BinaryStream&)+0x142>
+  991f70:	f3bf 8f5b 	dmb	ish
+  991f74:	e852 1f00 	ldrex	r1, [r2]
+  991f78:	1e4b      	subs	r3, r1, #1
+  991f7a:	e842 3700 	strex	r7, r3, [r2]
+  991f7e:	2f00      	cmp	r7, #0
+  991f80:	d1f8      	bne.n	991f74 <ServerToClientHandshakePacket::read(BinaryStream&)+0xe4>
+  991f82:	f3bf 8f5b 	dmb	ish
+  991f86:	2900      	cmp	r1, #0
+  991f88:	dc20      	bgt.n	991fcc <ServerToClientHandshakePacket::read(BinaryStream&)+0x13c>
+  991f8a:	a905      	add	r1, sp, #20
+  991f8c:	e01c      	b.n	991fc8 <ServerToClientHandshakePacket::read(BinaryStream&)+0x138>
+  991f8e:	4a1b      	ldr	r2, [pc, #108]	; (991ffc <ServerToClientHandshakePacket::read(BinaryStream&)+0x16c>)
+  991f90:	4604      	mov	r4, r0
+  991f92:	9901      	ldr	r1, [sp, #4]
+  991f94:	447a      	add	r2, pc
+  991f96:	f1a1 000c 	sub.w	r0, r1, #12
+  991f9a:	58ba      	ldr	r2, [r7, r2]
+  991f9c:	4290      	cmp	r0, r2
+  991f9e:	d015      	beq.n	991fcc <ServerToClientHandshakePacket::read(BinaryStream&)+0x13c>
+  991fa0:	4a17      	ldr	r2, [pc, #92]	; (992000 <ServerToClientHandshakePacket::read(BinaryStream&)+0x170>)
+  991fa2:	4b13      	ldr	r3, [pc, #76]	; (991ff0 <ServerToClientHandshakePacket::read(BinaryStream&)+0x160>)
+  991fa4:	447a      	add	r2, pc
+  991fa6:	589b      	ldr	r3, [r3, r2]
+  991fa8:	1f0a      	subs	r2, r1, #4
+  991faa:	b1b3      	cbz	r3, 991fda <ServerToClientHandshakePacket::read(BinaryStream&)+0x14a>
+  991fac:	f3bf 8f5b 	dmb	ish
+  991fb0:	e852 1f00 	ldrex	r1, [r2]
+  991fb4:	1e4b      	subs	r3, r1, #1
+  991fb6:	e842 3700 	strex	r7, r3, [r2]
+  991fba:	2f00      	cmp	r7, #0
+  991fbc:	d1f8      	bne.n	991fb0 <ServerToClientHandshakePacket::read(BinaryStream&)+0x120>
+  991fbe:	f3bf 8f5b 	dmb	ish
+  991fc2:	2900      	cmp	r1, #0
+  991fc4:	dc02      	bgt.n	991fcc <ServerToClientHandshakePacket::read(BinaryStream&)+0x13c>
+  991fc6:	a906      	add	r1, sp, #24
+  991fc8:	f170 ed56 	blx	b02a78 <std::_Hashtable<int, std::pair<int const, GameType>, std::allocator<std::pair<int const, GameType> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned int, std::integral_constant<bool, true>)+0x247a>
+  991fcc:	4620      	mov	r0, r4
+  991fce:	f508 e946 	blx	69a25c <_Unwind_Resume@plt>
+  991fd2:	6811      	ldr	r1, [r2, #0]
+  991fd4:	1e4b      	subs	r3, r1, #1
+  991fd6:	6013      	str	r3, [r2, #0]
+  991fd8:	e7d5      	b.n	991f86 <ServerToClientHandshakePacket::read(BinaryStream&)+0xf6>
+  991fda:	6811      	ldr	r1, [r2, #0]
+  991fdc:	1e4b      	subs	r3, r1, #1
+  991fde:	6013      	str	r3, [r2, #0]
+  991fe0:	e7ef      	b.n	991fc2 <ServerToClientHandshakePacket::read(BinaryStream&)+0x132>
+  991fe2:	bf00      	nop
+  991fe4:	907e      	str	r0, [sp, #504]	; 0x1f8
+  991fe6:	015f      	lsls	r7, r3, #5
+  991fe8:	8a98      	ldrh	r0, [r3, #20]
+  991fea:	ffff 906c 	vmla.i<illegal width 64>	<illegal reg q12.5>, <illegal reg q7.5>, d28[0]
+  991fee:	015f      	lsls	r7, r3, #5
+  991ff0:	8a9c      	ldrh	r4, [r3, #20]
+  991ff2:	ffff 9126 	vaddw.u<illegal width 64>	<illegal reg q12.5>, <illegal reg q7.5>, d22
+  991ff6:	015f      	lsls	r7, r3, #5
+  991ff8:	90ec      	str	r0, [sp, #944]	; 0x3b0
+  991ffa:	015f      	lsls	r7, r3, #5
+  991ffc:	9040      	str	r0, [sp, #256]	; 0x100
+  991ffe:	015f      	lsls	r7, r3, #5
+  992000:	9030      	str	r0, [sp, #192]	; 0xc0
+  992002:	015f      	lsls	r7, r3, #5
+  992004:	9100      	str	r1, [sp, #0]
+  992006:	015f      	lsls	r7, r3, #5
+  992008:	90c8      	str	r0, [sp, #800]	; 0x320
+  99200a:	015f      	lsls	r7, r3, #5

@@ -1,0 +1,88 @@
+  99a708:	b570      	push	{r4, r5, r6, lr}
+  99a70a:	b084      	sub	sp, #16
+  99a70c:	ae01      	add	r6, sp, #4
+  99a70e:	4604      	mov	r4, r0
+  99a710:	460d      	mov	r5, r1
+  99a712:	4630      	mov	r0, r6
+  99a714:	f501 ed6e 	blx	69c1f4 <ReadOnlyBinaryStream::getString()@plt>
+  99a718:	f104 000c 	add.w	r0, r4, #12
+  99a71c:	4631      	mov	r1, r6
+  99a71e:	f168 e9fc 	blx	b02b18 <std::_Hashtable<int, std::pair<int const, GameType>, std::allocator<std::pair<int const, GameType> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned int, std::integral_constant<bool, true>)+0x251a>
+  99a722:	482d      	ldr	r0, [pc, #180]	; (99a7d8 <TransferPacket::read(BinaryStream&)+0xd0>)
+  99a724:	4a29      	ldr	r2, [pc, #164]	; (99a7cc <TransferPacket::read(BinaryStream&)+0xc4>)
+  99a726:	4478      	add	r0, pc
+  99a728:	9901      	ldr	r1, [sp, #4]
+  99a72a:	5812      	ldr	r2, [r2, r0]
+  99a72c:	f1a1 000c 	sub.w	r0, r1, #12
+  99a730:	4290      	cmp	r0, r2
+  99a732:	d105      	bne.n	99a740 <TransferPacket::read(BinaryStream&)+0x38>
+  99a734:	4628      	mov	r0, r5
+  99a736:	f502 ea08 	blx	69cb48 <ReadOnlyBinaryStream::getUnsignedShort()@plt>
+  99a73a:	6120      	str	r0, [r4, #16]
+  99a73c:	b004      	add	sp, #16
+  99a73e:	bd70      	pop	{r4, r5, r6, pc}
+  99a740:	4a26      	ldr	r2, [pc, #152]	; (99a7dc <TransferPacket::read(BinaryStream&)+0xd4>)
+  99a742:	4b24      	ldr	r3, [pc, #144]	; (99a7d4 <TransferPacket::read(BinaryStream&)+0xcc>)
+  99a744:	447a      	add	r2, pc
+  99a746:	589b      	ldr	r3, [r3, r2]
+  99a748:	1f0a      	subs	r2, r1, #4
+  99a74a:	b15b      	cbz	r3, 99a764 <TransferPacket::read(BinaryStream&)+0x5c>
+  99a74c:	f3bf 8f5b 	dmb	ish
+  99a750:	e852 1f00 	ldrex	r1, [r2]
+  99a754:	1e4b      	subs	r3, r1, #1
+  99a756:	e842 3600 	strex	r6, r3, [r2]
+  99a75a:	2e00      	cmp	r6, #0
+  99a75c:	d1f8      	bne.n	99a750 <TransferPacket::read(BinaryStream&)+0x48>
+  99a75e:	f3bf 8f5b 	dmb	ish
+  99a762:	e002      	b.n	99a76a <TransferPacket::read(BinaryStream&)+0x62>
+  99a764:	6811      	ldr	r1, [r2, #0]
+  99a766:	1e4b      	subs	r3, r1, #1
+  99a768:	6013      	str	r3, [r2, #0]
+  99a76a:	2900      	cmp	r1, #0
+  99a76c:	dce2      	bgt.n	99a734 <TransferPacket::read(BinaryStream&)+0x2c>
+  99a76e:	a902      	add	r1, sp, #8
+  99a770:	f168 e982 	blx	b02a78 <std::_Hashtable<int, std::pair<int const, GameType>, std::allocator<std::pair<int const, GameType> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned int, std::integral_constant<bool, true>)+0x247a>
+  99a774:	e7de      	b.n	99a734 <TransferPacket::read(BinaryStream&)+0x2c>
+  99a776:	4a14      	ldr	r2, [pc, #80]	; (99a7c8 <TransferPacket::read(BinaryStream&)+0xc0>)
+  99a778:	4604      	mov	r4, r0
+  99a77a:	4b14      	ldr	r3, [pc, #80]	; (99a7cc <TransferPacket::read(BinaryStream&)+0xc4>)
+  99a77c:	447a      	add	r2, pc
+  99a77e:	9901      	ldr	r1, [sp, #4]
+  99a780:	f1a1 000c 	sub.w	r0, r1, #12
+  99a784:	589a      	ldr	r2, [r3, r2]
+  99a786:	4290      	cmp	r0, r2
+  99a788:	d016      	beq.n	99a7b8 <TransferPacket::read(BinaryStream&)+0xb0>
+  99a78a:	4a11      	ldr	r2, [pc, #68]	; (99a7d0 <TransferPacket::read(BinaryStream&)+0xc8>)
+  99a78c:	4b11      	ldr	r3, [pc, #68]	; (99a7d4 <TransferPacket::read(BinaryStream&)+0xcc>)
+  99a78e:	447a      	add	r2, pc
+  99a790:	589b      	ldr	r3, [r3, r2]
+  99a792:	1f0a      	subs	r2, r1, #4
+  99a794:	b19b      	cbz	r3, 99a7be <TransferPacket::read(BinaryStream&)+0xb6>
+  99a796:	f3bf 8f5b 	dmb	ish
+  99a79a:	e852 1f00 	ldrex	r1, [r2]
+  99a79e:	1e4b      	subs	r3, r1, #1
+  99a7a0:	e842 3600 	strex	r6, r3, [r2]
+  99a7a4:	2e00      	cmp	r6, #0
+  99a7a6:	d1f8      	bne.n	99a79a <TransferPacket::read(BinaryStream&)+0x92>
+  99a7a8:	f3bf 8f5b 	dmb	ish
+  99a7ac:	2900      	cmp	r1, #0
+  99a7ae:	bfdc      	itt	le
+  99a7b0:	f10d 010c 	addle.w	r1, sp, #12
+  99a7b4:	f168 e960 	blxle	b02a78 <std::_Hashtable<int, std::pair<int const, GameType>, std::allocator<std::pair<int const, GameType> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned int, std::integral_constant<bool, true>)+0x247a>
+  99a7b8:	4620      	mov	r0, r4
+  99a7ba:	f4ff ed50 	blx	69a25c <_Unwind_Resume@plt>
+  99a7be:	6811      	ldr	r1, [r2, #0]
+  99a7c0:	1e4b      	subs	r3, r1, #1
+  99a7c2:	6013      	str	r3, [r2, #0]
+  99a7c4:	e7f2      	b.n	99a7ac <TransferPacket::read(BinaryStream&)+0xa4>
+  99a7c6:	bf00      	nop
+  99a7c8:	0858      	lsrs	r0, r3, #1
+  99a7ca:	015f      	lsls	r7, r3, #5
+  99a7cc:	8a98      	ldrh	r0, [r3, #20]
+  99a7ce:	ffff 0846 	vtbx.8	d16, {d15}, d6
+  99a7d2:	015f      	lsls	r7, r3, #5
+  99a7d4:	8a9c      	ldrh	r4, [r3, #20]
+  99a7d6:	ffff 08ae 	vtbl.8	d16, {d31}, d30
+  99a7da:	015f      	lsls	r7, r3, #5
+  99a7dc:	0890      	lsrs	r0, r2, #2
+  99a7de:	015f      	lsls	r7, r3, #5

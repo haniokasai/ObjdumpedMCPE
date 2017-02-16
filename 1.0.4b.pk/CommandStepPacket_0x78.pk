@@ -1,0 +1,344 @@
+  99d434:	e92d 41f0 	stmdb	sp!, {r4, r5, r6, r7, r8, lr}
+  99d438:	b0bc      	sub	sp, #240	; 0xf0
+  99d43a:	4604      	mov	r4, r0
+  99d43c:	48c2      	ldr	r0, [pc, #776]	; (99d748 <CommandStepPacket::read(BinaryStream&)+0x314>)
+  99d43e:	f8df 830c 	ldr.w	r8, [pc, #780]	; 99d74c <CommandStepPacket::read(BinaryStream&)+0x318>
+  99d442:	ae07      	add	r6, sp, #28
+  99d444:	4478      	add	r0, pc
+  99d446:	460d      	mov	r5, r1
+  99d448:	f858 0000 	ldr.w	r0, [r8, r0]
+  99d44c:	6800      	ldr	r0, [r0, #0]
+  99d44e:	903b      	str	r0, [sp, #236]	; 0xec
+  99d450:	4630      	mov	r0, r6
+  99d452:	f4fe eed0 	blx	69c1f4 <ReadOnlyBinaryStream::getString()@plt>
+  99d456:	f104 000c 	add.w	r0, r4, #12
+  99d45a:	4631      	mov	r1, r6
+  99d45c:	f165 eb5c 	blx	b02b18 <std::_Hashtable<int, std::pair<int const, GameType>, std::allocator<std::pair<int const, GameType> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned int, std::integral_constant<bool, true>)+0x251a>
+  99d460:	48bf      	ldr	r0, [pc, #764]	; (99d760 <CommandStepPacket::read(BinaryStream&)+0x32c>)
+  99d462:	4fbc      	ldr	r7, [pc, #752]	; (99d754 <CommandStepPacket::read(BinaryStream&)+0x320>)
+  99d464:	4478      	add	r0, pc
+  99d466:	9907      	ldr	r1, [sp, #28]
+  99d468:	583a      	ldr	r2, [r7, r0]
+  99d46a:	f1a1 000c 	sub.w	r0, r1, #12
+  99d46e:	4290      	cmp	r0, r2
+  99d470:	d177      	bne.n	99d562 <CommandStepPacket::read(BinaryStream&)+0x12e>
+  99d472:	ae06      	add	r6, sp, #24
+  99d474:	4629      	mov	r1, r5
+  99d476:	4630      	mov	r0, r6
+  99d478:	f4fe eebc 	blx	69c1f4 <ReadOnlyBinaryStream::getString()@plt>
+  99d47c:	f104 0010 	add.w	r0, r4, #16
+  99d480:	4631      	mov	r1, r6
+  99d482:	f165 eb4a 	blx	b02b18 <std::_Hashtable<int, std::pair<int const, GameType>, std::allocator<std::pair<int const, GameType> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned int, std::integral_constant<bool, true>)+0x251a>
+  99d486:	48ba      	ldr	r0, [pc, #744]	; (99d770 <CommandStepPacket::read(BinaryStream&)+0x33c>)
+  99d488:	9906      	ldr	r1, [sp, #24]
+  99d48a:	4478      	add	r0, pc
+  99d48c:	583a      	ldr	r2, [r7, r0]
+  99d48e:	f1a1 000c 	sub.w	r0, r1, #12
+  99d492:	4290      	cmp	r0, r2
+  99d494:	d178      	bne.n	99d588 <CommandStepPacket::read(BinaryStream&)+0x154>
+  99d496:	4628      	mov	r0, r5
+  99d498:	f4ff e9dc 	blx	69c854 <ReadOnlyBinaryStream::getUnsignedVarInt()@plt>
+  99d49c:	7520      	strb	r0, [r4, #20]
+  99d49e:	4628      	mov	r0, r5
+  99d4a0:	f4ff e9d8 	blx	69c854 <ReadOnlyBinaryStream::getUnsignedVarInt()@plt>
+  99d4a4:	7560      	strb	r0, [r4, #21]
+  99d4a6:	4628      	mov	r0, r5
+  99d4a8:	f4ff eb48 	blx	69cb3c <ReadOnlyBinaryStream::getBool()@plt>
+  99d4ac:	75a0      	strb	r0, [r4, #22]
+  99d4ae:	4628      	mov	r0, r5
+  99d4b0:	f501 e98a 	blx	69e7c8 <ReadOnlyBinaryStream::getUnsignedVarInt64()@plt>
+  99d4b4:	e9cd 0102 	strd	r0, r1, [sp, #8]
+  99d4b8:	f64f 70ff 	movw	r0, #65535	; 0xffff
+  99d4bc:	f8ad 0010 	strh.w	r0, [sp, #16]
+  99d4c0:	a814      	add	r0, sp, #80	; 0x50
+  99d4c2:	a902      	add	r1, sp, #8
+  99d4c4:	f4ff e9f6 	blx	69c8b4 <NetworkIdentifier::NetworkIdentifier(RakNet::RakNetGUID const&)@plt>
+  99d4c8:	e9dd 1214 	ldrd	r1, r2, [sp, #80]	; 0x50
+  99d4cc:	e9c4 1206 	strd	r1, r2, [r4, #24]
+  99d4d0:	f104 0228 	add.w	r2, r4, #40	; 0x28
+  99d4d4:	f8bd 1058 	ldrh.w	r1, [sp, #88]	; 0x58
+  99d4d8:	8421      	strh	r1, [r4, #32]
+  99d4da:	f100 0110 	add.w	r1, r0, #16
+  99d4de:	4610      	mov	r0, r2
+  99d4e0:	2284      	movs	r2, #132	; 0x84
+  99d4e2:	f4fe ed08 	blx	69bef4 <__aeabi_memcpy8@plt>
+  99d4e6:	ae01      	add	r6, sp, #4
+  99d4e8:	4629      	mov	r1, r5
+  99d4ea:	4630      	mov	r0, r6
+  99d4ec:	f4fe ee82 	blx	69c1f4 <ReadOnlyBinaryStream::getString()@plt>
+  99d4f0:	f104 00d8 	add.w	r0, r4, #216	; 0xd8
+  99d4f4:	4631      	mov	r1, r6
+  99d4f6:	f165 eb10 	blx	b02b18 <std::_Hashtable<int, std::pair<int const, GameType>, std::allocator<std::pair<int const, GameType> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned int, std::integral_constant<bool, true>)+0x251a>
+  99d4fa:	48a1      	ldr	r0, [pc, #644]	; (99d780 <CommandStepPacket::read(BinaryStream&)+0x34c>)
+  99d4fc:	9901      	ldr	r1, [sp, #4]
+  99d4fe:	4478      	add	r0, pc
+  99d500:	583a      	ldr	r2, [r7, r0]
+  99d502:	f1a1 000c 	sub.w	r0, r1, #12
+  99d506:	4290      	cmp	r0, r2
+  99d508:	d150      	bne.n	99d5ac <CommandStepPacket::read(BinaryStream&)+0x178>
+  99d50a:	466e      	mov	r6, sp
+  99d50c:	4629      	mov	r1, r5
+  99d50e:	4630      	mov	r0, r6
+  99d510:	f4fe ee70 	blx	69c1f4 <ReadOnlyBinaryStream::getString()@plt>
+  99d514:	f104 00dc 	add.w	r0, r4, #220	; 0xdc
+  99d518:	4631      	mov	r1, r6
+  99d51a:	f165 eafe 	blx	b02b18 <std::_Hashtable<int, std::pair<int const, GameType>, std::allocator<std::pair<int const, GameType> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned int, std::integral_constant<bool, true>)+0x251a>
+  99d51e:	489c      	ldr	r0, [pc, #624]	; (99d790 <CommandStepPacket::read(BinaryStream&)+0x35c>)
+  99d520:	9900      	ldr	r1, [sp, #0]
+  99d522:	4478      	add	r0, pc
+  99d524:	583a      	ldr	r2, [r7, r0]
+  99d526:	f1a1 000c 	sub.w	r0, r1, #12
+  99d52a:	4290      	cmp	r0, r2
+  99d52c:	d150      	bne.n	99d5d0 <CommandStepPacket::read(BinaryStream&)+0x19c>
+  99d52e:	ae08      	add	r6, sp, #32
+  99d530:	4629      	mov	r1, r5
+  99d532:	4630      	mov	r0, r6
+  99d534:	f501 e94e 	blx	69e7d4 <CommandOriginData ReadOnlyBinaryStream::getType<CommandOriginData>()@plt>
+  99d538:	f104 00b0 	add.w	r0, r4, #176	; 0xb0
+  99d53c:	4631      	mov	r1, r6
+  99d53e:	f501 e950 	blx	69e7e0 <CommandOriginData::operator=(CommandOriginData const&)@plt>
+  99d542:	a808      	add	r0, sp, #32
+  99d544:	f4fe ee4a 	blx	69c1dc <CommandOriginData::~CommandOriginData()@plt>
+  99d548:	4893      	ldr	r0, [pc, #588]	; (99d798 <CommandStepPacket::read(BinaryStream&)+0x364>)
+  99d54a:	993b      	ldr	r1, [sp, #236]	; 0xec
+  99d54c:	4478      	add	r0, pc
+  99d54e:	f858 0000 	ldr.w	r0, [r8, r0]
+  99d552:	6800      	ldr	r0, [r0, #0]
+  99d554:	1a40      	subs	r0, r0, r1
+  99d556:	bf04      	itt	eq
+  99d558:	b03c      	addeq	sp, #240	; 0xf0
+  99d55a:	e8bd 81f0 	ldmiaeq.w	sp!, {r4, r5, r6, r7, r8, pc}
+  99d55e:	f4fe ec88 	blx	69be70 <__stack_chk_fail@plt>
+  99d562:	4a80      	ldr	r2, [pc, #512]	; (99d764 <CommandStepPacket::read(BinaryStream&)+0x330>)
+  99d564:	4b7d      	ldr	r3, [pc, #500]	; (99d75c <CommandStepPacket::read(BinaryStream&)+0x328>)
+  99d566:	447a      	add	r2, pc
+  99d568:	589b      	ldr	r3, [r3, r2]
+  99d56a:	1f0a      	subs	r2, r1, #4
+  99d56c:	2b00      	cmp	r3, #0
+  99d56e:	d041      	beq.n	99d5f4 <CommandStepPacket::read(BinaryStream&)+0x1c0>
+  99d570:	f3bf 8f5b 	dmb	ish
+  99d574:	e852 1f00 	ldrex	r1, [r2]
+  99d578:	1e4b      	subs	r3, r1, #1
+  99d57a:	e842 3600 	strex	r6, r3, [r2]
+  99d57e:	2e00      	cmp	r6, #0
+  99d580:	d1f8      	bne.n	99d574 <CommandStepPacket::read(BinaryStream&)+0x140>
+  99d582:	f3bf 8f5b 	dmb	ish
+  99d586:	e038      	b.n	99d5fa <CommandStepPacket::read(BinaryStream&)+0x1c6>
+  99d588:	4a7a      	ldr	r2, [pc, #488]	; (99d774 <CommandStepPacket::read(BinaryStream&)+0x340>)
+  99d58a:	4b74      	ldr	r3, [pc, #464]	; (99d75c <CommandStepPacket::read(BinaryStream&)+0x328>)
+  99d58c:	447a      	add	r2, pc
+  99d58e:	589b      	ldr	r3, [r3, r2]
+  99d590:	1f0a      	subs	r2, r1, #4
+  99d592:	b3cb      	cbz	r3, 99d608 <CommandStepPacket::read(BinaryStream&)+0x1d4>
+  99d594:	f3bf 8f5b 	dmb	ish
+  99d598:	e852 1f00 	ldrex	r1, [r2]
+  99d59c:	1e4b      	subs	r3, r1, #1
+  99d59e:	e842 3600 	strex	r6, r3, [r2]
+  99d5a2:	2e00      	cmp	r6, #0
+  99d5a4:	d1f8      	bne.n	99d598 <CommandStepPacket::read(BinaryStream&)+0x164>
+  99d5a6:	f3bf 8f5b 	dmb	ish
+  99d5aa:	e030      	b.n	99d60e <CommandStepPacket::read(BinaryStream&)+0x1da>
+  99d5ac:	4a75      	ldr	r2, [pc, #468]	; (99d784 <CommandStepPacket::read(BinaryStream&)+0x350>)
+  99d5ae:	4b6b      	ldr	r3, [pc, #428]	; (99d75c <CommandStepPacket::read(BinaryStream&)+0x328>)
+  99d5b0:	447a      	add	r2, pc
+  99d5b2:	589b      	ldr	r3, [r3, r2]
+  99d5b4:	1f0a      	subs	r2, r1, #4
+  99d5b6:	b38b      	cbz	r3, 99d61c <CommandStepPacket::read(BinaryStream&)+0x1e8>
+  99d5b8:	f3bf 8f5b 	dmb	ish
+  99d5bc:	e852 1f00 	ldrex	r1, [r2]
+  99d5c0:	1e4b      	subs	r3, r1, #1
+  99d5c2:	e842 3600 	strex	r6, r3, [r2]
+  99d5c6:	2e00      	cmp	r6, #0
+  99d5c8:	d1f8      	bne.n	99d5bc <CommandStepPacket::read(BinaryStream&)+0x188>
+  99d5ca:	f3bf 8f5b 	dmb	ish
+  99d5ce:	e028      	b.n	99d622 <CommandStepPacket::read(BinaryStream&)+0x1ee>
+  99d5d0:	4a70      	ldr	r2, [pc, #448]	; (99d794 <CommandStepPacket::read(BinaryStream&)+0x360>)
+  99d5d2:	4b62      	ldr	r3, [pc, #392]	; (99d75c <CommandStepPacket::read(BinaryStream&)+0x328>)
+  99d5d4:	447a      	add	r2, pc
+  99d5d6:	589b      	ldr	r3, [r3, r2]
+  99d5d8:	1f0a      	subs	r2, r1, #4
+  99d5da:	b34b      	cbz	r3, 99d630 <CommandStepPacket::read(BinaryStream&)+0x1fc>
+  99d5dc:	f3bf 8f5b 	dmb	ish
+  99d5e0:	e852 1f00 	ldrex	r1, [r2]
+  99d5e4:	1e4b      	subs	r3, r1, #1
+  99d5e6:	e842 3700 	strex	r7, r3, [r2]
+  99d5ea:	2f00      	cmp	r7, #0
+  99d5ec:	d1f8      	bne.n	99d5e0 <CommandStepPacket::read(BinaryStream&)+0x1ac>
+  99d5ee:	f3bf 8f5b 	dmb	ish
+  99d5f2:	e020      	b.n	99d636 <CommandStepPacket::read(BinaryStream&)+0x202>
+  99d5f4:	6811      	ldr	r1, [r2, #0]
+  99d5f6:	1e4b      	subs	r3, r1, #1
+  99d5f8:	6013      	str	r3, [r2, #0]
+  99d5fa:	2900      	cmp	r1, #0
+  99d5fc:	f73f af39 	bgt.w	99d472 <CommandStepPacket::read(BinaryStream&)+0x3e>
+  99d600:	a913      	add	r1, sp, #76	; 0x4c
+  99d602:	f165 ea3a 	blx	b02a78 <std::_Hashtable<int, std::pair<int const, GameType>, std::allocator<std::pair<int const, GameType> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned int, std::integral_constant<bool, true>)+0x247a>
+  99d606:	e734      	b.n	99d472 <CommandStepPacket::read(BinaryStream&)+0x3e>
+  99d608:	6811      	ldr	r1, [r2, #0]
+  99d60a:	1e4b      	subs	r3, r1, #1
+  99d60c:	6013      	str	r3, [r2, #0]
+  99d60e:	2900      	cmp	r1, #0
+  99d610:	f73f af41 	bgt.w	99d496 <CommandStepPacket::read(BinaryStream&)+0x62>
+  99d614:	a913      	add	r1, sp, #76	; 0x4c
+  99d616:	f165 ea30 	blx	b02a78 <std::_Hashtable<int, std::pair<int const, GameType>, std::allocator<std::pair<int const, GameType> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned int, std::integral_constant<bool, true>)+0x247a>
+  99d61a:	e73c      	b.n	99d496 <CommandStepPacket::read(BinaryStream&)+0x62>
+  99d61c:	6811      	ldr	r1, [r2, #0]
+  99d61e:	1e4b      	subs	r3, r1, #1
+  99d620:	6013      	str	r3, [r2, #0]
+  99d622:	2900      	cmp	r1, #0
+  99d624:	f73f af71 	bgt.w	99d50a <CommandStepPacket::read(BinaryStream&)+0xd6>
+  99d628:	a913      	add	r1, sp, #76	; 0x4c
+  99d62a:	f165 ea26 	blx	b02a78 <std::_Hashtable<int, std::pair<int const, GameType>, std::allocator<std::pair<int const, GameType> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned int, std::integral_constant<bool, true>)+0x247a>
+  99d62e:	e76c      	b.n	99d50a <CommandStepPacket::read(BinaryStream&)+0xd6>
+  99d630:	6811      	ldr	r1, [r2, #0]
+  99d632:	1e4b      	subs	r3, r1, #1
+  99d634:	6013      	str	r3, [r2, #0]
+  99d636:	2900      	cmp	r1, #0
+  99d638:	f73f af79 	bgt.w	99d52e <CommandStepPacket::read(BinaryStream&)+0xfa>
+  99d63c:	a913      	add	r1, sp, #76	; 0x4c
+  99d63e:	f165 ea1c 	blx	b02a78 <std::_Hashtable<int, std::pair<int const, GameType>, std::allocator<std::pair<int const, GameType> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned int, std::integral_constant<bool, true>)+0x247a>
+  99d642:	e774      	b.n	99d52e <CommandStepPacket::read(BinaryStream&)+0xfa>
+  99d644:	4a42      	ldr	r2, [pc, #264]	; (99d750 <CommandStepPacket::read(BinaryStream&)+0x31c>)
+  99d646:	4604      	mov	r4, r0
+  99d648:	4b42      	ldr	r3, [pc, #264]	; (99d754 <CommandStepPacket::read(BinaryStream&)+0x320>)
+  99d64a:	447a      	add	r2, pc
+  99d64c:	9907      	ldr	r1, [sp, #28]
+  99d64e:	f1a1 000c 	sub.w	r0, r1, #12
+  99d652:	589a      	ldr	r2, [r3, r2]
+  99d654:	4290      	cmp	r0, r2
+  99d656:	d069      	beq.n	99d72c <CommandStepPacket::read(BinaryStream&)+0x2f8>
+  99d658:	4a3f      	ldr	r2, [pc, #252]	; (99d758 <CommandStepPacket::read(BinaryStream&)+0x324>)
+  99d65a:	4b40      	ldr	r3, [pc, #256]	; (99d75c <CommandStepPacket::read(BinaryStream&)+0x328>)
+  99d65c:	447a      	add	r2, pc
+  99d65e:	589b      	ldr	r3, [r3, r2]
+  99d660:	1f0a      	subs	r2, r1, #4
+  99d662:	2b00      	cmp	r3, #0
+  99d664:	d06c      	beq.n	99d740 <CommandStepPacket::read(BinaryStream&)+0x30c>
+  99d666:	f3bf 8f5b 	dmb	ish
+  99d66a:	e852 1f00 	ldrex	r1, [r2]
+  99d66e:	1e4b      	subs	r3, r1, #1
+  99d670:	e842 3700 	strex	r7, r3, [r2]
+  99d674:	2f00      	cmp	r7, #0
+  99d676:	d1f8      	bne.n	99d66a <CommandStepPacket::read(BinaryStream&)+0x236>
+  99d678:	f3bf 8f5b 	dmb	ish
+  99d67c:	e050      	b.n	99d720 <CommandStepPacket::read(BinaryStream&)+0x2ec>
+  99d67e:	4a3a      	ldr	r2, [pc, #232]	; (99d768 <CommandStepPacket::read(BinaryStream&)+0x334>)
+  99d680:	4604      	mov	r4, r0
+  99d682:	9906      	ldr	r1, [sp, #24]
+  99d684:	447a      	add	r2, pc
+  99d686:	f1a1 000c 	sub.w	r0, r1, #12
+  99d68a:	58ba      	ldr	r2, [r7, r2]
+  99d68c:	4290      	cmp	r0, r2
+  99d68e:	d04d      	beq.n	99d72c <CommandStepPacket::read(BinaryStream&)+0x2f8>
+  99d690:	4a36      	ldr	r2, [pc, #216]	; (99d76c <CommandStepPacket::read(BinaryStream&)+0x338>)
+  99d692:	4b32      	ldr	r3, [pc, #200]	; (99d75c <CommandStepPacket::read(BinaryStream&)+0x328>)
+  99d694:	447a      	add	r2, pc
+  99d696:	589b      	ldr	r3, [r3, r2]
+  99d698:	1f0a      	subs	r2, r1, #4
+  99d69a:	2b00      	cmp	r3, #0
+  99d69c:	d050      	beq.n	99d740 <CommandStepPacket::read(BinaryStream&)+0x30c>
+  99d69e:	f3bf 8f5b 	dmb	ish
+  99d6a2:	e852 1f00 	ldrex	r1, [r2]
+  99d6a6:	1e4b      	subs	r3, r1, #1
+  99d6a8:	e842 3700 	strex	r7, r3, [r2]
+  99d6ac:	2f00      	cmp	r7, #0
+  99d6ae:	d1f8      	bne.n	99d6a2 <CommandStepPacket::read(BinaryStream&)+0x26e>
+  99d6b0:	f3bf 8f5b 	dmb	ish
+  99d6b4:	e034      	b.n	99d720 <CommandStepPacket::read(BinaryStream&)+0x2ec>
+  99d6b6:	4a30      	ldr	r2, [pc, #192]	; (99d778 <CommandStepPacket::read(BinaryStream&)+0x344>)
+  99d6b8:	4604      	mov	r4, r0
+  99d6ba:	9901      	ldr	r1, [sp, #4]
+  99d6bc:	447a      	add	r2, pc
+  99d6be:	f1a1 000c 	sub.w	r0, r1, #12
+  99d6c2:	58ba      	ldr	r2, [r7, r2]
+  99d6c4:	4290      	cmp	r0, r2
+  99d6c6:	d031      	beq.n	99d72c <CommandStepPacket::read(BinaryStream&)+0x2f8>
+  99d6c8:	4a2c      	ldr	r2, [pc, #176]	; (99d77c <CommandStepPacket::read(BinaryStream&)+0x348>)
+  99d6ca:	4b24      	ldr	r3, [pc, #144]	; (99d75c <CommandStepPacket::read(BinaryStream&)+0x328>)
+  99d6cc:	447a      	add	r2, pc
+  99d6ce:	589b      	ldr	r3, [r3, r2]
+  99d6d0:	1f0a      	subs	r2, r1, #4
+  99d6d2:	b3ab      	cbz	r3, 99d740 <CommandStepPacket::read(BinaryStream&)+0x30c>
+  99d6d4:	f3bf 8f5b 	dmb	ish
+  99d6d8:	e852 1f00 	ldrex	r1, [r2]
+  99d6dc:	1e4b      	subs	r3, r1, #1
+  99d6de:	e842 3700 	strex	r7, r3, [r2]
+  99d6e2:	2f00      	cmp	r7, #0
+  99d6e4:	d1f8      	bne.n	99d6d8 <CommandStepPacket::read(BinaryStream&)+0x2a4>
+  99d6e6:	f3bf 8f5b 	dmb	ish
+  99d6ea:	e019      	b.n	99d720 <CommandStepPacket::read(BinaryStream&)+0x2ec>
+  99d6ec:	4a26      	ldr	r2, [pc, #152]	; (99d788 <CommandStepPacket::read(BinaryStream&)+0x354>)
+  99d6ee:	4604      	mov	r4, r0
+  99d6f0:	9900      	ldr	r1, [sp, #0]
+  99d6f2:	447a      	add	r2, pc
+  99d6f4:	f1a1 000c 	sub.w	r0, r1, #12
+  99d6f8:	58ba      	ldr	r2, [r7, r2]
+  99d6fa:	4290      	cmp	r0, r2
+  99d6fc:	d016      	beq.n	99d72c <CommandStepPacket::read(BinaryStream&)+0x2f8>
+  99d6fe:	4a23      	ldr	r2, [pc, #140]	; (99d78c <CommandStepPacket::read(BinaryStream&)+0x358>)
+  99d700:	4b16      	ldr	r3, [pc, #88]	; (99d75c <CommandStepPacket::read(BinaryStream&)+0x328>)
+  99d702:	447a      	add	r2, pc
+  99d704:	589b      	ldr	r3, [r3, r2]
+  99d706:	1f0a      	subs	r2, r1, #4
+  99d708:	b1d3      	cbz	r3, 99d740 <CommandStepPacket::read(BinaryStream&)+0x30c>
+  99d70a:	f3bf 8f5b 	dmb	ish
+  99d70e:	e852 1f00 	ldrex	r1, [r2]
+  99d712:	1e4b      	subs	r3, r1, #1
+  99d714:	e842 3700 	strex	r7, r3, [r2]
+  99d718:	2f00      	cmp	r7, #0
+  99d71a:	d1f8      	bne.n	99d70e <CommandStepPacket::read(BinaryStream&)+0x2da>
+  99d71c:	f3bf 8f5b 	dmb	ish
+  99d720:	2900      	cmp	r1, #0
+  99d722:	bfdc      	itt	le
+  99d724:	f10d 014c 	addle.w	r1, sp, #76	; 0x4c
+  99d728:	f165 e9a6 	blxle	b02a78 <std::_Hashtable<int, std::pair<int const, GameType>, std::allocator<std::pair<int const, GameType> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned int, std::integral_constant<bool, true>)+0x247a>
+  99d72c:	4620      	mov	r0, r4
+  99d72e:	f4fc ed96 	blx	69a25c <_Unwind_Resume@plt>
+  99d732:	4604      	mov	r4, r0
+  99d734:	a808      	add	r0, sp, #32
+  99d736:	f4fe ed52 	blx	69c1dc <CommandOriginData::~CommandOriginData()@plt>
+  99d73a:	4620      	mov	r0, r4
+  99d73c:	f4fc ed8e 	blx	69a25c <_Unwind_Resume@plt>
+  99d740:	6811      	ldr	r1, [r2, #0]
+  99d742:	1e4b      	subs	r3, r1, #1
+  99d744:	6013      	str	r3, [r2, #0]
+  99d746:	e7eb      	b.n	99d720 <CommandStepPacket::read(BinaryStream&)+0x2ec>
+  99d748:	db90      	blt.n	99d66c <CommandStepPacket::read(BinaryStream&)+0x238>
+  99d74a:	015e      	lsls	r6, r3, #5
+  99d74c:	8bec      	ldrh	r4, [r5, #30]
+  99d74e:	ffff d98a 	vtbl.8	d29, {d31-<overflow reg d32}, d10
+  99d752:	015e      	lsls	r6, r3, #5
+  99d754:	8a98      	ldrh	r0, [r3, #20]
+  99d756:	ffff d978 	vqrshrn.u64	d29, q12, #1
+  99d75a:	015e      	lsls	r6, r3, #5
+  99d75c:	8a9c      	ldrh	r4, [r3, #20]
+  99d75e:	ffff db70 			; <UNDEFINED> instruction: 0xffffdb70
+  99d762:	015e      	lsls	r6, r3, #5
+  99d764:	da6e      	bge.n	99d844 <CommandStepPacket::createCommandContext(CommandContextType, Level&) const+0x9a>
+  99d766:	015e      	lsls	r6, r3, #5
+  99d768:	d950      	bls.n	99d80c <CommandStepPacket::createCommandContext(CommandContextType, Level&) const+0x62>
+  99d76a:	015e      	lsls	r6, r3, #5
+  99d76c:	d940      	bls.n	99d7f0 <CommandStepPacket::createCommandContext(CommandContextType, Level&) const+0x46>
+  99d76e:	015e      	lsls	r6, r3, #5
+  99d770:	db4a      	blt.n	99d808 <CommandStepPacket::createCommandContext(CommandContextType, Level&) const+0x5e>
+  99d772:	015e      	lsls	r6, r3, #5
+  99d774:	da48      	bge.n	99d808 <CommandStepPacket::createCommandContext(CommandContextType, Level&) const+0x5e>
+  99d776:	015e      	lsls	r6, r3, #5
+  99d778:	d918      	bls.n	99d7ac <CommandStepPacket::createCommandContext(CommandContextType, Level&) const+0x2>
+  99d77a:	015e      	lsls	r6, r3, #5
+  99d77c:	d908      	bls.n	99d790 <CommandStepPacket::read(BinaryStream&)+0x35c>
+  99d77e:	015e      	lsls	r6, r3, #5
+  99d780:	dad6      	bge.n	99d730 <CommandStepPacket::read(BinaryStream&)+0x2fc>
+  99d782:	015e      	lsls	r6, r3, #5
+  99d784:	da24      	bge.n	99d7d0 <CommandStepPacket::createCommandContext(CommandContextType, Level&) const+0x26>
+  99d786:	015e      	lsls	r6, r3, #5
+  99d788:	d8e2      	bhi.n	99d750 <CommandStepPacket::read(BinaryStream&)+0x31c>
+  99d78a:	015e      	lsls	r6, r3, #5
+  99d78c:	d8d2      	bhi.n	99d734 <CommandStepPacket::read(BinaryStream&)+0x300>
+  99d78e:	015e      	lsls	r6, r3, #5
+  99d790:	dab2      	bge.n	99d6f8 <CommandStepPacket::read(BinaryStream&)+0x2c4>
+  99d792:	015e      	lsls	r6, r3, #5
+  99d794:	da00      	bge.n	99d798 <CommandStepPacket::read(BinaryStream&)+0x364>
+  99d796:	015e      	lsls	r6, r3, #5
+  99d798:	da88      	bge.n	99d6ac <CommandStepPacket::read(BinaryStream&)+0x278>
+  99d79a:	015e      	lsls	r6, r3, #5

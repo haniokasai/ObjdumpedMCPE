@@ -1,0 +1,44 @@
+  996510:	b570      	push	{r4, r5, r6, lr}
+  996512:	b086      	sub	sp, #24
+  996514:	4604      	mov	r4, r0
+  996516:	4668      	mov	r0, sp
+  996518:	460d      	mov	r5, r1
+  99651a:	f506 eb9a 	blx	69cc50 <EntityRuntimeID ReadOnlyBinaryStream::getType<EntityRuntimeID>()@plt>
+  99651e:	e9dd 0100 	ldrd	r0, r1, [sp]
+  996522:	466e      	mov	r6, sp
+  996524:	e9c4 0104 	strd	r0, r1, [r4, #16]
+  996528:	4630      	mov	r0, r6
+  99652a:	4629      	mov	r1, r5
+  99652c:	f506 ec20 	blx	69cd70 <ItemInstance ReadOnlyBinaryStream::getType<ItemInstance>()@plt>
+  996530:	f104 0018 	add.w	r0, r4, #24
+  996534:	4631      	mov	r1, r6
+  996536:	f505 eee8 	blx	69c308 <ItemInstance::operator=(ItemInstance const&)@plt>
+  99653a:	9802      	ldr	r0, [sp, #8]
+  99653c:	b110      	cbz	r0, 996544 <MobEquipmentPacket::read(BinaryStream&)+0x34>
+  99653e:	6801      	ldr	r1, [r0, #0]
+  996540:	6849      	ldr	r1, [r1, #4]
+  996542:	4788      	blx	r1
+  996544:	4628      	mov	r0, r5
+  996546:	f506 ead0 	blx	69cae8 <ReadOnlyBinaryStream::getByte()@plt>
+  99654a:	f884 0036 	strb.w	r0, [r4, #54]	; 0x36
+  99654e:	4628      	mov	r0, r5
+  996550:	f506 eaca 	blx	69cae8 <ReadOnlyBinaryStream::getByte()@plt>
+  996554:	f884 0037 	strb.w	r0, [r4, #55]	; 0x37
+  996558:	4628      	mov	r0, r5
+  99655a:	f506 eac6 	blx	69cae8 <ReadOnlyBinaryStream::getByte()@plt>
+  99655e:	f884 0038 	strb.w	r0, [r4, #56]	; 0x38
+  996562:	f994 1036 	ldrsb.w	r1, [r4, #54]	; 0x36
+  996566:	62e1      	str	r1, [r4, #44]	; 0x2c
+  996568:	f994 1037 	ldrsb.w	r1, [r4, #55]	; 0x37
+  99656c:	6321      	str	r1, [r4, #48]	; 0x30
+  99656e:	f884 0035 	strb.w	r0, [r4, #53]	; 0x35
+  996572:	b006      	add	sp, #24
+  996574:	bd70      	pop	{r4, r5, r6, pc}
+  996576:	4604      	mov	r4, r0
+  996578:	9802      	ldr	r0, [sp, #8]
+  99657a:	b110      	cbz	r0, 996582 <MobEquipmentPacket::read(BinaryStream&)+0x72>
+  99657c:	6801      	ldr	r1, [r0, #0]
+  99657e:	6849      	ldr	r1, [r1, #4]
+  996580:	4788      	blx	r1
+  996582:	4620      	mov	r0, r4
+  996584:	f503 ee6a 	blx	69a25c <_Unwind_Resume@plt>

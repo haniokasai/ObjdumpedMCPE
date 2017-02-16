@@ -1,0 +1,92 @@
+  998058:	b570      	push	{r4, r5, r6, lr}
+  99805a:	b086      	sub	sp, #24
+  99805c:	4605      	mov	r5, r0
+  99805e:	a802      	add	r0, sp, #8
+  998060:	460c      	mov	r4, r1
+  998062:	f504 ef04 	blx	69ce6c <ChunkPos ReadOnlyBinaryStream::getType<ChunkPos>()@plt>
+  998066:	9802      	ldr	r0, [sp, #8]
+  998068:	ae01      	add	r6, sp, #4
+  99806a:	60e8      	str	r0, [r5, #12]
+  99806c:	4621      	mov	r1, r4
+  99806e:	9803      	ldr	r0, [sp, #12]
+  998070:	6128      	str	r0, [r5, #16]
+  998072:	4630      	mov	r0, r6
+  998074:	f504 e8be 	blx	69c1f4 <ReadOnlyBinaryStream::getString()@plt>
+  998078:	f105 0014 	add.w	r0, r5, #20
+  99807c:	4631      	mov	r1, r6
+  99807e:	f16a ed4c 	blx	b02b18 <std::_Hashtable<int, std::pair<int const, GameType>, std::allocator<std::pair<int const, GameType> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned int, std::integral_constant<bool, true>)+0x251a>
+  998082:	482b      	ldr	r0, [pc, #172]	; (998130 <FullChunkDataPacket::read(BinaryStream&)+0xd8>)
+  998084:	4a27      	ldr	r2, [pc, #156]	; (998124 <FullChunkDataPacket::read(BinaryStream&)+0xcc>)
+  998086:	4478      	add	r0, pc
+  998088:	9901      	ldr	r1, [sp, #4]
+  99808a:	5812      	ldr	r2, [r2, r0]
+  99808c:	f1a1 000c 	sub.w	r0, r1, #12
+  998090:	4290      	cmp	r0, r2
+  998092:	d101      	bne.n	998098 <FullChunkDataPacket::read(BinaryStream&)+0x40>
+  998094:	b006      	add	sp, #24
+  998096:	bd70      	pop	{r4, r5, r6, pc}
+  998098:	4a26      	ldr	r2, [pc, #152]	; (998134 <FullChunkDataPacket::read(BinaryStream&)+0xdc>)
+  99809a:	4b24      	ldr	r3, [pc, #144]	; (99812c <FullChunkDataPacket::read(BinaryStream&)+0xd4>)
+  99809c:	447a      	add	r2, pc
+  99809e:	589b      	ldr	r3, [r3, r2]
+  9980a0:	1f0a      	subs	r2, r1, #4
+  9980a2:	b15b      	cbz	r3, 9980bc <FullChunkDataPacket::read(BinaryStream&)+0x64>
+  9980a4:	f3bf 8f5b 	dmb	ish
+  9980a8:	e852 1f00 	ldrex	r1, [r2]
+  9980ac:	1e4b      	subs	r3, r1, #1
+  9980ae:	e842 3600 	strex	r6, r3, [r2]
+  9980b2:	2e00      	cmp	r6, #0
+  9980b4:	d1f8      	bne.n	9980a8 <FullChunkDataPacket::read(BinaryStream&)+0x50>
+  9980b6:	f3bf 8f5b 	dmb	ish
+  9980ba:	e002      	b.n	9980c2 <FullChunkDataPacket::read(BinaryStream&)+0x6a>
+  9980bc:	6811      	ldr	r1, [r2, #0]
+  9980be:	1e4b      	subs	r3, r1, #1
+  9980c0:	6013      	str	r3, [r2, #0]
+  9980c2:	2900      	cmp	r1, #0
+  9980c4:	dce6      	bgt.n	998094 <FullChunkDataPacket::read(BinaryStream&)+0x3c>
+  9980c6:	a904      	add	r1, sp, #16
+  9980c8:	f16a ecd6 	blx	b02a78 <std::_Hashtable<int, std::pair<int const, GameType>, std::allocator<std::pair<int const, GameType> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned int, std::integral_constant<bool, true>)+0x247a>
+  9980cc:	e7e2      	b.n	998094 <FullChunkDataPacket::read(BinaryStream&)+0x3c>
+  9980ce:	4a14      	ldr	r2, [pc, #80]	; (998120 <FullChunkDataPacket::read(BinaryStream&)+0xc8>)
+  9980d0:	4604      	mov	r4, r0
+  9980d2:	4b14      	ldr	r3, [pc, #80]	; (998124 <FullChunkDataPacket::read(BinaryStream&)+0xcc>)
+  9980d4:	447a      	add	r2, pc
+  9980d6:	9901      	ldr	r1, [sp, #4]
+  9980d8:	f1a1 000c 	sub.w	r0, r1, #12
+  9980dc:	589a      	ldr	r2, [r3, r2]
+  9980de:	4290      	cmp	r0, r2
+  9980e0:	d016      	beq.n	998110 <FullChunkDataPacket::read(BinaryStream&)+0xb8>
+  9980e2:	4a11      	ldr	r2, [pc, #68]	; (998128 <FullChunkDataPacket::read(BinaryStream&)+0xd0>)
+  9980e4:	4b11      	ldr	r3, [pc, #68]	; (99812c <FullChunkDataPacket::read(BinaryStream&)+0xd4>)
+  9980e6:	447a      	add	r2, pc
+  9980e8:	589b      	ldr	r3, [r3, r2]
+  9980ea:	1f0a      	subs	r2, r1, #4
+  9980ec:	b19b      	cbz	r3, 998116 <FullChunkDataPacket::read(BinaryStream&)+0xbe>
+  9980ee:	f3bf 8f5b 	dmb	ish
+  9980f2:	e852 1f00 	ldrex	r1, [r2]
+  9980f6:	1e4b      	subs	r3, r1, #1
+  9980f8:	e842 3600 	strex	r6, r3, [r2]
+  9980fc:	2e00      	cmp	r6, #0
+  9980fe:	d1f8      	bne.n	9980f2 <FullChunkDataPacket::read(BinaryStream&)+0x9a>
+  998100:	f3bf 8f5b 	dmb	ish
+  998104:	2900      	cmp	r1, #0
+  998106:	bfdc      	itt	le
+  998108:	f10d 0114 	addle.w	r1, sp, #20
+  99810c:	f16a ecb4 	blxle	b02a78 <std::_Hashtable<int, std::pair<int const, GameType>, std::allocator<std::pair<int const, GameType> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned int, std::integral_constant<bool, true>)+0x247a>
+  998110:	4620      	mov	r0, r4
+  998112:	f502 e8a4 	blx	69a25c <_Unwind_Resume@plt>
+  998116:	6811      	ldr	r1, [r2, #0]
+  998118:	1e4b      	subs	r3, r1, #1
+  99811a:	6013      	str	r3, [r2, #0]
+  99811c:	e7f2      	b.n	998104 <FullChunkDataPacket::read(BinaryStream&)+0xac>
+  99811e:	bf00      	nop
+  998120:	2f00      	cmp	r7, #0
+  998122:	015f      	lsls	r7, r3, #5
+  998124:	8a98      	ldrh	r0, [r3, #20]
+  998126:	ffff 2eee 			; <UNDEFINED> instruction: 0xffff2eee
+  99812a:	015f      	lsls	r7, r3, #5
+  99812c:	8a9c      	ldrh	r4, [r3, #20]
+  99812e:	ffff 2f4e 			; <UNDEFINED> instruction: 0xffff2f4e
+  998132:	015f      	lsls	r7, r3, #5
+  998134:	2f38      	cmp	r7, #56	; 0x38
+  998136:	015f      	lsls	r7, r3, #5

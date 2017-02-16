@@ -1,0 +1,24 @@
+  99911c:	b5b0      	push	{r4, r5, r7, lr}
+  99911e:	b086      	sub	sp, #24
+  999120:	ad01      	add	r5, sp, #4
+  999122:	4604      	mov	r4, r0
+  999124:	4628      	mov	r0, r5
+  999126:	f503 ee24 	blx	69cd70 <ItemInstance ReadOnlyBinaryStream::getType<ItemInstance>()@plt>
+  99912a:	f104 000c 	add.w	r0, r4, #12
+  99912e:	4629      	mov	r1, r5
+  999130:	f503 e8ea 	blx	69c308 <ItemInstance::operator=(ItemInstance const&)@plt>
+  999134:	9803      	ldr	r0, [sp, #12]
+  999136:	b110      	cbz	r0, 99913e <AddItemPacket::read(BinaryStream&)+0x22>
+  999138:	6801      	ldr	r1, [r0, #0]
+  99913a:	6849      	ldr	r1, [r1, #4]
+  99913c:	4788      	blx	r1
+  99913e:	b006      	add	sp, #24
+  999140:	bdb0      	pop	{r4, r5, r7, pc}
+  999142:	4604      	mov	r4, r0
+  999144:	9803      	ldr	r0, [sp, #12]
+  999146:	b110      	cbz	r0, 99914e <AddItemPacket::read(BinaryStream&)+0x32>
+  999148:	6801      	ldr	r1, [r0, #0]
+  99914a:	6849      	ldr	r1, [r1, #4]
+  99914c:	4788      	blx	r1
+  99914e:	4620      	mov	r0, r4
+  999150:	f501 e884 	blx	69a25c <_Unwind_Resume@plt>
