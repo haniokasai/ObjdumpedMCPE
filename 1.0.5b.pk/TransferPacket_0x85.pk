@@ -1,0 +1,88 @@
+  9ef6d8:	b570      	push	{r4, r5, r6, lr}
+  9ef6da:	b084      	sub	sp, #16
+  9ef6dc:	ae01      	add	r6, sp, #4
+  9ef6de:	4604      	mov	r4, r0
+  9ef6e0:	460d      	mov	r5, r1
+  9ef6e2:	4630      	mov	r0, r6
+  9ef6e4:	f4db e856 	blx	6ca794 <ReadOnlyBinaryStream::getString()@plt>
+  9ef6e8:	f104 000c 	add.w	r0, r4, #12
+  9ef6ec:	4631      	mov	r1, r6
+  9ef6ee:	f144 eeca 	blx	b34484 <CommandTarget::getCommandTarget(CommandOrigin const&, Entity const*)+0x108>
+  9ef6f2:	482d      	ldr	r0, [pc, #180]	; (9ef7a8 <TransferPacket::read(BinaryStream&)+0xd0>)
+  9ef6f4:	4a29      	ldr	r2, [pc, #164]	; (9ef79c <TransferPacket::read(BinaryStream&)+0xc4>)
+  9ef6f6:	4478      	add	r0, pc
+  9ef6f8:	9901      	ldr	r1, [sp, #4]
+  9ef6fa:	5812      	ldr	r2, [r2, r0]
+  9ef6fc:	f1a1 000c 	sub.w	r0, r1, #12
+  9ef700:	4290      	cmp	r0, r2
+  9ef702:	d105      	bne.n	9ef710 <TransferPacket::read(BinaryStream&)+0x38>
+  9ef704:	4628      	mov	r0, r5
+  9ef706:	f4db ecf0 	blx	6cb0e8 <ReadOnlyBinaryStream::getUnsignedShort()@plt>
+  9ef70a:	6120      	str	r0, [r4, #16]
+  9ef70c:	b004      	add	sp, #16
+  9ef70e:	bd70      	pop	{r4, r5, r6, pc}
+  9ef710:	4a26      	ldr	r2, [pc, #152]	; (9ef7ac <TransferPacket::read(BinaryStream&)+0xd4>)
+  9ef712:	4b24      	ldr	r3, [pc, #144]	; (9ef7a4 <TransferPacket::read(BinaryStream&)+0xcc>)
+  9ef714:	447a      	add	r2, pc
+  9ef716:	589b      	ldr	r3, [r3, r2]
+  9ef718:	1f0a      	subs	r2, r1, #4
+  9ef71a:	b15b      	cbz	r3, 9ef734 <TransferPacket::read(BinaryStream&)+0x5c>
+  9ef71c:	f3bf 8f5b 	dmb	ish
+  9ef720:	e852 1f00 	ldrex	r1, [r2]
+  9ef724:	1e4b      	subs	r3, r1, #1
+  9ef726:	e842 3600 	strex	r6, r3, [r2]
+  9ef72a:	2e00      	cmp	r6, #0
+  9ef72c:	d1f8      	bne.n	9ef720 <TransferPacket::read(BinaryStream&)+0x48>
+  9ef72e:	f3bf 8f5b 	dmb	ish
+  9ef732:	e002      	b.n	9ef73a <TransferPacket::read(BinaryStream&)+0x62>
+  9ef734:	6811      	ldr	r1, [r2, #0]
+  9ef736:	1e4b      	subs	r3, r1, #1
+  9ef738:	6013      	str	r3, [r2, #0]
+  9ef73a:	2900      	cmp	r1, #0
+  9ef73c:	dce2      	bgt.n	9ef704 <TransferPacket::read(BinaryStream&)+0x2c>
+  9ef73e:	a902      	add	r1, sp, #8
+  9ef740:	f144 ee50 	blx	b343e4 <CommandTarget::getCommandTarget(CommandOrigin const&, Entity const*)+0x68>
+  9ef744:	e7de      	b.n	9ef704 <TransferPacket::read(BinaryStream&)+0x2c>
+  9ef746:	4a14      	ldr	r2, [pc, #80]	; (9ef798 <TransferPacket::read(BinaryStream&)+0xc0>)
+  9ef748:	4604      	mov	r4, r0
+  9ef74a:	4b14      	ldr	r3, [pc, #80]	; (9ef79c <TransferPacket::read(BinaryStream&)+0xc4>)
+  9ef74c:	447a      	add	r2, pc
+  9ef74e:	9901      	ldr	r1, [sp, #4]
+  9ef750:	f1a1 000c 	sub.w	r0, r1, #12
+  9ef754:	589a      	ldr	r2, [r3, r2]
+  9ef756:	4290      	cmp	r0, r2
+  9ef758:	d016      	beq.n	9ef788 <TransferPacket::read(BinaryStream&)+0xb0>
+  9ef75a:	4a11      	ldr	r2, [pc, #68]	; (9ef7a0 <TransferPacket::read(BinaryStream&)+0xc8>)
+  9ef75c:	4b11      	ldr	r3, [pc, #68]	; (9ef7a4 <TransferPacket::read(BinaryStream&)+0xcc>)
+  9ef75e:	447a      	add	r2, pc
+  9ef760:	589b      	ldr	r3, [r3, r2]
+  9ef762:	1f0a      	subs	r2, r1, #4
+  9ef764:	b19b      	cbz	r3, 9ef78e <TransferPacket::read(BinaryStream&)+0xb6>
+  9ef766:	f3bf 8f5b 	dmb	ish
+  9ef76a:	e852 1f00 	ldrex	r1, [r2]
+  9ef76e:	1e4b      	subs	r3, r1, #1
+  9ef770:	e842 3600 	strex	r6, r3, [r2]
+  9ef774:	2e00      	cmp	r6, #0
+  9ef776:	d1f8      	bne.n	9ef76a <TransferPacket::read(BinaryStream&)+0x92>
+  9ef778:	f3bf 8f5b 	dmb	ish
+  9ef77c:	2900      	cmp	r1, #0
+  9ef77e:	bfdc      	itt	le
+  9ef780:	f10d 010c 	addle.w	r1, sp, #12
+  9ef784:	f144 ee2e 	blxle	b343e4 <CommandTarget::getCommandTarget(CommandOrigin const&, Entity const*)+0x68>
+  9ef788:	4620      	mov	r0, r4
+  9ef78a:	f4d9 e82c 	blx	6c87e4 <_Unwind_Resume@plt>
+  9ef78e:	6811      	ldr	r1, [r2, #0]
+  9ef790:	1e4b      	subs	r3, r1, #1
+  9ef792:	6013      	str	r3, [r2, #0]
+  9ef794:	e7f2      	b.n	9ef77c <TransferPacket::read(BinaryStream&)+0xa4>
+  9ef796:	bf00      	nop
+  9ef798:	7470      	strb	r0, [r6, #17]
+  9ef79a:	016c      	lsls	r4, r5, #5
+  9ef79c:	8854      	ldrh	r4, [r2, #2]
+  9ef79e:	ffff 745e 	vsri.32	<illegal reg q11.5>, q7, #1
+  9ef7a2:	016c      	lsls	r4, r5, #5
+  9ef7a4:	8858      	ldrh	r0, [r3, #2]
+  9ef7a6:	ffff 74c6 	vmls.i<illegal width 64>	<illegal reg q11.5>, <illegal reg q15.5>, d6[0]
+  9ef7aa:	016c      	lsls	r4, r5, #5
+  9ef7ac:	74a8      	strb	r0, [r5, #18]
+  9ef7ae:	016c      	lsls	r4, r5, #5

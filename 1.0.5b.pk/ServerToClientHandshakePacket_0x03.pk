@@ -1,0 +1,158 @@
+  9e69f4:	b5f0      	push	{r4, r5, r6, r7, lr}
+  9e69f6:	b087      	sub	sp, #28
+  9e69f8:	ae02      	add	r6, sp, #8
+  9e69fa:	4604      	mov	r4, r0
+  9e69fc:	460d      	mov	r5, r1
+  9e69fe:	4630      	mov	r0, r6
+  9e6a00:	f4e3 eec8 	blx	6ca794 <ReadOnlyBinaryStream::getString()@plt>
+  9e6a04:	f104 000c 	add.w	r0, r4, #12
+  9e6a08:	4631      	mov	r1, r6
+  9e6a0a:	f14d ed3c 	blx	b34484 <CommandTarget::getCommandTarget(CommandOrigin const&, Entity const*)+0x108>
+  9e6a0e:	4852      	ldr	r0, [pc, #328]	; (9e6b58 <ServerToClientHandshakePacket::read(BinaryStream&)+0x164>)
+  9e6a10:	4f4e      	ldr	r7, [pc, #312]	; (9e6b4c <ServerToClientHandshakePacket::read(BinaryStream&)+0x158>)
+  9e6a12:	4478      	add	r0, pc
+  9e6a14:	9902      	ldr	r1, [sp, #8]
+  9e6a16:	583a      	ldr	r2, [r7, r0]
+  9e6a18:	f1a1 000c 	sub.w	r0, r1, #12
+  9e6a1c:	4290      	cmp	r0, r2
+  9e6a1e:	d113      	bne.n	9e6a48 <ServerToClientHandshakePacket::read(BinaryStream&)+0x54>
+  9e6a20:	ae01      	add	r6, sp, #4
+  9e6a22:	4629      	mov	r1, r5
+  9e6a24:	4630      	mov	r0, r6
+  9e6a26:	f4e3 eeb6 	blx	6ca794 <ReadOnlyBinaryStream::getString()@plt>
+  9e6a2a:	f104 0010 	add.w	r0, r4, #16
+  9e6a2e:	4631      	mov	r1, r6
+  9e6a30:	f14d ed28 	blx	b34484 <CommandTarget::getCommandTarget(CommandOrigin const&, Entity const*)+0x108>
+  9e6a34:	484c      	ldr	r0, [pc, #304]	; (9e6b68 <ServerToClientHandshakePacket::read(BinaryStream&)+0x174>)
+  9e6a36:	9901      	ldr	r1, [sp, #4]
+  9e6a38:	4478      	add	r0, pc
+  9e6a3a:	583a      	ldr	r2, [r7, r0]
+  9e6a3c:	f1a1 000c 	sub.w	r0, r1, #12
+  9e6a40:	4290      	cmp	r0, r2
+  9e6a42:	d113      	bne.n	9e6a6c <ServerToClientHandshakePacket::read(BinaryStream&)+0x78>
+  9e6a44:	b007      	add	sp, #28
+  9e6a46:	bdf0      	pop	{r4, r5, r6, r7, pc}
+  9e6a48:	4a44      	ldr	r2, [pc, #272]	; (9e6b5c <ServerToClientHandshakePacket::read(BinaryStream&)+0x168>)
+  9e6a4a:	4b42      	ldr	r3, [pc, #264]	; (9e6b54 <ServerToClientHandshakePacket::read(BinaryStream&)+0x160>)
+  9e6a4c:	447a      	add	r2, pc
+  9e6a4e:	589b      	ldr	r3, [r3, r2]
+  9e6a50:	1f0a      	subs	r2, r1, #4
+  9e6a52:	b1eb      	cbz	r3, 9e6a90 <ServerToClientHandshakePacket::read(BinaryStream&)+0x9c>
+  9e6a54:	f3bf 8f5b 	dmb	ish
+  9e6a58:	e852 1f00 	ldrex	r1, [r2]
+  9e6a5c:	1e4b      	subs	r3, r1, #1
+  9e6a5e:	e842 3600 	strex	r6, r3, [r2]
+  9e6a62:	2e00      	cmp	r6, #0
+  9e6a64:	d1f8      	bne.n	9e6a58 <ServerToClientHandshakePacket::read(BinaryStream&)+0x64>
+  9e6a66:	f3bf 8f5b 	dmb	ish
+  9e6a6a:	e014      	b.n	9e6a96 <ServerToClientHandshakePacket::read(BinaryStream&)+0xa2>
+  9e6a6c:	4a3f      	ldr	r2, [pc, #252]	; (9e6b6c <ServerToClientHandshakePacket::read(BinaryStream&)+0x178>)
+  9e6a6e:	4b39      	ldr	r3, [pc, #228]	; (9e6b54 <ServerToClientHandshakePacket::read(BinaryStream&)+0x160>)
+  9e6a70:	447a      	add	r2, pc
+  9e6a72:	589b      	ldr	r3, [r3, r2]
+  9e6a74:	1f0a      	subs	r2, r1, #4
+  9e6a76:	b1a3      	cbz	r3, 9e6aa2 <ServerToClientHandshakePacket::read(BinaryStream&)+0xae>
+  9e6a78:	f3bf 8f5b 	dmb	ish
+  9e6a7c:	e852 1f00 	ldrex	r1, [r2]
+  9e6a80:	1e4b      	subs	r3, r1, #1
+  9e6a82:	e842 3700 	strex	r7, r3, [r2]
+  9e6a86:	2f00      	cmp	r7, #0
+  9e6a88:	d1f8      	bne.n	9e6a7c <ServerToClientHandshakePacket::read(BinaryStream&)+0x88>
+  9e6a8a:	f3bf 8f5b 	dmb	ish
+  9e6a8e:	e00b      	b.n	9e6aa8 <ServerToClientHandshakePacket::read(BinaryStream&)+0xb4>
+  9e6a90:	6811      	ldr	r1, [r2, #0]
+  9e6a92:	1e4b      	subs	r3, r1, #1
+  9e6a94:	6013      	str	r3, [r2, #0]
+  9e6a96:	2900      	cmp	r1, #0
+  9e6a98:	dcc2      	bgt.n	9e6a20 <ServerToClientHandshakePacket::read(BinaryStream&)+0x2c>
+  9e6a9a:	a903      	add	r1, sp, #12
+  9e6a9c:	f14d eca2 	blx	b343e4 <CommandTarget::getCommandTarget(CommandOrigin const&, Entity const*)+0x68>
+  9e6aa0:	e7be      	b.n	9e6a20 <ServerToClientHandshakePacket::read(BinaryStream&)+0x2c>
+  9e6aa2:	6811      	ldr	r1, [r2, #0]
+  9e6aa4:	1e4b      	subs	r3, r1, #1
+  9e6aa6:	6013      	str	r3, [r2, #0]
+  9e6aa8:	2900      	cmp	r1, #0
+  9e6aaa:	dccb      	bgt.n	9e6a44 <ServerToClientHandshakePacket::read(BinaryStream&)+0x50>
+  9e6aac:	a904      	add	r1, sp, #16
+  9e6aae:	f14d ec9a 	blx	b343e4 <CommandTarget::getCommandTarget(CommandOrigin const&, Entity const*)+0x68>
+  9e6ab2:	e7c7      	b.n	9e6a44 <ServerToClientHandshakePacket::read(BinaryStream&)+0x50>
+  9e6ab4:	4a24      	ldr	r2, [pc, #144]	; (9e6b48 <ServerToClientHandshakePacket::read(BinaryStream&)+0x154>)
+  9e6ab6:	4604      	mov	r4, r0
+  9e6ab8:	4b24      	ldr	r3, [pc, #144]	; (9e6b4c <ServerToClientHandshakePacket::read(BinaryStream&)+0x158>)
+  9e6aba:	447a      	add	r2, pc
+  9e6abc:	9902      	ldr	r1, [sp, #8]
+  9e6abe:	f1a1 000c 	sub.w	r0, r1, #12
+  9e6ac2:	589a      	ldr	r2, [r3, r2]
+  9e6ac4:	4290      	cmp	r0, r2
+  9e6ac6:	d033      	beq.n	9e6b30 <ServerToClientHandshakePacket::read(BinaryStream&)+0x13c>
+  9e6ac8:	4a21      	ldr	r2, [pc, #132]	; (9e6b50 <ServerToClientHandshakePacket::read(BinaryStream&)+0x15c>)
+  9e6aca:	4b22      	ldr	r3, [pc, #136]	; (9e6b54 <ServerToClientHandshakePacket::read(BinaryStream&)+0x160>)
+  9e6acc:	447a      	add	r2, pc
+  9e6ace:	589b      	ldr	r3, [r3, r2]
+  9e6ad0:	1f0a      	subs	r2, r1, #4
+  9e6ad2:	b383      	cbz	r3, 9e6b36 <ServerToClientHandshakePacket::read(BinaryStream&)+0x142>
+  9e6ad4:	f3bf 8f5b 	dmb	ish
+  9e6ad8:	e852 1f00 	ldrex	r1, [r2]
+  9e6adc:	1e4b      	subs	r3, r1, #1
+  9e6ade:	e842 3700 	strex	r7, r3, [r2]
+  9e6ae2:	2f00      	cmp	r7, #0
+  9e6ae4:	d1f8      	bne.n	9e6ad8 <ServerToClientHandshakePacket::read(BinaryStream&)+0xe4>
+  9e6ae6:	f3bf 8f5b 	dmb	ish
+  9e6aea:	2900      	cmp	r1, #0
+  9e6aec:	dc20      	bgt.n	9e6b30 <ServerToClientHandshakePacket::read(BinaryStream&)+0x13c>
+  9e6aee:	a905      	add	r1, sp, #20
+  9e6af0:	e01c      	b.n	9e6b2c <ServerToClientHandshakePacket::read(BinaryStream&)+0x138>
+  9e6af2:	4a1b      	ldr	r2, [pc, #108]	; (9e6b60 <ServerToClientHandshakePacket::read(BinaryStream&)+0x16c>)
+  9e6af4:	4604      	mov	r4, r0
+  9e6af6:	9901      	ldr	r1, [sp, #4]
+  9e6af8:	447a      	add	r2, pc
+  9e6afa:	f1a1 000c 	sub.w	r0, r1, #12
+  9e6afe:	58ba      	ldr	r2, [r7, r2]
+  9e6b00:	4290      	cmp	r0, r2
+  9e6b02:	d015      	beq.n	9e6b30 <ServerToClientHandshakePacket::read(BinaryStream&)+0x13c>
+  9e6b04:	4a17      	ldr	r2, [pc, #92]	; (9e6b64 <ServerToClientHandshakePacket::read(BinaryStream&)+0x170>)
+  9e6b06:	4b13      	ldr	r3, [pc, #76]	; (9e6b54 <ServerToClientHandshakePacket::read(BinaryStream&)+0x160>)
+  9e6b08:	447a      	add	r2, pc
+  9e6b0a:	589b      	ldr	r3, [r3, r2]
+  9e6b0c:	1f0a      	subs	r2, r1, #4
+  9e6b0e:	b1b3      	cbz	r3, 9e6b3e <ServerToClientHandshakePacket::read(BinaryStream&)+0x14a>
+  9e6b10:	f3bf 8f5b 	dmb	ish
+  9e6b14:	e852 1f00 	ldrex	r1, [r2]
+  9e6b18:	1e4b      	subs	r3, r1, #1
+  9e6b1a:	e842 3700 	strex	r7, r3, [r2]
+  9e6b1e:	2f00      	cmp	r7, #0
+  9e6b20:	d1f8      	bne.n	9e6b14 <ServerToClientHandshakePacket::read(BinaryStream&)+0x120>
+  9e6b22:	f3bf 8f5b 	dmb	ish
+  9e6b26:	2900      	cmp	r1, #0
+  9e6b28:	dc02      	bgt.n	9e6b30 <ServerToClientHandshakePacket::read(BinaryStream&)+0x13c>
+  9e6b2a:	a906      	add	r1, sp, #24
+  9e6b2c:	f14d ec5a 	blx	b343e4 <CommandTarget::getCommandTarget(CommandOrigin const&, Entity const*)+0x68>
+  9e6b30:	4620      	mov	r0, r4
+  9e6b32:	f4e1 ee58 	blx	6c87e4 <_Unwind_Resume@plt>
+  9e6b36:	6811      	ldr	r1, [r2, #0]
+  9e6b38:	1e4b      	subs	r3, r1, #1
+  9e6b3a:	6013      	str	r3, [r2, #0]
+  9e6b3c:	e7d5      	b.n	9e6aea <ServerToClientHandshakePacket::read(BinaryStream&)+0xf6>
+  9e6b3e:	6811      	ldr	r1, [r2, #0]
+  9e6b40:	1e4b      	subs	r3, r1, #1
+  9e6b42:	6013      	str	r3, [r2, #0]
+  9e6b44:	e7ef      	b.n	9e6b26 <ServerToClientHandshakePacket::read(BinaryStream&)+0x132>
+  9e6b46:	bf00      	nop
+  9e6b48:	0102      	lsls	r2, r0, #4
+  9e6b4a:	016d      	lsls	r5, r5, #5
+  9e6b4c:	8854      	ldrh	r4, [r2, #2]
+  9e6b4e:	ffff 00f0 	vshr.u64	q8, q8, #1
+  9e6b52:	016d      	lsls	r5, r5, #5
+  9e6b54:	8858      	ldrh	r0, [r3, #2]
+  9e6b56:	ffff 01aa 	vaddw.u<illegal width 64>	q8, <illegal reg q15.5>, d26
+  9e6b5a:	016d      	lsls	r5, r5, #5
+  9e6b5c:	0170      	lsls	r0, r6, #5
+  9e6b5e:	016d      	lsls	r5, r5, #5
+  9e6b60:	00c4      	lsls	r4, r0, #3
+  9e6b62:	016d      	lsls	r5, r5, #5
+  9e6b64:	00b4      	lsls	r4, r6, #2
+  9e6b66:	016d      	lsls	r5, r5, #5
+  9e6b68:	0184      	lsls	r4, r0, #6
+  9e6b6a:	016d      	lsls	r5, r5, #5
+  9e6b6c:	014c      	lsls	r4, r1, #5
+  9e6b6e:	016d      	lsls	r5, r5, #5

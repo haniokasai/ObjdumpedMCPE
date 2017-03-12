@@ -1,0 +1,178 @@
+  9e91d0:	b5f0      	push	{r4, r5, r6, r7, lr}
+  9e91d2:	b085      	sub	sp, #20
+  9e91d4:	4604      	mov	r4, r0
+  9e91d6:	a802      	add	r0, sp, #8
+  9e91d8:	460d      	mov	r5, r1
+  9e91da:	f4e2 e80a 	blx	6cb1f0 <EntityUniqueID ReadOnlyBinaryStream::getType<EntityUniqueID>()@plt>
+  9e91de:	e9dd 0102 	ldrd	r0, r1, [sp, #8]
+  9e91e2:	e9c4 011a 	strd	r0, r1, [r4, #104]	; 0x68
+  9e91e6:	a802      	add	r0, sp, #8
+  9e91e8:	4629      	mov	r1, r5
+  9e91ea:	f4e2 e808 	blx	6cb1fc <EntityRuntimeID ReadOnlyBinaryStream::getType<EntityRuntimeID>()@plt>
+  9e91ee:	e9dd 0102 	ldrd	r0, r1, [sp, #8]
+  9e91f2:	e9c4 011c 	strd	r0, r1, [r4, #112]	; 0x70
+  9e91f6:	a802      	add	r0, sp, #8
+  9e91f8:	4629      	mov	r1, r5
+  9e91fa:	f4e2 e806 	blx	6cb208 <Vec3 ReadOnlyBinaryStream::getType<Vec3>()@plt>
+  9e91fe:	9802      	ldr	r0, [sp, #8]
+  9e9200:	4629      	mov	r1, r5
+  9e9202:	67a0      	str	r0, [r4, #120]	; 0x78
+  9e9204:	9803      	ldr	r0, [sp, #12]
+  9e9206:	67e0      	str	r0, [r4, #124]	; 0x7c
+  9e9208:	9804      	ldr	r0, [sp, #16]
+  9e920a:	f8c4 0080 	str.w	r0, [r4, #128]	; 0x80
+  9e920e:	a802      	add	r0, sp, #8
+  9e9210:	f4e2 e800 	blx	6cb214 <Vec2 ReadOnlyBinaryStream::getType<Vec2>()@plt>
+  9e9214:	e9dd 0102 	ldrd	r0, r1, [sp, #8]
+  9e9218:	e9c4 0121 	strd	r0, r1, [r4, #132]	; 0x84
+  9e921c:	f104 010c 	add.w	r1, r4, #12
+  9e9220:	4628      	mov	r0, r5
+  9e9222:	f4e1 effe 	blx	6cb220 <void ReadOnlyBinaryStream::readType<LevelSettings>(LevelSettings&)@plt>
+  9e9226:	ae01      	add	r6, sp, #4
+  9e9228:	4629      	mov	r1, r5
+  9e922a:	4630      	mov	r0, r6
+  9e922c:	f4e1 eab2 	blx	6ca794 <ReadOnlyBinaryStream::getString()@plt>
+  9e9230:	f104 008c 	add.w	r0, r4, #140	; 0x8c
+  9e9234:	4631      	mov	r1, r6
+  9e9236:	f14b e926 	blx	b34484 <CommandTarget::getCommandTarget(CommandOrigin const&, Entity const*)+0x108>
+  9e923a:	484f      	ldr	r0, [pc, #316]	; (9e9378 <StartGamePacket::read(BinaryStream&)+0x1a8>)
+  9e923c:	4f4b      	ldr	r7, [pc, #300]	; (9e936c <StartGamePacket::read(BinaryStream&)+0x19c>)
+  9e923e:	4478      	add	r0, pc
+  9e9240:	9901      	ldr	r1, [sp, #4]
+  9e9242:	583a      	ldr	r2, [r7, r0]
+  9e9244:	f1a1 000c 	sub.w	r0, r1, #12
+  9e9248:	4290      	cmp	r0, r2
+  9e924a:	d113      	bne.n	9e9274 <StartGamePacket::read(BinaryStream&)+0xa4>
+  9e924c:	466e      	mov	r6, sp
+  9e924e:	4629      	mov	r1, r5
+  9e9250:	4630      	mov	r0, r6
+  9e9252:	f4e1 eaa0 	blx	6ca794 <ReadOnlyBinaryStream::getString()@plt>
+  9e9256:	f104 0090 	add.w	r0, r4, #144	; 0x90
+  9e925a:	4631      	mov	r1, r6
+  9e925c:	f14b e912 	blx	b34484 <CommandTarget::getCommandTarget(CommandOrigin const&, Entity const*)+0x108>
+  9e9260:	4849      	ldr	r0, [pc, #292]	; (9e9388 <StartGamePacket::read(BinaryStream&)+0x1b8>)
+  9e9262:	9900      	ldr	r1, [sp, #0]
+  9e9264:	4478      	add	r0, pc
+  9e9266:	583a      	ldr	r2, [r7, r0]
+  9e9268:	f1a1 000c 	sub.w	r0, r1, #12
+  9e926c:	4290      	cmp	r0, r2
+  9e926e:	d113      	bne.n	9e9298 <StartGamePacket::read(BinaryStream&)+0xc8>
+  9e9270:	b005      	add	sp, #20
+  9e9272:	bdf0      	pop	{r4, r5, r6, r7, pc}
+  9e9274:	4a41      	ldr	r2, [pc, #260]	; (9e937c <StartGamePacket::read(BinaryStream&)+0x1ac>)
+  9e9276:	4b3f      	ldr	r3, [pc, #252]	; (9e9374 <StartGamePacket::read(BinaryStream&)+0x1a4>)
+  9e9278:	447a      	add	r2, pc
+  9e927a:	589b      	ldr	r3, [r3, r2]
+  9e927c:	1f0a      	subs	r2, r1, #4
+  9e927e:	b1eb      	cbz	r3, 9e92bc <StartGamePacket::read(BinaryStream&)+0xec>
+  9e9280:	f3bf 8f5b 	dmb	ish
+  9e9284:	e852 1f00 	ldrex	r1, [r2]
+  9e9288:	1e4b      	subs	r3, r1, #1
+  9e928a:	e842 3600 	strex	r6, r3, [r2]
+  9e928e:	2e00      	cmp	r6, #0
+  9e9290:	d1f8      	bne.n	9e9284 <StartGamePacket::read(BinaryStream&)+0xb4>
+  9e9292:	f3bf 8f5b 	dmb	ish
+  9e9296:	e014      	b.n	9e92c2 <StartGamePacket::read(BinaryStream&)+0xf2>
+  9e9298:	4a3c      	ldr	r2, [pc, #240]	; (9e938c <StartGamePacket::read(BinaryStream&)+0x1bc>)
+  9e929a:	4b36      	ldr	r3, [pc, #216]	; (9e9374 <StartGamePacket::read(BinaryStream&)+0x1a4>)
+  9e929c:	447a      	add	r2, pc
+  9e929e:	589b      	ldr	r3, [r3, r2]
+  9e92a0:	1f0a      	subs	r2, r1, #4
+  9e92a2:	b1a3      	cbz	r3, 9e92ce <StartGamePacket::read(BinaryStream&)+0xfe>
+  9e92a4:	f3bf 8f5b 	dmb	ish
+  9e92a8:	e852 1f00 	ldrex	r1, [r2]
+  9e92ac:	1e4b      	subs	r3, r1, #1
+  9e92ae:	e842 3700 	strex	r7, r3, [r2]
+  9e92b2:	2f00      	cmp	r7, #0
+  9e92b4:	d1f8      	bne.n	9e92a8 <StartGamePacket::read(BinaryStream&)+0xd8>
+  9e92b6:	f3bf 8f5b 	dmb	ish
+  9e92ba:	e00b      	b.n	9e92d4 <StartGamePacket::read(BinaryStream&)+0x104>
+  9e92bc:	6811      	ldr	r1, [r2, #0]
+  9e92be:	1e4b      	subs	r3, r1, #1
+  9e92c0:	6013      	str	r3, [r2, #0]
+  9e92c2:	2900      	cmp	r1, #0
+  9e92c4:	dcc2      	bgt.n	9e924c <StartGamePacket::read(BinaryStream&)+0x7c>
+  9e92c6:	a902      	add	r1, sp, #8
+  9e92c8:	f14b e88c 	blx	b343e4 <CommandTarget::getCommandTarget(CommandOrigin const&, Entity const*)+0x68>
+  9e92cc:	e7be      	b.n	9e924c <StartGamePacket::read(BinaryStream&)+0x7c>
+  9e92ce:	6811      	ldr	r1, [r2, #0]
+  9e92d0:	1e4b      	subs	r3, r1, #1
+  9e92d2:	6013      	str	r3, [r2, #0]
+  9e92d4:	2900      	cmp	r1, #0
+  9e92d6:	dccb      	bgt.n	9e9270 <StartGamePacket::read(BinaryStream&)+0xa0>
+  9e92d8:	a902      	add	r1, sp, #8
+  9e92da:	f14b e884 	blx	b343e4 <CommandTarget::getCommandTarget(CommandOrigin const&, Entity const*)+0x68>
+  9e92de:	e7c7      	b.n	9e9270 <StartGamePacket::read(BinaryStream&)+0xa0>
+  9e92e0:	4a21      	ldr	r2, [pc, #132]	; (9e9368 <StartGamePacket::read(BinaryStream&)+0x198>)
+  9e92e2:	4604      	mov	r4, r0
+  9e92e4:	4b21      	ldr	r3, [pc, #132]	; (9e936c <StartGamePacket::read(BinaryStream&)+0x19c>)
+  9e92e6:	447a      	add	r2, pc
+  9e92e8:	9901      	ldr	r1, [sp, #4]
+  9e92ea:	f1a1 000c 	sub.w	r0, r1, #12
+  9e92ee:	589a      	ldr	r2, [r3, r2]
+  9e92f0:	4290      	cmp	r0, r2
+  9e92f2:	d031      	beq.n	9e9358 <StartGamePacket::read(BinaryStream&)+0x188>
+  9e92f4:	4a1e      	ldr	r2, [pc, #120]	; (9e9370 <StartGamePacket::read(BinaryStream&)+0x1a0>)
+  9e92f6:	4b1f      	ldr	r3, [pc, #124]	; (9e9374 <StartGamePacket::read(BinaryStream&)+0x1a4>)
+  9e92f8:	447a      	add	r2, pc
+  9e92fa:	589b      	ldr	r3, [r3, r2]
+  9e92fc:	1f0a      	subs	r2, r1, #4
+  9e92fe:	b373      	cbz	r3, 9e935e <StartGamePacket::read(BinaryStream&)+0x18e>
+  9e9300:	f3bf 8f5b 	dmb	ish
+  9e9304:	e852 1f00 	ldrex	r1, [r2]
+  9e9308:	1e4b      	subs	r3, r1, #1
+  9e930a:	e842 3700 	strex	r7, r3, [r2]
+  9e930e:	2f00      	cmp	r7, #0
+  9e9310:	d1f8      	bne.n	9e9304 <StartGamePacket::read(BinaryStream&)+0x134>
+  9e9312:	f3bf 8f5b 	dmb	ish
+  9e9316:	e019      	b.n	9e934c <StartGamePacket::read(BinaryStream&)+0x17c>
+  9e9318:	4a19      	ldr	r2, [pc, #100]	; (9e9380 <StartGamePacket::read(BinaryStream&)+0x1b0>)
+  9e931a:	4604      	mov	r4, r0
+  9e931c:	9900      	ldr	r1, [sp, #0]
+  9e931e:	447a      	add	r2, pc
+  9e9320:	f1a1 000c 	sub.w	r0, r1, #12
+  9e9324:	58ba      	ldr	r2, [r7, r2]
+  9e9326:	4290      	cmp	r0, r2
+  9e9328:	d016      	beq.n	9e9358 <StartGamePacket::read(BinaryStream&)+0x188>
+  9e932a:	4a16      	ldr	r2, [pc, #88]	; (9e9384 <StartGamePacket::read(BinaryStream&)+0x1b4>)
+  9e932c:	4b11      	ldr	r3, [pc, #68]	; (9e9374 <StartGamePacket::read(BinaryStream&)+0x1a4>)
+  9e932e:	447a      	add	r2, pc
+  9e9330:	589b      	ldr	r3, [r3, r2]
+  9e9332:	1f0a      	subs	r2, r1, #4
+  9e9334:	b19b      	cbz	r3, 9e935e <StartGamePacket::read(BinaryStream&)+0x18e>
+  9e9336:	f3bf 8f5b 	dmb	ish
+  9e933a:	e852 1f00 	ldrex	r1, [r2]
+  9e933e:	1e4b      	subs	r3, r1, #1
+  9e9340:	e842 3700 	strex	r7, r3, [r2]
+  9e9344:	2f00      	cmp	r7, #0
+  9e9346:	d1f8      	bne.n	9e933a <StartGamePacket::read(BinaryStream&)+0x16a>
+  9e9348:	f3bf 8f5b 	dmb	ish
+  9e934c:	2900      	cmp	r1, #0
+  9e934e:	bfdc      	itt	le
+  9e9350:	f10d 0108 	addle.w	r1, sp, #8
+  9e9354:	f14b e846 	blxle	b343e4 <CommandTarget::getCommandTarget(CommandOrigin const&, Entity const*)+0x68>
+  9e9358:	4620      	mov	r0, r4
+  9e935a:	f4df ea44 	blx	6c87e4 <_Unwind_Resume@plt>
+  9e935e:	6811      	ldr	r1, [r2, #0]
+  9e9360:	1e4b      	subs	r3, r1, #1
+  9e9362:	6013      	str	r3, [r2, #0]
+  9e9364:	e7f2      	b.n	9e934c <StartGamePacket::read(BinaryStream&)+0x17c>
+  9e9366:	bf00      	nop
+  9e9368:	d8d6      	bhi.n	9e9318 <StartGamePacket::read(BinaryStream&)+0x148>
+  9e936a:	016c      	lsls	r4, r5, #5
+  9e936c:	8854      	ldrh	r4, [r2, #2]
+  9e936e:	ffff d8c4 	vtbx.8	d29, {d31}, d4
+  9e9372:	016c      	lsls	r4, r5, #5
+  9e9374:	8858      	ldrh	r0, [r3, #2]
+  9e9376:	ffff d97e 	vqrshrn.u64	d29, q15, #1
+  9e937a:	016c      	lsls	r4, r5, #5
+  9e937c:	d944      	bls.n	9e9408 <void ReadOnlyBinaryStream::readType<LevelSettings>(LevelSettings&)+0x6c>
+  9e937e:	016c      	lsls	r4, r5, #5
+  9e9380:	d89e      	bhi.n	9e92c0 <StartGamePacket::read(BinaryStream&)+0xf0>
+  9e9382:	016c      	lsls	r4, r5, #5
+  9e9384:	d88e      	bhi.n	9e92a4 <StartGamePacket::read(BinaryStream&)+0xd4>
+  9e9386:	016c      	lsls	r4, r5, #5
+  9e9388:	d958      	bls.n	9e943c <void ReadOnlyBinaryStream::readType<LevelSettings>(LevelSettings&)+0xa0>
+  9e938a:	016c      	lsls	r4, r5, #5
+  9e938c:	d920      	bls.n	9e93d0 <void ReadOnlyBinaryStream::readType<LevelSettings>(LevelSettings&)+0x34>
+  9e938e:	016c      	lsls	r4, r5, #5

@@ -1,0 +1,100 @@
+  b79f30:	b570      	push	{r4, r5, r6, lr}
+  b79f32:	b084      	sub	sp, #16
+  b79f34:	466e      	mov	r6, sp
+  b79f36:	4604      	mov	r4, r0
+  b79f38:	4630      	mov	r0, r6
+  b79f3a:	460d      	mov	r5, r1
+  b79f3c:	f750 e42a 	blx	6ca794 <ReadOnlyBinaryStream::getString()@plt>
+  b79f40:	f104 000c 	add.w	r0, r4, #12
+  b79f44:	4631      	mov	r1, r6
+  b79f46:	f3ae ee16 	blx	f28b74 <Smithy::Smithy(StartPiece*, int, Random&, BoundingBox const&, int)+0x11c>
+  b79f4a:	4834      	ldr	r0, [pc, #208]	; (b7a01c <PlaySoundPacket::read(BinaryStream&)+0xec>)
+  b79f4c:	4a30      	ldr	r2, [pc, #192]	; (b7a010 <PlaySoundPacket::read(BinaryStream&)+0xe0>)
+  b79f4e:	4478      	add	r0, pc
+  b79f50:	9900      	ldr	r1, [sp, #0]
+  b79f52:	5812      	ldr	r2, [r2, r0]
+  b79f54:	f1a1 000c 	sub.w	r0, r1, #12
+  b79f58:	4290      	cmp	r0, r2
+  b79f5a:	d113      	bne.n	b79f84 <PlaySoundPacket::read(BinaryStream&)+0x54>
+  b79f5c:	a801      	add	r0, sp, #4
+  b79f5e:	4629      	mov	r1, r5
+  b79f60:	f751 e212 	blx	6cb388 <NetworkBlockPosition ReadOnlyBinaryStream::getType<NetworkBlockPosition>()@plt>
+  b79f64:	9801      	ldr	r0, [sp, #4]
+  b79f66:	6120      	str	r0, [r4, #16]
+  b79f68:	9802      	ldr	r0, [sp, #8]
+  b79f6a:	6160      	str	r0, [r4, #20]
+  b79f6c:	9803      	ldr	r0, [sp, #12]
+  b79f6e:	61a0      	str	r0, [r4, #24]
+  b79f70:	4628      	mov	r0, r5
+  b79f72:	f751 e1aa 	blx	6cb2c8 <ReadOnlyBinaryStream::getFloat()@plt>
+  b79f76:	61e0      	str	r0, [r4, #28]
+  b79f78:	4628      	mov	r0, r5
+  b79f7a:	f751 e1a6 	blx	6cb2c8 <ReadOnlyBinaryStream::getFloat()@plt>
+  b79f7e:	6220      	str	r0, [r4, #32]
+  b79f80:	b004      	add	sp, #16
+  b79f82:	bd70      	pop	{r4, r5, r6, pc}
+  b79f84:	4a26      	ldr	r2, [pc, #152]	; (b7a020 <PlaySoundPacket::read(BinaryStream&)+0xf0>)
+  b79f86:	4b24      	ldr	r3, [pc, #144]	; (b7a018 <PlaySoundPacket::read(BinaryStream&)+0xe8>)
+  b79f88:	447a      	add	r2, pc
+  b79f8a:	589b      	ldr	r3, [r3, r2]
+  b79f8c:	1f0a      	subs	r2, r1, #4
+  b79f8e:	b15b      	cbz	r3, b79fa8 <PlaySoundPacket::read(BinaryStream&)+0x78>
+  b79f90:	f3bf 8f5b 	dmb	ish
+  b79f94:	e852 1f00 	ldrex	r1, [r2]
+  b79f98:	1e4b      	subs	r3, r1, #1
+  b79f9a:	e842 3600 	strex	r6, r3, [r2]
+  b79f9e:	2e00      	cmp	r6, #0
+  b79fa0:	d1f8      	bne.n	b79f94 <PlaySoundPacket::read(BinaryStream&)+0x64>
+  b79fa2:	f3bf 8f5b 	dmb	ish
+  b79fa6:	e002      	b.n	b79fae <PlaySoundPacket::read(BinaryStream&)+0x7e>
+  b79fa8:	6811      	ldr	r1, [r2, #0]
+  b79faa:	1e4b      	subs	r3, r1, #1
+  b79fac:	6013      	str	r3, [r2, #0]
+  b79fae:	2900      	cmp	r1, #0
+  b79fb0:	dcd4      	bgt.n	b79f5c <PlaySoundPacket::read(BinaryStream&)+0x2c>
+  b79fb2:	a901      	add	r1, sp, #4
+  b79fb4:	f3ae ede6 	blx	f28b84 <Smithy::Smithy(StartPiece*, int, Random&, BoundingBox const&, int)+0x12c>
+  b79fb8:	e7d0      	b.n	b79f5c <PlaySoundPacket::read(BinaryStream&)+0x2c>
+  b79fba:	4a14      	ldr	r2, [pc, #80]	; (b7a00c <PlaySoundPacket::read(BinaryStream&)+0xdc>)
+  b79fbc:	4604      	mov	r4, r0
+  b79fbe:	4b14      	ldr	r3, [pc, #80]	; (b7a010 <PlaySoundPacket::read(BinaryStream&)+0xe0>)
+  b79fc0:	447a      	add	r2, pc
+  b79fc2:	9900      	ldr	r1, [sp, #0]
+  b79fc4:	f1a1 000c 	sub.w	r0, r1, #12
+  b79fc8:	589a      	ldr	r2, [r3, r2]
+  b79fca:	4290      	cmp	r0, r2
+  b79fcc:	d016      	beq.n	b79ffc <PlaySoundPacket::read(BinaryStream&)+0xcc>
+  b79fce:	4a11      	ldr	r2, [pc, #68]	; (b7a014 <PlaySoundPacket::read(BinaryStream&)+0xe4>)
+  b79fd0:	4b11      	ldr	r3, [pc, #68]	; (b7a018 <PlaySoundPacket::read(BinaryStream&)+0xe8>)
+  b79fd2:	447a      	add	r2, pc
+  b79fd4:	589b      	ldr	r3, [r3, r2]
+  b79fd6:	1f0a      	subs	r2, r1, #4
+  b79fd8:	b19b      	cbz	r3, b7a002 <PlaySoundPacket::read(BinaryStream&)+0xd2>
+  b79fda:	f3bf 8f5b 	dmb	ish
+  b79fde:	e852 1f00 	ldrex	r1, [r2]
+  b79fe2:	1e4b      	subs	r3, r1, #1
+  b79fe4:	e842 3600 	strex	r6, r3, [r2]
+  b79fe8:	2e00      	cmp	r6, #0
+  b79fea:	d1f8      	bne.n	b79fde <PlaySoundPacket::read(BinaryStream&)+0xae>
+  b79fec:	f3bf 8f5b 	dmb	ish
+  b79ff0:	2900      	cmp	r1, #0
+  b79ff2:	bfdc      	itt	le
+  b79ff4:	f10d 0104 	addle.w	r1, sp, #4
+  b79ff8:	f3ae edc4 	blxle	f28b84 <Smithy::Smithy(StartPiece*, int, Random&, BoundingBox const&, int)+0x12c>
+  b79ffc:	4620      	mov	r0, r4
+  b79ffe:	f74e e3f2 	blx	6c87e4 <_Unwind_Resume@plt>
+  b7a002:	6811      	ldr	r1, [r2, #0]
+  b7a004:	1e4b      	subs	r3, r1, #1
+  b7a006:	6013      	str	r3, [r2, #0]
+  b7a008:	e7f2      	b.n	b79ff0 <PlaySoundPacket::read(BinaryStream&)+0xc0>
+  b7a00a:	bf00      	nop
+  b7a00c:	cbfc      	ldmia	r3, {r2, r3, r4, r5, r6, r7}
+  b7a00e:	0153      	lsls	r3, r2, #5
+  b7a010:	8854      	ldrh	r4, [r2, #2]
+  b7a012:	ffff cbea 	vtbx.8	d28, {d31-<overflow reg d34}, d26
+  b7a016:	0153      	lsls	r3, r2, #5
+  b7a018:	8858      	ldrh	r0, [r3, #2]
+  b7a01a:	ffff cc6e 	vdup.8	q14, d30[7]
+  b7a01e:	0153      	lsls	r3, r2, #5
+  b7a020:	cc34      	ldmia	r4, {r2, r4, r5}
+  b7a022:	0153      	lsls	r3, r2, #5

@@ -1,0 +1,92 @@
+  9ecb00:	b570      	push	{r4, r5, r6, lr}
+  9ecb02:	b086      	sub	sp, #24
+  9ecb04:	4605      	mov	r5, r0
+  9ecb06:	a802      	add	r0, sp, #8
+  9ecb08:	460c      	mov	r4, r1
+  9ecb0a:	f4de ec86 	blx	6cb418 <ChunkPos ReadOnlyBinaryStream::getType<ChunkPos>()@plt>
+  9ecb0e:	9802      	ldr	r0, [sp, #8]
+  9ecb10:	ae01      	add	r6, sp, #4
+  9ecb12:	60e8      	str	r0, [r5, #12]
+  9ecb14:	4621      	mov	r1, r4
+  9ecb16:	9803      	ldr	r0, [sp, #12]
+  9ecb18:	6128      	str	r0, [r5, #16]
+  9ecb1a:	4630      	mov	r0, r6
+  9ecb1c:	f4dd ee3a 	blx	6ca794 <ReadOnlyBinaryStream::getString()@plt>
+  9ecb20:	f105 0014 	add.w	r0, r5, #20
+  9ecb24:	4631      	mov	r1, r6
+  9ecb26:	f147 ecae 	blx	b34484 <CommandTarget::getCommandTarget(CommandOrigin const&, Entity const*)+0x108>
+  9ecb2a:	482b      	ldr	r0, [pc, #172]	; (9ecbd8 <FullChunkDataPacket::read(BinaryStream&)+0xd8>)
+  9ecb2c:	4a27      	ldr	r2, [pc, #156]	; (9ecbcc <FullChunkDataPacket::read(BinaryStream&)+0xcc>)
+  9ecb2e:	4478      	add	r0, pc
+  9ecb30:	9901      	ldr	r1, [sp, #4]
+  9ecb32:	5812      	ldr	r2, [r2, r0]
+  9ecb34:	f1a1 000c 	sub.w	r0, r1, #12
+  9ecb38:	4290      	cmp	r0, r2
+  9ecb3a:	d101      	bne.n	9ecb40 <FullChunkDataPacket::read(BinaryStream&)+0x40>
+  9ecb3c:	b006      	add	sp, #24
+  9ecb3e:	bd70      	pop	{r4, r5, r6, pc}
+  9ecb40:	4a26      	ldr	r2, [pc, #152]	; (9ecbdc <FullChunkDataPacket::read(BinaryStream&)+0xdc>)
+  9ecb42:	4b24      	ldr	r3, [pc, #144]	; (9ecbd4 <FullChunkDataPacket::read(BinaryStream&)+0xd4>)
+  9ecb44:	447a      	add	r2, pc
+  9ecb46:	589b      	ldr	r3, [r3, r2]
+  9ecb48:	1f0a      	subs	r2, r1, #4
+  9ecb4a:	b15b      	cbz	r3, 9ecb64 <FullChunkDataPacket::read(BinaryStream&)+0x64>
+  9ecb4c:	f3bf 8f5b 	dmb	ish
+  9ecb50:	e852 1f00 	ldrex	r1, [r2]
+  9ecb54:	1e4b      	subs	r3, r1, #1
+  9ecb56:	e842 3600 	strex	r6, r3, [r2]
+  9ecb5a:	2e00      	cmp	r6, #0
+  9ecb5c:	d1f8      	bne.n	9ecb50 <FullChunkDataPacket::read(BinaryStream&)+0x50>
+  9ecb5e:	f3bf 8f5b 	dmb	ish
+  9ecb62:	e002      	b.n	9ecb6a <FullChunkDataPacket::read(BinaryStream&)+0x6a>
+  9ecb64:	6811      	ldr	r1, [r2, #0]
+  9ecb66:	1e4b      	subs	r3, r1, #1
+  9ecb68:	6013      	str	r3, [r2, #0]
+  9ecb6a:	2900      	cmp	r1, #0
+  9ecb6c:	dce6      	bgt.n	9ecb3c <FullChunkDataPacket::read(BinaryStream&)+0x3c>
+  9ecb6e:	a904      	add	r1, sp, #16
+  9ecb70:	f147 ec38 	blx	b343e4 <CommandTarget::getCommandTarget(CommandOrigin const&, Entity const*)+0x68>
+  9ecb74:	e7e2      	b.n	9ecb3c <FullChunkDataPacket::read(BinaryStream&)+0x3c>
+  9ecb76:	4a14      	ldr	r2, [pc, #80]	; (9ecbc8 <FullChunkDataPacket::read(BinaryStream&)+0xc8>)
+  9ecb78:	4604      	mov	r4, r0
+  9ecb7a:	4b14      	ldr	r3, [pc, #80]	; (9ecbcc <FullChunkDataPacket::read(BinaryStream&)+0xcc>)
+  9ecb7c:	447a      	add	r2, pc
+  9ecb7e:	9901      	ldr	r1, [sp, #4]
+  9ecb80:	f1a1 000c 	sub.w	r0, r1, #12
+  9ecb84:	589a      	ldr	r2, [r3, r2]
+  9ecb86:	4290      	cmp	r0, r2
+  9ecb88:	d016      	beq.n	9ecbb8 <FullChunkDataPacket::read(BinaryStream&)+0xb8>
+  9ecb8a:	4a11      	ldr	r2, [pc, #68]	; (9ecbd0 <FullChunkDataPacket::read(BinaryStream&)+0xd0>)
+  9ecb8c:	4b11      	ldr	r3, [pc, #68]	; (9ecbd4 <FullChunkDataPacket::read(BinaryStream&)+0xd4>)
+  9ecb8e:	447a      	add	r2, pc
+  9ecb90:	589b      	ldr	r3, [r3, r2]
+  9ecb92:	1f0a      	subs	r2, r1, #4
+  9ecb94:	b19b      	cbz	r3, 9ecbbe <FullChunkDataPacket::read(BinaryStream&)+0xbe>
+  9ecb96:	f3bf 8f5b 	dmb	ish
+  9ecb9a:	e852 1f00 	ldrex	r1, [r2]
+  9ecb9e:	1e4b      	subs	r3, r1, #1
+  9ecba0:	e842 3600 	strex	r6, r3, [r2]
+  9ecba4:	2e00      	cmp	r6, #0
+  9ecba6:	d1f8      	bne.n	9ecb9a <FullChunkDataPacket::read(BinaryStream&)+0x9a>
+  9ecba8:	f3bf 8f5b 	dmb	ish
+  9ecbac:	2900      	cmp	r1, #0
+  9ecbae:	bfdc      	itt	le
+  9ecbb0:	f10d 0114 	addle.w	r1, sp, #20
+  9ecbb4:	f147 ec16 	blxle	b343e4 <CommandTarget::getCommandTarget(CommandOrigin const&, Entity const*)+0x68>
+  9ecbb8:	4620      	mov	r0, r4
+  9ecbba:	f4db ee14 	blx	6c87e4 <_Unwind_Resume@plt>
+  9ecbbe:	6811      	ldr	r1, [r2, #0]
+  9ecbc0:	1e4b      	subs	r3, r1, #1
+  9ecbc2:	6013      	str	r3, [r2, #0]
+  9ecbc4:	e7f2      	b.n	9ecbac <FullChunkDataPacket::read(BinaryStream&)+0xac>
+  9ecbc6:	bf00      	nop
+  9ecbc8:	a040      	add	r0, pc, #256	; (adr r0, 9ecccc <ChangeDimensionPacket::write(BinaryStream&) const+0x14>)
+  9ecbca:	016c      	lsls	r4, r5, #5
+  9ecbcc:	8854      	ldrh	r4, [r2, #2]
+  9ecbce:	ffff a02e 	vaddl.u<illegal width 64>	q13, d15, d30
+  9ecbd2:	016c      	lsls	r4, r5, #5
+  9ecbd4:	8858      	ldrh	r0, [r3, #2]
+  9ecbd6:	ffff a08e 	vaddl.u<illegal width 64>	q13, d31, d14
+  9ecbda:	016c      	lsls	r4, r5, #5
+  9ecbdc:	a078      	add	r0, pc, #480	; (adr r0, 9ecdc0 <PlayerListPacket::~PlayerListPacket()+0x20>)
+  9ecbde:	016c      	lsls	r4, r5, #5

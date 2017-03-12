@@ -1,0 +1,88 @@
+  9efb40:	b570      	push	{r4, r5, r6, lr}
+  9efb42:	b084      	sub	sp, #16
+  9efb44:	ae01      	add	r6, sp, #4
+  9efb46:	4604      	mov	r4, r0
+  9efb48:	460d      	mov	r5, r1
+  9efb4a:	4630      	mov	r0, r6
+  9efb4c:	f4da ee22 	blx	6ca794 <ReadOnlyBinaryStream::getString()@plt>
+  9efb50:	f104 000c 	add.w	r0, r4, #12
+  9efb54:	4631      	mov	r1, r6
+  9efb56:	f144 ec96 	blx	b34484 <CommandTarget::getCommandTarget(CommandOrigin const&, Entity const*)+0x108>
+  9efb5a:	482d      	ldr	r0, [pc, #180]	; (9efc10 <StopSoundPacket::read(BinaryStream&)+0xd0>)
+  9efb5c:	4a29      	ldr	r2, [pc, #164]	; (9efc04 <StopSoundPacket::read(BinaryStream&)+0xc4>)
+  9efb5e:	4478      	add	r0, pc
+  9efb60:	9901      	ldr	r1, [sp, #4]
+  9efb62:	5812      	ldr	r2, [r2, r0]
+  9efb64:	f1a1 000c 	sub.w	r0, r1, #12
+  9efb68:	4290      	cmp	r0, r2
+  9efb6a:	d105      	bne.n	9efb78 <StopSoundPacket::read(BinaryStream&)+0x38>
+  9efb6c:	4628      	mov	r0, r5
+  9efb6e:	f4db eab6 	blx	6cb0dc <ReadOnlyBinaryStream::getBool()@plt>
+  9efb72:	7420      	strb	r0, [r4, #16]
+  9efb74:	b004      	add	sp, #16
+  9efb76:	bd70      	pop	{r4, r5, r6, pc}
+  9efb78:	4a26      	ldr	r2, [pc, #152]	; (9efc14 <StopSoundPacket::read(BinaryStream&)+0xd4>)
+  9efb7a:	4b24      	ldr	r3, [pc, #144]	; (9efc0c <StopSoundPacket::read(BinaryStream&)+0xcc>)
+  9efb7c:	447a      	add	r2, pc
+  9efb7e:	589b      	ldr	r3, [r3, r2]
+  9efb80:	1f0a      	subs	r2, r1, #4
+  9efb82:	b15b      	cbz	r3, 9efb9c <StopSoundPacket::read(BinaryStream&)+0x5c>
+  9efb84:	f3bf 8f5b 	dmb	ish
+  9efb88:	e852 1f00 	ldrex	r1, [r2]
+  9efb8c:	1e4b      	subs	r3, r1, #1
+  9efb8e:	e842 3600 	strex	r6, r3, [r2]
+  9efb92:	2e00      	cmp	r6, #0
+  9efb94:	d1f8      	bne.n	9efb88 <StopSoundPacket::read(BinaryStream&)+0x48>
+  9efb96:	f3bf 8f5b 	dmb	ish
+  9efb9a:	e002      	b.n	9efba2 <StopSoundPacket::read(BinaryStream&)+0x62>
+  9efb9c:	6811      	ldr	r1, [r2, #0]
+  9efb9e:	1e4b      	subs	r3, r1, #1
+  9efba0:	6013      	str	r3, [r2, #0]
+  9efba2:	2900      	cmp	r1, #0
+  9efba4:	dce2      	bgt.n	9efb6c <StopSoundPacket::read(BinaryStream&)+0x2c>
+  9efba6:	a902      	add	r1, sp, #8
+  9efba8:	f144 ec1c 	blx	b343e4 <CommandTarget::getCommandTarget(CommandOrigin const&, Entity const*)+0x68>
+  9efbac:	e7de      	b.n	9efb6c <StopSoundPacket::read(BinaryStream&)+0x2c>
+  9efbae:	4a14      	ldr	r2, [pc, #80]	; (9efc00 <StopSoundPacket::read(BinaryStream&)+0xc0>)
+  9efbb0:	4604      	mov	r4, r0
+  9efbb2:	4b14      	ldr	r3, [pc, #80]	; (9efc04 <StopSoundPacket::read(BinaryStream&)+0xc4>)
+  9efbb4:	447a      	add	r2, pc
+  9efbb6:	9901      	ldr	r1, [sp, #4]
+  9efbb8:	f1a1 000c 	sub.w	r0, r1, #12
+  9efbbc:	589a      	ldr	r2, [r3, r2]
+  9efbbe:	4290      	cmp	r0, r2
+  9efbc0:	d016      	beq.n	9efbf0 <StopSoundPacket::read(BinaryStream&)+0xb0>
+  9efbc2:	4a11      	ldr	r2, [pc, #68]	; (9efc08 <StopSoundPacket::read(BinaryStream&)+0xc8>)
+  9efbc4:	4b11      	ldr	r3, [pc, #68]	; (9efc0c <StopSoundPacket::read(BinaryStream&)+0xcc>)
+  9efbc6:	447a      	add	r2, pc
+  9efbc8:	589b      	ldr	r3, [r3, r2]
+  9efbca:	1f0a      	subs	r2, r1, #4
+  9efbcc:	b19b      	cbz	r3, 9efbf6 <StopSoundPacket::read(BinaryStream&)+0xb6>
+  9efbce:	f3bf 8f5b 	dmb	ish
+  9efbd2:	e852 1f00 	ldrex	r1, [r2]
+  9efbd6:	1e4b      	subs	r3, r1, #1
+  9efbd8:	e842 3600 	strex	r6, r3, [r2]
+  9efbdc:	2e00      	cmp	r6, #0
+  9efbde:	d1f8      	bne.n	9efbd2 <StopSoundPacket::read(BinaryStream&)+0x92>
+  9efbe0:	f3bf 8f5b 	dmb	ish
+  9efbe4:	2900      	cmp	r1, #0
+  9efbe6:	bfdc      	itt	le
+  9efbe8:	f10d 010c 	addle.w	r1, sp, #12
+  9efbec:	f144 ebfa 	blxle	b343e4 <CommandTarget::getCommandTarget(CommandOrigin const&, Entity const*)+0x68>
+  9efbf0:	4620      	mov	r0, r4
+  9efbf2:	f4d8 edf8 	blx	6c87e4 <_Unwind_Resume@plt>
+  9efbf6:	6811      	ldr	r1, [r2, #0]
+  9efbf8:	1e4b      	subs	r3, r1, #1
+  9efbfa:	6013      	str	r3, [r2, #0]
+  9efbfc:	e7f2      	b.n	9efbe4 <StopSoundPacket::read(BinaryStream&)+0xa4>
+  9efbfe:	bf00      	nop
+  9efc00:	7008      	strb	r0, [r1, #0]
+  9efc02:	016c      	lsls	r4, r5, #5
+  9efc04:	8854      	ldrh	r4, [r2, #2]
+  9efc06:	ffff 6ff6 			; <UNDEFINED> instruction: 0xffff6ff6
+  9efc0a:	016c      	lsls	r4, r5, #5
+  9efc0c:	8858      	ldrh	r0, [r3, #2]
+  9efc0e:	ffff 705e 	vshr.u32	<illegal reg q11.5>, q7, #1
+  9efc12:	016c      	lsls	r4, r5, #5
+  9efc14:	7040      	strb	r0, [r0, #1]
+  9efc16:	016c      	lsls	r4, r5, #5

@@ -1,0 +1,204 @@
+  9e65dc:	b570      	push	{r4, r5, r6, lr}
+  9e65de:	b088      	sub	sp, #32
+  9e65e0:	4604      	mov	r4, r0
+  9e65e2:	486e      	ldr	r0, [pc, #440]	; (9e679c <LoginPacket::read(BinaryStream&)+0x1c0>)
+  9e65e4:	460d      	mov	r5, r1
+  9e65e6:	496e      	ldr	r1, [pc, #440]	; (9e67a0 <LoginPacket::read(BinaryStream&)+0x1c4>)
+  9e65e8:	4478      	add	r0, pc
+  9e65ea:	5808      	ldr	r0, [r1, r0]
+  9e65ec:	6806      	ldr	r6, [r0, #0]
+  9e65ee:	4628      	mov	r0, r5
+  9e65f0:	f4e4 ed44 	blx	6cb07c <ReadOnlyBinaryStream::getSignedBigEndianInt()@plt>
+  9e65f4:	6120      	str	r0, [r4, #16]
+  9e65f6:	42b0      	cmp	r0, r6
+  9e65f8:	d13a      	bne.n	9e6670 <LoginPacket::read(BinaryStream&)+0x94>
+  9e65fa:	4628      	mov	r0, r5
+  9e65fc:	f4e4 ed44 	blx	6cb088 <ReadOnlyBinaryStream::getByte()@plt>
+  9e6600:	ae06      	add	r6, sp, #24
+  9e6602:	7320      	strb	r0, [r4, #12]
+  9e6604:	4629      	mov	r1, r5
+  9e6606:	4630      	mov	r0, r6
+  9e6608:	f4e4 e8c4 	blx	6ca794 <ReadOnlyBinaryStream::getString()@plt>
+  9e660c:	a804      	add	r0, sp, #16
+  9e660e:	f10d 0217 	add.w	r2, sp, #23
+  9e6612:	4631      	mov	r1, r6
+  9e6614:	f4e4 ed3e 	blx	6cb094 <Util::decompress(std::string const&, bool&)@plt>
+  9e6618:	f89d 0017 	ldrb.w	r0, [sp, #23]
+  9e661c:	b1a8      	cbz	r0, 9e664a <LoginPacket::read(BinaryStream&)+0x6e>
+  9e661e:	a801      	add	r0, sp, #4
+  9e6620:	a904      	add	r1, sp, #16
+  9e6622:	f4e4 ed3e 	blx	6cb0a0 <ConnectionRequest::fromString(std::string const&)@plt>
+  9e6626:	200c      	movs	r0, #12
+  9e6628:	f4e2 e8e2 	blx	6c87f0 <operator new(unsigned int)@plt>
+  9e662c:	4605      	mov	r5, r0
+  9e662e:	a901      	add	r1, sp, #4
+  9e6630:	4628      	mov	r0, r5
+  9e6632:	f4e4 ed3c 	blx	6cb0ac <ConnectionRequest::ConnectionRequest(ConnectionRequest const&)@plt>
+  9e6636:	6960      	ldr	r0, [r4, #20]
+  9e6638:	6165      	str	r5, [r4, #20]
+  9e663a:	b118      	cbz	r0, 9e6644 <LoginPacket::read(BinaryStream&)+0x68>
+  9e663c:	f4e4 ecfa 	blx	6cb034 <ConnectionRequest::~ConnectionRequest()@plt>
+  9e6640:	f4e1 effe 	blx	6c8640 <operator delete(void*)@plt>
+  9e6644:	a801      	add	r0, sp, #4
+  9e6646:	f4e4 ecf6 	blx	6cb034 <ConnectionRequest::~ConnectionRequest()@plt>
+  9e664a:	485c      	ldr	r0, [pc, #368]	; (9e67bc <LoginPacket::read(BinaryStream&)+0x1e0>)
+  9e664c:	4c56      	ldr	r4, [pc, #344]	; (9e67a8 <LoginPacket::read(BinaryStream&)+0x1cc>)
+  9e664e:	4478      	add	r0, pc
+  9e6650:	9904      	ldr	r1, [sp, #16]
+  9e6652:	5822      	ldr	r2, [r4, r0]
+  9e6654:	f1a1 000c 	sub.w	r0, r1, #12
+  9e6658:	4290      	cmp	r0, r2
+  9e665a:	d110      	bne.n	9e667e <LoginPacket::read(BinaryStream&)+0xa2>
+  9e665c:	4859      	ldr	r0, [pc, #356]	; (9e67c4 <LoginPacket::read(BinaryStream&)+0x1e8>)
+  9e665e:	9906      	ldr	r1, [sp, #24]
+  9e6660:	4478      	add	r0, pc
+  9e6662:	5822      	ldr	r2, [r4, r0]
+  9e6664:	f1a1 000c 	sub.w	r0, r1, #12
+  9e6668:	4290      	cmp	r0, r2
+  9e666a:	d11a      	bne.n	9e66a2 <LoginPacket::read(BinaryStream&)+0xc6>
+  9e666c:	b008      	add	sp, #32
+  9e666e:	bd70      	pop	{r4, r5, r6, pc}
+  9e6670:	68e8      	ldr	r0, [r5, #12]
+  9e6672:	6800      	ldr	r0, [r0, #0]
+  9e6674:	f850 0c0c 	ldr.w	r0, [r0, #-12]
+  9e6678:	6068      	str	r0, [r5, #4]
+  9e667a:	b008      	add	sp, #32
+  9e667c:	bd70      	pop	{r4, r5, r6, pc}
+  9e667e:	4a50      	ldr	r2, [pc, #320]	; (9e67c0 <LoginPacket::read(BinaryStream&)+0x1e4>)
+  9e6680:	4b4b      	ldr	r3, [pc, #300]	; (9e67b0 <LoginPacket::read(BinaryStream&)+0x1d4>)
+  9e6682:	447a      	add	r2, pc
+  9e6684:	589b      	ldr	r3, [r3, r2]
+  9e6686:	1f0a      	subs	r2, r1, #4
+  9e6688:	b1eb      	cbz	r3, 9e66c6 <LoginPacket::read(BinaryStream&)+0xea>
+  9e668a:	f3bf 8f5b 	dmb	ish
+  9e668e:	e852 1f00 	ldrex	r1, [r2]
+  9e6692:	1e4b      	subs	r3, r1, #1
+  9e6694:	e842 3600 	strex	r6, r3, [r2]
+  9e6698:	2e00      	cmp	r6, #0
+  9e669a:	d1f8      	bne.n	9e668e <LoginPacket::read(BinaryStream&)+0xb2>
+  9e669c:	f3bf 8f5b 	dmb	ish
+  9e66a0:	e014      	b.n	9e66cc <LoginPacket::read(BinaryStream&)+0xf0>
+  9e66a2:	4a49      	ldr	r2, [pc, #292]	; (9e67c8 <LoginPacket::read(BinaryStream&)+0x1ec>)
+  9e66a4:	4b42      	ldr	r3, [pc, #264]	; (9e67b0 <LoginPacket::read(BinaryStream&)+0x1d4>)
+  9e66a6:	447a      	add	r2, pc
+  9e66a8:	589b      	ldr	r3, [r3, r2]
+  9e66aa:	1f0a      	subs	r2, r1, #4
+  9e66ac:	b1a3      	cbz	r3, 9e66d8 <LoginPacket::read(BinaryStream&)+0xfc>
+  9e66ae:	f3bf 8f5b 	dmb	ish
+  9e66b2:	e852 1f00 	ldrex	r1, [r2]
+  9e66b6:	1e4b      	subs	r3, r1, #1
+  9e66b8:	e842 3600 	strex	r6, r3, [r2]
+  9e66bc:	2e00      	cmp	r6, #0
+  9e66be:	d1f8      	bne.n	9e66b2 <LoginPacket::read(BinaryStream&)+0xd6>
+  9e66c0:	f3bf 8f5b 	dmb	ish
+  9e66c4:	e00b      	b.n	9e66de <LoginPacket::read(BinaryStream&)+0x102>
+  9e66c6:	6811      	ldr	r1, [r2, #0]
+  9e66c8:	1e4b      	subs	r3, r1, #1
+  9e66ca:	6013      	str	r3, [r2, #0]
+  9e66cc:	2900      	cmp	r1, #0
+  9e66ce:	dcc5      	bgt.n	9e665c <LoginPacket::read(BinaryStream&)+0x80>
+  9e66d0:	a907      	add	r1, sp, #28
+  9e66d2:	f14d ee88 	blx	b343e4 <CommandTarget::getCommandTarget(CommandOrigin const&, Entity const*)+0x68>
+  9e66d6:	e7c1      	b.n	9e665c <LoginPacket::read(BinaryStream&)+0x80>
+  9e66d8:	6811      	ldr	r1, [r2, #0]
+  9e66da:	1e4b      	subs	r3, r1, #1
+  9e66dc:	6013      	str	r3, [r2, #0]
+  9e66de:	2900      	cmp	r1, #0
+  9e66e0:	dcc4      	bgt.n	9e666c <LoginPacket::read(BinaryStream&)+0x90>
+  9e66e2:	a904      	add	r1, sp, #16
+  9e66e4:	f14d ee7e 	blx	b343e4 <CommandTarget::getCommandTarget(CommandOrigin const&, Entity const*)+0x68>
+  9e66e8:	e7c0      	b.n	9e666c <LoginPacket::read(BinaryStream&)+0x90>
+  9e66ea:	4604      	mov	r4, r0
+  9e66ec:	e013      	b.n	9e6716 <LoginPacket::read(BinaryStream&)+0x13a>
+  9e66ee:	4604      	mov	r4, r0
+  9e66f0:	e008      	b.n	9e6704 <LoginPacket::read(BinaryStream&)+0x128>
+  9e66f2:	4604      	mov	r4, r0
+  9e66f4:	e003      	b.n	9e66fe <LoginPacket::read(BinaryStream&)+0x122>
+  9e66f6:	4604      	mov	r4, r0
+  9e66f8:	4628      	mov	r0, r5
+  9e66fa:	f4e1 efa2 	blx	6c8640 <operator delete(void*)@plt>
+  9e66fe:	a801      	add	r0, sp, #4
+  9e6700:	f4e4 ec98 	blx	6cb034 <ConnectionRequest::~ConnectionRequest()@plt>
+  9e6704:	4827      	ldr	r0, [pc, #156]	; (9e67a4 <LoginPacket::read(BinaryStream&)+0x1c8>)
+  9e6706:	4a28      	ldr	r2, [pc, #160]	; (9e67a8 <LoginPacket::read(BinaryStream&)+0x1cc>)
+  9e6708:	4478      	add	r0, pc
+  9e670a:	9904      	ldr	r1, [sp, #16]
+  9e670c:	5812      	ldr	r2, [r2, r0]
+  9e670e:	f1a1 000c 	sub.w	r0, r1, #12
+  9e6712:	4290      	cmp	r0, r2
+  9e6714:	d122      	bne.n	9e675c <LoginPacket::read(BinaryStream&)+0x180>
+  9e6716:	4827      	ldr	r0, [pc, #156]	; (9e67b4 <LoginPacket::read(BinaryStream&)+0x1d8>)
+  9e6718:	4a23      	ldr	r2, [pc, #140]	; (9e67a8 <LoginPacket::read(BinaryStream&)+0x1cc>)
+  9e671a:	4478      	add	r0, pc
+  9e671c:	9906      	ldr	r1, [sp, #24]
+  9e671e:	5812      	ldr	r2, [r2, r0]
+  9e6720:	f1a1 000c 	sub.w	r0, r1, #12
+  9e6724:	4290      	cmp	r0, r2
+  9e6726:	d016      	beq.n	9e6756 <LoginPacket::read(BinaryStream&)+0x17a>
+  9e6728:	4a23      	ldr	r2, [pc, #140]	; (9e67b8 <LoginPacket::read(BinaryStream&)+0x1dc>)
+  9e672a:	4b21      	ldr	r3, [pc, #132]	; (9e67b0 <LoginPacket::read(BinaryStream&)+0x1d4>)
+  9e672c:	447a      	add	r2, pc
+  9e672e:	589b      	ldr	r3, [r3, r2]
+  9e6730:	1f0a      	subs	r2, r1, #4
+  9e6732:	b373      	cbz	r3, 9e6792 <LoginPacket::read(BinaryStream&)+0x1b6>
+  9e6734:	f3bf 8f5b 	dmb	ish
+  9e6738:	e852 1f00 	ldrex	r1, [r2]
+  9e673c:	1e4b      	subs	r3, r1, #1
+  9e673e:	e842 3600 	strex	r6, r3, [r2]
+  9e6742:	2e00      	cmp	r6, #0
+  9e6744:	d1f8      	bne.n	9e6738 <LoginPacket::read(BinaryStream&)+0x15c>
+  9e6746:	f3bf 8f5b 	dmb	ish
+  9e674a:	2900      	cmp	r1, #0
+  9e674c:	bfdc      	itt	le
+  9e674e:	f10d 011c 	addle.w	r1, sp, #28
+  9e6752:	f14d ee48 	blxle	b343e4 <CommandTarget::getCommandTarget(CommandOrigin const&, Entity const*)+0x68>
+  9e6756:	4620      	mov	r0, r4
+  9e6758:	f4e2 e844 	blx	6c87e4 <_Unwind_Resume@plt>
+  9e675c:	4a13      	ldr	r2, [pc, #76]	; (9e67ac <LoginPacket::read(BinaryStream&)+0x1d0>)
+  9e675e:	4b14      	ldr	r3, [pc, #80]	; (9e67b0 <LoginPacket::read(BinaryStream&)+0x1d4>)
+  9e6760:	447a      	add	r2, pc
+  9e6762:	589b      	ldr	r3, [r3, r2]
+  9e6764:	1f0a      	subs	r2, r1, #4
+  9e6766:	b15b      	cbz	r3, 9e6780 <LoginPacket::read(BinaryStream&)+0x1a4>
+  9e6768:	f3bf 8f5b 	dmb	ish
+  9e676c:	e852 1f00 	ldrex	r1, [r2]
+  9e6770:	1e4b      	subs	r3, r1, #1
+  9e6772:	e842 3600 	strex	r6, r3, [r2]
+  9e6776:	2e00      	cmp	r6, #0
+  9e6778:	d1f8      	bne.n	9e676c <LoginPacket::read(BinaryStream&)+0x190>
+  9e677a:	f3bf 8f5b 	dmb	ish
+  9e677e:	e002      	b.n	9e6786 <LoginPacket::read(BinaryStream&)+0x1aa>
+  9e6780:	6811      	ldr	r1, [r2, #0]
+  9e6782:	1e4b      	subs	r3, r1, #1
+  9e6784:	6013      	str	r3, [r2, #0]
+  9e6786:	2900      	cmp	r1, #0
+  9e6788:	dcc5      	bgt.n	9e6716 <LoginPacket::read(BinaryStream&)+0x13a>
+  9e678a:	a907      	add	r1, sp, #28
+  9e678c:	f14d ee2a 	blx	b343e4 <CommandTarget::getCommandTarget(CommandOrigin const&, Entity const*)+0x68>
+  9e6790:	e7c1      	b.n	9e6716 <LoginPacket::read(BinaryStream&)+0x13a>
+  9e6792:	6811      	ldr	r1, [r2, #0]
+  9e6794:	1e4b      	subs	r3, r1, #1
+  9e6796:	6013      	str	r3, [r2, #0]
+  9e6798:	e7d7      	b.n	9e674a <LoginPacket::read(BinaryStream&)+0x16e>
+  9e679a:	bf00      	nop
+  9e679c:	05d4      	lsls	r4, r2, #23
+  9e679e:	016d      	lsls	r5, r5, #5
+  9e67a0:	8b30      	ldrh	r0, [r6, #24]
+  9e67a2:	ffff 04b4 	vsri.64	d16, d20, #1
+  9e67a6:	016d      	lsls	r5, r5, #5
+  9e67a8:	8854      	ldrh	r4, [r2, #2]
+  9e67aa:	ffff 045c 	vsri.32	q8, q6, #1
+  9e67ae:	016d      	lsls	r5, r5, #5
+  9e67b0:	8858      	ldrh	r0, [r3, #2]
+  9e67b2:	ffff 04a2 	vraddhn.i<illegal width 128>	d16, <illegal reg q15.5>, q9
+  9e67b6:	016d      	lsls	r5, r5, #5
+  9e67b8:	0490      	lsls	r0, r2, #18
+  9e67ba:	016d      	lsls	r5, r5, #5
+  9e67bc:	056e      	lsls	r6, r5, #21
+  9e67be:	016d      	lsls	r5, r5, #5
+  9e67c0:	053a      	lsls	r2, r7, #20
+  9e67c2:	016d      	lsls	r5, r5, #5
+  9e67c4:	055c      	lsls	r4, r3, #21
+  9e67c6:	016d      	lsls	r5, r5, #5
+  9e67c8:	0516      	lsls	r6, r2, #20
+  9e67ca:	016d      	lsls	r5, r5, #5

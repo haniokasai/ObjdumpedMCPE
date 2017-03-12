@@ -1,0 +1,90 @@
+  9e88b4:	b570      	push	{r4, r5, r6, lr}
+  9e88b6:	b084      	sub	sp, #16
+  9e88b8:	460d      	mov	r5, r1
+  9e88ba:	4604      	mov	r4, r0
+  9e88bc:	4628      	mov	r0, r5
+  9e88be:	f4e2 ec0e 	blx	6cb0dc <ReadOnlyBinaryStream::getBool()@plt>
+  9e88c2:	7320      	strb	r0, [r4, #12]
+  9e88c4:	b990      	cbnz	r0, 9e88ec <DisconnectPacket::read(BinaryStream&)+0x38>
+  9e88c6:	ae01      	add	r6, sp, #4
+  9e88c8:	4629      	mov	r1, r5
+  9e88ca:	4630      	mov	r0, r6
+  9e88cc:	f4e1 ef62 	blx	6ca794 <ReadOnlyBinaryStream::getString()@plt>
+  9e88d0:	f104 0010 	add.w	r0, r4, #16
+  9e88d4:	4631      	mov	r1, r6
+  9e88d6:	f14b edd6 	blx	b34484 <CommandTarget::getCommandTarget(CommandOrigin const&, Entity const*)+0x108>
+  9e88da:	482b      	ldr	r0, [pc, #172]	; (9e8988 <DisconnectPacket::read(BinaryStream&)+0xd4>)
+  9e88dc:	4a27      	ldr	r2, [pc, #156]	; (9e897c <DisconnectPacket::read(BinaryStream&)+0xc8>)
+  9e88de:	4478      	add	r0, pc
+  9e88e0:	9901      	ldr	r1, [sp, #4]
+  9e88e2:	5812      	ldr	r2, [r2, r0]
+  9e88e4:	f1a1 000c 	sub.w	r0, r1, #12
+  9e88e8:	4290      	cmp	r0, r2
+  9e88ea:	d101      	bne.n	9e88f0 <DisconnectPacket::read(BinaryStream&)+0x3c>
+  9e88ec:	b004      	add	sp, #16
+  9e88ee:	bd70      	pop	{r4, r5, r6, pc}
+  9e88f0:	4a26      	ldr	r2, [pc, #152]	; (9e898c <DisconnectPacket::read(BinaryStream&)+0xd8>)
+  9e88f2:	4b24      	ldr	r3, [pc, #144]	; (9e8984 <DisconnectPacket::read(BinaryStream&)+0xd0>)
+  9e88f4:	447a      	add	r2, pc
+  9e88f6:	589b      	ldr	r3, [r3, r2]
+  9e88f8:	1f0a      	subs	r2, r1, #4
+  9e88fa:	b15b      	cbz	r3, 9e8914 <DisconnectPacket::read(BinaryStream&)+0x60>
+  9e88fc:	f3bf 8f5b 	dmb	ish
+  9e8900:	e852 1f00 	ldrex	r1, [r2]
+  9e8904:	1e4b      	subs	r3, r1, #1
+  9e8906:	e842 3600 	strex	r6, r3, [r2]
+  9e890a:	2e00      	cmp	r6, #0
+  9e890c:	d1f8      	bne.n	9e8900 <DisconnectPacket::read(BinaryStream&)+0x4c>
+  9e890e:	f3bf 8f5b 	dmb	ish
+  9e8912:	e002      	b.n	9e891a <DisconnectPacket::read(BinaryStream&)+0x66>
+  9e8914:	6811      	ldr	r1, [r2, #0]
+  9e8916:	1e4b      	subs	r3, r1, #1
+  9e8918:	6013      	str	r3, [r2, #0]
+  9e891a:	2900      	cmp	r1, #0
+  9e891c:	dce6      	bgt.n	9e88ec <DisconnectPacket::read(BinaryStream&)+0x38>
+  9e891e:	a902      	add	r1, sp, #8
+  9e8920:	f14b ed60 	blx	b343e4 <CommandTarget::getCommandTarget(CommandOrigin const&, Entity const*)+0x68>
+  9e8924:	e7e2      	b.n	9e88ec <DisconnectPacket::read(BinaryStream&)+0x38>
+  9e8926:	4a14      	ldr	r2, [pc, #80]	; (9e8978 <DisconnectPacket::read(BinaryStream&)+0xc4>)
+  9e8928:	4604      	mov	r4, r0
+  9e892a:	4b14      	ldr	r3, [pc, #80]	; (9e897c <DisconnectPacket::read(BinaryStream&)+0xc8>)
+  9e892c:	447a      	add	r2, pc
+  9e892e:	9901      	ldr	r1, [sp, #4]
+  9e8930:	f1a1 000c 	sub.w	r0, r1, #12
+  9e8934:	589a      	ldr	r2, [r3, r2]
+  9e8936:	4290      	cmp	r0, r2
+  9e8938:	d016      	beq.n	9e8968 <DisconnectPacket::read(BinaryStream&)+0xb4>
+  9e893a:	4a11      	ldr	r2, [pc, #68]	; (9e8980 <DisconnectPacket::read(BinaryStream&)+0xcc>)
+  9e893c:	4b11      	ldr	r3, [pc, #68]	; (9e8984 <DisconnectPacket::read(BinaryStream&)+0xd0>)
+  9e893e:	447a      	add	r2, pc
+  9e8940:	589b      	ldr	r3, [r3, r2]
+  9e8942:	1f0a      	subs	r2, r1, #4
+  9e8944:	b19b      	cbz	r3, 9e896e <DisconnectPacket::read(BinaryStream&)+0xba>
+  9e8946:	f3bf 8f5b 	dmb	ish
+  9e894a:	e852 1f00 	ldrex	r1, [r2]
+  9e894e:	1e4b      	subs	r3, r1, #1
+  9e8950:	e842 3600 	strex	r6, r3, [r2]
+  9e8954:	2e00      	cmp	r6, #0
+  9e8956:	d1f8      	bne.n	9e894a <DisconnectPacket::read(BinaryStream&)+0x96>
+  9e8958:	f3bf 8f5b 	dmb	ish
+  9e895c:	2900      	cmp	r1, #0
+  9e895e:	bfdc      	itt	le
+  9e8960:	f10d 010c 	addle.w	r1, sp, #12
+  9e8964:	f14b ed3e 	blxle	b343e4 <CommandTarget::getCommandTarget(CommandOrigin const&, Entity const*)+0x68>
+  9e8968:	4620      	mov	r0, r4
+  9e896a:	f4df ef3c 	blx	6c87e4 <_Unwind_Resume@plt>
+  9e896e:	6811      	ldr	r1, [r2, #0]
+  9e8970:	1e4b      	subs	r3, r1, #1
+  9e8972:	6013      	str	r3, [r2, #0]
+  9e8974:	e7f2      	b.n	9e895c <DisconnectPacket::read(BinaryStream&)+0xa8>
+  9e8976:	bf00      	nop
+  9e8978:	e290      	b.n	9e8e9c <TextPacket::read(BinaryStream&)+0x220>
+  9e897a:	016c      	lsls	r4, r5, #5
+  9e897c:	8854      	ldrh	r4, [r2, #2]
+  9e897e:	ffff e27e 	vrshr.u32	q15, q15, #1
+  9e8982:	016c      	lsls	r4, r5, #5
+  9e8984:	8858      	ldrh	r0, [r3, #2]
+  9e8986:	ffff e2de 	vrshr.u64	q15, q7, #1
+  9e898a:	016c      	lsls	r4, r5, #5
+  9e898c:	e2c8      	b.n	9e8f20 <TextPacket::read(BinaryStream&)+0x2a4>
+  9e898e:	016c      	lsls	r4, r5, #5

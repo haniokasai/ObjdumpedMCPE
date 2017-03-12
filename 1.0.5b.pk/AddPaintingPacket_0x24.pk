@@ -1,0 +1,107 @@
+  9ec444:	b570      	push	{r4, r5, r6, lr}
+  9ec446:	b086      	sub	sp, #24
+  9ec448:	4604      	mov	r4, r0
+  9ec44a:	a802      	add	r0, sp, #8
+  9ec44c:	460d      	mov	r5, r1
+  9ec44e:	f4de eed0 	blx	6cb1f0 <EntityUniqueID ReadOnlyBinaryStream::getType<EntityUniqueID>()@plt>
+  9ec452:	e9dd 0102 	ldrd	r0, r1, [sp, #8]
+  9ec456:	e9c4 0104 	strd	r0, r1, [r4, #16]
+  9ec45a:	a802      	add	r0, sp, #8
+  9ec45c:	4629      	mov	r1, r5
+  9ec45e:	f4de eece 	blx	6cb1fc <EntityRuntimeID ReadOnlyBinaryStream::getType<EntityRuntimeID>()@plt>
+  9ec462:	e9dd 0102 	ldrd	r0, r1, [sp, #8]
+  9ec466:	e9c4 0106 	strd	r0, r1, [r4, #24]
+  9ec46a:	a802      	add	r0, sp, #8
+  9ec46c:	4629      	mov	r1, r5
+  9ec46e:	f4de ef8c 	blx	6cb388 <NetworkBlockPosition ReadOnlyBinaryStream::getType<NetworkBlockPosition>()@plt>
+  9ec472:	9802      	ldr	r0, [sp, #8]
+  9ec474:	6220      	str	r0, [r4, #32]
+  9ec476:	9803      	ldr	r0, [sp, #12]
+  9ec478:	6260      	str	r0, [r4, #36]	; 0x24
+  9ec47a:	9804      	ldr	r0, [sp, #16]
+  9ec47c:	62a0      	str	r0, [r4, #40]	; 0x28
+  9ec47e:	4628      	mov	r0, r5
+  9ec480:	f4de ee86 	blx	6cb190 <ReadOnlyBinaryStream::getVarInt()@plt>
+  9ec484:	ae01      	add	r6, sp, #4
+  9ec486:	62e0      	str	r0, [r4, #44]	; 0x2c
+  9ec488:	4629      	mov	r1, r5
+  9ec48a:	4630      	mov	r0, r6
+  9ec48c:	f4de e982 	blx	6ca794 <ReadOnlyBinaryStream::getString()@plt>
+  9ec490:	f104 0030 	add.w	r0, r4, #48	; 0x30
+  9ec494:	4631      	mov	r1, r6
+  9ec496:	f147 eff6 	blx	b34484 <CommandTarget::getCommandTarget(CommandOrigin const&, Entity const*)+0x108>
+  9ec49a:	482b      	ldr	r0, [pc, #172]	; (9ec548 <AddPaintingPacket::read(BinaryStream&)+0x104>)
+  9ec49c:	4a27      	ldr	r2, [pc, #156]	; (9ec53c <AddPaintingPacket::read(BinaryStream&)+0xf8>)
+  9ec49e:	4478      	add	r0, pc
+  9ec4a0:	9901      	ldr	r1, [sp, #4]
+  9ec4a2:	5812      	ldr	r2, [r2, r0]
+  9ec4a4:	f1a1 000c 	sub.w	r0, r1, #12
+  9ec4a8:	4290      	cmp	r0, r2
+  9ec4aa:	d101      	bne.n	9ec4b0 <AddPaintingPacket::read(BinaryStream&)+0x6c>
+  9ec4ac:	b006      	add	sp, #24
+  9ec4ae:	bd70      	pop	{r4, r5, r6, pc}
+  9ec4b0:	4a26      	ldr	r2, [pc, #152]	; (9ec54c <AddPaintingPacket::read(BinaryStream&)+0x108>)
+  9ec4b2:	4b24      	ldr	r3, [pc, #144]	; (9ec544 <AddPaintingPacket::read(BinaryStream&)+0x100>)
+  9ec4b4:	447a      	add	r2, pc
+  9ec4b6:	589b      	ldr	r3, [r3, r2]
+  9ec4b8:	1f0a      	subs	r2, r1, #4
+  9ec4ba:	b15b      	cbz	r3, 9ec4d4 <AddPaintingPacket::read(BinaryStream&)+0x90>
+  9ec4bc:	f3bf 8f5b 	dmb	ish
+  9ec4c0:	e852 1f00 	ldrex	r1, [r2]
+  9ec4c4:	1e4b      	subs	r3, r1, #1
+  9ec4c6:	e842 3600 	strex	r6, r3, [r2]
+  9ec4ca:	2e00      	cmp	r6, #0
+  9ec4cc:	d1f8      	bne.n	9ec4c0 <AddPaintingPacket::read(BinaryStream&)+0x7c>
+  9ec4ce:	f3bf 8f5b 	dmb	ish
+  9ec4d2:	e002      	b.n	9ec4da <AddPaintingPacket::read(BinaryStream&)+0x96>
+  9ec4d4:	6811      	ldr	r1, [r2, #0]
+  9ec4d6:	1e4b      	subs	r3, r1, #1
+  9ec4d8:	6013      	str	r3, [r2, #0]
+  9ec4da:	2900      	cmp	r1, #0
+  9ec4dc:	dce6      	bgt.n	9ec4ac <AddPaintingPacket::read(BinaryStream&)+0x68>
+  9ec4de:	a902      	add	r1, sp, #8
+  9ec4e0:	f147 ef80 	blx	b343e4 <CommandTarget::getCommandTarget(CommandOrigin const&, Entity const*)+0x68>
+  9ec4e4:	e7e2      	b.n	9ec4ac <AddPaintingPacket::read(BinaryStream&)+0x68>
+  9ec4e6:	4a14      	ldr	r2, [pc, #80]	; (9ec538 <AddPaintingPacket::read(BinaryStream&)+0xf4>)
+  9ec4e8:	4604      	mov	r4, r0
+  9ec4ea:	4b14      	ldr	r3, [pc, #80]	; (9ec53c <AddPaintingPacket::read(BinaryStream&)+0xf8>)
+  9ec4ec:	447a      	add	r2, pc
+  9ec4ee:	9901      	ldr	r1, [sp, #4]
+  9ec4f0:	f1a1 000c 	sub.w	r0, r1, #12
+  9ec4f4:	589a      	ldr	r2, [r3, r2]
+  9ec4f6:	4290      	cmp	r0, r2
+  9ec4f8:	d016      	beq.n	9ec528 <AddPaintingPacket::read(BinaryStream&)+0xe4>
+  9ec4fa:	4a11      	ldr	r2, [pc, #68]	; (9ec540 <AddPaintingPacket::read(BinaryStream&)+0xfc>)
+  9ec4fc:	4b11      	ldr	r3, [pc, #68]	; (9ec544 <AddPaintingPacket::read(BinaryStream&)+0x100>)
+  9ec4fe:	447a      	add	r2, pc
+  9ec500:	589b      	ldr	r3, [r3, r2]
+  9ec502:	1f0a      	subs	r2, r1, #4
+  9ec504:	b19b      	cbz	r3, 9ec52e <AddPaintingPacket::read(BinaryStream&)+0xea>
+  9ec506:	f3bf 8f5b 	dmb	ish
+  9ec50a:	e852 1f00 	ldrex	r1, [r2]
+  9ec50e:	1e4b      	subs	r3, r1, #1
+  9ec510:	e842 3600 	strex	r6, r3, [r2]
+  9ec514:	2e00      	cmp	r6, #0
+  9ec516:	d1f8      	bne.n	9ec50a <AddPaintingPacket::read(BinaryStream&)+0xc6>
+  9ec518:	f3bf 8f5b 	dmb	ish
+  9ec51c:	2900      	cmp	r1, #0
+  9ec51e:	bfdc      	itt	le
+  9ec520:	f10d 0108 	addle.w	r1, sp, #8
+  9ec524:	f147 ef5e 	blxle	b343e4 <CommandTarget::getCommandTarget(CommandOrigin const&, Entity const*)+0x68>
+  9ec528:	4620      	mov	r0, r4
+  9ec52a:	f4dc e95c 	blx	6c87e4 <_Unwind_Resume@plt>
+  9ec52e:	6811      	ldr	r1, [r2, #0]
+  9ec530:	1e4b      	subs	r3, r1, #1
+  9ec532:	6013      	str	r3, [r2, #0]
+  9ec534:	e7f2      	b.n	9ec51c <AddPaintingPacket::read(BinaryStream&)+0xd8>
+  9ec536:	bf00      	nop
+  9ec538:	a6d0      	add	r6, pc, #832	; (adr r6, 9ec87c <NbtIo::read(IDataInput&)+0x44>)
+  9ec53a:	016c      	lsls	r4, r5, #5
+  9ec53c:	8854      	ldrh	r4, [r2, #2]
+  9ec53e:	ffff a6be 	vqshlu.s64	d26, d30, #63	; 0x3f
+  9ec542:	016c      	lsls	r4, r5, #5
+  9ec544:	8858      	ldrh	r0, [r3, #2]
+  9ec546:	ffff a71e 	vqshl.u32	d26, d14, #31
+  9ec54a:	016c      	lsls	r4, r5, #5
+  9ec54c:	a708      	add	r7, pc, #32	; (adr r7, 9ec570 <AdventureSettingsPacket::getName() const+0xc>)
+  9ec54e:	016c      	lsls	r4, r5, #5

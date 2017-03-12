@@ -1,0 +1,15 @@
+  9ee966:	b5b0      	push	{r4, r5, r7, lr}
+  9ee968:	b082      	sub	sp, #8
+  9ee96a:	4605      	mov	r5, r0
+  9ee96c:	4668      	mov	r0, sp
+  9ee96e:	460c      	mov	r4, r1
+  9ee970:	f4dc ec3e 	blx	6cb1f0 <EntityUniqueID ReadOnlyBinaryStream::getType<EntityUniqueID>()@plt>
+  9ee974:	e9dd 0100 	ldrd	r0, r1, [sp]
+  9ee978:	e9c5 0104 	strd	r0, r1, [r5, #16]
+  9ee97c:	4668      	mov	r0, sp
+  9ee97e:	4621      	mov	r1, r4
+  9ee980:	f4dc ec36 	blx	6cb1f0 <EntityUniqueID ReadOnlyBinaryStream::getType<EntityUniqueID>()@plt>
+  9ee984:	e9dd 0100 	ldrd	r0, r1, [sp]
+  9ee988:	e9c5 0106 	strd	r0, r1, [r5, #24]
+  9ee98c:	b002      	add	sp, #8
+  9ee98e:	bdb0      	pop	{r4, r5, r7, pc}

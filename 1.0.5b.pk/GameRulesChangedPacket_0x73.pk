@@ -1,0 +1,4 @@
+  9eeb14:	f100 020c 	add.w	r2, r0, #12
+  9eeb18:	4608      	mov	r0, r1
+  9eeb1a:	4611      	mov	r1, r2
+  9eeb1c:	f146 b84a 	b.w	b34bb4 <CommandTarget::getCommandTarget(CommandOrigin const&, Entity const*)+0x838>

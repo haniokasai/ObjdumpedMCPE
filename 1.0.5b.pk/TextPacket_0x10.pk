@@ -1,0 +1,387 @@
+  9e8c7c:	e92d 4ff0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, lr}
+  9e8c80:	b087      	sub	sp, #28
+  9e8c82:	460d      	mov	r5, r1
+  9e8c84:	4604      	mov	r4, r0
+  9e8c86:	4628      	mov	r0, r5
+  9e8c88:	f4e2 e9fe 	blx	6cb088 <ReadOnlyBinaryStream::getByte()@plt>
+  9e8c8c:	7320      	strb	r0, [r4, #12]
+  9e8c8e:	2807      	cmp	r0, #7
+  9e8c90:	d855      	bhi.n	9e8d3e <TextPacket::read(BinaryStream&)+0xc2>
+  9e8c92:	2101      	movs	r1, #1
+  9e8c94:	4081      	lsls	r1, r0
+  9e8c96:	f011 0fca 	tst.w	r1, #202	; 0xca
+  9e8c9a:	d03a      	beq.n	9e8d12 <TextPacket::read(BinaryStream&)+0x96>
+  9e8c9c:	ae04      	add	r6, sp, #16
+  9e8c9e:	4629      	mov	r1, r5
+  9e8ca0:	4630      	mov	r0, r6
+  9e8ca2:	f4e1 ed78 	blx	6ca794 <ReadOnlyBinaryStream::getString()@plt>
+  9e8ca6:	f104 0010 	add.w	r0, r4, #16
+  9e8caa:	4631      	mov	r1, r6
+  9e8cac:	f14b ebea 	blx	b34484 <CommandTarget::getCommandTarget(CommandOrigin const&, Entity const*)+0x108>
+  9e8cb0:	f8df 0368 	ldr.w	r0, [pc, #872]	; 9e901c <TextPacket::read(BinaryStream&)+0x3a0>
+  9e8cb4:	4fcf      	ldr	r7, [pc, #828]	; (9e8ff4 <TextPacket::read(BinaryStream&)+0x378>)
+  9e8cb6:	4478      	add	r0, pc
+  9e8cb8:	9904      	ldr	r1, [sp, #16]
+  9e8cba:	583a      	ldr	r2, [r7, r0]
+  9e8cbc:	f1a1 000c 	sub.w	r0, r1, #12
+  9e8cc0:	4290      	cmp	r0, r2
+  9e8cc2:	f040 80a1 	bne.w	9e8e08 <TextPacket::read(BinaryStream&)+0x18c>
+  9e8cc6:	ae03      	add	r6, sp, #12
+  9e8cc8:	4629      	mov	r1, r5
+  9e8cca:	4630      	mov	r0, r6
+  9e8ccc:	f4e1 ed62 	blx	6ca794 <ReadOnlyBinaryStream::getString()@plt>
+  9e8cd0:	f104 0014 	add.w	r0, r4, #20
+  9e8cd4:	4631      	mov	r1, r6
+  9e8cd6:	f14b ebd6 	blx	b34484 <CommandTarget::getCommandTarget(CommandOrigin const&, Entity const*)+0x108>
+  9e8cda:	48d4      	ldr	r0, [pc, #848]	; (9e902c <TextPacket::read(BinaryStream&)+0x3b0>)
+  9e8cdc:	9903      	ldr	r1, [sp, #12]
+  9e8cde:	4478      	add	r0, pc
+  9e8ce0:	583a      	ldr	r2, [r7, r0]
+  9e8ce2:	f1a1 000c 	sub.w	r0, r1, #12
+  9e8ce6:	4290      	cmp	r0, r2
+  9e8ce8:	d029      	beq.n	9e8d3e <TextPacket::read(BinaryStream&)+0xc2>
+  9e8cea:	4ad1      	ldr	r2, [pc, #836]	; (9e9030 <TextPacket::read(BinaryStream&)+0x3b4>)
+  9e8cec:	4bc3      	ldr	r3, [pc, #780]	; (9e8ffc <TextPacket::read(BinaryStream&)+0x380>)
+  9e8cee:	447a      	add	r2, pc
+  9e8cf0:	589b      	ldr	r3, [r3, r2]
+  9e8cf2:	1f0a      	subs	r2, r1, #4
+  9e8cf4:	2b00      	cmp	r3, #0
+  9e8cf6:	f000 80ab 	beq.w	9e8e50 <TextPacket::read(BinaryStream&)+0x1d4>
+  9e8cfa:	f3bf 8f5b 	dmb	ish
+  9e8cfe:	e852 1f00 	ldrex	r1, [r2]
+  9e8d02:	1e4b      	subs	r3, r1, #1
+  9e8d04:	e842 3700 	strex	r7, r3, [r2]
+  9e8d08:	2f00      	cmp	r7, #0
+  9e8d0a:	d1f8      	bne.n	9e8cfe <TextPacket::read(BinaryStream&)+0x82>
+  9e8d0c:	f3bf 8f5b 	dmb	ish
+  9e8d10:	e0a1      	b.n	9e8e56 <TextPacket::read(BinaryStream&)+0x1da>
+  9e8d12:	f011 0f31 	tst.w	r1, #49	; 0x31
+  9e8d16:	d015      	beq.n	9e8d44 <TextPacket::read(BinaryStream&)+0xc8>
+  9e8d18:	ae05      	add	r6, sp, #20
+  9e8d1a:	4629      	mov	r1, r5
+  9e8d1c:	4630      	mov	r0, r6
+  9e8d1e:	f4e1 ed3a 	blx	6ca794 <ReadOnlyBinaryStream::getString()@plt>
+  9e8d22:	f104 0014 	add.w	r0, r4, #20
+  9e8d26:	4631      	mov	r1, r6
+  9e8d28:	f14b ebac 	blx	b34484 <CommandTarget::getCommandTarget(CommandOrigin const&, Entity const*)+0x108>
+  9e8d2c:	48c3      	ldr	r0, [pc, #780]	; (9e903c <TextPacket::read(BinaryStream&)+0x3c0>)
+  9e8d2e:	4ab1      	ldr	r2, [pc, #708]	; (9e8ff4 <TextPacket::read(BinaryStream&)+0x378>)
+  9e8d30:	4478      	add	r0, pc
+  9e8d32:	9905      	ldr	r1, [sp, #20]
+  9e8d34:	5812      	ldr	r2, [r2, r0]
+  9e8d36:	f1a1 000c 	sub.w	r0, r1, #12
+  9e8d3a:	4290      	cmp	r0, r2
+  9e8d3c:	d176      	bne.n	9e8e2c <TextPacket::read(BinaryStream&)+0x1b0>
+  9e8d3e:	b007      	add	sp, #28
+  9e8d40:	e8bd 8ff0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, pc}
+  9e8d44:	2802      	cmp	r0, #2
+  9e8d46:	d1fa      	bne.n	9e8d3e <TextPacket::read(BinaryStream&)+0xc2>
+  9e8d48:	ae02      	add	r6, sp, #8
+  9e8d4a:	4629      	mov	r1, r5
+  9e8d4c:	4630      	mov	r0, r6
+  9e8d4e:	f4e1 ed22 	blx	6ca794 <ReadOnlyBinaryStream::getString()@plt>
+  9e8d52:	f104 0014 	add.w	r0, r4, #20
+  9e8d56:	4631      	mov	r1, r6
+  9e8d58:	f14b eb94 	blx	b34484 <CommandTarget::getCommandTarget(CommandOrigin const&, Entity const*)+0x108>
+  9e8d5c:	48a8      	ldr	r0, [pc, #672]	; (9e9000 <TextPacket::read(BinaryStream&)+0x384>)
+  9e8d5e:	4fa5      	ldr	r7, [pc, #660]	; (9e8ff4 <TextPacket::read(BinaryStream&)+0x378>)
+  9e8d60:	4478      	add	r0, pc
+  9e8d62:	9902      	ldr	r1, [sp, #8]
+  9e8d64:	583a      	ldr	r2, [r7, r0]
+  9e8d66:	f1a1 000c 	sub.w	r0, r1, #12
+  9e8d6a:	4290      	cmp	r0, r2
+  9e8d6c:	f040 80ab 	bne.w	9e8ec6 <TextPacket::read(BinaryStream&)+0x24a>
+  9e8d70:	4628      	mov	r0, r5
+  9e8d72:	f4e2 e840 	blx	6cadf4 <ReadOnlyBinaryStream::getUnsignedVarInt()@plt>
+  9e8d76:	4606      	mov	r6, r0
+  9e8d78:	2e00      	cmp	r6, #0
+  9e8d7a:	d0e0      	beq.n	9e8d3e <TextPacket::read(BinaryStream&)+0xc2>
+  9e8d7c:	48a4      	ldr	r0, [pc, #656]	; (9e9010 <TextPacket::read(BinaryStream&)+0x394>)
+  9e8d7e:	f104 0818 	add.w	r8, r4, #24
+  9e8d82:	499e      	ldr	r1, [pc, #632]	; (9e8ffc <TextPacket::read(BinaryStream&)+0x380>)
+  9e8d84:	f10d 0a04 	add.w	sl, sp, #4
+  9e8d88:	4478      	add	r0, pc
+  9e8d8a:	f04f 0900 	mov.w	r9, #0
+  9e8d8e:	f857 b000 	ldr.w	fp, [r7, r0]
+  9e8d92:	5808      	ldr	r0, [r1, r0]
+  9e8d94:	9000      	str	r0, [sp, #0]
+  9e8d96:	e019      	b.n	9e8dcc <TextPacket::read(BinaryStream&)+0x150>
+  9e8d98:	1f0a      	subs	r2, r1, #4
+  9e8d9a:	9900      	ldr	r1, [sp, #0]
+  9e8d9c:	b169      	cbz	r1, 9e8dba <TextPacket::read(BinaryStream&)+0x13e>
+  9e8d9e:	46bc      	mov	ip, r7
+  9e8da0:	f3bf 8f5b 	dmb	ish
+  9e8da4:	e852 1f00 	ldrex	r1, [r2]
+  9e8da8:	1e4b      	subs	r3, r1, #1
+  9e8daa:	e842 3700 	strex	r7, r3, [r2]
+  9e8dae:	2f00      	cmp	r7, #0
+  9e8db0:	d1f8      	bne.n	9e8da4 <TextPacket::read(BinaryStream&)+0x128>
+  9e8db2:	f3bf 8f5b 	dmb	ish
+  9e8db6:	4667      	mov	r7, ip
+  9e8db8:	e002      	b.n	9e8dc0 <TextPacket::read(BinaryStream&)+0x144>
+  9e8dba:	6811      	ldr	r1, [r2, #0]
+  9e8dbc:	1e4b      	subs	r3, r1, #1
+  9e8dbe:	6013      	str	r3, [r2, #0]
+  9e8dc0:	2900      	cmp	r1, #0
+  9e8dc2:	dc1c      	bgt.n	9e8dfe <TextPacket::read(BinaryStream&)+0x182>
+  9e8dc4:	a906      	add	r1, sp, #24
+  9e8dc6:	f14b eb0e 	blx	b343e4 <CommandTarget::getCommandTarget(CommandOrigin const&, Entity const*)+0x68>
+  9e8dca:	e018      	b.n	9e8dfe <TextPacket::read(BinaryStream&)+0x182>
+  9e8dcc:	4650      	mov	r0, sl
+  9e8dce:	4629      	mov	r1, r5
+  9e8dd0:	f4e1 ece0 	blx	6ca794 <ReadOnlyBinaryStream::getString()@plt>
+  9e8dd4:	e9d4 0107 	ldrd	r0, r1, [r4, #28]
+  9e8dd8:	4288      	cmp	r0, r1
+  9e8dda:	d007      	beq.n	9e8dec <TextPacket::read(BinaryStream&)+0x170>
+  9e8ddc:	9901      	ldr	r1, [sp, #4]
+  9e8dde:	f840 1b04 	str.w	r1, [r0], #4
+  9e8de2:	f10b 010c 	add.w	r1, fp, #12
+  9e8de6:	9101      	str	r1, [sp, #4]
+  9e8de8:	61e0      	str	r0, [r4, #28]
+  9e8dea:	e004      	b.n	9e8df6 <TextPacket::read(BinaryStream&)+0x17a>
+  9e8dec:	4640      	mov	r0, r8
+  9e8dee:	4651      	mov	r1, sl
+  9e8df0:	f4df edbe 	blx	6c8970 <void std::vector<std::string, std::allocator<std::string> >::_M_emplace_back_aux<std::string>(std::string&&)@plt>
+  9e8df4:	9901      	ldr	r1, [sp, #4]
+  9e8df6:	f1a1 000c 	sub.w	r0, r1, #12
+  9e8dfa:	4558      	cmp	r0, fp
+  9e8dfc:	d1cc      	bne.n	9e8d98 <TextPacket::read(BinaryStream&)+0x11c>
+  9e8dfe:	f109 0901 	add.w	r9, r9, #1
+  9e8e02:	45b1      	cmp	r9, r6
+  9e8e04:	d1e2      	bne.n	9e8dcc <TextPacket::read(BinaryStream&)+0x150>
+  9e8e06:	e79a      	b.n	9e8d3e <TextPacket::read(BinaryStream&)+0xc2>
+  9e8e08:	4a85      	ldr	r2, [pc, #532]	; (9e9020 <TextPacket::read(BinaryStream&)+0x3a4>)
+  9e8e0a:	4b7c      	ldr	r3, [pc, #496]	; (9e8ffc <TextPacket::read(BinaryStream&)+0x380>)
+  9e8e0c:	447a      	add	r2, pc
+  9e8e0e:	589b      	ldr	r3, [r3, r2]
+  9e8e10:	1f0a      	subs	r2, r1, #4
+  9e8e12:	b34b      	cbz	r3, 9e8e68 <TextPacket::read(BinaryStream&)+0x1ec>
+  9e8e14:	f3bf 8f5b 	dmb	ish
+  9e8e18:	e852 1f00 	ldrex	r1, [r2]
+  9e8e1c:	1e4b      	subs	r3, r1, #1
+  9e8e1e:	e842 3600 	strex	r6, r3, [r2]
+  9e8e22:	2e00      	cmp	r6, #0
+  9e8e24:	d1f8      	bne.n	9e8e18 <TextPacket::read(BinaryStream&)+0x19c>
+  9e8e26:	f3bf 8f5b 	dmb	ish
+  9e8e2a:	e020      	b.n	9e8e6e <TextPacket::read(BinaryStream&)+0x1f2>
+  9e8e2c:	4a84      	ldr	r2, [pc, #528]	; (9e9040 <TextPacket::read(BinaryStream&)+0x3c4>)
+  9e8e2e:	4b73      	ldr	r3, [pc, #460]	; (9e8ffc <TextPacket::read(BinaryStream&)+0x380>)
+  9e8e30:	447a      	add	r2, pc
+  9e8e32:	589b      	ldr	r3, [r3, r2]
+  9e8e34:	1f0a      	subs	r2, r1, #4
+  9e8e36:	b15b      	cbz	r3, 9e8e50 <TextPacket::read(BinaryStream&)+0x1d4>
+  9e8e38:	f3bf 8f5b 	dmb	ish
+  9e8e3c:	e852 1f00 	ldrex	r1, [r2]
+  9e8e40:	1e4b      	subs	r3, r1, #1
+  9e8e42:	e842 3700 	strex	r7, r3, [r2]
+  9e8e46:	2f00      	cmp	r7, #0
+  9e8e48:	d1f8      	bne.n	9e8e3c <TextPacket::read(BinaryStream&)+0x1c0>
+  9e8e4a:	f3bf 8f5b 	dmb	ish
+  9e8e4e:	e002      	b.n	9e8e56 <TextPacket::read(BinaryStream&)+0x1da>
+  9e8e50:	6811      	ldr	r1, [r2, #0]
+  9e8e52:	1e4b      	subs	r3, r1, #1
+  9e8e54:	6013      	str	r3, [r2, #0]
+  9e8e56:	2900      	cmp	r1, #0
+  9e8e58:	f73f af71 	bgt.w	9e8d3e <TextPacket::read(BinaryStream&)+0xc2>
+  9e8e5c:	a906      	add	r1, sp, #24
+  9e8e5e:	f14b eac2 	blx	b343e4 <CommandTarget::getCommandTarget(CommandOrigin const&, Entity const*)+0x68>
+  9e8e62:	b007      	add	sp, #28
+  9e8e64:	e8bd 8ff0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, pc}
+  9e8e68:	6811      	ldr	r1, [r2, #0]
+  9e8e6a:	1e4b      	subs	r3, r1, #1
+  9e8e6c:	6013      	str	r3, [r2, #0]
+  9e8e6e:	2900      	cmp	r1, #0
+  9e8e70:	f73f af29 	bgt.w	9e8cc6 <TextPacket::read(BinaryStream&)+0x4a>
+  9e8e74:	a906      	add	r1, sp, #24
+  9e8e76:	f14b eab6 	blx	b343e4 <CommandTarget::getCommandTarget(CommandOrigin const&, Entity const*)+0x68>
+  9e8e7a:	e724      	b.n	9e8cc6 <TextPacket::read(BinaryStream&)+0x4a>
+  9e8e7c:	4a62      	ldr	r2, [pc, #392]	; (9e9008 <TextPacket::read(BinaryStream&)+0x38c>)
+  9e8e7e:	4604      	mov	r4, r0
+  9e8e80:	9901      	ldr	r1, [sp, #4]
+  9e8e82:	447a      	add	r2, pc
+  9e8e84:	f1a1 000c 	sub.w	r0, r1, #12
+  9e8e88:	58ba      	ldr	r2, [r7, r2]
+  9e8e8a:	4290      	cmp	r0, r2
+  9e8e8c:	d018      	beq.n	9e8ec0 <TextPacket::read(BinaryStream&)+0x244>
+  9e8e8e:	4a5f      	ldr	r2, [pc, #380]	; (9e900c <TextPacket::read(BinaryStream&)+0x390>)
+  9e8e90:	4b5a      	ldr	r3, [pc, #360]	; (9e8ffc <TextPacket::read(BinaryStream&)+0x380>)
+  9e8e92:	447a      	add	r2, pc
+  9e8e94:	589b      	ldr	r3, [r3, r2]
+  9e8e96:	1f0a      	subs	r2, r1, #4
+  9e8e98:	2b00      	cmp	r3, #0
+  9e8e9a:	f000 80a4 	beq.w	9e8fe6 <TextPacket::read(BinaryStream&)+0x36a>
+  9e8e9e:	f3bf 8f5b 	dmb	ish
+  9e8ea2:	e852 1f00 	ldrex	r1, [r2]
+  9e8ea6:	1e4b      	subs	r3, r1, #1
+  9e8ea8:	e842 3700 	strex	r7, r3, [r2]
+  9e8eac:	2f00      	cmp	r7, #0
+  9e8eae:	d1f8      	bne.n	9e8ea2 <TextPacket::read(BinaryStream&)+0x226>
+  9e8eb0:	f3bf 8f5b 	dmb	ish
+  9e8eb4:	2900      	cmp	r1, #0
+  9e8eb6:	bfdc      	itt	le
+  9e8eb8:	f10d 0118 	addle.w	r1, sp, #24
+  9e8ebc:	f14b ea92 	blxle	b343e4 <CommandTarget::getCommandTarget(CommandOrigin const&, Entity const*)+0x68>
+  9e8ec0:	4620      	mov	r0, r4
+  9e8ec2:	f4df ec90 	blx	6c87e4 <_Unwind_Resume@plt>
+  9e8ec6:	4a4f      	ldr	r2, [pc, #316]	; (9e9004 <TextPacket::read(BinaryStream&)+0x388>)
+  9e8ec8:	4b4c      	ldr	r3, [pc, #304]	; (9e8ffc <TextPacket::read(BinaryStream&)+0x380>)
+  9e8eca:	447a      	add	r2, pc
+  9e8ecc:	589b      	ldr	r3, [r3, r2]
+  9e8ece:	1f0a      	subs	r2, r1, #4
+  9e8ed0:	b16b      	cbz	r3, 9e8eee <TextPacket::read(BinaryStream&)+0x272>
+  9e8ed2:	463e      	mov	r6, r7
+  9e8ed4:	f3bf 8f5b 	dmb	ish
+  9e8ed8:	e852 1f00 	ldrex	r1, [r2]
+  9e8edc:	1e4b      	subs	r3, r1, #1
+  9e8ede:	e842 3700 	strex	r7, r3, [r2]
+  9e8ee2:	2f00      	cmp	r7, #0
+  9e8ee4:	d1f8      	bne.n	9e8ed8 <TextPacket::read(BinaryStream&)+0x25c>
+  9e8ee6:	f3bf 8f5b 	dmb	ish
+  9e8eea:	4637      	mov	r7, r6
+  9e8eec:	e002      	b.n	9e8ef4 <TextPacket::read(BinaryStream&)+0x278>
+  9e8eee:	6811      	ldr	r1, [r2, #0]
+  9e8ef0:	1e4b      	subs	r3, r1, #1
+  9e8ef2:	6013      	str	r3, [r2, #0]
+  9e8ef4:	2900      	cmp	r1, #0
+  9e8ef6:	f73f af3b 	bgt.w	9e8d70 <TextPacket::read(BinaryStream&)+0xf4>
+  9e8efa:	a906      	add	r1, sp, #24
+  9e8efc:	f14b ea72 	blx	b343e4 <CommandTarget::getCommandTarget(CommandOrigin const&, Entity const*)+0x68>
+  9e8f00:	e736      	b.n	9e8d70 <TextPacket::read(BinaryStream&)+0xf4>
+  9e8f02:	4a44      	ldr	r2, [pc, #272]	; (9e9014 <TextPacket::read(BinaryStream&)+0x398>)
+  9e8f04:	4604      	mov	r4, r0
+  9e8f06:	4b3b      	ldr	r3, [pc, #236]	; (9e8ff4 <TextPacket::read(BinaryStream&)+0x378>)
+  9e8f08:	447a      	add	r2, pc
+  9e8f0a:	9904      	ldr	r1, [sp, #16]
+  9e8f0c:	f1a1 000c 	sub.w	r0, r1, #12
+  9e8f10:	589a      	ldr	r2, [r3, r2]
+  9e8f12:	4290      	cmp	r0, r2
+  9e8f14:	d0d4      	beq.n	9e8ec0 <TextPacket::read(BinaryStream&)+0x244>
+  9e8f16:	4a40      	ldr	r2, [pc, #256]	; (9e9018 <TextPacket::read(BinaryStream&)+0x39c>)
+  9e8f18:	4b38      	ldr	r3, [pc, #224]	; (9e8ffc <TextPacket::read(BinaryStream&)+0x380>)
+  9e8f1a:	447a      	add	r2, pc
+  9e8f1c:	589b      	ldr	r3, [r3, r2]
+  9e8f1e:	1f0a      	subs	r2, r1, #4
+  9e8f20:	2b00      	cmp	r3, #0
+  9e8f22:	d060      	beq.n	9e8fe6 <TextPacket::read(BinaryStream&)+0x36a>
+  9e8f24:	f3bf 8f5b 	dmb	ish
+  9e8f28:	e852 1f00 	ldrex	r1, [r2]
+  9e8f2c:	1e4b      	subs	r3, r1, #1
+  9e8f2e:	e842 3700 	strex	r7, r3, [r2]
+  9e8f32:	2f00      	cmp	r7, #0
+  9e8f34:	d1f8      	bne.n	9e8f28 <TextPacket::read(BinaryStream&)+0x2ac>
+  9e8f36:	f3bf 8f5b 	dmb	ish
+  9e8f3a:	e7bb      	b.n	9e8eb4 <TextPacket::read(BinaryStream&)+0x238>
+  9e8f3c:	4a39      	ldr	r2, [pc, #228]	; (9e9024 <TextPacket::read(BinaryStream&)+0x3a8>)
+  9e8f3e:	4604      	mov	r4, r0
+  9e8f40:	9903      	ldr	r1, [sp, #12]
+  9e8f42:	447a      	add	r2, pc
+  9e8f44:	f1a1 000c 	sub.w	r0, r1, #12
+  9e8f48:	58ba      	ldr	r2, [r7, r2]
+  9e8f4a:	4290      	cmp	r0, r2
+  9e8f4c:	d0b8      	beq.n	9e8ec0 <TextPacket::read(BinaryStream&)+0x244>
+  9e8f4e:	4a36      	ldr	r2, [pc, #216]	; (9e9028 <TextPacket::read(BinaryStream&)+0x3ac>)
+  9e8f50:	4b2a      	ldr	r3, [pc, #168]	; (9e8ffc <TextPacket::read(BinaryStream&)+0x380>)
+  9e8f52:	447a      	add	r2, pc
+  9e8f54:	589b      	ldr	r3, [r3, r2]
+  9e8f56:	1f0a      	subs	r2, r1, #4
+  9e8f58:	2b00      	cmp	r3, #0
+  9e8f5a:	d044      	beq.n	9e8fe6 <TextPacket::read(BinaryStream&)+0x36a>
+  9e8f5c:	f3bf 8f5b 	dmb	ish
+  9e8f60:	e852 1f00 	ldrex	r1, [r2]
+  9e8f64:	1e4b      	subs	r3, r1, #1
+  9e8f66:	e842 3700 	strex	r7, r3, [r2]
+  9e8f6a:	2f00      	cmp	r7, #0
+  9e8f6c:	d1f8      	bne.n	9e8f60 <TextPacket::read(BinaryStream&)+0x2e4>
+  9e8f6e:	f3bf 8f5b 	dmb	ish
+  9e8f72:	e79f      	b.n	9e8eb4 <TextPacket::read(BinaryStream&)+0x238>
+  9e8f74:	4a2f      	ldr	r2, [pc, #188]	; (9e9034 <TextPacket::read(BinaryStream&)+0x3b8>)
+  9e8f76:	4604      	mov	r4, r0
+  9e8f78:	4b1e      	ldr	r3, [pc, #120]	; (9e8ff4 <TextPacket::read(BinaryStream&)+0x378>)
+  9e8f7a:	447a      	add	r2, pc
+  9e8f7c:	9905      	ldr	r1, [sp, #20]
+  9e8f7e:	f1a1 000c 	sub.w	r0, r1, #12
+  9e8f82:	589a      	ldr	r2, [r3, r2]
+  9e8f84:	4290      	cmp	r0, r2
+  9e8f86:	d09b      	beq.n	9e8ec0 <TextPacket::read(BinaryStream&)+0x244>
+  9e8f88:	4a2b      	ldr	r2, [pc, #172]	; (9e9038 <TextPacket::read(BinaryStream&)+0x3bc>)
+  9e8f8a:	4b1c      	ldr	r3, [pc, #112]	; (9e8ffc <TextPacket::read(BinaryStream&)+0x380>)
+  9e8f8c:	447a      	add	r2, pc
+  9e8f8e:	589b      	ldr	r3, [r3, r2]
+  9e8f90:	1f0a      	subs	r2, r1, #4
+  9e8f92:	b343      	cbz	r3, 9e8fe6 <TextPacket::read(BinaryStream&)+0x36a>
+  9e8f94:	f3bf 8f5b 	dmb	ish
+  9e8f98:	e852 1f00 	ldrex	r1, [r2]
+  9e8f9c:	1e4b      	subs	r3, r1, #1
+  9e8f9e:	e842 3700 	strex	r7, r3, [r2]
+  9e8fa2:	2f00      	cmp	r7, #0
+  9e8fa4:	d1f8      	bne.n	9e8f98 <TextPacket::read(BinaryStream&)+0x31c>
+  9e8fa6:	f3bf 8f5b 	dmb	ish
+  9e8faa:	e783      	b.n	9e8eb4 <TextPacket::read(BinaryStream&)+0x238>
+  9e8fac:	4a10      	ldr	r2, [pc, #64]	; (9e8ff0 <TextPacket::read(BinaryStream&)+0x374>)
+  9e8fae:	4604      	mov	r4, r0
+  9e8fb0:	4b10      	ldr	r3, [pc, #64]	; (9e8ff4 <TextPacket::read(BinaryStream&)+0x378>)
+  9e8fb2:	447a      	add	r2, pc
+  9e8fb4:	9902      	ldr	r1, [sp, #8]
+  9e8fb6:	f1a1 000c 	sub.w	r0, r1, #12
+  9e8fba:	589a      	ldr	r2, [r3, r2]
+  9e8fbc:	4290      	cmp	r0, r2
+  9e8fbe:	f43f af7f 	beq.w	9e8ec0 <TextPacket::read(BinaryStream&)+0x244>
+  9e8fc2:	4a0d      	ldr	r2, [pc, #52]	; (9e8ff8 <TextPacket::read(BinaryStream&)+0x37c>)
+  9e8fc4:	4b0d      	ldr	r3, [pc, #52]	; (9e8ffc <TextPacket::read(BinaryStream&)+0x380>)
+  9e8fc6:	447a      	add	r2, pc
+  9e8fc8:	589b      	ldr	r3, [r3, r2]
+  9e8fca:	1f0a      	subs	r2, r1, #4
+  9e8fcc:	b15b      	cbz	r3, 9e8fe6 <TextPacket::read(BinaryStream&)+0x36a>
+  9e8fce:	f3bf 8f5b 	dmb	ish
+  9e8fd2:	e852 1f00 	ldrex	r1, [r2]
+  9e8fd6:	1e4b      	subs	r3, r1, #1
+  9e8fd8:	e842 3700 	strex	r7, r3, [r2]
+  9e8fdc:	2f00      	cmp	r7, #0
+  9e8fde:	d1f8      	bne.n	9e8fd2 <TextPacket::read(BinaryStream&)+0x356>
+  9e8fe0:	f3bf 8f5b 	dmb	ish
+  9e8fe4:	e766      	b.n	9e8eb4 <TextPacket::read(BinaryStream&)+0x238>
+  9e8fe6:	6811      	ldr	r1, [r2, #0]
+  9e8fe8:	1e4b      	subs	r3, r1, #1
+  9e8fea:	6013      	str	r3, [r2, #0]
+  9e8fec:	e762      	b.n	9e8eb4 <TextPacket::read(BinaryStream&)+0x238>
+  9e8fee:	bf00      	nop
+  9e8ff0:	dc0a      	bgt.n	9e9008 <TextPacket::read(BinaryStream&)+0x38c>
+  9e8ff2:	016c      	lsls	r4, r5, #5
+  9e8ff4:	8854      	ldrh	r4, [r2, #2]
+  9e8ff6:	ffff dbf6 			; <UNDEFINED> instruction: 0xffffdbf6
+  9e8ffa:	016c      	lsls	r4, r5, #5
+  9e8ffc:	8858      	ldrh	r0, [r3, #2]
+  9e8ffe:	ffff de5c 	vcvt.f32.u32	<illegal reg q14.5>, q6, #1
+  9e9002:	016c      	lsls	r4, r5, #5
+  9e9004:	dcf2      	bgt.n	9e8fec <TextPacket::read(BinaryStream&)+0x370>
+  9e9006:	016c      	lsls	r4, r5, #5
+  9e9008:	dd3a      	ble.n	9e9080 <StartGamePacket::~StartGamePacket()+0x30>
+  9e900a:	016c      	lsls	r4, r5, #5
+  9e900c:	dd2a      	ble.n	9e9064 <StartGamePacket::~StartGamePacket()+0x14>
+  9e900e:	016c      	lsls	r4, r5, #5
+  9e9010:	de34      	udf	#52	; 0x34
+  9e9012:	016c      	lsls	r4, r5, #5
+  9e9014:	dcb4      	bgt.n	9e8f80 <TextPacket::read(BinaryStream&)+0x304>
+  9e9016:	016c      	lsls	r4, r5, #5
+  9e9018:	dca2      	bgt.n	9e8f60 <TextPacket::read(BinaryStream&)+0x2e4>
+  9e901a:	016c      	lsls	r4, r5, #5
+  9e901c:	df06      	svc	6
+  9e901e:	016c      	lsls	r4, r5, #5
+  9e9020:	ddb0      	ble.n	9e8f84 <TextPacket::read(BinaryStream&)+0x308>
+  9e9022:	016c      	lsls	r4, r5, #5
+  9e9024:	dc7a      	bgt.n	9e911c <StartGamePacket::~StartGamePacket()+0xcc>
+  9e9026:	016c      	lsls	r4, r5, #5
+  9e9028:	dc6a      	bgt.n	9e9100 <StartGamePacket::~StartGamePacket()+0xb0>
+  9e902a:	016c      	lsls	r4, r5, #5
+  9e902c:	dede      	udf	#222	; 0xde
+  9e902e:	016c      	lsls	r4, r5, #5
+  9e9030:	dece      	udf	#206	; 0xce
+  9e9032:	016c      	lsls	r4, r5, #5
+  9e9034:	dc42      	bgt.n	9e90bc <StartGamePacket::~StartGamePacket()+0x6c>
+  9e9036:	016c      	lsls	r4, r5, #5
+  9e9038:	dc30      	bgt.n	9e909c <StartGamePacket::~StartGamePacket()+0x4c>
+  9e903a:	016c      	lsls	r4, r5, #5
+  9e903c:	de8c      	udf	#140	; 0x8c
+  9e903e:	016c      	lsls	r4, r5, #5
+  9e9040:	dd8c      	ble.n	9e8f5c <TextPacket::read(BinaryStream&)+0x2e0>
+  9e9042:	016c      	lsls	r4, r5, #5

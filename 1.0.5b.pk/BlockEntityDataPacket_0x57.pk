@@ -1,0 +1,49 @@
+  9ec6e4:	b5b0      	push	{r4, r5, r7, lr}
+  9ec6e6:	b084      	sub	sp, #16
+  9ec6e8:	4604      	mov	r4, r0
+  9ec6ea:	a801      	add	r0, sp, #4
+  9ec6ec:	460d      	mov	r5, r1
+  9ec6ee:	f4de ee4c 	blx	6cb388 <NetworkBlockPosition ReadOnlyBinaryStream::getType<NetworkBlockPosition>()@plt>
+  9ec6f2:	4816      	ldr	r0, [pc, #88]	; (9ec74c <BlockEntityDataPacket::read(BinaryStream&)+0x68>)
+  9ec6f4:	9a01      	ldr	r2, [sp, #4]
+  9ec6f6:	4916      	ldr	r1, [pc, #88]	; (9ec750 <BlockEntityDataPacket::read(BinaryStream&)+0x6c>)
+  9ec6f8:	4478      	add	r0, pc
+  9ec6fa:	60e2      	str	r2, [r4, #12]
+  9ec6fc:	9a02      	ldr	r2, [sp, #8]
+  9ec6fe:	5808      	ldr	r0, [r1, r0]
+  9ec700:	6122      	str	r2, [r4, #16]
+  9ec702:	9903      	ldr	r1, [sp, #12]
+  9ec704:	3008      	adds	r0, #8
+  9ec706:	6161      	str	r1, [r4, #20]
+  9ec708:	e9cd 0501 	strd	r0, r5, [sp, #4]
+  9ec70c:	a901      	add	r1, sp, #4
+  9ec70e:	4668      	mov	r0, sp
+  9ec710:	f4de ee70 	blx	6cb3f4 <NbtIo::read(IDataInput&)@plt>
+  9ec714:	9d00      	ldr	r5, [sp, #0]
+  9ec716:	f104 0018 	add.w	r0, r4, #24
+  9ec71a:	4629      	mov	r1, r5
+  9ec71c:	f4de ee70 	blx	6cb400 <CompoundTag::operator=(CompoundTag&&)@plt>
+  9ec720:	b11d      	cbz	r5, 9ec72a <BlockEntityDataPacket::read(BinaryStream&)+0x46>
+  9ec722:	6828      	ldr	r0, [r5, #0]
+  9ec724:	6841      	ldr	r1, [r0, #4]
+  9ec726:	4628      	mov	r0, r5
+  9ec728:	4788      	blx	r1
+  9ec72a:	b004      	add	sp, #16
+  9ec72c:	bdb0      	pop	{r4, r5, r7, pc}
+  9ec72e:	4604      	mov	r4, r0
+  9ec730:	f4dc e858 	blx	6c87e4 <_Unwind_Resume@plt>
+  9ec734:	4604      	mov	r4, r0
+  9ec736:	b11d      	cbz	r5, 9ec740 <BlockEntityDataPacket::read(BinaryStream&)+0x5c>
+  9ec738:	6828      	ldr	r0, [r5, #0]
+  9ec73a:	6841      	ldr	r1, [r0, #4]
+  9ec73c:	4628      	mov	r0, r5
+  9ec73e:	4788      	blx	r1
+  9ec740:	2000      	movs	r0, #0
+  9ec742:	9000      	str	r0, [sp, #0]
+  9ec744:	4620      	mov	r0, r4
+  9ec746:	f4dc e84e 	blx	6c87e4 <_Unwind_Resume@plt>
+  9ec74a:	bf00      	nop
+  9ec74c:	a4c4      	add	r4, pc, #784	; (adr r4, 9eca60 <FullChunkDataPacket::~FullChunkDataPacket()+0x20>)
+  9ec74e:	016c      	lsls	r4, r5, #5
+  9ec750:	89c8      	ldrh	r0, [r1, #14]
+  9ec752:	ffff 4684 	vcvt.f<illegal width 64>.u<illegal width 64>	d20, d4

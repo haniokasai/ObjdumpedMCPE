@@ -1,0 +1,44 @@
+  9eafb8:	b570      	push	{r4, r5, r6, lr}
+  9eafba:	b086      	sub	sp, #24
+  9eafbc:	4604      	mov	r4, r0
+  9eafbe:	4668      	mov	r0, sp
+  9eafc0:	460d      	mov	r5, r1
+  9eafc2:	f4e0 e91c 	blx	6cb1fc <EntityRuntimeID ReadOnlyBinaryStream::getType<EntityRuntimeID>()@plt>
+  9eafc6:	e9dd 0100 	ldrd	r0, r1, [sp]
+  9eafca:	466e      	mov	r6, sp
+  9eafcc:	e9c4 0104 	strd	r0, r1, [r4, #16]
+  9eafd0:	4630      	mov	r0, r6
+  9eafd2:	4629      	mov	r1, r5
+  9eafd4:	f4e0 e9a2 	blx	6cb31c <ItemInstance ReadOnlyBinaryStream::getType<ItemInstance>()@plt>
+  9eafd8:	f104 0018 	add.w	r0, r4, #24
+  9eafdc:	4631      	mov	r1, r6
+  9eafde:	f4df ec64 	blx	6ca8a8 <ItemInstance::operator=(ItemInstance const&)@plt>
+  9eafe2:	9802      	ldr	r0, [sp, #8]
+  9eafe4:	b110      	cbz	r0, 9eafec <MobEquipmentPacket::read(BinaryStream&)+0x34>
+  9eafe6:	6801      	ldr	r1, [r0, #0]
+  9eafe8:	6849      	ldr	r1, [r1, #4]
+  9eafea:	4788      	blx	r1
+  9eafec:	4628      	mov	r0, r5
+  9eafee:	f4e0 e84c 	blx	6cb088 <ReadOnlyBinaryStream::getByte()@plt>
+  9eaff2:	f884 0036 	strb.w	r0, [r4, #54]	; 0x36
+  9eaff6:	4628      	mov	r0, r5
+  9eaff8:	f4e0 e846 	blx	6cb088 <ReadOnlyBinaryStream::getByte()@plt>
+  9eaffc:	f884 0037 	strb.w	r0, [r4, #55]	; 0x37
+  9eb000:	4628      	mov	r0, r5
+  9eb002:	f4e0 e842 	blx	6cb088 <ReadOnlyBinaryStream::getByte()@plt>
+  9eb006:	f884 0038 	strb.w	r0, [r4, #56]	; 0x38
+  9eb00a:	f994 1036 	ldrsb.w	r1, [r4, #54]	; 0x36
+  9eb00e:	62e1      	str	r1, [r4, #44]	; 0x2c
+  9eb010:	f994 1037 	ldrsb.w	r1, [r4, #55]	; 0x37
+  9eb014:	6321      	str	r1, [r4, #48]	; 0x30
+  9eb016:	f884 0035 	strb.w	r0, [r4, #53]	; 0x35
+  9eb01a:	b006      	add	sp, #24
+  9eb01c:	bd70      	pop	{r4, r5, r6, pc}
+  9eb01e:	4604      	mov	r4, r0
+  9eb020:	9802      	ldr	r0, [sp, #8]
+  9eb022:	b110      	cbz	r0, 9eb02a <MobEquipmentPacket::read(BinaryStream&)+0x72>
+  9eb024:	6801      	ldr	r1, [r0, #0]
+  9eb026:	6849      	ldr	r1, [r1, #4]
+  9eb028:	4788      	blx	r1
+  9eb02a:	4620      	mov	r0, r4
+  9eb02c:	f4dd ebda 	blx	6c87e4 <_Unwind_Resume@plt>

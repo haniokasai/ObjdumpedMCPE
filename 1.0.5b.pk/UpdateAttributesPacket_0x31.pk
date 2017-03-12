@@ -1,0 +1,132 @@
+  9f58b0:	e92d 4ff0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, lr}
+  9f58b4:	b081      	sub	sp, #4
+  9f58b6:	ed2d 8b04 	vpush	{d8-d9}
+  9f58ba:	b088      	sub	sp, #32
+  9f58bc:	ae02      	add	r6, sp, #8
+  9f58be:	4605      	mov	r5, r0
+  9f58c0:	4689      	mov	r9, r1
+  9f58c2:	4630      	mov	r0, r6
+  9f58c4:	f4d5 ec9a 	blx	6cb1fc <EntityRuntimeID ReadOnlyBinaryStream::getType<EntityRuntimeID>()@plt>
+  9f58c8:	e9dd 0102 	ldrd	r0, r1, [sp, #8]
+  9f58cc:	e9c5 0104 	strd	r0, r1, [r5, #16]
+  9f58d0:	4648      	mov	r0, r9
+  9f58d2:	f4d5 ea90 	blx	6cadf4 <ReadOnlyBinaryStream::getUnsignedVarInt()@plt>
+  9f58d6:	f105 0718 	add.w	r7, r5, #24
+  9f58da:	4680      	mov	r8, r0
+  9f58dc:	4641      	mov	r1, r8
+  9f58de:	4638      	mov	r0, r7
+  9f58e0:	f4d7 ecc4 	blx	6cd26c <std::vector<UpdateAttributesPacket::AttributeData, std::allocator<UpdateAttributesPacket::AttributeData> >::reserve(unsigned int)@plt>
+  9f58e4:	f1b8 0f00 	cmp.w	r8, #0
+  9f58e8:	d053      	beq.n	9f5992 <UpdateAttributesPacket::read(BinaryStream&)+0xe2>
+  9f58ea:	4841      	ldr	r0, [pc, #260]	; (9f59f0 <UpdateAttributesPacket::read(BinaryStream&)+0x140>)
+  9f58ec:	ef80 8050 	vmov.i32	q4, #0	; 0x00000000
+  9f58f0:	4940      	ldr	r1, [pc, #256]	; (9f59f4 <UpdateAttributesPacket::read(BinaryStream&)+0x144>)
+  9f58f2:	f106 0410 	add.w	r4, r6, #16
+  9f58f6:	4478      	add	r0, pc
+  9f58f8:	f04f 0b00 	mov.w	fp, #0
+  9f58fc:	eb01 0a00 	add.w	sl, r1, r0
+  9f5900:	493e      	ldr	r1, [pc, #248]	; (9f59fc <UpdateAttributesPacket::read(BinaryStream&)+0x14c>)
+  9f5902:	5809      	ldr	r1, [r1, r0]
+  9f5904:	9101      	str	r1, [sp, #4]
+  9f5906:	493f      	ldr	r1, [pc, #252]	; (9f5a04 <UpdateAttributesPacket::read(BinaryStream&)+0x154>)
+  9f5908:	5808      	ldr	r0, [r1, r0]
+  9f590a:	9000      	str	r0, [sp, #0]
+  9f590c:	e019      	b.n	9f5942 <UpdateAttributesPacket::read(BinaryStream&)+0x92>
+  9f590e:	1f0a      	subs	r2, r1, #4
+  9f5910:	9900      	ldr	r1, [sp, #0]
+  9f5912:	b169      	cbz	r1, 9f5930 <UpdateAttributesPacket::read(BinaryStream&)+0x80>
+  9f5914:	46bc      	mov	ip, r7
+  9f5916:	f3bf 8f5b 	dmb	ish
+  9f591a:	e852 1f00 	ldrex	r1, [r2]
+  9f591e:	1e4b      	subs	r3, r1, #1
+  9f5920:	e842 3700 	strex	r7, r3, [r2]
+  9f5924:	2f00      	cmp	r7, #0
+  9f5926:	d1f8      	bne.n	9f591a <UpdateAttributesPacket::read(BinaryStream&)+0x6a>
+  9f5928:	f3bf 8f5b 	dmb	ish
+  9f592c:	4667      	mov	r7, ip
+  9f592e:	e002      	b.n	9f5936 <UpdateAttributesPacket::read(BinaryStream&)+0x86>
+  9f5930:	6811      	ldr	r1, [r2, #0]
+  9f5932:	1e4b      	subs	r3, r1, #1
+  9f5934:	6013      	str	r3, [r2, #0]
+  9f5936:	2900      	cmp	r1, #0
+  9f5938:	dc27      	bgt.n	9f598a <UpdateAttributesPacket::read(BinaryStream&)+0xda>
+  9f593a:	a907      	add	r1, sp, #28
+  9f593c:	f13e ed52 	blx	b343e4 <CommandTarget::getCommandTarget(CommandOrigin const&, Entity const*)+0x68>
+  9f5940:	e023      	b.n	9f598a <UpdateAttributesPacket::read(BinaryStream&)+0xda>
+  9f5942:	aa07      	add	r2, sp, #28
+  9f5944:	4620      	mov	r0, r4
+  9f5946:	4651      	mov	r1, sl
+  9f5948:	f906 8acf 	vst1.64	{d8-d9}, [r6]
+  9f594c:	f13e ed52 	blx	b343f4 <CommandTarget::getCommandTarget(CommandOrigin const&, Entity const*)+0x78>
+  9f5950:	4630      	mov	r0, r6
+  9f5952:	4649      	mov	r1, r9
+  9f5954:	f4d7 ec90 	blx	6cd278 <UpdateAttributesPacket::AttributeData::read(BinaryStream&)@plt>
+  9f5958:	e9d5 0107 	ldrd	r0, r1, [r5, #28]
+  9f595c:	4288      	cmp	r0, r1
+  9f595e:	d00a      	beq.n	9f5976 <UpdateAttributesPacket::read(BinaryStream&)+0xc6>
+  9f5960:	f966 0acf 	vld1.64	{d16-d17}, [r6]
+  9f5964:	f940 0a8d 	vst1.32	{d16-d17}, [r0]!
+  9f5968:	4621      	mov	r1, r4
+  9f596a:	f13e ed34 	blx	b343d4 <CommandTarget::getCommandTarget(CommandOrigin const&, Entity const*)+0x58>
+  9f596e:	69e8      	ldr	r0, [r5, #28]
+  9f5970:	3014      	adds	r0, #20
+  9f5972:	61e8      	str	r0, [r5, #28]
+  9f5974:	e003      	b.n	9f597e <UpdateAttributesPacket::read(BinaryStream&)+0xce>
+  9f5976:	4638      	mov	r0, r7
+  9f5978:	4631      	mov	r1, r6
+  9f597a:	f4d7 ec84 	blx	6cd284 <void std::vector<UpdateAttributesPacket::AttributeData, std::allocator<UpdateAttributesPacket::AttributeData> >::_M_emplace_back_aux<UpdateAttributesPacket::AttributeData const&>(UpdateAttributesPacket::AttributeData const&)@plt>
+  9f597e:	9906      	ldr	r1, [sp, #24]
+  9f5980:	9a01      	ldr	r2, [sp, #4]
+  9f5982:	f1a1 000c 	sub.w	r0, r1, #12
+  9f5986:	4290      	cmp	r0, r2
+  9f5988:	d1c1      	bne.n	9f590e <UpdateAttributesPacket::read(BinaryStream&)+0x5e>
+  9f598a:	f10b 0b01 	add.w	fp, fp, #1
+  9f598e:	45c3      	cmp	fp, r8
+  9f5990:	d3d7      	bcc.n	9f5942 <UpdateAttributesPacket::read(BinaryStream&)+0x92>
+  9f5992:	b008      	add	sp, #32
+  9f5994:	ecbd 8b04 	vpop	{d8-d9}
+  9f5998:	b001      	add	sp, #4
+  9f599a:	e8bd 8ff0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, pc}
+  9f599e:	4a16      	ldr	r2, [pc, #88]	; (9f59f8 <UpdateAttributesPacket::read(BinaryStream&)+0x148>)
+  9f59a0:	4604      	mov	r4, r0
+  9f59a2:	4b16      	ldr	r3, [pc, #88]	; (9f59fc <UpdateAttributesPacket::read(BinaryStream&)+0x14c>)
+  9f59a4:	447a      	add	r2, pc
+  9f59a6:	9906      	ldr	r1, [sp, #24]
+  9f59a8:	f1a1 000c 	sub.w	r0, r1, #12
+  9f59ac:	589a      	ldr	r2, [r3, r2]
+  9f59ae:	4290      	cmp	r0, r2
+  9f59b0:	d016      	beq.n	9f59e0 <UpdateAttributesPacket::read(BinaryStream&)+0x130>
+  9f59b2:	4a13      	ldr	r2, [pc, #76]	; (9f5a00 <UpdateAttributesPacket::read(BinaryStream&)+0x150>)
+  9f59b4:	4b13      	ldr	r3, [pc, #76]	; (9f5a04 <UpdateAttributesPacket::read(BinaryStream&)+0x154>)
+  9f59b6:	447a      	add	r2, pc
+  9f59b8:	589b      	ldr	r3, [r3, r2]
+  9f59ba:	1f0a      	subs	r2, r1, #4
+  9f59bc:	b19b      	cbz	r3, 9f59e6 <UpdateAttributesPacket::read(BinaryStream&)+0x136>
+  9f59be:	f3bf 8f5b 	dmb	ish
+  9f59c2:	e852 1f00 	ldrex	r1, [r2]
+  9f59c6:	1e4b      	subs	r3, r1, #1
+  9f59c8:	e842 3700 	strex	r7, r3, [r2]
+  9f59cc:	2f00      	cmp	r7, #0
+  9f59ce:	d1f8      	bne.n	9f59c2 <UpdateAttributesPacket::read(BinaryStream&)+0x112>
+  9f59d0:	f3bf 8f5b 	dmb	ish
+  9f59d4:	2900      	cmp	r1, #0
+  9f59d6:	bfdc      	itt	le
+  9f59d8:	f10d 011c 	addle.w	r1, sp, #28
+  9f59dc:	f13e ed02 	blxle	b343e4 <CommandTarget::getCommandTarget(CommandOrigin const&, Entity const*)+0x68>
+  9f59e0:	4620      	mov	r0, r4
+  9f59e2:	f4d2 ef00 	blx	6c87e4 <_Unwind_Resume@plt>
+  9f59e6:	6811      	ldr	r1, [r2, #0]
+  9f59e8:	1e4b      	subs	r3, r1, #1
+  9f59ea:	6013      	str	r3, [r2, #0]
+  9f59ec:	e7f2      	b.n	9f59d4 <UpdateAttributesPacket::read(BinaryStream&)+0x124>
+  9f59ee:	bf00      	nop
+  9f59f0:	12c6      	asrs	r6, r0, #11
+  9f59f2:	016c      	lsls	r4, r5, #5
+  9f59f4:	ac1c      	add	r4, sp, #112	; 0x70
+  9f59f6:	ffe6 1218 	vrshr.u32	d17, d8, #26
+  9f59fa:	016c      	lsls	r4, r5, #5
+  9f59fc:	8854      	ldrh	r4, [r2, #2]
+  9f59fe:	ffff 1206 	vsubl.u<illegal width 64>	<illegal reg q8.5>, d15, d6
+  9f5a02:	016c      	lsls	r4, r5, #5
+  9f5a04:	8858      	ldrh	r0, [r3, #2]
+  9f5a06:	ffff e92d 	vtbl.8	d30, {d15-d16}, d29

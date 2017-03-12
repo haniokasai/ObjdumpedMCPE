@@ -1,0 +1,20 @@
+  9eb9b6:	b5b0      	push	{r4, r5, r7, lr}
+  9eb9b8:	b082      	sub	sp, #8
+  9eb9ba:	460d      	mov	r5, r1
+  9eb9bc:	4604      	mov	r4, r0
+  9eb9be:	4628      	mov	r0, r5
+  9eb9c0:	f4df ebe6 	blx	6cb190 <ReadOnlyBinaryStream::getVarInt()@plt>
+  9eb9c4:	61a0      	str	r0, [r4, #24]
+  9eb9c6:	4668      	mov	r0, sp
+  9eb9c8:	4629      	mov	r1, r5
+  9eb9ca:	f4df ec18 	blx	6cb1fc <EntityRuntimeID ReadOnlyBinaryStream::getType<EntityRuntimeID>()@plt>
+  9eb9ce:	e9dd 0100 	ldrd	r0, r1, [sp]
+  9eb9d2:	e9c4 0104 	strd	r0, r1, [r4, #16]
+  9eb9d6:	7e20      	ldrb	r0, [r4, #24]
+  9eb9d8:	f010 0f80 	tst.w	r0, #128	; 0x80
+  9eb9dc:	d003      	beq.n	9eb9e6 <AnimatePacket::read(BinaryStream&)+0x30>
+  9eb9de:	4628      	mov	r0, r5
+  9eb9e0:	f4df ec72 	blx	6cb2c8 <ReadOnlyBinaryStream::getFloat()@plt>
+  9eb9e4:	61e0      	str	r0, [r4, #28]
+  9eb9e6:	b002      	add	sp, #8
+  9eb9e8:	bdb0      	pop	{r4, r5, r7, pc}

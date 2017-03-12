@@ -1,0 +1,116 @@
+  9ef1bc:	b5f0      	push	{r4, r5, r6, r7, lr}
+  9ef1be:	b083      	sub	sp, #12
+  9ef1c0:	466e      	mov	r6, sp
+  9ef1c2:	4605      	mov	r5, r0
+  9ef1c4:	4630      	mov	r0, r6
+  9ef1c6:	460c      	mov	r4, r1
+  9ef1c8:	f4db eae4 	blx	6ca794 <ReadOnlyBinaryStream::getString()@plt>
+  9ef1cc:	f105 000c 	add.w	r0, r5, #12
+  9ef1d0:	4631      	mov	r1, r6
+  9ef1d2:	f145 e958 	blx	b34484 <CommandTarget::getCommandTarget(CommandOrigin const&, Entity const*)+0x108>
+  9ef1d6:	483e      	ldr	r0, [pc, #248]	; (9ef2d0 <ResourcePackChunkDataPacket::read(BinaryStream&)+0x114>)
+  9ef1d8:	4a3a      	ldr	r2, [pc, #232]	; (9ef2c4 <ResourcePackChunkDataPacket::read(BinaryStream&)+0x108>)
+  9ef1da:	4478      	add	r0, pc
+  9ef1dc:	9900      	ldr	r1, [sp, #0]
+  9ef1de:	5812      	ldr	r2, [r2, r0]
+  9ef1e0:	f1a1 000c 	sub.w	r0, r1, #12
+  9ef1e4:	4290      	cmp	r0, r2
+  9ef1e6:	d128      	bne.n	9ef23a <ResourcePackChunkDataPacket::read(BinaryStream&)+0x7e>
+  9ef1e8:	4620      	mov	r0, r4
+  9ef1ea:	f4dc e964 	blx	6cb4b4 <ReadOnlyBinaryStream::getUnsignedInt()@plt>
+  9ef1ee:	6128      	str	r0, [r5, #16]
+  9ef1f0:	4620      	mov	r0, r4
+  9ef1f2:	f4db ef86 	blx	6cb100 <ReadOnlyBinaryStream::getUnsignedInt64()@plt>
+  9ef1f6:	e9c5 0106 	strd	r0, r1, [r5, #24]
+  9ef1fa:	4620      	mov	r0, r4
+  9ef1fc:	f4dc e95a 	blx	6cb4b4 <ReadOnlyBinaryStream::getUnsignedInt()@plt>
+  9ef200:	462f      	mov	r7, r5
+  9ef202:	4606      	mov	r6, r0
+  9ef204:	f857 0f20 	ldr.w	r0, [r7, #32]!
+  9ef208:	6879      	ldr	r1, [r7, #4]
+  9ef20a:	1a09      	subs	r1, r1, r0
+  9ef20c:	428e      	cmp	r6, r1
+  9ef20e:	d904      	bls.n	9ef21a <ResourcePackChunkDataPacket::read(BinaryStream&)+0x5e>
+  9ef210:	1a71      	subs	r1, r6, r1
+  9ef212:	4638      	mov	r0, r7
+  9ef214:	f4dc e954 	blx	6cb4c0 <std::vector<unsigned char, std::allocator<unsigned char> >::_M_default_append(unsigned int)@plt>
+  9ef218:	e002      	b.n	9ef220 <ResourcePackChunkDataPacket::read(BinaryStream&)+0x64>
+  9ef21a:	bf3c      	itt	cc
+  9ef21c:	4430      	addcc	r0, r6
+  9ef21e:	6268      	strcc	r0, [r5, #36]	; 0x24
+  9ef220:	2e01      	cmp	r6, #1
+  9ef222:	db08      	blt.n	9ef236 <ResourcePackChunkDataPacket::read(BinaryStream&)+0x7a>
+  9ef224:	2500      	movs	r5, #0
+  9ef226:	4620      	mov	r0, r4
+  9ef228:	f4db ef2e 	blx	6cb088 <ReadOnlyBinaryStream::getByte()@plt>
+  9ef22c:	6839      	ldr	r1, [r7, #0]
+  9ef22e:	5548      	strb	r0, [r1, r5]
+  9ef230:	3501      	adds	r5, #1
+  9ef232:	42ae      	cmp	r6, r5
+  9ef234:	d1f7      	bne.n	9ef226 <ResourcePackChunkDataPacket::read(BinaryStream&)+0x6a>
+  9ef236:	b003      	add	sp, #12
+  9ef238:	bdf0      	pop	{r4, r5, r6, r7, pc}
+  9ef23a:	4a26      	ldr	r2, [pc, #152]	; (9ef2d4 <ResourcePackChunkDataPacket::read(BinaryStream&)+0x118>)
+  9ef23c:	4b23      	ldr	r3, [pc, #140]	; (9ef2cc <ResourcePackChunkDataPacket::read(BinaryStream&)+0x110>)
+  9ef23e:	447a      	add	r2, pc
+  9ef240:	589b      	ldr	r3, [r3, r2]
+  9ef242:	1f0a      	subs	r2, r1, #4
+  9ef244:	b15b      	cbz	r3, 9ef25e <ResourcePackChunkDataPacket::read(BinaryStream&)+0xa2>
+  9ef246:	f3bf 8f5b 	dmb	ish
+  9ef24a:	e852 1f00 	ldrex	r1, [r2]
+  9ef24e:	1e4b      	subs	r3, r1, #1
+  9ef250:	e842 3700 	strex	r7, r3, [r2]
+  9ef254:	2f00      	cmp	r7, #0
+  9ef256:	d1f8      	bne.n	9ef24a <ResourcePackChunkDataPacket::read(BinaryStream&)+0x8e>
+  9ef258:	f3bf 8f5b 	dmb	ish
+  9ef25c:	e002      	b.n	9ef264 <ResourcePackChunkDataPacket::read(BinaryStream&)+0xa8>
+  9ef25e:	6811      	ldr	r1, [r2, #0]
+  9ef260:	1e4b      	subs	r3, r1, #1
+  9ef262:	6013      	str	r3, [r2, #0]
+  9ef264:	2900      	cmp	r1, #0
+  9ef266:	dcbf      	bgt.n	9ef1e8 <ResourcePackChunkDataPacket::read(BinaryStream&)+0x2c>
+  9ef268:	a901      	add	r1, sp, #4
+  9ef26a:	f145 e8bc 	blx	b343e4 <CommandTarget::getCommandTarget(CommandOrigin const&, Entity const*)+0x68>
+  9ef26e:	e7bb      	b.n	9ef1e8 <ResourcePackChunkDataPacket::read(BinaryStream&)+0x2c>
+  9ef270:	4a13      	ldr	r2, [pc, #76]	; (9ef2c0 <ResourcePackChunkDataPacket::read(BinaryStream&)+0x104>)
+  9ef272:	4604      	mov	r4, r0
+  9ef274:	4b13      	ldr	r3, [pc, #76]	; (9ef2c4 <ResourcePackChunkDataPacket::read(BinaryStream&)+0x108>)
+  9ef276:	447a      	add	r2, pc
+  9ef278:	9900      	ldr	r1, [sp, #0]
+  9ef27a:	f1a1 000c 	sub.w	r0, r1, #12
+  9ef27e:	589a      	ldr	r2, [r3, r2]
+  9ef280:	4290      	cmp	r0, r2
+  9ef282:	d016      	beq.n	9ef2b2 <ResourcePackChunkDataPacket::read(BinaryStream&)+0xf6>
+  9ef284:	4a10      	ldr	r2, [pc, #64]	; (9ef2c8 <ResourcePackChunkDataPacket::read(BinaryStream&)+0x10c>)
+  9ef286:	4b11      	ldr	r3, [pc, #68]	; (9ef2cc <ResourcePackChunkDataPacket::read(BinaryStream&)+0x110>)
+  9ef288:	447a      	add	r2, pc
+  9ef28a:	589b      	ldr	r3, [r3, r2]
+  9ef28c:	1f0a      	subs	r2, r1, #4
+  9ef28e:	b19b      	cbz	r3, 9ef2b8 <ResourcePackChunkDataPacket::read(BinaryStream&)+0xfc>
+  9ef290:	f3bf 8f5b 	dmb	ish
+  9ef294:	e852 1f00 	ldrex	r1, [r2]
+  9ef298:	1e4b      	subs	r3, r1, #1
+  9ef29a:	e842 3700 	strex	r7, r3, [r2]
+  9ef29e:	2f00      	cmp	r7, #0
+  9ef2a0:	d1f8      	bne.n	9ef294 <ResourcePackChunkDataPacket::read(BinaryStream&)+0xd8>
+  9ef2a2:	f3bf 8f5b 	dmb	ish
+  9ef2a6:	2900      	cmp	r1, #0
+  9ef2a8:	bfdc      	itt	le
+  9ef2aa:	f10d 0108 	addle.w	r1, sp, #8
+  9ef2ae:	f145 e89a 	blxle	b343e4 <CommandTarget::getCommandTarget(CommandOrigin const&, Entity const*)+0x68>
+  9ef2b2:	4620      	mov	r0, r4
+  9ef2b4:	f4d9 ea96 	blx	6c87e4 <_Unwind_Resume@plt>
+  9ef2b8:	6811      	ldr	r1, [r2, #0]
+  9ef2ba:	1e4b      	subs	r3, r1, #1
+  9ef2bc:	6013      	str	r3, [r2, #0]
+  9ef2be:	e7f2      	b.n	9ef2a6 <ResourcePackChunkDataPacket::read(BinaryStream&)+0xea>
+  9ef2c0:	7946      	ldrb	r6, [r0, #5]
+  9ef2c2:	016c      	lsls	r4, r5, #5
+  9ef2c4:	8854      	ldrh	r4, [r2, #2]
+  9ef2c6:	ffff 7934 	vqshrn.u64	d23, q10, #1
+  9ef2ca:	016c      	lsls	r4, r5, #5
+  9ef2cc:	8858      	ldrh	r0, [r3, #2]
+  9ef2ce:	ffff 79e2 	vtbx.8	d23, {d31-<overflow reg d32}, d18
+  9ef2d2:	016c      	lsls	r4, r5, #5
+  9ef2d4:	797e      	ldrb	r6, [r7, #5]
+  9ef2d6:	016c      	lsls	r4, r5, #5

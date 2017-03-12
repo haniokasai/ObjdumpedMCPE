@@ -1,0 +1,75 @@
+  9eb2ba:	b570      	push	{r4, r5, r6, lr}
+  9eb2bc:	b094      	sub	sp, #80	; 0x50
+  9eb2be:	4604      	mov	r4, r0
+  9eb2c0:	4668      	mov	r0, sp
+  9eb2c2:	460d      	mov	r5, r1
+  9eb2c4:	f4df ef9a 	blx	6cb1fc <EntityRuntimeID ReadOnlyBinaryStream::getType<EntityRuntimeID>()@plt>
+  9eb2c8:	e9dd 0100 	ldrd	r0, r1, [sp]
+  9eb2cc:	466e      	mov	r6, sp
+  9eb2ce:	e9c4 0104 	strd	r0, r1, [r4, #16]
+  9eb2d2:	4630      	mov	r0, r6
+  9eb2d4:	4629      	mov	r1, r5
+  9eb2d6:	f4e0 e822 	blx	6cb31c <ItemInstance ReadOnlyBinaryStream::getType<ItemInstance>()@plt>
+  9eb2da:	f104 0018 	add.w	r0, r4, #24
+  9eb2de:	4631      	mov	r1, r6
+  9eb2e0:	f4df eae2 	blx	6ca8a8 <ItemInstance::operator=(ItemInstance const&)@plt>
+  9eb2e4:	9802      	ldr	r0, [sp, #8]
+  9eb2e6:	b110      	cbz	r0, 9eb2ee <MobArmorEquipmentPacket::read(BinaryStream&)+0x34>
+  9eb2e8:	6801      	ldr	r1, [r0, #0]
+  9eb2ea:	6849      	ldr	r1, [r1, #4]
+  9eb2ec:	4788      	blx	r1
+  9eb2ee:	ae05      	add	r6, sp, #20
+  9eb2f0:	4629      	mov	r1, r5
+  9eb2f2:	4630      	mov	r0, r6
+  9eb2f4:	f4e0 e812 	blx	6cb31c <ItemInstance ReadOnlyBinaryStream::getType<ItemInstance>()@plt>
+  9eb2f8:	f104 002c 	add.w	r0, r4, #44	; 0x2c
+  9eb2fc:	4631      	mov	r1, r6
+  9eb2fe:	f4df ead4 	blx	6ca8a8 <ItemInstance::operator=(ItemInstance const&)@plt>
+  9eb302:	9807      	ldr	r0, [sp, #28]
+  9eb304:	b110      	cbz	r0, 9eb30c <MobArmorEquipmentPacket::read(BinaryStream&)+0x52>
+  9eb306:	6801      	ldr	r1, [r0, #0]
+  9eb308:	6849      	ldr	r1, [r1, #4]
+  9eb30a:	4788      	blx	r1
+  9eb30c:	ae0a      	add	r6, sp, #40	; 0x28
+  9eb30e:	4629      	mov	r1, r5
+  9eb310:	4630      	mov	r0, r6
+  9eb312:	f4e0 e804 	blx	6cb31c <ItemInstance ReadOnlyBinaryStream::getType<ItemInstance>()@plt>
+  9eb316:	f104 0040 	add.w	r0, r4, #64	; 0x40
+  9eb31a:	4631      	mov	r1, r6
+  9eb31c:	f4df eac4 	blx	6ca8a8 <ItemInstance::operator=(ItemInstance const&)@plt>
+  9eb320:	980c      	ldr	r0, [sp, #48]	; 0x30
+  9eb322:	b110      	cbz	r0, 9eb32a <MobArmorEquipmentPacket::read(BinaryStream&)+0x70>
+  9eb324:	6801      	ldr	r1, [r0, #0]
+  9eb326:	6849      	ldr	r1, [r1, #4]
+  9eb328:	4788      	blx	r1
+  9eb32a:	ae0f      	add	r6, sp, #60	; 0x3c
+  9eb32c:	4629      	mov	r1, r5
+  9eb32e:	4630      	mov	r0, r6
+  9eb330:	f4df eff4 	blx	6cb31c <ItemInstance ReadOnlyBinaryStream::getType<ItemInstance>()@plt>
+  9eb334:	f104 0054 	add.w	r0, r4, #84	; 0x54
+  9eb338:	4631      	mov	r1, r6
+  9eb33a:	f4df eab6 	blx	6ca8a8 <ItemInstance::operator=(ItemInstance const&)@plt>
+  9eb33e:	9811      	ldr	r0, [sp, #68]	; 0x44
+  9eb340:	b110      	cbz	r0, 9eb348 <MobArmorEquipmentPacket::read(BinaryStream&)+0x8e>
+  9eb342:	6801      	ldr	r1, [r0, #0]
+  9eb344:	6849      	ldr	r1, [r1, #4]
+  9eb346:	4788      	blx	r1
+  9eb348:	b014      	add	sp, #80	; 0x50
+  9eb34a:	bd70      	pop	{r4, r5, r6, pc}
+  9eb34c:	4604      	mov	r4, r0
+  9eb34e:	9802      	ldr	r0, [sp, #8]
+  9eb350:	e007      	b.n	9eb362 <MobArmorEquipmentPacket::read(BinaryStream&)+0xa8>
+  9eb352:	4604      	mov	r4, r0
+  9eb354:	9807      	ldr	r0, [sp, #28]
+  9eb356:	e004      	b.n	9eb362 <MobArmorEquipmentPacket::read(BinaryStream&)+0xa8>
+  9eb358:	4604      	mov	r4, r0
+  9eb35a:	980c      	ldr	r0, [sp, #48]	; 0x30
+  9eb35c:	e001      	b.n	9eb362 <MobArmorEquipmentPacket::read(BinaryStream&)+0xa8>
+  9eb35e:	4604      	mov	r4, r0
+  9eb360:	9811      	ldr	r0, [sp, #68]	; 0x44
+  9eb362:	b110      	cbz	r0, 9eb36a <MobArmorEquipmentPacket::read(BinaryStream&)+0xb0>
+  9eb364:	6801      	ldr	r1, [r0, #0]
+  9eb366:	6849      	ldr	r1, [r1, #4]
+  9eb368:	4788      	blx	r1
+  9eb36a:	4620      	mov	r0, r4
+  9eb36c:	f4dd ea3a 	blx	6c87e4 <_Unwind_Resume@plt>

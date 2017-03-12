@@ -1,0 +1,6 @@
+  9eb632:	b510      	push	{r4, lr}
+  9eb634:	4604      	mov	r4, r0
+  9eb636:	4608      	mov	r0, r1
+  9eb638:	f4df ee46 	blx	6cb2c8 <ReadOnlyBinaryStream::getFloat()@plt>
+  9eb63c:	60e0      	str	r0, [r4, #12]
+  9eb63e:	bd10      	pop	{r4, pc}

@@ -1,0 +1,421 @@
+  9f1140:	e92d 4ff0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, lr}
+  9f1144:	af03      	add	r7, sp, #12
+  9f1146:	b081      	sub	sp, #4
+  9f1148:	ed2d 8b04 	vpush	{d8-d9}
+  9f114c:	b096      	sub	sp, #88	; 0x58
+  9f114e:	466c      	mov	r4, sp
+  9f1150:	f36f 0403 	bfc	r4, #0, #4
+  9f1154:	46a5      	mov	sp, r4
+  9f1156:	f10d 0a48 	add.w	sl, sp, #72	; 0x48
+  9f115a:	4683      	mov	fp, r0
+  9f115c:	465e      	mov	r6, fp
+  9f115e:	4688      	mov	r8, r1
+  9f1160:	4650      	mov	r0, sl
+  9f1162:	f856 4f0c 	ldr.w	r4, [r6, #12]!
+  9f1166:	f4da e844 	blx	6cb1f0 <EntityUniqueID ReadOnlyBinaryStream::getType<EntityUniqueID>()@plt>
+  9f116a:	e9dd 0112 	ldrd	r0, r1, [sp, #72]	; 0x48
+  9f116e:	e9c4 0100 	strd	r0, r1, [r4]
+  9f1172:	4640      	mov	r0, r8
+  9f1174:	f4d9 ee3e 	blx	6cadf4 <ReadOnlyBinaryStream::getUnsignedVarInt()@plt>
+  9f1178:	62f0      	str	r0, [r6, #44]	; 0x2c
+  9f117a:	f010 0f08 	tst.w	r0, #8
+  9f117e:	d031      	beq.n	9f11e4 <ClientboundMapItemDataPacket::read(BinaryStream&)+0xa4>
+  9f1180:	4640      	mov	r0, r8
+  9f1182:	f4d9 ee38 	blx	6cadf4 <ReadOnlyBinaryStream::getUnsignedVarInt()@plt>
+  9f1186:	e9db 5103 	ldrd	r5, r1, [fp, #12]
+  9f118a:	1b4b      	subs	r3, r1, r5
+  9f118c:	10da      	asrs	r2, r3, #3
+  9f118e:	ebb0 0fe3 	cmp.w	r0, r3, asr #3
+  9f1192:	d906      	bls.n	9f11a2 <ClientboundMapItemDataPacket::read(BinaryStream&)+0x62>
+  9f1194:	1a81      	subs	r1, r0, r2
+  9f1196:	4630      	mov	r0, r6
+  9f1198:	f4db edc2 	blx	6ccd20 <std::vector<EntityUniqueID, std::allocator<EntityUniqueID> >::_M_default_append(unsigned int)@plt>
+  9f119c:	e9db 5103 	ldrd	r5, r1, [fp, #12]
+  9f11a0:	e005      	b.n	9f11ae <ClientboundMapItemDataPacket::read(BinaryStream&)+0x6e>
+  9f11a2:	4290      	cmp	r0, r2
+  9f11a4:	bf3c      	itt	cc
+  9f11a6:	eb05 01c0 	addcc.w	r1, r5, r0, lsl #3
+  9f11aa:	f8cb 1010 	strcc.w	r1, [fp, #16]
+  9f11ae:	1b48      	subs	r0, r1, r5
+  9f11b0:	10c0      	asrs	r0, r0, #3
+  9f11b2:	2802      	cmp	r0, #2
+  9f11b4:	d314      	bcc.n	9f11e0 <ClientboundMapItemDataPacket::read(BinaryStream&)+0xa0>
+  9f11b6:	f10d 0948 	add.w	r9, sp, #72	; 0x48
+  9f11ba:	2401      	movs	r4, #1
+  9f11bc:	2608      	movs	r6, #8
+  9f11be:	4648      	mov	r0, r9
+  9f11c0:	4641      	mov	r1, r8
+  9f11c2:	f4da e816 	blx	6cb1f0 <EntityUniqueID ReadOnlyBinaryStream::getType<EntityUniqueID>()@plt>
+  9f11c6:	e9dd 0112 	ldrd	r0, r1, [sp, #72]	; 0x48
+  9f11ca:	3401      	adds	r4, #1
+  9f11cc:	51a8      	str	r0, [r5, r6]
+  9f11ce:	19a8      	adds	r0, r5, r6
+  9f11d0:	3608      	adds	r6, #8
+  9f11d2:	6041      	str	r1, [r0, #4]
+  9f11d4:	e9db 5003 	ldrd	r5, r0, [fp, #12]
+  9f11d8:	1b40      	subs	r0, r0, r5
+  9f11da:	ebb4 0fe0 	cmp.w	r4, r0, asr #3
+  9f11de:	d3ee      	bcc.n	9f11be <ClientboundMapItemDataPacket::read(BinaryStream&)+0x7e>
+  9f11e0:	f8db 0038 	ldr.w	r0, [fp, #56]	; 0x38
+  9f11e4:	f010 0f06 	tst.w	r0, #6
+  9f11e8:	d006      	beq.n	9f11f8 <ClientboundMapItemDataPacket::read(BinaryStream&)+0xb8>
+  9f11ea:	4640      	mov	r0, r8
+  9f11ec:	f4d9 ef4c 	blx	6cb088 <ReadOnlyBinaryStream::getByte()@plt>
+  9f11f0:	f88b 0018 	strb.w	r0, [fp, #24]
+  9f11f4:	f8db 0038 	ldr.w	r0, [fp, #56]	; 0x38
+  9f11f8:	f010 0f04 	tst.w	r0, #4
+  9f11fc:	f000 815a 	beq.w	9f14b4 <ClientboundMapItemDataPacket::read(BinaryStream&)+0x374>
+  9f1200:	4640      	mov	r0, r8
+  9f1202:	f4d9 edf8 	blx	6cadf4 <ReadOnlyBinaryStream::getUnsignedVarInt()@plt>
+  9f1206:	4605      	mov	r5, r0
+  9f1208:	4658      	mov	r0, fp
+  9f120a:	f8cd b014 	str.w	fp, [sp, #20]
+  9f120e:	f850 3f1c 	ldr.w	r3, [r0, #28]!
+  9f1212:	6844      	ldr	r4, [r0, #4]
+  9f1214:	1ae2      	subs	r2, r4, r3
+  9f1216:	10d1      	asrs	r1, r2, #3
+  9f1218:	ebb5 0fe2 	cmp.w	r5, r2, asr #3
+  9f121c:	d904      	bls.n	9f1228 <ClientboundMapItemDataPacket::read(BinaryStream&)+0xe8>
+  9f121e:	1a69      	subs	r1, r5, r1
+  9f1220:	9007      	str	r0, [sp, #28]
+  9f1222:	f4db ed9c 	blx	6ccd5c <std::vector<std::shared_ptr<MapDecoration>, std::allocator<std::shared_ptr<MapDecoration> > >::_M_default_append(unsigned int)@plt>
+  9f1226:	e04d      	b.n	9f12c4 <ClientboundMapItemDataPacket::read(BinaryStream&)+0x184>
+  9f1228:	9007      	str	r0, [sp, #28]
+  9f122a:	428d      	cmp	r5, r1
+  9f122c:	d24a      	bcs.n	9f12c4 <ClientboundMapItemDataPacket::read(BinaryStream&)+0x184>
+  9f122e:	eb03 0bc5 	add.w	fp, r3, r5, lsl #3
+  9f1232:	9508      	str	r5, [sp, #32]
+  9f1234:	455c      	cmp	r4, fp
+  9f1236:	d03f      	beq.n	9f12b8 <ClientboundMapItemDataPacket::read(BinaryStream&)+0x178>
+  9f1238:	48d9      	ldr	r0, [pc, #868]	; (9f15a0 <ClientboundMapItemDataPacket::read(BinaryStream&)+0x460>)
+  9f123a:	46d9      	mov	r9, fp
+  9f123c:	49d9      	ldr	r1, [pc, #868]	; (9f15a4 <ClientboundMapItemDataPacket::read(BinaryStream&)+0x464>)
+  9f123e:	4478      	add	r0, pc
+  9f1240:	f851 a000 	ldr.w	sl, [r1, r0]
+  9f1244:	f8d9 6004 	ldr.w	r6, [r9, #4]
+  9f1248:	b396      	cbz	r6, 9f12b0 <ClientboundMapItemDataPacket::read(BinaryStream&)+0x170>
+  9f124a:	1d31      	adds	r1, r6, #4
+  9f124c:	f1ba 0f00 	cmp.w	sl, #0
+  9f1250:	d00b      	beq.n	9f126a <ClientboundMapItemDataPacket::read(BinaryStream&)+0x12a>
+  9f1252:	f3bf 8f5b 	dmb	ish
+  9f1256:	e851 0f00 	ldrex	r0, [r1]
+  9f125a:	1e42      	subs	r2, r0, #1
+  9f125c:	e841 2300 	strex	r3, r2, [r1]
+  9f1260:	2b00      	cmp	r3, #0
+  9f1262:	d1f8      	bne.n	9f1256 <ClientboundMapItemDataPacket::read(BinaryStream&)+0x116>
+  9f1264:	f3bf 8f5b 	dmb	ish
+  9f1268:	e002      	b.n	9f1270 <ClientboundMapItemDataPacket::read(BinaryStream&)+0x130>
+  9f126a:	6808      	ldr	r0, [r1, #0]
+  9f126c:	1e42      	subs	r2, r0, #1
+  9f126e:	600a      	str	r2, [r1, #0]
+  9f1270:	2801      	cmp	r0, #1
+  9f1272:	d11d      	bne.n	9f12b0 <ClientboundMapItemDataPacket::read(BinaryStream&)+0x170>
+  9f1274:	4635      	mov	r5, r6
+  9f1276:	f855 0b08 	ldr.w	r0, [r5], #8
+  9f127a:	6881      	ldr	r1, [r0, #8]
+  9f127c:	4630      	mov	r0, r6
+  9f127e:	4788      	blx	r1
+  9f1280:	f1ba 0f00 	cmp.w	sl, #0
+  9f1284:	d00b      	beq.n	9f129e <ClientboundMapItemDataPacket::read(BinaryStream&)+0x15e>
+  9f1286:	f3bf 8f5b 	dmb	ish
+  9f128a:	e855 0f00 	ldrex	r0, [r5]
+  9f128e:	1e41      	subs	r1, r0, #1
+  9f1290:	e845 1200 	strex	r2, r1, [r5]
+  9f1294:	2a00      	cmp	r2, #0
+  9f1296:	d1f8      	bne.n	9f128a <ClientboundMapItemDataPacket::read(BinaryStream&)+0x14a>
+  9f1298:	f3bf 8f5b 	dmb	ish
+  9f129c:	e002      	b.n	9f12a4 <ClientboundMapItemDataPacket::read(BinaryStream&)+0x164>
+  9f129e:	6828      	ldr	r0, [r5, #0]
+  9f12a0:	1e41      	subs	r1, r0, #1
+  9f12a2:	6029      	str	r1, [r5, #0]
+  9f12a4:	2801      	cmp	r0, #1
+  9f12a6:	d103      	bne.n	9f12b0 <ClientboundMapItemDataPacket::read(BinaryStream&)+0x170>
+  9f12a8:	6830      	ldr	r0, [r6, #0]
+  9f12aa:	68c1      	ldr	r1, [r0, #12]
+  9f12ac:	4630      	mov	r0, r6
+  9f12ae:	4788      	blx	r1
+  9f12b0:	f109 0908 	add.w	r9, r9, #8
+  9f12b4:	45a1      	cmp	r9, r4
+  9f12b6:	d1c5      	bne.n	9f1244 <ClientboundMapItemDataPacket::read(BinaryStream&)+0x104>
+  9f12b8:	9805      	ldr	r0, [sp, #20]
+  9f12ba:	f10d 0a48 	add.w	sl, sp, #72	; 0x48
+  9f12be:	9d08      	ldr	r5, [sp, #32]
+  9f12c0:	f8c0 b020 	str.w	fp, [r0, #32]
+  9f12c4:	2d00      	cmp	r5, #0
+  9f12c6:	f000 80f1 	beq.w	9f14ac <ClientboundMapItemDataPacket::read(BinaryStream&)+0x36c>
+  9f12ca:	a0b1      	add	r0, pc, #708	; (adr r0, 9f1590 <ClientboundMapItemDataPacket::read(BinaryStream&)+0x450>)
+  9f12cc:	49b7      	ldr	r1, [pc, #732]	; (9f15ac <ClientboundMapItemDataPacket::read(BinaryStream&)+0x46c>)
+  9f12ce:	f920 8aef 	vld1.64	{d8-d9}, [r0 :128]
+  9f12d2:	f04f 0900 	mov.w	r9, #0
+  9f12d6:	48b7      	ldr	r0, [pc, #732]	; (9f15b4 <ClientboundMapItemDataPacket::read(BinaryStream&)+0x474>)
+  9f12d8:	4478      	add	r0, pc
+  9f12da:	5809      	ldr	r1, [r1, r0]
+  9f12dc:	9106      	str	r1, [sp, #24]
+  9f12de:	49b1      	ldr	r1, [pc, #708]	; (9f15a4 <ClientboundMapItemDataPacket::read(BinaryStream&)+0x464>)
+  9f12e0:	5808      	ldr	r0, [r1, r0]
+  9f12e2:	9008      	str	r0, [sp, #32]
+  9f12e4:	e018      	b.n	9f1318 <ClientboundMapItemDataPacket::read(BinaryStream&)+0x1d8>
+  9f12e6:	1f0a      	subs	r2, r1, #4
+  9f12e8:	9908      	ldr	r1, [sp, #32]
+  9f12ea:	b159      	cbz	r1, 9f1304 <ClientboundMapItemDataPacket::read(BinaryStream&)+0x1c4>
+  9f12ec:	f3bf 8f5b 	dmb	ish
+  9f12f0:	e852 1f00 	ldrex	r1, [r2]
+  9f12f4:	1e4b      	subs	r3, r1, #1
+  9f12f6:	e842 3600 	strex	r6, r3, [r2]
+  9f12fa:	2e00      	cmp	r6, #0
+  9f12fc:	d1f8      	bne.n	9f12f0 <ClientboundMapItemDataPacket::read(BinaryStream&)+0x1b0>
+  9f12fe:	f3bf 8f5b 	dmb	ish
+  9f1302:	e002      	b.n	9f130a <ClientboundMapItemDataPacket::read(BinaryStream&)+0x1ca>
+  9f1304:	6811      	ldr	r1, [r2, #0]
+  9f1306:	1e4b      	subs	r3, r1, #1
+  9f1308:	6013      	str	r3, [r2, #0]
+  9f130a:	2900      	cmp	r1, #0
+  9f130c:	f300 80c9 	bgt.w	9f14a2 <ClientboundMapItemDataPacket::read(BinaryStream&)+0x362>
+  9f1310:	a911      	add	r1, sp, #68	; 0x44
+  9f1312:	f143 e868 	blx	b343e4 <CommandTarget::getCommandTarget(CommandOrigin const&, Entity const*)+0x68>
+  9f1316:	e0c4      	b.n	9f14a2 <ClientboundMapItemDataPacket::read(BinaryStream&)+0x362>
+  9f1318:	4640      	mov	r0, r8
+  9f131a:	46ab      	mov	fp, r5
+  9f131c:	f4d9 ef38 	blx	6cb190 <ReadOnlyBinaryStream::getVarInt()@plt>
+  9f1320:	4606      	mov	r6, r0
+  9f1322:	4640      	mov	r0, r8
+  9f1324:	f4d9 eeb0 	blx	6cb088 <ReadOnlyBinaryStream::getByte()@plt>
+  9f1328:	f88d 0043 	strb.w	r0, [sp, #67]	; 0x43
+  9f132c:	4640      	mov	r0, r8
+  9f132e:	f4d9 eeac 	blx	6cb088 <ReadOnlyBinaryStream::getByte()@plt>
+  9f1332:	f88d 0042 	strb.w	r0, [sp, #66]	; 0x42
+  9f1336:	4650      	mov	r0, sl
+  9f1338:	4641      	mov	r1, r8
+  9f133a:	f4d9 ea2c 	blx	6ca794 <ReadOnlyBinaryStream::getString()@plt>
+  9f133e:	4640      	mov	r0, r8
+  9f1340:	f4da e8b8 	blx	6cb4b4 <ReadOnlyBinaryStream::getUnsignedInt()@plt>
+  9f1344:	f3c0 4107 	ubfx	r1, r0, #16, #8
+  9f1348:	ee00 1b90 	vmov.32	d16[0], r1
+  9f134c:	f3c0 2107 	ubfx	r1, r0, #8, #8
+  9f1350:	ee20 1b90 	vmov.32	d16[1], r1
+  9f1354:	b2c1      	uxtb	r1, r0
+  9f1356:	0e00      	lsrs	r0, r0, #24
+  9f1358:	ee01 1b90 	vmov.32	d17[0], r1
+  9f135c:	ee21 0b90 	vmov.32	d17[1], r0
+  9f1360:	a80c      	add	r0, sp, #48	; 0x30
+  9f1362:	fffb 0660 	vcvt.f32.s32	q8, q8
+  9f1366:	4601      	mov	r1, r0
+  9f1368:	9807      	ldr	r0, [sp, #28]
+  9f136a:	ff40 0dd8 	vmul.f32	q8, q8, q4
+  9f136e:	f941 0aef 	vst1.64	{d16-d17}, [r1 :128]
+  9f1372:	6805      	ldr	r5, [r0, #0]
+  9f1374:	f3c6 1003 	ubfx	r0, r6, #4, #4
+  9f1378:	f88d 0027 	strb.w	r0, [sp, #39]	; 0x27
+  9f137c:	f006 000f 	and.w	r0, r6, #15
+  9f1380:	f88d 0026 	strb.w	r0, [sp, #38]	; 0x26
+  9f1384:	f10d 0042 	add.w	r0, sp, #66	; 0x42
+  9f1388:	9000      	str	r0, [sp, #0]
+  9f138a:	f10d 0026 	add.w	r0, sp, #38	; 0x26
+  9f138e:	e9cd 0a01 	strd	r0, sl, [sp, #4]
+  9f1392:	9103      	str	r1, [sp, #12]
+  9f1394:	a80a      	add	r0, sp, #40	; 0x28
+  9f1396:	a915      	add	r1, sp, #84	; 0x54
+  9f1398:	f10d 0227 	add.w	r2, sp, #39	; 0x27
+  9f139c:	f10d 0343 	add.w	r3, sp, #67	; 0x43
+  9f13a0:	f4db ece2 	blx	6ccd68 <std::__shared_ptr<MapDecoration, (__gnu_cxx::_Lock_policy)2>::__shared_ptr<std::allocator<MapDecoration>, MapDecoration::Type, signed char&, signed char&, signed char, std::string&, Color&>(std::_Sp_make_shared_tag, std::allocator<MapDecoration> const&, MapDecoration::Type&&, signed char&, signed char&, signed char&&, std::string&, Color&)@plt>
+  9f13a4:	e9dd 010a 	ldrd	r0, r1, [sp, #40]	; 0x28
+  9f13a8:	2200      	movs	r2, #0
+  9f13aa:	e9cd 220a 	strd	r2, r2, [sp, #40]	; 0x28
+  9f13ae:	4654      	mov	r4, sl
+  9f13b0:	f845 0039 	str.w	r0, [r5, r9, lsl #3]
+  9f13b4:	eb05 00c9 	add.w	r0, r5, r9, lsl #3
+  9f13b8:	f8d0 a004 	ldr.w	sl, [r0, #4]
+  9f13bc:	6041      	str	r1, [r0, #4]
+  9f13be:	f1ba 0f00 	cmp.w	sl, #0
+  9f13c2:	d032      	beq.n	9f142a <ClientboundMapItemDataPacket::read(BinaryStream&)+0x2ea>
+  9f13c4:	f10a 0104 	add.w	r1, sl, #4
+  9f13c8:	9808      	ldr	r0, [sp, #32]
+  9f13ca:	b158      	cbz	r0, 9f13e4 <ClientboundMapItemDataPacket::read(BinaryStream&)+0x2a4>
+  9f13cc:	f3bf 8f5b 	dmb	ish
+  9f13d0:	e851 0f00 	ldrex	r0, [r1]
+  9f13d4:	1e42      	subs	r2, r0, #1
+  9f13d6:	e841 2300 	strex	r3, r2, [r1]
+  9f13da:	2b00      	cmp	r3, #0
+  9f13dc:	d1f8      	bne.n	9f13d0 <ClientboundMapItemDataPacket::read(BinaryStream&)+0x290>
+  9f13de:	f3bf 8f5b 	dmb	ish
+  9f13e2:	e002      	b.n	9f13ea <ClientboundMapItemDataPacket::read(BinaryStream&)+0x2aa>
+  9f13e4:	6808      	ldr	r0, [r1, #0]
+  9f13e6:	1e42      	subs	r2, r0, #1
+  9f13e8:	600a      	str	r2, [r1, #0]
+  9f13ea:	2801      	cmp	r0, #1
+  9f13ec:	d11d      	bne.n	9f142a <ClientboundMapItemDataPacket::read(BinaryStream&)+0x2ea>
+  9f13ee:	4655      	mov	r5, sl
+  9f13f0:	f855 0b08 	ldr.w	r0, [r5], #8
+  9f13f4:	6881      	ldr	r1, [r0, #8]
+  9f13f6:	4650      	mov	r0, sl
+  9f13f8:	4788      	blx	r1
+  9f13fa:	9808      	ldr	r0, [sp, #32]
+  9f13fc:	b158      	cbz	r0, 9f1416 <ClientboundMapItemDataPacket::read(BinaryStream&)+0x2d6>
+  9f13fe:	f3bf 8f5b 	dmb	ish
+  9f1402:	e855 0f00 	ldrex	r0, [r5]
+  9f1406:	1e41      	subs	r1, r0, #1
+  9f1408:	e845 1200 	strex	r2, r1, [r5]
+  9f140c:	2a00      	cmp	r2, #0
+  9f140e:	d1f8      	bne.n	9f1402 <ClientboundMapItemDataPacket::read(BinaryStream&)+0x2c2>
+  9f1410:	f3bf 8f5b 	dmb	ish
+  9f1414:	e002      	b.n	9f141c <ClientboundMapItemDataPacket::read(BinaryStream&)+0x2dc>
+  9f1416:	6828      	ldr	r0, [r5, #0]
+  9f1418:	1e41      	subs	r1, r0, #1
+  9f141a:	6029      	str	r1, [r5, #0]
+  9f141c:	2801      	cmp	r0, #1
+  9f141e:	d104      	bne.n	9f142a <ClientboundMapItemDataPacket::read(BinaryStream&)+0x2ea>
+  9f1420:	f8da 0000 	ldr.w	r0, [sl]
+  9f1424:	68c1      	ldr	r1, [r0, #12]
+  9f1426:	4650      	mov	r0, sl
+  9f1428:	4788      	blx	r1
+  9f142a:	9e0b      	ldr	r6, [sp, #44]	; 0x2c
+  9f142c:	46a2      	mov	sl, r4
+  9f142e:	b386      	cbz	r6, 9f1492 <ClientboundMapItemDataPacket::read(BinaryStream&)+0x352>
+  9f1430:	1d31      	adds	r1, r6, #4
+  9f1432:	9808      	ldr	r0, [sp, #32]
+  9f1434:	b158      	cbz	r0, 9f144e <ClientboundMapItemDataPacket::read(BinaryStream&)+0x30e>
+  9f1436:	f3bf 8f5b 	dmb	ish
+  9f143a:	e851 0f00 	ldrex	r0, [r1]
+  9f143e:	1e42      	subs	r2, r0, #1
+  9f1440:	e841 2300 	strex	r3, r2, [r1]
+  9f1444:	2b00      	cmp	r3, #0
+  9f1446:	d1f8      	bne.n	9f143a <ClientboundMapItemDataPacket::read(BinaryStream&)+0x2fa>
+  9f1448:	f3bf 8f5b 	dmb	ish
+  9f144c:	e002      	b.n	9f1454 <ClientboundMapItemDataPacket::read(BinaryStream&)+0x314>
+  9f144e:	6808      	ldr	r0, [r1, #0]
+  9f1450:	1e42      	subs	r2, r0, #1
+  9f1452:	600a      	str	r2, [r1, #0]
+  9f1454:	2801      	cmp	r0, #1
+  9f1456:	d11c      	bne.n	9f1492 <ClientboundMapItemDataPacket::read(BinaryStream&)+0x352>
+  9f1458:	4635      	mov	r5, r6
+  9f145a:	f855 0b08 	ldr.w	r0, [r5], #8
+  9f145e:	6881      	ldr	r1, [r0, #8]
+  9f1460:	4630      	mov	r0, r6
+  9f1462:	4788      	blx	r1
+  9f1464:	9808      	ldr	r0, [sp, #32]
+  9f1466:	b158      	cbz	r0, 9f1480 <ClientboundMapItemDataPacket::read(BinaryStream&)+0x340>
+  9f1468:	f3bf 8f5b 	dmb	ish
+  9f146c:	e855 0f00 	ldrex	r0, [r5]
+  9f1470:	1e41      	subs	r1, r0, #1
+  9f1472:	e845 1200 	strex	r2, r1, [r5]
+  9f1476:	2a00      	cmp	r2, #0
+  9f1478:	d1f8      	bne.n	9f146c <ClientboundMapItemDataPacket::read(BinaryStream&)+0x32c>
+  9f147a:	f3bf 8f5b 	dmb	ish
+  9f147e:	e002      	b.n	9f1486 <ClientboundMapItemDataPacket::read(BinaryStream&)+0x346>
+  9f1480:	6828      	ldr	r0, [r5, #0]
+  9f1482:	1e41      	subs	r1, r0, #1
+  9f1484:	6029      	str	r1, [r5, #0]
+  9f1486:	2801      	cmp	r0, #1
+  9f1488:	d103      	bne.n	9f1492 <ClientboundMapItemDataPacket::read(BinaryStream&)+0x352>
+  9f148a:	6830      	ldr	r0, [r6, #0]
+  9f148c:	68c1      	ldr	r1, [r0, #12]
+  9f148e:	4630      	mov	r0, r6
+  9f1490:	4788      	blx	r1
+  9f1492:	9912      	ldr	r1, [sp, #72]	; 0x48
+  9f1494:	465d      	mov	r5, fp
+  9f1496:	9a06      	ldr	r2, [sp, #24]
+  9f1498:	f1a1 000c 	sub.w	r0, r1, #12
+  9f149c:	4290      	cmp	r0, r2
+  9f149e:	f47f af22 	bne.w	9f12e6 <ClientboundMapItemDataPacket::read(BinaryStream&)+0x1a6>
+  9f14a2:	f109 0901 	add.w	r9, r9, #1
+  9f14a6:	45a9      	cmp	r9, r5
+  9f14a8:	f4ff af36 	bcc.w	9f1318 <ClientboundMapItemDataPacket::read(BinaryStream&)+0x1d8>
+  9f14ac:	f8dd b014 	ldr.w	fp, [sp, #20]
+  9f14b0:	f8db 0038 	ldr.w	r0, [fp, #56]	; 0x38
+  9f14b4:	f010 0f02 	tst.w	r0, #2
+  9f14b8:	d05e      	beq.n	9f1578 <ClientboundMapItemDataPacket::read(BinaryStream&)+0x438>
+  9f14ba:	4640      	mov	r0, r8
+  9f14bc:	f4d9 ee68 	blx	6cb190 <ReadOnlyBinaryStream::getVarInt()@plt>
+  9f14c0:	f8cb 0030 	str.w	r0, [fp, #48]	; 0x30
+  9f14c4:	4640      	mov	r0, r8
+  9f14c6:	f4d9 ee64 	blx	6cb190 <ReadOnlyBinaryStream::getVarInt()@plt>
+  9f14ca:	f8cb 0034 	str.w	r0, [fp, #52]	; 0x34
+  9f14ce:	4640      	mov	r0, r8
+  9f14d0:	f4d9 ee5e 	blx	6cb190 <ReadOnlyBinaryStream::getVarInt()@plt>
+  9f14d4:	f8cb 0028 	str.w	r0, [fp, #40]	; 0x28
+  9f14d8:	4640      	mov	r0, r8
+  9f14da:	f4d9 ee5a 	blx	6cb190 <ReadOnlyBinaryStream::getVarInt()@plt>
+  9f14de:	f8cb 002c 	str.w	r0, [fp, #44]	; 0x2c
+  9f14e2:	465e      	mov	r6, fp
+  9f14e4:	e9db 010c 	ldrd	r0, r1, [fp, #48]	; 0x30
+  9f14e8:	f856 2f3c 	ldr.w	r2, [r6, #60]!
+  9f14ec:	fb01 f300 	mul.w	r3, r1, r0
+  9f14f0:	6875      	ldr	r5, [r6, #4]
+  9f14f2:	1aac      	subs	r4, r5, r2
+  9f14f4:	10a5      	asrs	r5, r4, #2
+  9f14f6:	ebb3 0fa4 	cmp.w	r3, r4, asr #2
+  9f14fa:	d92a      	bls.n	9f1552 <ClientboundMapItemDataPacket::read(BinaryStream&)+0x412>
+  9f14fc:	1b59      	subs	r1, r3, r5
+  9f14fe:	4630      	mov	r0, r6
+  9f1500:	f4db ec08 	blx	6ccd14 <std::vector<unsigned int, std::allocator<unsigned int> >::_M_default_append(unsigned int)@plt>
+  9f1504:	e9db 010c 	ldrd	r0, r1, [fp, #48]	; 0x30
+  9f1508:	e029      	b.n	9f155e <ClientboundMapItemDataPacket::read(BinaryStream&)+0x41e>
+  9f150a:	4a27      	ldr	r2, [pc, #156]	; (9f15a8 <ClientboundMapItemDataPacket::read(BinaryStream&)+0x468>)
+  9f150c:	4604      	mov	r4, r0
+  9f150e:	4b27      	ldr	r3, [pc, #156]	; (9f15ac <ClientboundMapItemDataPacket::read(BinaryStream&)+0x46c>)
+  9f1510:	447a      	add	r2, pc
+  9f1512:	9912      	ldr	r1, [sp, #72]	; 0x48
+  9f1514:	f1a1 000c 	sub.w	r0, r1, #12
+  9f1518:	589a      	ldr	r2, [r3, r2]
+  9f151a:	4290      	cmp	r0, r2
+  9f151c:	d016      	beq.n	9f154c <ClientboundMapItemDataPacket::read(BinaryStream&)+0x40c>
+  9f151e:	4a24      	ldr	r2, [pc, #144]	; (9f15b0 <ClientboundMapItemDataPacket::read(BinaryStream&)+0x470>)
+  9f1520:	4b20      	ldr	r3, [pc, #128]	; (9f15a4 <ClientboundMapItemDataPacket::read(BinaryStream&)+0x464>)
+  9f1522:	447a      	add	r2, pc
+  9f1524:	589b      	ldr	r3, [r3, r2]
+  9f1526:	1f0a      	subs	r2, r1, #4
+  9f1528:	b373      	cbz	r3, 9f1588 <ClientboundMapItemDataPacket::read(BinaryStream&)+0x448>
+  9f152a:	f3bf 8f5b 	dmb	ish
+  9f152e:	e852 1f00 	ldrex	r1, [r2]
+  9f1532:	1e4b      	subs	r3, r1, #1
+  9f1534:	e842 3600 	strex	r6, r3, [r2]
+  9f1538:	2e00      	cmp	r6, #0
+  9f153a:	d1f8      	bne.n	9f152e <ClientboundMapItemDataPacket::read(BinaryStream&)+0x3ee>
+  9f153c:	f3bf 8f5b 	dmb	ish
+  9f1540:	2900      	cmp	r1, #0
+  9f1542:	bfdc      	itt	le
+  9f1544:	f10d 0144 	addle.w	r1, sp, #68	; 0x44
+  9f1548:	f142 ef4c 	blxle	b343e4 <CommandTarget::getCommandTarget(CommandOrigin const&, Entity const*)+0x68>
+  9f154c:	4620      	mov	r0, r4
+  9f154e:	f4d7 e94a 	blx	6c87e4 <_Unwind_Resume@plt>
+  9f1552:	42ab      	cmp	r3, r5
+  9f1554:	bf3c      	itt	cc
+  9f1556:	eb02 0283 	addcc.w	r2, r2, r3, lsl #2
+  9f155a:	f8cb 2040 	strcc.w	r2, [fp, #64]	; 0x40
+  9f155e:	fb01 f400 	mul.w	r4, r1, r0
+  9f1562:	b14c      	cbz	r4, 9f1578 <ClientboundMapItemDataPacket::read(BinaryStream&)+0x438>
+  9f1564:	2500      	movs	r5, #0
+  9f1566:	4640      	mov	r0, r8
+  9f1568:	f4d9 ec44 	blx	6cadf4 <ReadOnlyBinaryStream::getUnsignedVarInt()@plt>
+  9f156c:	6831      	ldr	r1, [r6, #0]
+  9f156e:	f841 0025 	str.w	r0, [r1, r5, lsl #2]
+  9f1572:	3501      	adds	r5, #1
+  9f1574:	42ac      	cmp	r4, r5
+  9f1576:	d1f6      	bne.n	9f1566 <ClientboundMapItemDataPacket::read(BinaryStream&)+0x426>
+  9f1578:	f1a7 0420 	sub.w	r4, r7, #32
+  9f157c:	46a5      	mov	sp, r4
+  9f157e:	ecbd 8b04 	vpop	{d8-d9}
+  9f1582:	b001      	add	sp, #4
+  9f1584:	e8bd 8ff0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, pc}
+  9f1588:	6811      	ldr	r1, [r2, #0]
+  9f158a:	1e4b      	subs	r3, r1, #1
+  9f158c:	6013      	str	r3, [r2, #0]
+  9f158e:	e7d7      	b.n	9f1540 <ClientboundMapItemDataPacket::read(BinaryStream&)+0x400>
+  9f1590:	8081      	strh	r1, [r0, #4]
+  9f1592:	3b80      	subs	r3, #128	; 0x80
+  9f1594:	8081      	strh	r1, [r0, #4]
+  9f1596:	3b80      	subs	r3, #128	; 0x80
+  9f1598:	8081      	strh	r1, [r0, #4]
+  9f159a:	3b80      	subs	r3, #128	; 0x80
+  9f159c:	8081      	strh	r1, [r0, #4]
+  9f159e:	3b80      	subs	r3, #128	; 0x80
+  9f15a0:	597e      	ldr	r6, [r7, r5]
+  9f15a2:	016c      	lsls	r4, r5, #5
+  9f15a4:	8858      	ldrh	r0, [r3, #2]
+  9f15a6:	ffff 56ac 	vcvt.f<illegal width 64>.u<illegal width 64>	d21, d28
+  9f15aa:	016c      	lsls	r4, r5, #5
+  9f15ac:	8854      	ldrh	r4, [r2, #2]
+  9f15ae:	ffff 569a 	vqshlu.s64	d21, d10, #63	; 0x3f
+  9f15b2:	016c      	lsls	r4, r5, #5
+  9f15b4:	58e4      	ldr	r4, [r4, r3]
+  9f15b6:	016c      	lsls	r4, r5, #5

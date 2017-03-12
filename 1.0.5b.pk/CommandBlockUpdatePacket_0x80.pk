@@ -1,0 +1,250 @@
+  9ee6a8:	b5f0      	push	{r4, r5, r6, r7, lr}
+  9ee6aa:	b087      	sub	sp, #28
+  9ee6ac:	460d      	mov	r5, r1
+  9ee6ae:	4604      	mov	r4, r0
+  9ee6b0:	4628      	mov	r0, r5
+  9ee6b2:	f4dc ed14 	blx	6cb0dc <ReadOnlyBinaryStream::getBool()@plt>
+  9ee6b6:	f884 0035 	strb.w	r0, [r4, #53]	; 0x35
+  9ee6ba:	b1b0      	cbz	r0, 9ee6ea <CommandBlockUpdatePacket::read(BinaryStream&)+0x42>
+  9ee6bc:	a804      	add	r0, sp, #16
+  9ee6be:	4629      	mov	r1, r5
+  9ee6c0:	f4dc ee62 	blx	6cb388 <NetworkBlockPosition ReadOnlyBinaryStream::getType<NetworkBlockPosition>()@plt>
+  9ee6c4:	9804      	ldr	r0, [sp, #16]
+  9ee6c6:	60e0      	str	r0, [r4, #12]
+  9ee6c8:	9805      	ldr	r0, [sp, #20]
+  9ee6ca:	6120      	str	r0, [r4, #16]
+  9ee6cc:	9806      	ldr	r0, [sp, #24]
+  9ee6ce:	6160      	str	r0, [r4, #20]
+  9ee6d0:	4628      	mov	r0, r5
+  9ee6d2:	f4dc eb90 	blx	6cadf4 <ReadOnlyBinaryStream::getUnsignedVarInt()@plt>
+  9ee6d6:	7620      	strb	r0, [r4, #24]
+  9ee6d8:	4628      	mov	r0, r5
+  9ee6da:	f4dc ed00 	blx	6cb0dc <ReadOnlyBinaryStream::getBool()@plt>
+  9ee6de:	7660      	strb	r0, [r4, #25]
+  9ee6e0:	4628      	mov	r0, r5
+  9ee6e2:	f4dc ecfc 	blx	6cb0dc <ReadOnlyBinaryStream::getBool()@plt>
+  9ee6e6:	76a0      	strb	r0, [r4, #26]
+  9ee6e8:	e007      	b.n	9ee6fa <CommandBlockUpdatePacket::read(BinaryStream&)+0x52>
+  9ee6ea:	a804      	add	r0, sp, #16
+  9ee6ec:	4629      	mov	r1, r5
+  9ee6ee:	f4dc ed86 	blx	6cb1fc <EntityRuntimeID ReadOnlyBinaryStream::getType<EntityRuntimeID>()@plt>
+  9ee6f2:	e9dd 0104 	ldrd	r0, r1, [sp, #16]
+  9ee6f6:	e9c4 0108 	strd	r0, r1, [r4, #32]
+  9ee6fa:	ae03      	add	r6, sp, #12
+  9ee6fc:	4629      	mov	r1, r5
+  9ee6fe:	4630      	mov	r0, r6
+  9ee700:	f4dc e848 	blx	6ca794 <ReadOnlyBinaryStream::getString()@plt>
+  9ee704:	f104 0028 	add.w	r0, r4, #40	; 0x28
+  9ee708:	4631      	mov	r1, r6
+  9ee70a:	f145 eebc 	blx	b34484 <CommandTarget::getCommandTarget(CommandOrigin const&, Entity const*)+0x108>
+  9ee70e:	4876      	ldr	r0, [pc, #472]	; (9ee8e8 <CommandBlockUpdatePacket::read(BinaryStream&)+0x240>)
+  9ee710:	4f72      	ldr	r7, [pc, #456]	; (9ee8dc <CommandBlockUpdatePacket::read(BinaryStream&)+0x234>)
+  9ee712:	4478      	add	r0, pc
+  9ee714:	9903      	ldr	r1, [sp, #12]
+  9ee716:	583a      	ldr	r2, [r7, r0]
+  9ee718:	f1a1 000c 	sub.w	r0, r1, #12
+  9ee71c:	4290      	cmp	r0, r2
+  9ee71e:	d12a      	bne.n	9ee776 <CommandBlockUpdatePacket::read(BinaryStream&)+0xce>
+  9ee720:	ae02      	add	r6, sp, #8
+  9ee722:	4629      	mov	r1, r5
+  9ee724:	4630      	mov	r0, r6
+  9ee726:	f4dc e836 	blx	6ca794 <ReadOnlyBinaryStream::getString()@plt>
+  9ee72a:	f104 002c 	add.w	r0, r4, #44	; 0x2c
+  9ee72e:	4631      	mov	r1, r6
+  9ee730:	f145 eea8 	blx	b34484 <CommandTarget::getCommandTarget(CommandOrigin const&, Entity const*)+0x108>
+  9ee734:	4870      	ldr	r0, [pc, #448]	; (9ee8f8 <CommandBlockUpdatePacket::read(BinaryStream&)+0x250>)
+  9ee736:	9902      	ldr	r1, [sp, #8]
+  9ee738:	4478      	add	r0, pc
+  9ee73a:	583a      	ldr	r2, [r7, r0]
+  9ee73c:	f1a1 000c 	sub.w	r0, r1, #12
+  9ee740:	4290      	cmp	r0, r2
+  9ee742:	d12a      	bne.n	9ee79a <CommandBlockUpdatePacket::read(BinaryStream&)+0xf2>
+  9ee744:	ae01      	add	r6, sp, #4
+  9ee746:	4629      	mov	r1, r5
+  9ee748:	4630      	mov	r0, r6
+  9ee74a:	f4dc e824 	blx	6ca794 <ReadOnlyBinaryStream::getString()@plt>
+  9ee74e:	f104 0030 	add.w	r0, r4, #48	; 0x30
+  9ee752:	4631      	mov	r1, r6
+  9ee754:	f145 ee96 	blx	b34484 <CommandTarget::getCommandTarget(CommandOrigin const&, Entity const*)+0x108>
+  9ee758:	486b      	ldr	r0, [pc, #428]	; (9ee908 <CommandBlockUpdatePacket::read(BinaryStream&)+0x260>)
+  9ee75a:	9901      	ldr	r1, [sp, #4]
+  9ee75c:	4478      	add	r0, pc
+  9ee75e:	583a      	ldr	r2, [r7, r0]
+  9ee760:	f1a1 000c 	sub.w	r0, r1, #12
+  9ee764:	4290      	cmp	r0, r2
+  9ee766:	d12a      	bne.n	9ee7be <CommandBlockUpdatePacket::read(BinaryStream&)+0x116>
+  9ee768:	4628      	mov	r0, r5
+  9ee76a:	f4dc ecb8 	blx	6cb0dc <ReadOnlyBinaryStream::getBool()@plt>
+  9ee76e:	f884 0034 	strb.w	r0, [r4, #52]	; 0x34
+  9ee772:	b007      	add	sp, #28
+  9ee774:	bdf0      	pop	{r4, r5, r6, r7, pc}
+  9ee776:	4a5d      	ldr	r2, [pc, #372]	; (9ee8ec <CommandBlockUpdatePacket::read(BinaryStream&)+0x244>)
+  9ee778:	4b5a      	ldr	r3, [pc, #360]	; (9ee8e4 <CommandBlockUpdatePacket::read(BinaryStream&)+0x23c>)
+  9ee77a:	447a      	add	r2, pc
+  9ee77c:	589b      	ldr	r3, [r3, r2]
+  9ee77e:	1f0a      	subs	r2, r1, #4
+  9ee780:	b37b      	cbz	r3, 9ee7e2 <CommandBlockUpdatePacket::read(BinaryStream&)+0x13a>
+  9ee782:	f3bf 8f5b 	dmb	ish
+  9ee786:	e852 1f00 	ldrex	r1, [r2]
+  9ee78a:	1e4b      	subs	r3, r1, #1
+  9ee78c:	e842 3600 	strex	r6, r3, [r2]
+  9ee790:	2e00      	cmp	r6, #0
+  9ee792:	d1f8      	bne.n	9ee786 <CommandBlockUpdatePacket::read(BinaryStream&)+0xde>
+  9ee794:	f3bf 8f5b 	dmb	ish
+  9ee798:	e026      	b.n	9ee7e8 <CommandBlockUpdatePacket::read(BinaryStream&)+0x140>
+  9ee79a:	4a58      	ldr	r2, [pc, #352]	; (9ee8fc <CommandBlockUpdatePacket::read(BinaryStream&)+0x254>)
+  9ee79c:	4b51      	ldr	r3, [pc, #324]	; (9ee8e4 <CommandBlockUpdatePacket::read(BinaryStream&)+0x23c>)
+  9ee79e:	447a      	add	r2, pc
+  9ee7a0:	589b      	ldr	r3, [r3, r2]
+  9ee7a2:	1f0a      	subs	r2, r1, #4
+  9ee7a4:	b333      	cbz	r3, 9ee7f4 <CommandBlockUpdatePacket::read(BinaryStream&)+0x14c>
+  9ee7a6:	f3bf 8f5b 	dmb	ish
+  9ee7aa:	e852 1f00 	ldrex	r1, [r2]
+  9ee7ae:	1e4b      	subs	r3, r1, #1
+  9ee7b0:	e842 3600 	strex	r6, r3, [r2]
+  9ee7b4:	2e00      	cmp	r6, #0
+  9ee7b6:	d1f8      	bne.n	9ee7aa <CommandBlockUpdatePacket::read(BinaryStream&)+0x102>
+  9ee7b8:	f3bf 8f5b 	dmb	ish
+  9ee7bc:	e01d      	b.n	9ee7fa <CommandBlockUpdatePacket::read(BinaryStream&)+0x152>
+  9ee7be:	4a53      	ldr	r2, [pc, #332]	; (9ee90c <CommandBlockUpdatePacket::read(BinaryStream&)+0x264>)
+  9ee7c0:	4b48      	ldr	r3, [pc, #288]	; (9ee8e4 <CommandBlockUpdatePacket::read(BinaryStream&)+0x23c>)
+  9ee7c2:	447a      	add	r2, pc
+  9ee7c4:	589b      	ldr	r3, [r3, r2]
+  9ee7c6:	1f0a      	subs	r2, r1, #4
+  9ee7c8:	b1eb      	cbz	r3, 9ee806 <CommandBlockUpdatePacket::read(BinaryStream&)+0x15e>
+  9ee7ca:	f3bf 8f5b 	dmb	ish
+  9ee7ce:	e852 1f00 	ldrex	r1, [r2]
+  9ee7d2:	1e4b      	subs	r3, r1, #1
+  9ee7d4:	e842 3700 	strex	r7, r3, [r2]
+  9ee7d8:	2f00      	cmp	r7, #0
+  9ee7da:	d1f8      	bne.n	9ee7ce <CommandBlockUpdatePacket::read(BinaryStream&)+0x126>
+  9ee7dc:	f3bf 8f5b 	dmb	ish
+  9ee7e0:	e014      	b.n	9ee80c <CommandBlockUpdatePacket::read(BinaryStream&)+0x164>
+  9ee7e2:	6811      	ldr	r1, [r2, #0]
+  9ee7e4:	1e4b      	subs	r3, r1, #1
+  9ee7e6:	6013      	str	r3, [r2, #0]
+  9ee7e8:	2900      	cmp	r1, #0
+  9ee7ea:	dc99      	bgt.n	9ee720 <CommandBlockUpdatePacket::read(BinaryStream&)+0x78>
+  9ee7ec:	a904      	add	r1, sp, #16
+  9ee7ee:	f145 edfa 	blx	b343e4 <CommandTarget::getCommandTarget(CommandOrigin const&, Entity const*)+0x68>
+  9ee7f2:	e795      	b.n	9ee720 <CommandBlockUpdatePacket::read(BinaryStream&)+0x78>
+  9ee7f4:	6811      	ldr	r1, [r2, #0]
+  9ee7f6:	1e4b      	subs	r3, r1, #1
+  9ee7f8:	6013      	str	r3, [r2, #0]
+  9ee7fa:	2900      	cmp	r1, #0
+  9ee7fc:	dca2      	bgt.n	9ee744 <CommandBlockUpdatePacket::read(BinaryStream&)+0x9c>
+  9ee7fe:	a904      	add	r1, sp, #16
+  9ee800:	f145 edf0 	blx	b343e4 <CommandTarget::getCommandTarget(CommandOrigin const&, Entity const*)+0x68>
+  9ee804:	e79e      	b.n	9ee744 <CommandBlockUpdatePacket::read(BinaryStream&)+0x9c>
+  9ee806:	6811      	ldr	r1, [r2, #0]
+  9ee808:	1e4b      	subs	r3, r1, #1
+  9ee80a:	6013      	str	r3, [r2, #0]
+  9ee80c:	2900      	cmp	r1, #0
+  9ee80e:	dcab      	bgt.n	9ee768 <CommandBlockUpdatePacket::read(BinaryStream&)+0xc0>
+  9ee810:	a904      	add	r1, sp, #16
+  9ee812:	f145 ede8 	blx	b343e4 <CommandTarget::getCommandTarget(CommandOrigin const&, Entity const*)+0x68>
+  9ee816:	e7a7      	b.n	9ee768 <CommandBlockUpdatePacket::read(BinaryStream&)+0xc0>
+  9ee818:	4a2f      	ldr	r2, [pc, #188]	; (9ee8d8 <CommandBlockUpdatePacket::read(BinaryStream&)+0x230>)
+  9ee81a:	4604      	mov	r4, r0
+  9ee81c:	4b2f      	ldr	r3, [pc, #188]	; (9ee8dc <CommandBlockUpdatePacket::read(BinaryStream&)+0x234>)
+  9ee81e:	447a      	add	r2, pc
+  9ee820:	9903      	ldr	r1, [sp, #12]
+  9ee822:	f1a1 000c 	sub.w	r0, r1, #12
+  9ee826:	589a      	ldr	r2, [r3, r2]
+  9ee828:	4290      	cmp	r0, r2
+  9ee82a:	d04d      	beq.n	9ee8c8 <CommandBlockUpdatePacket::read(BinaryStream&)+0x220>
+  9ee82c:	4a2c      	ldr	r2, [pc, #176]	; (9ee8e0 <CommandBlockUpdatePacket::read(BinaryStream&)+0x238>)
+  9ee82e:	4b2d      	ldr	r3, [pc, #180]	; (9ee8e4 <CommandBlockUpdatePacket::read(BinaryStream&)+0x23c>)
+  9ee830:	447a      	add	r2, pc
+  9ee832:	589b      	ldr	r3, [r3, r2]
+  9ee834:	1f0a      	subs	r2, r1, #4
+  9ee836:	2b00      	cmp	r3, #0
+  9ee838:	d049      	beq.n	9ee8ce <CommandBlockUpdatePacket::read(BinaryStream&)+0x226>
+  9ee83a:	f3bf 8f5b 	dmb	ish
+  9ee83e:	e852 1f00 	ldrex	r1, [r2]
+  9ee842:	1e4b      	subs	r3, r1, #1
+  9ee844:	e842 3700 	strex	r7, r3, [r2]
+  9ee848:	2f00      	cmp	r7, #0
+  9ee84a:	d1f8      	bne.n	9ee83e <CommandBlockUpdatePacket::read(BinaryStream&)+0x196>
+  9ee84c:	f3bf 8f5b 	dmb	ish
+  9ee850:	e034      	b.n	9ee8bc <CommandBlockUpdatePacket::read(BinaryStream&)+0x214>
+  9ee852:	4a27      	ldr	r2, [pc, #156]	; (9ee8f0 <CommandBlockUpdatePacket::read(BinaryStream&)+0x248>)
+  9ee854:	4604      	mov	r4, r0
+  9ee856:	9902      	ldr	r1, [sp, #8]
+  9ee858:	447a      	add	r2, pc
+  9ee85a:	f1a1 000c 	sub.w	r0, r1, #12
+  9ee85e:	58ba      	ldr	r2, [r7, r2]
+  9ee860:	4290      	cmp	r0, r2
+  9ee862:	d031      	beq.n	9ee8c8 <CommandBlockUpdatePacket::read(BinaryStream&)+0x220>
+  9ee864:	4a23      	ldr	r2, [pc, #140]	; (9ee8f4 <CommandBlockUpdatePacket::read(BinaryStream&)+0x24c>)
+  9ee866:	4b1f      	ldr	r3, [pc, #124]	; (9ee8e4 <CommandBlockUpdatePacket::read(BinaryStream&)+0x23c>)
+  9ee868:	447a      	add	r2, pc
+  9ee86a:	589b      	ldr	r3, [r3, r2]
+  9ee86c:	1f0a      	subs	r2, r1, #4
+  9ee86e:	b373      	cbz	r3, 9ee8ce <CommandBlockUpdatePacket::read(BinaryStream&)+0x226>
+  9ee870:	f3bf 8f5b 	dmb	ish
+  9ee874:	e852 1f00 	ldrex	r1, [r2]
+  9ee878:	1e4b      	subs	r3, r1, #1
+  9ee87a:	e842 3700 	strex	r7, r3, [r2]
+  9ee87e:	2f00      	cmp	r7, #0
+  9ee880:	d1f8      	bne.n	9ee874 <CommandBlockUpdatePacket::read(BinaryStream&)+0x1cc>
+  9ee882:	f3bf 8f5b 	dmb	ish
+  9ee886:	e019      	b.n	9ee8bc <CommandBlockUpdatePacket::read(BinaryStream&)+0x214>
+  9ee888:	4a1d      	ldr	r2, [pc, #116]	; (9ee900 <CommandBlockUpdatePacket::read(BinaryStream&)+0x258>)
+  9ee88a:	4604      	mov	r4, r0
+  9ee88c:	9901      	ldr	r1, [sp, #4]
+  9ee88e:	447a      	add	r2, pc
+  9ee890:	f1a1 000c 	sub.w	r0, r1, #12
+  9ee894:	58ba      	ldr	r2, [r7, r2]
+  9ee896:	4290      	cmp	r0, r2
+  9ee898:	d016      	beq.n	9ee8c8 <CommandBlockUpdatePacket::read(BinaryStream&)+0x220>
+  9ee89a:	4a1a      	ldr	r2, [pc, #104]	; (9ee904 <CommandBlockUpdatePacket::read(BinaryStream&)+0x25c>)
+  9ee89c:	4b11      	ldr	r3, [pc, #68]	; (9ee8e4 <CommandBlockUpdatePacket::read(BinaryStream&)+0x23c>)
+  9ee89e:	447a      	add	r2, pc
+  9ee8a0:	589b      	ldr	r3, [r3, r2]
+  9ee8a2:	1f0a      	subs	r2, r1, #4
+  9ee8a4:	b19b      	cbz	r3, 9ee8ce <CommandBlockUpdatePacket::read(BinaryStream&)+0x226>
+  9ee8a6:	f3bf 8f5b 	dmb	ish
+  9ee8aa:	e852 1f00 	ldrex	r1, [r2]
+  9ee8ae:	1e4b      	subs	r3, r1, #1
+  9ee8b0:	e842 3700 	strex	r7, r3, [r2]
+  9ee8b4:	2f00      	cmp	r7, #0
+  9ee8b6:	d1f8      	bne.n	9ee8aa <CommandBlockUpdatePacket::read(BinaryStream&)+0x202>
+  9ee8b8:	f3bf 8f5b 	dmb	ish
+  9ee8bc:	2900      	cmp	r1, #0
+  9ee8be:	bfdc      	itt	le
+  9ee8c0:	f10d 0110 	addle.w	r1, sp, #16
+  9ee8c4:	f145 ed8e 	blxle	b343e4 <CommandTarget::getCommandTarget(CommandOrigin const&, Entity const*)+0x68>
+  9ee8c8:	4620      	mov	r0, r4
+  9ee8ca:	f4d9 ef8c 	blx	6c87e4 <_Unwind_Resume@plt>
+  9ee8ce:	6811      	ldr	r1, [r2, #0]
+  9ee8d0:	1e4b      	subs	r3, r1, #1
+  9ee8d2:	6013      	str	r3, [r2, #0]
+  9ee8d4:	e7f2      	b.n	9ee8bc <CommandBlockUpdatePacket::read(BinaryStream&)+0x214>
+  9ee8d6:	bf00      	nop
+  9ee8d8:	839e      	strh	r6, [r3, #28]
+  9ee8da:	016c      	lsls	r4, r5, #5
+  9ee8dc:	8854      	ldrh	r4, [r2, #2]
+  9ee8de:	ffff 838c 	vsubw.u<illegal width 64>	q12, <illegal reg q15.5>, d12
+  9ee8e2:	016c      	lsls	r4, r5, #5
+  9ee8e4:	8858      	ldrh	r0, [r3, #2]
+  9ee8e6:	ffff 84aa 	vraddhn.i<illegal width 128>	d24, <illegal reg q15.5>, q13
+  9ee8ea:	016c      	lsls	r4, r5, #5
+  9ee8ec:	8442      	strh	r2, [r0, #34]	; 0x22
+  9ee8ee:	016c      	lsls	r4, r5, #5
+  9ee8f0:	8364      	strh	r4, [r4, #26]
+  9ee8f2:	016c      	lsls	r4, r5, #5
+  9ee8f4:	8354      	strh	r4, [r2, #26]
+  9ee8f6:	016c      	lsls	r4, r5, #5
+  9ee8f8:	8484      	strh	r4, [r0, #36]	; 0x24
+  9ee8fa:	016c      	lsls	r4, r5, #5
+  9ee8fc:	841e      	strh	r6, [r3, #32]
+  9ee8fe:	016c      	lsls	r4, r5, #5
+  9ee900:	832e      	strh	r6, [r5, #24]
+  9ee902:	016c      	lsls	r4, r5, #5
+  9ee904:	831e      	strh	r6, [r3, #24]
+  9ee906:	016c      	lsls	r4, r5, #5
+  9ee908:	8460      	strh	r0, [r4, #34]	; 0x22
+  9ee90a:	016c      	lsls	r4, r5, #5
+  9ee90c:	83fa      	strh	r2, [r7, #30]
+  9ee90e:	016c      	lsls	r4, r5, #5

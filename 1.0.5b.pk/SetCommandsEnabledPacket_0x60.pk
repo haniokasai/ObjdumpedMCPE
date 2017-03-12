@@ -1,0 +1,6 @@
+  9ecc22:	b510      	push	{r4, lr}
+  9ecc24:	4604      	mov	r4, r0
+  9ecc26:	4608      	mov	r0, r1
+  9ecc28:	f4de ea58 	blx	6cb0dc <ReadOnlyBinaryStream::getBool()@plt>
+  9ecc2c:	7320      	strb	r0, [r4, #12]
+  9ecc2e:	bd10      	pop	{r4, pc}
