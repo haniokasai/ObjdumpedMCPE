@@ -1,0 +1,19 @@
+  cd5d72:	b5b0      	push	{r4, r5, r7, lr}
+  cd5d74:	460c      	mov	r4, r1
+  cd5d76:	4605      	mov	r5, r0
+  cd5d78:	4620      	mov	r0, r4
+  cd5d7a:	f63c e046 	blx	711e08 <ReadOnlyBinaryStream::getByte()@plt>
+  cd5d7e:	7328      	strb	r0, [r5, #12]
+  cd5d80:	4620      	mov	r0, r4
+  cd5d82:	f63f e0ea 	blx	714f58 <ReadOnlyBinaryStream::getVarInt()@plt>
+  cd5d86:	6128      	str	r0, [r5, #16]
+  cd5d88:	4620      	mov	r0, r4
+  cd5d8a:	f63f e0e6 	blx	714f58 <ReadOnlyBinaryStream::getVarInt()@plt>
+  cd5d8e:	f105 0118 	add.w	r1, r5, #24
+  cd5d92:	6168      	str	r0, [r5, #20]
+  cd5d94:	4620      	mov	r0, r4
+  cd5d96:	f64b e53c 	blx	721810 <void ReadOnlyBinaryStream::readType<ItemInstance>(ItemInstance&)@plt>
+  cd5d9a:	4620      	mov	r0, r4
+  cd5d9c:	f63c e034 	blx	711e08 <ReadOnlyBinaryStream::getByte()@plt>
+  cd5da0:	f885 0044 	strb.w	r0, [r5, #68]	; 0x44
+  cd5da4:	bdb0      	pop	{r4, r5, r7, pc}

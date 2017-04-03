@@ -1,0 +1,387 @@
+  b71ea8:	e92d 4ff0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, lr}
+  b71eac:	b087      	sub	sp, #28
+  b71eae:	460d      	mov	r5, r1
+  b71eb0:	4604      	mov	r4, r0
+  b71eb2:	4628      	mov	r0, r5
+  b71eb4:	f79f e7a8 	blx	711e08 <ReadOnlyBinaryStream::getByte()@plt>
+  b71eb8:	7320      	strb	r0, [r4, #12]
+  b71eba:	2807      	cmp	r0, #7
+  b71ebc:	d855      	bhi.n	b71f6a <TextPacket::read(BinaryStream&)+0xc2>
+  b71ebe:	2101      	movs	r1, #1
+  b71ec0:	4081      	lsls	r1, r0
+  b71ec2:	f011 0fca 	tst.w	r1, #202	; 0xca
+  b71ec6:	d03a      	beq.n	b71f3e <TextPacket::read(BinaryStream&)+0x96>
+  b71ec8:	ae04      	add	r6, sp, #16
+  b71eca:	4629      	mov	r1, r5
+  b71ecc:	4630      	mov	r0, r6
+  b71ece:	f79f e7a8 	blx	711e20 <ReadOnlyBinaryStream::getString()@plt>
+  b71ed2:	f104 0010 	add.w	r0, r4, #16
+  b71ed6:	4631      	mov	r1, r6
+  b71ed8:	f00e ece8 	blx	b808ac <std::vector<PackModel, std::allocator<PackModel> >::erase(__gnu_cxx::__normal_iterator<PackModel const*, std::vector<PackModel, std::allocator<PackModel> > >, __gnu_cxx::__normal_iterator<PackModel const*, std::vector<PackModel, std::allocator<PackModel> > >)+0x130>
+  b71edc:	f8df 0368 	ldr.w	r0, [pc, #872]	; b72248 <TextPacket::read(BinaryStream&)+0x3a0>
+  b71ee0:	4fcf      	ldr	r7, [pc, #828]	; (b72220 <TextPacket::read(BinaryStream&)+0x378>)
+  b71ee2:	4478      	add	r0, pc
+  b71ee4:	9904      	ldr	r1, [sp, #16]
+  b71ee6:	583a      	ldr	r2, [r7, r0]
+  b71ee8:	f1a1 000c 	sub.w	r0, r1, #12
+  b71eec:	4290      	cmp	r0, r2
+  b71eee:	f040 80a1 	bne.w	b72034 <TextPacket::read(BinaryStream&)+0x18c>
+  b71ef2:	ae03      	add	r6, sp, #12
+  b71ef4:	4629      	mov	r1, r5
+  b71ef6:	4630      	mov	r0, r6
+  b71ef8:	f79f e792 	blx	711e20 <ReadOnlyBinaryStream::getString()@plt>
+  b71efc:	f104 0014 	add.w	r0, r4, #20
+  b71f00:	4631      	mov	r1, r6
+  b71f02:	f00e ecd4 	blx	b808ac <std::vector<PackModel, std::allocator<PackModel> >::erase(__gnu_cxx::__normal_iterator<PackModel const*, std::vector<PackModel, std::allocator<PackModel> > >, __gnu_cxx::__normal_iterator<PackModel const*, std::vector<PackModel, std::allocator<PackModel> > >)+0x130>
+  b71f06:	48d4      	ldr	r0, [pc, #848]	; (b72258 <TextPacket::read(BinaryStream&)+0x3b0>)
+  b71f08:	9903      	ldr	r1, [sp, #12]
+  b71f0a:	4478      	add	r0, pc
+  b71f0c:	583a      	ldr	r2, [r7, r0]
+  b71f0e:	f1a1 000c 	sub.w	r0, r1, #12
+  b71f12:	4290      	cmp	r0, r2
+  b71f14:	d029      	beq.n	b71f6a <TextPacket::read(BinaryStream&)+0xc2>
+  b71f16:	4ad1      	ldr	r2, [pc, #836]	; (b7225c <TextPacket::read(BinaryStream&)+0x3b4>)
+  b71f18:	4bc3      	ldr	r3, [pc, #780]	; (b72228 <TextPacket::read(BinaryStream&)+0x380>)
+  b71f1a:	447a      	add	r2, pc
+  b71f1c:	589b      	ldr	r3, [r3, r2]
+  b71f1e:	1f0a      	subs	r2, r1, #4
+  b71f20:	2b00      	cmp	r3, #0
+  b71f22:	f000 80ab 	beq.w	b7207c <TextPacket::read(BinaryStream&)+0x1d4>
+  b71f26:	f3bf 8f5b 	dmb	ish
+  b71f2a:	e852 1f00 	ldrex	r1, [r2]
+  b71f2e:	1e4b      	subs	r3, r1, #1
+  b71f30:	e842 3700 	strex	r7, r3, [r2]
+  b71f34:	2f00      	cmp	r7, #0
+  b71f36:	d1f8      	bne.n	b71f2a <TextPacket::read(BinaryStream&)+0x82>
+  b71f38:	f3bf 8f5b 	dmb	ish
+  b71f3c:	e0a1      	b.n	b72082 <TextPacket::read(BinaryStream&)+0x1da>
+  b71f3e:	f011 0f31 	tst.w	r1, #49	; 0x31
+  b71f42:	d015      	beq.n	b71f70 <TextPacket::read(BinaryStream&)+0xc8>
+  b71f44:	ae05      	add	r6, sp, #20
+  b71f46:	4629      	mov	r1, r5
+  b71f48:	4630      	mov	r0, r6
+  b71f4a:	f79f e76a 	blx	711e20 <ReadOnlyBinaryStream::getString()@plt>
+  b71f4e:	f104 0014 	add.w	r0, r4, #20
+  b71f52:	4631      	mov	r1, r6
+  b71f54:	f00e ecaa 	blx	b808ac <std::vector<PackModel, std::allocator<PackModel> >::erase(__gnu_cxx::__normal_iterator<PackModel const*, std::vector<PackModel, std::allocator<PackModel> > >, __gnu_cxx::__normal_iterator<PackModel const*, std::vector<PackModel, std::allocator<PackModel> > >)+0x130>
+  b71f58:	48c3      	ldr	r0, [pc, #780]	; (b72268 <TextPacket::read(BinaryStream&)+0x3c0>)
+  b71f5a:	4ab1      	ldr	r2, [pc, #708]	; (b72220 <TextPacket::read(BinaryStream&)+0x378>)
+  b71f5c:	4478      	add	r0, pc
+  b71f5e:	9905      	ldr	r1, [sp, #20]
+  b71f60:	5812      	ldr	r2, [r2, r0]
+  b71f62:	f1a1 000c 	sub.w	r0, r1, #12
+  b71f66:	4290      	cmp	r0, r2
+  b71f68:	d176      	bne.n	b72058 <TextPacket::read(BinaryStream&)+0x1b0>
+  b71f6a:	b007      	add	sp, #28
+  b71f6c:	e8bd 8ff0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, pc}
+  b71f70:	2802      	cmp	r0, #2
+  b71f72:	d1fa      	bne.n	b71f6a <TextPacket::read(BinaryStream&)+0xc2>
+  b71f74:	ae02      	add	r6, sp, #8
+  b71f76:	4629      	mov	r1, r5
+  b71f78:	4630      	mov	r0, r6
+  b71f7a:	f79f e752 	blx	711e20 <ReadOnlyBinaryStream::getString()@plt>
+  b71f7e:	f104 0014 	add.w	r0, r4, #20
+  b71f82:	4631      	mov	r1, r6
+  b71f84:	f00e ec92 	blx	b808ac <std::vector<PackModel, std::allocator<PackModel> >::erase(__gnu_cxx::__normal_iterator<PackModel const*, std::vector<PackModel, std::allocator<PackModel> > >, __gnu_cxx::__normal_iterator<PackModel const*, std::vector<PackModel, std::allocator<PackModel> > >)+0x130>
+  b71f88:	48a8      	ldr	r0, [pc, #672]	; (b7222c <TextPacket::read(BinaryStream&)+0x384>)
+  b71f8a:	4fa5      	ldr	r7, [pc, #660]	; (b72220 <TextPacket::read(BinaryStream&)+0x378>)
+  b71f8c:	4478      	add	r0, pc
+  b71f8e:	9902      	ldr	r1, [sp, #8]
+  b71f90:	583a      	ldr	r2, [r7, r0]
+  b71f92:	f1a1 000c 	sub.w	r0, r1, #12
+  b71f96:	4290      	cmp	r0, r2
+  b71f98:	f040 80ab 	bne.w	b720f2 <TextPacket::read(BinaryStream&)+0x24a>
+  b71f9c:	4628      	mov	r0, r5
+  b71f9e:	f7a2 e7f4 	blx	714f88 <ReadOnlyBinaryStream::getUnsignedVarInt()@plt>
+  b71fa2:	4606      	mov	r6, r0
+  b71fa4:	2e00      	cmp	r6, #0
+  b71fa6:	d0e0      	beq.n	b71f6a <TextPacket::read(BinaryStream&)+0xc2>
+  b71fa8:	48a4      	ldr	r0, [pc, #656]	; (b7223c <TextPacket::read(BinaryStream&)+0x394>)
+  b71faa:	f104 0818 	add.w	r8, r4, #24
+  b71fae:	499e      	ldr	r1, [pc, #632]	; (b72228 <TextPacket::read(BinaryStream&)+0x380>)
+  b71fb0:	f10d 0a04 	add.w	sl, sp, #4
+  b71fb4:	4478      	add	r0, pc
+  b71fb6:	f04f 0900 	mov.w	r9, #0
+  b71fba:	f857 b000 	ldr.w	fp, [r7, r0]
+  b71fbe:	5808      	ldr	r0, [r1, r0]
+  b71fc0:	9000      	str	r0, [sp, #0]
+  b71fc2:	e019      	b.n	b71ff8 <TextPacket::read(BinaryStream&)+0x150>
+  b71fc4:	1f0a      	subs	r2, r1, #4
+  b71fc6:	9900      	ldr	r1, [sp, #0]
+  b71fc8:	b169      	cbz	r1, b71fe6 <TextPacket::read(BinaryStream&)+0x13e>
+  b71fca:	46bc      	mov	ip, r7
+  b71fcc:	f3bf 8f5b 	dmb	ish
+  b71fd0:	e852 1f00 	ldrex	r1, [r2]
+  b71fd4:	1e4b      	subs	r3, r1, #1
+  b71fd6:	e842 3700 	strex	r7, r3, [r2]
+  b71fda:	2f00      	cmp	r7, #0
+  b71fdc:	d1f8      	bne.n	b71fd0 <TextPacket::read(BinaryStream&)+0x128>
+  b71fde:	f3bf 8f5b 	dmb	ish
+  b71fe2:	4667      	mov	r7, ip
+  b71fe4:	e002      	b.n	b71fec <TextPacket::read(BinaryStream&)+0x144>
+  b71fe6:	6811      	ldr	r1, [r2, #0]
+  b71fe8:	1e4b      	subs	r3, r1, #1
+  b71fea:	6013      	str	r3, [r2, #0]
+  b71fec:	2900      	cmp	r1, #0
+  b71fee:	dc1c      	bgt.n	b7202a <TextPacket::read(BinaryStream&)+0x182>
+  b71ff0:	a906      	add	r1, sp, #24
+  b71ff2:	f00e ec44 	blx	b8087c <std::vector<PackModel, std::allocator<PackModel> >::erase(__gnu_cxx::__normal_iterator<PackModel const*, std::vector<PackModel, std::allocator<PackModel> > >, __gnu_cxx::__normal_iterator<PackModel const*, std::vector<PackModel, std::allocator<PackModel> > >)+0x100>
+  b71ff6:	e018      	b.n	b7202a <TextPacket::read(BinaryStream&)+0x182>
+  b71ff8:	4650      	mov	r0, sl
+  b71ffa:	4629      	mov	r1, r5
+  b71ffc:	f79f e710 	blx	711e20 <ReadOnlyBinaryStream::getString()@plt>
+  b72000:	e9d4 0107 	ldrd	r0, r1, [r4, #28]
+  b72004:	4288      	cmp	r0, r1
+  b72006:	d007      	beq.n	b72018 <TextPacket::read(BinaryStream&)+0x170>
+  b72008:	9901      	ldr	r1, [sp, #4]
+  b7200a:	f840 1b04 	str.w	r1, [r0], #4
+  b7200e:	f10b 010c 	add.w	r1, fp, #12
+  b72012:	9101      	str	r1, [sp, #4]
+  b72014:	61e0      	str	r0, [r4, #28]
+  b72016:	e004      	b.n	b72022 <TextPacket::read(BinaryStream&)+0x17a>
+  b72018:	4640      	mov	r0, r8
+  b7201a:	4651      	mov	r1, sl
+  b7201c:	f79b e738 	blx	70de90 <void std::vector<std::string, std::allocator<std::string> >::_M_emplace_back_aux<std::string>(std::string&&)@plt>
+  b72020:	9901      	ldr	r1, [sp, #4]
+  b72022:	f1a1 000c 	sub.w	r0, r1, #12
+  b72026:	4558      	cmp	r0, fp
+  b72028:	d1cc      	bne.n	b71fc4 <TextPacket::read(BinaryStream&)+0x11c>
+  b7202a:	f109 0901 	add.w	r9, r9, #1
+  b7202e:	45b1      	cmp	r9, r6
+  b72030:	d1e2      	bne.n	b71ff8 <TextPacket::read(BinaryStream&)+0x150>
+  b72032:	e79a      	b.n	b71f6a <TextPacket::read(BinaryStream&)+0xc2>
+  b72034:	4a85      	ldr	r2, [pc, #532]	; (b7224c <TextPacket::read(BinaryStream&)+0x3a4>)
+  b72036:	4b7c      	ldr	r3, [pc, #496]	; (b72228 <TextPacket::read(BinaryStream&)+0x380>)
+  b72038:	447a      	add	r2, pc
+  b7203a:	589b      	ldr	r3, [r3, r2]
+  b7203c:	1f0a      	subs	r2, r1, #4
+  b7203e:	b34b      	cbz	r3, b72094 <TextPacket::read(BinaryStream&)+0x1ec>
+  b72040:	f3bf 8f5b 	dmb	ish
+  b72044:	e852 1f00 	ldrex	r1, [r2]
+  b72048:	1e4b      	subs	r3, r1, #1
+  b7204a:	e842 3600 	strex	r6, r3, [r2]
+  b7204e:	2e00      	cmp	r6, #0
+  b72050:	d1f8      	bne.n	b72044 <TextPacket::read(BinaryStream&)+0x19c>
+  b72052:	f3bf 8f5b 	dmb	ish
+  b72056:	e020      	b.n	b7209a <TextPacket::read(BinaryStream&)+0x1f2>
+  b72058:	4a84      	ldr	r2, [pc, #528]	; (b7226c <TextPacket::read(BinaryStream&)+0x3c4>)
+  b7205a:	4b73      	ldr	r3, [pc, #460]	; (b72228 <TextPacket::read(BinaryStream&)+0x380>)
+  b7205c:	447a      	add	r2, pc
+  b7205e:	589b      	ldr	r3, [r3, r2]
+  b72060:	1f0a      	subs	r2, r1, #4
+  b72062:	b15b      	cbz	r3, b7207c <TextPacket::read(BinaryStream&)+0x1d4>
+  b72064:	f3bf 8f5b 	dmb	ish
+  b72068:	e852 1f00 	ldrex	r1, [r2]
+  b7206c:	1e4b      	subs	r3, r1, #1
+  b7206e:	e842 3700 	strex	r7, r3, [r2]
+  b72072:	2f00      	cmp	r7, #0
+  b72074:	d1f8      	bne.n	b72068 <TextPacket::read(BinaryStream&)+0x1c0>
+  b72076:	f3bf 8f5b 	dmb	ish
+  b7207a:	e002      	b.n	b72082 <TextPacket::read(BinaryStream&)+0x1da>
+  b7207c:	6811      	ldr	r1, [r2, #0]
+  b7207e:	1e4b      	subs	r3, r1, #1
+  b72080:	6013      	str	r3, [r2, #0]
+  b72082:	2900      	cmp	r1, #0
+  b72084:	f73f af71 	bgt.w	b71f6a <TextPacket::read(BinaryStream&)+0xc2>
+  b72088:	a906      	add	r1, sp, #24
+  b7208a:	f00e ebf8 	blx	b8087c <std::vector<PackModel, std::allocator<PackModel> >::erase(__gnu_cxx::__normal_iterator<PackModel const*, std::vector<PackModel, std::allocator<PackModel> > >, __gnu_cxx::__normal_iterator<PackModel const*, std::vector<PackModel, std::allocator<PackModel> > >)+0x100>
+  b7208e:	b007      	add	sp, #28
+  b72090:	e8bd 8ff0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, pc}
+  b72094:	6811      	ldr	r1, [r2, #0]
+  b72096:	1e4b      	subs	r3, r1, #1
+  b72098:	6013      	str	r3, [r2, #0]
+  b7209a:	2900      	cmp	r1, #0
+  b7209c:	f73f af29 	bgt.w	b71ef2 <TextPacket::read(BinaryStream&)+0x4a>
+  b720a0:	a906      	add	r1, sp, #24
+  b720a2:	f00e ebec 	blx	b8087c <std::vector<PackModel, std::allocator<PackModel> >::erase(__gnu_cxx::__normal_iterator<PackModel const*, std::vector<PackModel, std::allocator<PackModel> > >, __gnu_cxx::__normal_iterator<PackModel const*, std::vector<PackModel, std::allocator<PackModel> > >)+0x100>
+  b720a6:	e724      	b.n	b71ef2 <TextPacket::read(BinaryStream&)+0x4a>
+  b720a8:	4a62      	ldr	r2, [pc, #392]	; (b72234 <TextPacket::read(BinaryStream&)+0x38c>)
+  b720aa:	4604      	mov	r4, r0
+  b720ac:	9901      	ldr	r1, [sp, #4]
+  b720ae:	447a      	add	r2, pc
+  b720b0:	f1a1 000c 	sub.w	r0, r1, #12
+  b720b4:	58ba      	ldr	r2, [r7, r2]
+  b720b6:	4290      	cmp	r0, r2
+  b720b8:	d018      	beq.n	b720ec <TextPacket::read(BinaryStream&)+0x244>
+  b720ba:	4a5f      	ldr	r2, [pc, #380]	; (b72238 <TextPacket::read(BinaryStream&)+0x390>)
+  b720bc:	4b5a      	ldr	r3, [pc, #360]	; (b72228 <TextPacket::read(BinaryStream&)+0x380>)
+  b720be:	447a      	add	r2, pc
+  b720c0:	589b      	ldr	r3, [r3, r2]
+  b720c2:	1f0a      	subs	r2, r1, #4
+  b720c4:	2b00      	cmp	r3, #0
+  b720c6:	f000 80a4 	beq.w	b72212 <TextPacket::read(BinaryStream&)+0x36a>
+  b720ca:	f3bf 8f5b 	dmb	ish
+  b720ce:	e852 1f00 	ldrex	r1, [r2]
+  b720d2:	1e4b      	subs	r3, r1, #1
+  b720d4:	e842 3700 	strex	r7, r3, [r2]
+  b720d8:	2f00      	cmp	r7, #0
+  b720da:	d1f8      	bne.n	b720ce <TextPacket::read(BinaryStream&)+0x226>
+  b720dc:	f3bf 8f5b 	dmb	ish
+  b720e0:	2900      	cmp	r1, #0
+  b720e2:	bfdc      	itt	le
+  b720e4:	f10d 0118 	addle.w	r1, sp, #24
+  b720e8:	f00e ebc8 	blxle	b8087c <std::vector<PackModel, std::allocator<PackModel> >::erase(__gnu_cxx::__normal_iterator<PackModel const*, std::vector<PackModel, std::allocator<PackModel> > >, __gnu_cxx::__normal_iterator<PackModel const*, std::vector<PackModel, std::allocator<PackModel> > >)+0x100>
+  b720ec:	4620      	mov	r0, r4
+  b720ee:	f79b e63a 	blx	70dd64 <_Unwind_Resume@plt>
+  b720f2:	4a4f      	ldr	r2, [pc, #316]	; (b72230 <TextPacket::read(BinaryStream&)+0x388>)
+  b720f4:	4b4c      	ldr	r3, [pc, #304]	; (b72228 <TextPacket::read(BinaryStream&)+0x380>)
+  b720f6:	447a      	add	r2, pc
+  b720f8:	589b      	ldr	r3, [r3, r2]
+  b720fa:	1f0a      	subs	r2, r1, #4
+  b720fc:	b16b      	cbz	r3, b7211a <TextPacket::read(BinaryStream&)+0x272>
+  b720fe:	463e      	mov	r6, r7
+  b72100:	f3bf 8f5b 	dmb	ish
+  b72104:	e852 1f00 	ldrex	r1, [r2]
+  b72108:	1e4b      	subs	r3, r1, #1
+  b7210a:	e842 3700 	strex	r7, r3, [r2]
+  b7210e:	2f00      	cmp	r7, #0
+  b72110:	d1f8      	bne.n	b72104 <TextPacket::read(BinaryStream&)+0x25c>
+  b72112:	f3bf 8f5b 	dmb	ish
+  b72116:	4637      	mov	r7, r6
+  b72118:	e002      	b.n	b72120 <TextPacket::read(BinaryStream&)+0x278>
+  b7211a:	6811      	ldr	r1, [r2, #0]
+  b7211c:	1e4b      	subs	r3, r1, #1
+  b7211e:	6013      	str	r3, [r2, #0]
+  b72120:	2900      	cmp	r1, #0
+  b72122:	f73f af3b 	bgt.w	b71f9c <TextPacket::read(BinaryStream&)+0xf4>
+  b72126:	a906      	add	r1, sp, #24
+  b72128:	f00e eba8 	blx	b8087c <std::vector<PackModel, std::allocator<PackModel> >::erase(__gnu_cxx::__normal_iterator<PackModel const*, std::vector<PackModel, std::allocator<PackModel> > >, __gnu_cxx::__normal_iterator<PackModel const*, std::vector<PackModel, std::allocator<PackModel> > >)+0x100>
+  b7212c:	e736      	b.n	b71f9c <TextPacket::read(BinaryStream&)+0xf4>
+  b7212e:	4a44      	ldr	r2, [pc, #272]	; (b72240 <TextPacket::read(BinaryStream&)+0x398>)
+  b72130:	4604      	mov	r4, r0
+  b72132:	4b3b      	ldr	r3, [pc, #236]	; (b72220 <TextPacket::read(BinaryStream&)+0x378>)
+  b72134:	447a      	add	r2, pc
+  b72136:	9904      	ldr	r1, [sp, #16]
+  b72138:	f1a1 000c 	sub.w	r0, r1, #12
+  b7213c:	589a      	ldr	r2, [r3, r2]
+  b7213e:	4290      	cmp	r0, r2
+  b72140:	d0d4      	beq.n	b720ec <TextPacket::read(BinaryStream&)+0x244>
+  b72142:	4a40      	ldr	r2, [pc, #256]	; (b72244 <TextPacket::read(BinaryStream&)+0x39c>)
+  b72144:	4b38      	ldr	r3, [pc, #224]	; (b72228 <TextPacket::read(BinaryStream&)+0x380>)
+  b72146:	447a      	add	r2, pc
+  b72148:	589b      	ldr	r3, [r3, r2]
+  b7214a:	1f0a      	subs	r2, r1, #4
+  b7214c:	2b00      	cmp	r3, #0
+  b7214e:	d060      	beq.n	b72212 <TextPacket::read(BinaryStream&)+0x36a>
+  b72150:	f3bf 8f5b 	dmb	ish
+  b72154:	e852 1f00 	ldrex	r1, [r2]
+  b72158:	1e4b      	subs	r3, r1, #1
+  b7215a:	e842 3700 	strex	r7, r3, [r2]
+  b7215e:	2f00      	cmp	r7, #0
+  b72160:	d1f8      	bne.n	b72154 <TextPacket::read(BinaryStream&)+0x2ac>
+  b72162:	f3bf 8f5b 	dmb	ish
+  b72166:	e7bb      	b.n	b720e0 <TextPacket::read(BinaryStream&)+0x238>
+  b72168:	4a39      	ldr	r2, [pc, #228]	; (b72250 <TextPacket::read(BinaryStream&)+0x3a8>)
+  b7216a:	4604      	mov	r4, r0
+  b7216c:	9903      	ldr	r1, [sp, #12]
+  b7216e:	447a      	add	r2, pc
+  b72170:	f1a1 000c 	sub.w	r0, r1, #12
+  b72174:	58ba      	ldr	r2, [r7, r2]
+  b72176:	4290      	cmp	r0, r2
+  b72178:	d0b8      	beq.n	b720ec <TextPacket::read(BinaryStream&)+0x244>
+  b7217a:	4a36      	ldr	r2, [pc, #216]	; (b72254 <TextPacket::read(BinaryStream&)+0x3ac>)
+  b7217c:	4b2a      	ldr	r3, [pc, #168]	; (b72228 <TextPacket::read(BinaryStream&)+0x380>)
+  b7217e:	447a      	add	r2, pc
+  b72180:	589b      	ldr	r3, [r3, r2]
+  b72182:	1f0a      	subs	r2, r1, #4
+  b72184:	2b00      	cmp	r3, #0
+  b72186:	d044      	beq.n	b72212 <TextPacket::read(BinaryStream&)+0x36a>
+  b72188:	f3bf 8f5b 	dmb	ish
+  b7218c:	e852 1f00 	ldrex	r1, [r2]
+  b72190:	1e4b      	subs	r3, r1, #1
+  b72192:	e842 3700 	strex	r7, r3, [r2]
+  b72196:	2f00      	cmp	r7, #0
+  b72198:	d1f8      	bne.n	b7218c <TextPacket::read(BinaryStream&)+0x2e4>
+  b7219a:	f3bf 8f5b 	dmb	ish
+  b7219e:	e79f      	b.n	b720e0 <TextPacket::read(BinaryStream&)+0x238>
+  b721a0:	4a2f      	ldr	r2, [pc, #188]	; (b72260 <TextPacket::read(BinaryStream&)+0x3b8>)
+  b721a2:	4604      	mov	r4, r0
+  b721a4:	4b1e      	ldr	r3, [pc, #120]	; (b72220 <TextPacket::read(BinaryStream&)+0x378>)
+  b721a6:	447a      	add	r2, pc
+  b721a8:	9905      	ldr	r1, [sp, #20]
+  b721aa:	f1a1 000c 	sub.w	r0, r1, #12
+  b721ae:	589a      	ldr	r2, [r3, r2]
+  b721b0:	4290      	cmp	r0, r2
+  b721b2:	d09b      	beq.n	b720ec <TextPacket::read(BinaryStream&)+0x244>
+  b721b4:	4a2b      	ldr	r2, [pc, #172]	; (b72264 <TextPacket::read(BinaryStream&)+0x3bc>)
+  b721b6:	4b1c      	ldr	r3, [pc, #112]	; (b72228 <TextPacket::read(BinaryStream&)+0x380>)
+  b721b8:	447a      	add	r2, pc
+  b721ba:	589b      	ldr	r3, [r3, r2]
+  b721bc:	1f0a      	subs	r2, r1, #4
+  b721be:	b343      	cbz	r3, b72212 <TextPacket::read(BinaryStream&)+0x36a>
+  b721c0:	f3bf 8f5b 	dmb	ish
+  b721c4:	e852 1f00 	ldrex	r1, [r2]
+  b721c8:	1e4b      	subs	r3, r1, #1
+  b721ca:	e842 3700 	strex	r7, r3, [r2]
+  b721ce:	2f00      	cmp	r7, #0
+  b721d0:	d1f8      	bne.n	b721c4 <TextPacket::read(BinaryStream&)+0x31c>
+  b721d2:	f3bf 8f5b 	dmb	ish
+  b721d6:	e783      	b.n	b720e0 <TextPacket::read(BinaryStream&)+0x238>
+  b721d8:	4a10      	ldr	r2, [pc, #64]	; (b7221c <TextPacket::read(BinaryStream&)+0x374>)
+  b721da:	4604      	mov	r4, r0
+  b721dc:	4b10      	ldr	r3, [pc, #64]	; (b72220 <TextPacket::read(BinaryStream&)+0x378>)
+  b721de:	447a      	add	r2, pc
+  b721e0:	9902      	ldr	r1, [sp, #8]
+  b721e2:	f1a1 000c 	sub.w	r0, r1, #12
+  b721e6:	589a      	ldr	r2, [r3, r2]
+  b721e8:	4290      	cmp	r0, r2
+  b721ea:	f43f af7f 	beq.w	b720ec <TextPacket::read(BinaryStream&)+0x244>
+  b721ee:	4a0d      	ldr	r2, [pc, #52]	; (b72224 <TextPacket::read(BinaryStream&)+0x37c>)
+  b721f0:	4b0d      	ldr	r3, [pc, #52]	; (b72228 <TextPacket::read(BinaryStream&)+0x380>)
+  b721f2:	447a      	add	r2, pc
+  b721f4:	589b      	ldr	r3, [r3, r2]
+  b721f6:	1f0a      	subs	r2, r1, #4
+  b721f8:	b15b      	cbz	r3, b72212 <TextPacket::read(BinaryStream&)+0x36a>
+  b721fa:	f3bf 8f5b 	dmb	ish
+  b721fe:	e852 1f00 	ldrex	r1, [r2]
+  b72202:	1e4b      	subs	r3, r1, #1
+  b72204:	e842 3700 	strex	r7, r3, [r2]
+  b72208:	2f00      	cmp	r7, #0
+  b7220a:	d1f8      	bne.n	b721fe <TextPacket::read(BinaryStream&)+0x356>
+  b7220c:	f3bf 8f5b 	dmb	ish
+  b72210:	e766      	b.n	b720e0 <TextPacket::read(BinaryStream&)+0x238>
+  b72212:	6811      	ldr	r1, [r2, #0]
+  b72214:	1e4b      	subs	r3, r1, #1
+  b72216:	6013      	str	r3, [r2, #0]
+  b72218:	e762      	b.n	b720e0 <TextPacket::read(BinaryStream&)+0x238>
+  b7221a:	bf00      	nop
+  b7221c:	8722      	strh	r2, [r4, #56]	; 0x38
+  b7221e:	0179      	lsls	r1, r7, #5
+  b72220:	8638      	strh	r0, [r7, #48]	; 0x30
+  b72222:	ffff 870e 	vcvt.s<illegal width 64>.f<illegal width 64>	d24, d14
+  b72226:	0179      	lsls	r1, r7, #5
+  b72228:	863c      	strh	r4, [r7, #48]	; 0x30
+  b7222a:	ffff 8974 	vqrshrn.u64	d24, q10, #1
+  b7222e:	0179      	lsls	r1, r7, #5
+  b72230:	880a      	ldrh	r2, [r1, #0]
+  b72232:	0179      	lsls	r1, r7, #5
+  b72234:	8852      	ldrh	r2, [r2, #2]
+  b72236:	0179      	lsls	r1, r7, #5
+  b72238:	8842      	ldrh	r2, [r0, #2]
+  b7223a:	0179      	lsls	r1, r7, #5
+  b7223c:	894c      	ldrh	r4, [r1, #10]
+  b7223e:	0179      	lsls	r1, r7, #5
+  b72240:	87cc      	strh	r4, [r1, #62]	; 0x3e
+  b72242:	0179      	lsls	r1, r7, #5
+  b72244:	87ba      	strh	r2, [r7, #60]	; 0x3c
+  b72246:	0179      	lsls	r1, r7, #5
+  b72248:	8a1e      	ldrh	r6, [r3, #16]
+  b7224a:	0179      	lsls	r1, r7, #5
+  b7224c:	88c8      	ldrh	r0, [r1, #6]
+  b7224e:	0179      	lsls	r1, r7, #5
+  b72250:	8792      	strh	r2, [r2, #60]	; 0x3c
+  b72252:	0179      	lsls	r1, r7, #5
+  b72254:	8782      	strh	r2, [r0, #60]	; 0x3c
+  b72256:	0179      	lsls	r1, r7, #5
+  b72258:	89f6      	ldrh	r6, [r6, #14]
+  b7225a:	0179      	lsls	r1, r7, #5
+  b7225c:	89e6      	ldrh	r6, [r4, #14]
+  b7225e:	0179      	lsls	r1, r7, #5
+  b72260:	875a      	strh	r2, [r3, #58]	; 0x3a
+  b72262:	0179      	lsls	r1, r7, #5
+  b72264:	8748      	strh	r0, [r1, #58]	; 0x3a
+  b72266:	0179      	lsls	r1, r7, #5
+  b72268:	89a4      	ldrh	r4, [r4, #12]
+  b7226a:	0179      	lsls	r1, r7, #5
+  b7226c:	88a4      	ldrh	r4, [r4, #4]
+  b7226e:	0179      	lsls	r1, r7, #5

@@ -1,0 +1,89 @@
+  b587a8:	b5f0      	push	{r4, r5, r6, r7, lr}
+  b587aa:	b08d      	sub	sp, #52	; 0x34
+  b587ac:	460c      	mov	r4, r1
+  b587ae:	4605      	mov	r5, r0
+  b587b0:	4620      	mov	r0, r4
+  b587b2:	f7b9 e32a 	blx	711e08 <ReadOnlyBinaryStream::getByte()@plt>
+  b587b6:	7328      	strb	r0, [r5, #12]
+  b587b8:	4620      	mov	r0, r4
+  b587ba:	f7bc e3ce 	blx	714f58 <ReadOnlyBinaryStream::getVarInt()@plt>
+  b587be:	6128      	str	r0, [r5, #16]
+  b587c0:	a808      	add	r0, sp, #32
+  b587c2:	4621      	mov	r1, r4
+  b587c4:	f7bc e3ce 	blx	714f64 <mce::UUID ReadOnlyBinaryStream::getType<mce::UUID>()@plt>
+  b587c8:	f8df e0ac 	ldr.w	lr, [pc, #172]	; b58878 <CraftingEventPacket::read(BinaryStream&)+0xd0>
+  b587cc:	492b      	ldr	r1, [pc, #172]	; (b5887c <CraftingEventPacket::read(BinaryStream&)+0xd4>)
+  b587ce:	44fe      	add	lr, pc
+  b587d0:	f8df c0ac 	ldr.w	ip, [pc, #172]	; b58880 <CraftingEventPacket::read(BinaryStream&)+0xd8>
+  b587d4:	f851 600e 	ldr.w	r6, [r1, lr]
+  b587d8:	e9dd 1308 	ldrd	r1, r3, [sp, #32]
+  b587dc:	e9dd 200a 	ldrd	r2, r0, [sp, #40]	; 0x28
+  b587e0:	e9c5 1306 	strd	r1, r3, [r5, #24]
+  b587e4:	e9c5 2008 	strd	r2, r0, [r5, #32]
+  b587e8:	2001      	movs	r0, #1
+  b587ea:	f85c 700e 	ldr.w	r7, [ip, lr]
+  b587ee:	f7b5 e338 	blx	70de60 <operator new(unsigned int)@plt>
+  b587f2:	9004      	str	r0, [sp, #16]
+  b587f4:	e9cd 7606 	strd	r7, r6, [sp, #24]
+  b587f8:	f105 0128 	add.w	r1, r5, #40	; 0x28
+  b587fc:	aa04      	add	r2, sp, #16
+  b587fe:	4620      	mov	r0, r4
+  b58800:	f7bc e3b6 	blx	714f70 <void ReadOnlyBinaryStream::readVectorList<ItemInstance>(std::vector<ItemInstance, std::allocator<ItemInstance> >&, std::function<ItemInstance (ReadOnlyBinaryStream&)>&&)@plt>
+  b58804:	9b06      	ldr	r3, [sp, #24]
+  b58806:	b11b      	cbz	r3, b58810 <CraftingEventPacket::read(BinaryStream&)+0x68>
+  b58808:	a804      	add	r0, sp, #16
+  b5880a:	2203      	movs	r2, #3
+  b5880c:	4601      	mov	r1, r0
+  b5880e:	4798      	blx	r3
+  b58810:	481c      	ldr	r0, [pc, #112]	; (b58884 <CraftingEventPacket::read(BinaryStream&)+0xdc>)
+  b58812:	491d      	ldr	r1, [pc, #116]	; (b58888 <CraftingEventPacket::read(BinaryStream&)+0xe0>)
+  b58814:	4a1d      	ldr	r2, [pc, #116]	; (b5888c <CraftingEventPacket::read(BinaryStream&)+0xe4>)
+  b58816:	4478      	add	r0, pc
+  b58818:	580e      	ldr	r6, [r1, r0]
+  b5881a:	5817      	ldr	r7, [r2, r0]
+  b5881c:	2001      	movs	r0, #1
+  b5881e:	f7b5 e320 	blx	70de60 <operator new(unsigned int)@plt>
+  b58822:	9000      	str	r0, [sp, #0]
+  b58824:	e9cd 6702 	strd	r6, r7, [sp, #8]
+  b58828:	f105 0134 	add.w	r1, r5, #52	; 0x34
+  b5882c:	466a      	mov	r2, sp
+  b5882e:	4620      	mov	r0, r4
+  b58830:	f7bc e39e 	blx	714f70 <void ReadOnlyBinaryStream::readVectorList<ItemInstance>(std::vector<ItemInstance, std::allocator<ItemInstance> >&, std::function<ItemInstance (ReadOnlyBinaryStream&)>&&)@plt>
+  b58834:	9b02      	ldr	r3, [sp, #8]
+  b58836:	b11b      	cbz	r3, b58840 <CraftingEventPacket::read(BinaryStream&)+0x98>
+  b58838:	4668      	mov	r0, sp
+  b5883a:	2203      	movs	r2, #3
+  b5883c:	4601      	mov	r1, r0
+  b5883e:	4798      	blx	r3
+  b58840:	b00d      	add	sp, #52	; 0x34
+  b58842:	bdf0      	pop	{r4, r5, r6, r7, pc}
+  b58844:	9b06      	ldr	r3, [sp, #24]
+  b58846:	4604      	mov	r4, r0
+  b58848:	b16b      	cbz	r3, b58866 <CraftingEventPacket::read(BinaryStream&)+0xbe>
+  b5884a:	a804      	add	r0, sp, #16
+  b5884c:	2203      	movs	r2, #3
+  b5884e:	4601      	mov	r1, r0
+  b58850:	4798      	blx	r3
+  b58852:	e008      	b.n	b58866 <CraftingEventPacket::read(BinaryStream&)+0xbe>
+  b58854:	f778 fb27 	bl	ad0ea6 <AppPlatform_android::getPlatformTempPath()+0x4>
+  b58858:	9b02      	ldr	r3, [sp, #8]
+  b5885a:	4604      	mov	r4, r0
+  b5885c:	b11b      	cbz	r3, b58866 <CraftingEventPacket::read(BinaryStream&)+0xbe>
+  b5885e:	4668      	mov	r0, sp
+  b58860:	2203      	movs	r2, #3
+  b58862:	4601      	mov	r1, r0
+  b58864:	4798      	blx	r3
+  b58866:	4620      	mov	r0, r4
+  b58868:	f7b5 e27c 	blx	70dd64 <_Unwind_Resume@plt>
+  b5886c:	f778 fb1b 	bl	ad0ea6 <AppPlatform_android::getPlatformTempPath()+0x4>
+  b58870:	f778 fb19 	bl	ad0ea6 <AppPlatform_android::getPlatformTempPath()+0x4>
+  b58874:	f778 fb17 	bl	ad0ea6 <AppPlatform_android::getPlatformTempPath()+0x4>
+  b58878:	2132      	movs	r1, #50	; 0x32
+  b5887a:	017b      	lsls	r3, r7, #5
+  b5887c:	8bf4      	ldrh	r4, [r6, #30]
+  b5887e:	ffff 8bf8 			; <UNDEFINED> instruction: 0xffff8bf8
+  b58882:	ffff 20ea 	vmla.i<illegal width 64>	q9, <illegal reg q15.5>, d26[0]
+  b58886:	017b      	lsls	r3, r7, #5
+  b58888:	8bfc      	ldrh	r4, [r7, #30]
+  b5888a:	ffff 8c00 	vdup.8	d24, d0[7]
+  b5888e:	ffff 4684 	vcvt.f<illegal width 64>.u<illegal width 64>	d20, d4

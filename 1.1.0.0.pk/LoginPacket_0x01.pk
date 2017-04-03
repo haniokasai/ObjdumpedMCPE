@@ -1,0 +1,204 @@
+  c9f79c:	b570      	push	{r4, r5, r6, lr}
+  c9f79e:	b088      	sub	sp, #32
+  c9f7a0:	4604      	mov	r4, r0
+  c9f7a2:	486e      	ldr	r0, [pc, #440]	; (c9f95c <LoginPacket::read(BinaryStream&)+0x1c0>)
+  c9f7a4:	460d      	mov	r5, r1
+  c9f7a6:	496e      	ldr	r1, [pc, #440]	; (c9f960 <LoginPacket::read(BinaryStream&)+0x1c4>)
+  c9f7a8:	4478      	add	r0, pc
+  c9f7aa:	5808      	ldr	r0, [r1, r0]
+  c9f7ac:	6806      	ldr	r6, [r0, #0]
+  c9f7ae:	4628      	mov	r0, r5
+  c9f7b0:	f67f e69a 	blx	71f4e8 <ReadOnlyBinaryStream::getSignedBigEndianInt()@plt>
+  c9f7b4:	6120      	str	r0, [r4, #16]
+  c9f7b6:	42b0      	cmp	r0, r6
+  c9f7b8:	d13a      	bne.n	c9f830 <LoginPacket::read(BinaryStream&)+0x94>
+  c9f7ba:	4628      	mov	r0, r5
+  c9f7bc:	f672 e324 	blx	711e08 <ReadOnlyBinaryStream::getByte()@plt>
+  c9f7c0:	ae06      	add	r6, sp, #24
+  c9f7c2:	7320      	strb	r0, [r4, #12]
+  c9f7c4:	4629      	mov	r1, r5
+  c9f7c6:	4630      	mov	r0, r6
+  c9f7c8:	f672 e32a 	blx	711e20 <ReadOnlyBinaryStream::getString()@plt>
+  c9f7cc:	a804      	add	r0, sp, #16
+  c9f7ce:	f10d 0217 	add.w	r2, sp, #23
+  c9f7d2:	4631      	mov	r1, r6
+  c9f7d4:	f67f e68e 	blx	71f4f4 <Util::decompress(std::string const&, bool&)@plt>
+  c9f7d8:	f89d 0017 	ldrb.w	r0, [sp, #23]
+  c9f7dc:	b1a8      	cbz	r0, c9f80a <LoginPacket::read(BinaryStream&)+0x6e>
+  c9f7de:	a801      	add	r0, sp, #4
+  c9f7e0:	a904      	add	r1, sp, #16
+  c9f7e2:	f67f e68e 	blx	71f500 <ConnectionRequest::fromString(std::string const&)@plt>
+  c9f7e6:	200c      	movs	r0, #12
+  c9f7e8:	f66e e33a 	blx	70de60 <operator new(unsigned int)@plt>
+  c9f7ec:	4605      	mov	r5, r0
+  c9f7ee:	a901      	add	r1, sp, #4
+  c9f7f0:	4628      	mov	r0, r5
+  c9f7f2:	f67f e410 	blx	71f014 <ConnectionRequest::ConnectionRequest(ConnectionRequest const&)@plt>
+  c9f7f6:	6960      	ldr	r0, [r4, #20]
+  c9f7f8:	6165      	str	r5, [r4, #20]
+  c9f7fa:	b118      	cbz	r0, c9f804 <LoginPacket::read(BinaryStream&)+0x68>
+  c9f7fc:	f67f e410 	blx	71f020 <ConnectionRequest::~ConnectionRequest()@plt>
+  c9f800:	f66e e29e 	blx	70dd40 <operator delete(void*)@plt>
+  c9f804:	a801      	add	r0, sp, #4
+  c9f806:	f67f e40c 	blx	71f020 <ConnectionRequest::~ConnectionRequest()@plt>
+  c9f80a:	485c      	ldr	r0, [pc, #368]	; (c9f97c <LoginPacket::read(BinaryStream&)+0x1e0>)
+  c9f80c:	4c56      	ldr	r4, [pc, #344]	; (c9f968 <LoginPacket::read(BinaryStream&)+0x1cc>)
+  c9f80e:	4478      	add	r0, pc
+  c9f810:	9904      	ldr	r1, [sp, #16]
+  c9f812:	5822      	ldr	r2, [r4, r0]
+  c9f814:	f1a1 000c 	sub.w	r0, r1, #12
+  c9f818:	4290      	cmp	r0, r2
+  c9f81a:	d110      	bne.n	c9f83e <LoginPacket::read(BinaryStream&)+0xa2>
+  c9f81c:	4859      	ldr	r0, [pc, #356]	; (c9f984 <LoginPacket::read(BinaryStream&)+0x1e8>)
+  c9f81e:	9906      	ldr	r1, [sp, #24]
+  c9f820:	4478      	add	r0, pc
+  c9f822:	5822      	ldr	r2, [r4, r0]
+  c9f824:	f1a1 000c 	sub.w	r0, r1, #12
+  c9f828:	4290      	cmp	r0, r2
+  c9f82a:	d11a      	bne.n	c9f862 <LoginPacket::read(BinaryStream&)+0xc6>
+  c9f82c:	b008      	add	sp, #32
+  c9f82e:	bd70      	pop	{r4, r5, r6, pc}
+  c9f830:	68e8      	ldr	r0, [r5, #12]
+  c9f832:	6800      	ldr	r0, [r0, #0]
+  c9f834:	f850 0c0c 	ldr.w	r0, [r0, #-12]
+  c9f838:	6068      	str	r0, [r5, #4]
+  c9f83a:	b008      	add	sp, #32
+  c9f83c:	bd70      	pop	{r4, r5, r6, pc}
+  c9f83e:	4a50      	ldr	r2, [pc, #320]	; (c9f980 <LoginPacket::read(BinaryStream&)+0x1e4>)
+  c9f840:	4b4b      	ldr	r3, [pc, #300]	; (c9f970 <LoginPacket::read(BinaryStream&)+0x1d4>)
+  c9f842:	447a      	add	r2, pc
+  c9f844:	589b      	ldr	r3, [r3, r2]
+  c9f846:	1f0a      	subs	r2, r1, #4
+  c9f848:	b1eb      	cbz	r3, c9f886 <LoginPacket::read(BinaryStream&)+0xea>
+  c9f84a:	f3bf 8f5b 	dmb	ish
+  c9f84e:	e852 1f00 	ldrex	r1, [r2]
+  c9f852:	1e4b      	subs	r3, r1, #1
+  c9f854:	e842 3600 	strex	r6, r3, [r2]
+  c9f858:	2e00      	cmp	r6, #0
+  c9f85a:	d1f8      	bne.n	c9f84e <LoginPacket::read(BinaryStream&)+0xb2>
+  c9f85c:	f3bf 8f5b 	dmb	ish
+  c9f860:	e014      	b.n	c9f88c <LoginPacket::read(BinaryStream&)+0xf0>
+  c9f862:	4a49      	ldr	r2, [pc, #292]	; (c9f988 <LoginPacket::read(BinaryStream&)+0x1ec>)
+  c9f864:	4b42      	ldr	r3, [pc, #264]	; (c9f970 <LoginPacket::read(BinaryStream&)+0x1d4>)
+  c9f866:	447a      	add	r2, pc
+  c9f868:	589b      	ldr	r3, [r3, r2]
+  c9f86a:	1f0a      	subs	r2, r1, #4
+  c9f86c:	b1a3      	cbz	r3, c9f898 <LoginPacket::read(BinaryStream&)+0xfc>
+  c9f86e:	f3bf 8f5b 	dmb	ish
+  c9f872:	e852 1f00 	ldrex	r1, [r2]
+  c9f876:	1e4b      	subs	r3, r1, #1
+  c9f878:	e842 3600 	strex	r6, r3, [r2]
+  c9f87c:	2e00      	cmp	r6, #0
+  c9f87e:	d1f8      	bne.n	c9f872 <LoginPacket::read(BinaryStream&)+0xd6>
+  c9f880:	f3bf 8f5b 	dmb	ish
+  c9f884:	e00b      	b.n	c9f89e <LoginPacket::read(BinaryStream&)+0x102>
+  c9f886:	6811      	ldr	r1, [r2, #0]
+  c9f888:	1e4b      	subs	r3, r1, #1
+  c9f88a:	6013      	str	r3, [r2, #0]
+  c9f88c:	2900      	cmp	r1, #0
+  c9f88e:	dcc5      	bgt.n	c9f81c <LoginPacket::read(BinaryStream&)+0x80>
+  c9f890:	a907      	add	r1, sp, #28
+  c9f892:	f2d6 ed92 	blx	f763b8 <ContainerScreenController::_getCoalesceOrder(std::string const&) const+0x18>
+  c9f896:	e7c1      	b.n	c9f81c <LoginPacket::read(BinaryStream&)+0x80>
+  c9f898:	6811      	ldr	r1, [r2, #0]
+  c9f89a:	1e4b      	subs	r3, r1, #1
+  c9f89c:	6013      	str	r3, [r2, #0]
+  c9f89e:	2900      	cmp	r1, #0
+  c9f8a0:	dcc4      	bgt.n	c9f82c <LoginPacket::read(BinaryStream&)+0x90>
+  c9f8a2:	a904      	add	r1, sp, #16
+  c9f8a4:	f2d6 ed88 	blx	f763b8 <ContainerScreenController::_getCoalesceOrder(std::string const&) const+0x18>
+  c9f8a8:	e7c0      	b.n	c9f82c <LoginPacket::read(BinaryStream&)+0x90>
+  c9f8aa:	4604      	mov	r4, r0
+  c9f8ac:	e013      	b.n	c9f8d6 <LoginPacket::read(BinaryStream&)+0x13a>
+  c9f8ae:	4604      	mov	r4, r0
+  c9f8b0:	e008      	b.n	c9f8c4 <LoginPacket::read(BinaryStream&)+0x128>
+  c9f8b2:	4604      	mov	r4, r0
+  c9f8b4:	e003      	b.n	c9f8be <LoginPacket::read(BinaryStream&)+0x122>
+  c9f8b6:	4604      	mov	r4, r0
+  c9f8b8:	4628      	mov	r0, r5
+  c9f8ba:	f66e e242 	blx	70dd40 <operator delete(void*)@plt>
+  c9f8be:	a801      	add	r0, sp, #4
+  c9f8c0:	f67f e3ae 	blx	71f020 <ConnectionRequest::~ConnectionRequest()@plt>
+  c9f8c4:	4827      	ldr	r0, [pc, #156]	; (c9f964 <LoginPacket::read(BinaryStream&)+0x1c8>)
+  c9f8c6:	4a28      	ldr	r2, [pc, #160]	; (c9f968 <LoginPacket::read(BinaryStream&)+0x1cc>)
+  c9f8c8:	4478      	add	r0, pc
+  c9f8ca:	9904      	ldr	r1, [sp, #16]
+  c9f8cc:	5812      	ldr	r2, [r2, r0]
+  c9f8ce:	f1a1 000c 	sub.w	r0, r1, #12
+  c9f8d2:	4290      	cmp	r0, r2
+  c9f8d4:	d122      	bne.n	c9f91c <LoginPacket::read(BinaryStream&)+0x180>
+  c9f8d6:	4827      	ldr	r0, [pc, #156]	; (c9f974 <LoginPacket::read(BinaryStream&)+0x1d8>)
+  c9f8d8:	4a23      	ldr	r2, [pc, #140]	; (c9f968 <LoginPacket::read(BinaryStream&)+0x1cc>)
+  c9f8da:	4478      	add	r0, pc
+  c9f8dc:	9906      	ldr	r1, [sp, #24]
+  c9f8de:	5812      	ldr	r2, [r2, r0]
+  c9f8e0:	f1a1 000c 	sub.w	r0, r1, #12
+  c9f8e4:	4290      	cmp	r0, r2
+  c9f8e6:	d016      	beq.n	c9f916 <LoginPacket::read(BinaryStream&)+0x17a>
+  c9f8e8:	4a23      	ldr	r2, [pc, #140]	; (c9f978 <LoginPacket::read(BinaryStream&)+0x1dc>)
+  c9f8ea:	4b21      	ldr	r3, [pc, #132]	; (c9f970 <LoginPacket::read(BinaryStream&)+0x1d4>)
+  c9f8ec:	447a      	add	r2, pc
+  c9f8ee:	589b      	ldr	r3, [r3, r2]
+  c9f8f0:	1f0a      	subs	r2, r1, #4
+  c9f8f2:	b373      	cbz	r3, c9f952 <LoginPacket::read(BinaryStream&)+0x1b6>
+  c9f8f4:	f3bf 8f5b 	dmb	ish
+  c9f8f8:	e852 1f00 	ldrex	r1, [r2]
+  c9f8fc:	1e4b      	subs	r3, r1, #1
+  c9f8fe:	e842 3600 	strex	r6, r3, [r2]
+  c9f902:	2e00      	cmp	r6, #0
+  c9f904:	d1f8      	bne.n	c9f8f8 <LoginPacket::read(BinaryStream&)+0x15c>
+  c9f906:	f3bf 8f5b 	dmb	ish
+  c9f90a:	2900      	cmp	r1, #0
+  c9f90c:	bfdc      	itt	le
+  c9f90e:	f10d 011c 	addle.w	r1, sp, #28
+  c9f912:	f2d6 ed52 	blxle	f763b8 <ContainerScreenController::_getCoalesceOrder(std::string const&) const+0x18>
+  c9f916:	4620      	mov	r0, r4
+  c9f918:	f66e e224 	blx	70dd64 <_Unwind_Resume@plt>
+  c9f91c:	4a13      	ldr	r2, [pc, #76]	; (c9f96c <LoginPacket::read(BinaryStream&)+0x1d0>)
+  c9f91e:	4b14      	ldr	r3, [pc, #80]	; (c9f970 <LoginPacket::read(BinaryStream&)+0x1d4>)
+  c9f920:	447a      	add	r2, pc
+  c9f922:	589b      	ldr	r3, [r3, r2]
+  c9f924:	1f0a      	subs	r2, r1, #4
+  c9f926:	b15b      	cbz	r3, c9f940 <LoginPacket::read(BinaryStream&)+0x1a4>
+  c9f928:	f3bf 8f5b 	dmb	ish
+  c9f92c:	e852 1f00 	ldrex	r1, [r2]
+  c9f930:	1e4b      	subs	r3, r1, #1
+  c9f932:	e842 3600 	strex	r6, r3, [r2]
+  c9f936:	2e00      	cmp	r6, #0
+  c9f938:	d1f8      	bne.n	c9f92c <LoginPacket::read(BinaryStream&)+0x190>
+  c9f93a:	f3bf 8f5b 	dmb	ish
+  c9f93e:	e002      	b.n	c9f946 <LoginPacket::read(BinaryStream&)+0x1aa>
+  c9f940:	6811      	ldr	r1, [r2, #0]
+  c9f942:	1e4b      	subs	r3, r1, #1
+  c9f944:	6013      	str	r3, [r2, #0]
+  c9f946:	2900      	cmp	r1, #0
+  c9f948:	dcc5      	bgt.n	c9f8d6 <LoginPacket::read(BinaryStream&)+0x13a>
+  c9f94a:	a907      	add	r1, sp, #28
+  c9f94c:	f2d6 ed34 	blx	f763b8 <ContainerScreenController::_getCoalesceOrder(std::string const&) const+0x18>
+  c9f950:	e7c1      	b.n	c9f8d6 <LoginPacket::read(BinaryStream&)+0x13a>
+  c9f952:	6811      	ldr	r1, [r2, #0]
+  c9f954:	1e4b      	subs	r3, r1, #1
+  c9f956:	6013      	str	r3, [r2, #0]
+  c9f958:	e7d7      	b.n	c9f90a <LoginPacket::read(BinaryStream&)+0x16e>
+  c9f95a:	bf00      	nop
+  c9f95c:	b158      	cbz	r0, c9f976 <LoginPacket::read(BinaryStream&)+0x1da>
+  c9f95e:	0166      	lsls	r6, r4, #5
+  c9f960:	9118      	str	r1, [sp, #96]	; 0x60
+  c9f962:	ffff b038 	vshr.u32	d27, d24, #1
+  c9f966:	0166      	lsls	r6, r4, #5
+  c9f968:	8638      	strh	r0, [r7, #48]	; 0x30
+  c9f96a:	ffff afe0 			; <UNDEFINED> instruction: 0xffffafe0
+  c9f96e:	0166      	lsls	r6, r4, #5
+  c9f970:	863c      	strh	r4, [r7, #48]	; 0x30
+  c9f972:	ffff b026 	vaddl.u<illegal width 64>	<illegal reg q13.5>, d15, d22
+  c9f976:	0166      	lsls	r6, r4, #5
+  c9f978:	b014      	add	sp, #80	; 0x50
+  c9f97a:	0166      	lsls	r6, r4, #5
+  c9f97c:	b0f2      	sub	sp, #456	; 0x1c8
+  c9f97e:	0166      	lsls	r6, r4, #5
+  c9f980:	b0be      	sub	sp, #248	; 0xf8
+  c9f982:	0166      	lsls	r6, r4, #5
+  c9f984:	b0e0      	sub	sp, #384	; 0x180
+  c9f986:	0166      	lsls	r6, r4, #5
+  c9f988:	b09a      	sub	sp, #104	; 0x68
+  c9f98a:	0166      	lsls	r6, r4, #5

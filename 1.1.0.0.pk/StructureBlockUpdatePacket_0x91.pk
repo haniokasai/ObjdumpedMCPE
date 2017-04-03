@@ -1,0 +1,169 @@
+  b723a0:	b5f0      	push	{r4, r5, r6, r7, lr}
+  b723a2:	b097      	sub	sp, #92	; 0x5c
+  b723a4:	4604      	mov	r4, r0
+  b723a6:	4668      	mov	r0, sp
+  b723a8:	460d      	mov	r5, r1
+  b723aa:	f7a4 e41c 	blx	716be4 <NetworkBlockPosition ReadOnlyBinaryStream::getType<NetworkBlockPosition>()@plt>
+  b723ae:	9800      	ldr	r0, [sp, #0]
+  b723b0:	60e0      	str	r0, [r4, #12]
+  b723b2:	9801      	ldr	r0, [sp, #4]
+  b723b4:	6120      	str	r0, [r4, #16]
+  b723b6:	9802      	ldr	r0, [sp, #8]
+  b723b8:	6160      	str	r0, [r4, #20]
+  b723ba:	4628      	mov	r0, r5
+  b723bc:	f7a2 e5e4 	blx	714f88 <ReadOnlyBinaryStream::getUnsignedVarInt()@plt>
+  b723c0:	466e      	mov	r6, sp
+  b723c2:	61a0      	str	r0, [r4, #24]
+  b723c4:	4630      	mov	r0, r6
+  b723c6:	4629      	mov	r1, r5
+  b723c8:	f7a4 e412 	blx	716bf0 <StructureEditorData ReadOnlyBinaryStream::getType<StructureEditorData>()@plt>
+  b723cc:	f104 001c 	add.w	r0, r4, #28
+  b723d0:	4631      	mov	r1, r6
+  b723d2:	f7a4 e414 	blx	716bfc <StructureEditorData::operator=(StructureEditorData const&)@plt>
+  b723d6:	4855      	ldr	r0, [pc, #340]	; (b7252c <StructureBlockUpdatePacket::read(BinaryStream&)+0x18c>)
+  b723d8:	4f4f      	ldr	r7, [pc, #316]	; (b72518 <StructureBlockUpdatePacket::read(BinaryStream&)+0x178>)
+  b723da:	4478      	add	r0, pc
+  b723dc:	9901      	ldr	r1, [sp, #4]
+  b723de:	583a      	ldr	r2, [r7, r0]
+  b723e0:	f1a1 000c 	sub.w	r0, r1, #12
+  b723e4:	4290      	cmp	r0, r2
+  b723e6:	d113      	bne.n	b72410 <StructureBlockUpdatePacket::read(BinaryStream&)+0x70>
+  b723e8:	4852      	ldr	r0, [pc, #328]	; (b72534 <StructureBlockUpdatePacket::read(BinaryStream&)+0x194>)
+  b723ea:	9900      	ldr	r1, [sp, #0]
+  b723ec:	4478      	add	r0, pc
+  b723ee:	583a      	ldr	r2, [r7, r0]
+  b723f0:	f1a1 000c 	sub.w	r0, r1, #12
+  b723f4:	4290      	cmp	r0, r2
+  b723f6:	d11d      	bne.n	b72434 <StructureBlockUpdatePacket::read(BinaryStream&)+0x94>
+  b723f8:	4628      	mov	r0, r5
+  b723fa:	f7a4 e406 	blx	716c08 <ReadOnlyBinaryStream::getBool()@plt>
+  b723fe:	f884 0074 	strb.w	r0, [r4, #116]	; 0x74
+  b72402:	4628      	mov	r0, r5
+  b72404:	f7a4 e400 	blx	716c08 <ReadOnlyBinaryStream::getBool()@plt>
+  b72408:	f884 0075 	strb.w	r0, [r4, #117]	; 0x75
+  b7240c:	b017      	add	sp, #92	; 0x5c
+  b7240e:	bdf0      	pop	{r4, r5, r6, r7, pc}
+  b72410:	4a47      	ldr	r2, [pc, #284]	; (b72530 <StructureBlockUpdatePacket::read(BinaryStream&)+0x190>)
+  b72412:	4b43      	ldr	r3, [pc, #268]	; (b72520 <StructureBlockUpdatePacket::read(BinaryStream&)+0x180>)
+  b72414:	447a      	add	r2, pc
+  b72416:	589b      	ldr	r3, [r3, r2]
+  b72418:	1f0a      	subs	r2, r1, #4
+  b7241a:	b1eb      	cbz	r3, b72458 <StructureBlockUpdatePacket::read(BinaryStream&)+0xb8>
+  b7241c:	f3bf 8f5b 	dmb	ish
+  b72420:	e852 1f00 	ldrex	r1, [r2]
+  b72424:	1e4b      	subs	r3, r1, #1
+  b72426:	e842 3600 	strex	r6, r3, [r2]
+  b7242a:	2e00      	cmp	r6, #0
+  b7242c:	d1f8      	bne.n	b72420 <StructureBlockUpdatePacket::read(BinaryStream&)+0x80>
+  b7242e:	f3bf 8f5b 	dmb	ish
+  b72432:	e014      	b.n	b7245e <StructureBlockUpdatePacket::read(BinaryStream&)+0xbe>
+  b72434:	4a40      	ldr	r2, [pc, #256]	; (b72538 <StructureBlockUpdatePacket::read(BinaryStream&)+0x198>)
+  b72436:	4b3a      	ldr	r3, [pc, #232]	; (b72520 <StructureBlockUpdatePacket::read(BinaryStream&)+0x180>)
+  b72438:	447a      	add	r2, pc
+  b7243a:	589b      	ldr	r3, [r3, r2]
+  b7243c:	1f0a      	subs	r2, r1, #4
+  b7243e:	b1a3      	cbz	r3, b7246a <StructureBlockUpdatePacket::read(BinaryStream&)+0xca>
+  b72440:	f3bf 8f5b 	dmb	ish
+  b72444:	e852 1f00 	ldrex	r1, [r2]
+  b72448:	1e4b      	subs	r3, r1, #1
+  b7244a:	e842 3700 	strex	r7, r3, [r2]
+  b7244e:	2f00      	cmp	r7, #0
+  b72450:	d1f8      	bne.n	b72444 <StructureBlockUpdatePacket::read(BinaryStream&)+0xa4>
+  b72452:	f3bf 8f5b 	dmb	ish
+  b72456:	e00b      	b.n	b72470 <StructureBlockUpdatePacket::read(BinaryStream&)+0xd0>
+  b72458:	6811      	ldr	r1, [r2, #0]
+  b7245a:	1e4b      	subs	r3, r1, #1
+  b7245c:	6013      	str	r3, [r2, #0]
+  b7245e:	2900      	cmp	r1, #0
+  b72460:	dcc2      	bgt.n	b723e8 <StructureBlockUpdatePacket::read(BinaryStream&)+0x48>
+  b72462:	a916      	add	r1, sp, #88	; 0x58
+  b72464:	f00e ea0a 	blx	b8087c <std::vector<PackModel, std::allocator<PackModel> >::erase(__gnu_cxx::__normal_iterator<PackModel const*, std::vector<PackModel, std::allocator<PackModel> > >, __gnu_cxx::__normal_iterator<PackModel const*, std::vector<PackModel, std::allocator<PackModel> > >)+0x100>
+  b72468:	e7be      	b.n	b723e8 <StructureBlockUpdatePacket::read(BinaryStream&)+0x48>
+  b7246a:	6811      	ldr	r1, [r2, #0]
+  b7246c:	1e4b      	subs	r3, r1, #1
+  b7246e:	6013      	str	r3, [r2, #0]
+  b72470:	2900      	cmp	r1, #0
+  b72472:	dcc1      	bgt.n	b723f8 <StructureBlockUpdatePacket::read(BinaryStream&)+0x58>
+  b72474:	a916      	add	r1, sp, #88	; 0x58
+  b72476:	f00e ea02 	blx	b8087c <std::vector<PackModel, std::allocator<PackModel> >::erase(__gnu_cxx::__normal_iterator<PackModel const*, std::vector<PackModel, std::allocator<PackModel> > >, __gnu_cxx::__normal_iterator<PackModel const*, std::vector<PackModel, std::allocator<PackModel> > >)+0x100>
+  b7247a:	e7bd      	b.n	b723f8 <StructureBlockUpdatePacket::read(BinaryStream&)+0x58>
+  b7247c:	4a25      	ldr	r2, [pc, #148]	; (b72514 <StructureBlockUpdatePacket::read(BinaryStream&)+0x174>)
+  b7247e:	4604      	mov	r4, r0
+  b72480:	4d25      	ldr	r5, [pc, #148]	; (b72518 <StructureBlockUpdatePacket::read(BinaryStream&)+0x178>)
+  b72482:	447a      	add	r2, pc
+  b72484:	9901      	ldr	r1, [sp, #4]
+  b72486:	f1a1 000c 	sub.w	r0, r1, #12
+  b7248a:	58aa      	ldr	r2, [r5, r2]
+  b7248c:	4290      	cmp	r0, r2
+  b7248e:	d121      	bne.n	b724d4 <StructureBlockUpdatePacket::read(BinaryStream&)+0x134>
+  b72490:	4824      	ldr	r0, [pc, #144]	; (b72524 <StructureBlockUpdatePacket::read(BinaryStream&)+0x184>)
+  b72492:	9900      	ldr	r1, [sp, #0]
+  b72494:	4478      	add	r0, pc
+  b72496:	582a      	ldr	r2, [r5, r0]
+  b72498:	f1a1 000c 	sub.w	r0, r1, #12
+  b7249c:	4290      	cmp	r0, r2
+  b7249e:	d016      	beq.n	b724ce <StructureBlockUpdatePacket::read(BinaryStream&)+0x12e>
+  b724a0:	4a21      	ldr	r2, [pc, #132]	; (b72528 <StructureBlockUpdatePacket::read(BinaryStream&)+0x188>)
+  b724a2:	4b1f      	ldr	r3, [pc, #124]	; (b72520 <StructureBlockUpdatePacket::read(BinaryStream&)+0x180>)
+  b724a4:	447a      	add	r2, pc
+  b724a6:	589b      	ldr	r3, [r3, r2]
+  b724a8:	1f0a      	subs	r2, r1, #4
+  b724aa:	b373      	cbz	r3, b7250a <StructureBlockUpdatePacket::read(BinaryStream&)+0x16a>
+  b724ac:	f3bf 8f5b 	dmb	ish
+  b724b0:	e852 1f00 	ldrex	r1, [r2]
+  b724b4:	1e4b      	subs	r3, r1, #1
+  b724b6:	e842 3600 	strex	r6, r3, [r2]
+  b724ba:	2e00      	cmp	r6, #0
+  b724bc:	d1f8      	bne.n	b724b0 <StructureBlockUpdatePacket::read(BinaryStream&)+0x110>
+  b724be:	f3bf 8f5b 	dmb	ish
+  b724c2:	2900      	cmp	r1, #0
+  b724c4:	bfdc      	itt	le
+  b724c6:	f10d 0158 	addle.w	r1, sp, #88	; 0x58
+  b724ca:	f00e e9d8 	blxle	b8087c <std::vector<PackModel, std::allocator<PackModel> >::erase(__gnu_cxx::__normal_iterator<PackModel const*, std::vector<PackModel, std::allocator<PackModel> > >, __gnu_cxx::__normal_iterator<PackModel const*, std::vector<PackModel, std::allocator<PackModel> > >)+0x100>
+  b724ce:	4620      	mov	r0, r4
+  b724d0:	f79b e448 	blx	70dd64 <_Unwind_Resume@plt>
+  b724d4:	4a11      	ldr	r2, [pc, #68]	; (b7251c <StructureBlockUpdatePacket::read(BinaryStream&)+0x17c>)
+  b724d6:	4b12      	ldr	r3, [pc, #72]	; (b72520 <StructureBlockUpdatePacket::read(BinaryStream&)+0x180>)
+  b724d8:	447a      	add	r2, pc
+  b724da:	589b      	ldr	r3, [r3, r2]
+  b724dc:	1f0a      	subs	r2, r1, #4
+  b724de:	b15b      	cbz	r3, b724f8 <StructureBlockUpdatePacket::read(BinaryStream&)+0x158>
+  b724e0:	f3bf 8f5b 	dmb	ish
+  b724e4:	e852 1f00 	ldrex	r1, [r2]
+  b724e8:	1e4b      	subs	r3, r1, #1
+  b724ea:	e842 3600 	strex	r6, r3, [r2]
+  b724ee:	2e00      	cmp	r6, #0
+  b724f0:	d1f8      	bne.n	b724e4 <StructureBlockUpdatePacket::read(BinaryStream&)+0x144>
+  b724f2:	f3bf 8f5b 	dmb	ish
+  b724f6:	e002      	b.n	b724fe <StructureBlockUpdatePacket::read(BinaryStream&)+0x15e>
+  b724f8:	6811      	ldr	r1, [r2, #0]
+  b724fa:	1e4b      	subs	r3, r1, #1
+  b724fc:	6013      	str	r3, [r2, #0]
+  b724fe:	2900      	cmp	r1, #0
+  b72500:	dcc6      	bgt.n	b72490 <StructureBlockUpdatePacket::read(BinaryStream&)+0xf0>
+  b72502:	a916      	add	r1, sp, #88	; 0x58
+  b72504:	f00e e9ba 	blx	b8087c <std::vector<PackModel, std::allocator<PackModel> >::erase(__gnu_cxx::__normal_iterator<PackModel const*, std::vector<PackModel, std::allocator<PackModel> > >, __gnu_cxx::__normal_iterator<PackModel const*, std::vector<PackModel, std::allocator<PackModel> > >)+0x100>
+  b72508:	e7c2      	b.n	b72490 <StructureBlockUpdatePacket::read(BinaryStream&)+0xf0>
+  b7250a:	6811      	ldr	r1, [r2, #0]
+  b7250c:	1e4b      	subs	r3, r1, #1
+  b7250e:	6013      	str	r3, [r2, #0]
+  b72510:	e7d7      	b.n	b724c2 <StructureBlockUpdatePacket::read(BinaryStream&)+0x122>
+  b72512:	bf00      	nop
+  b72514:	847e      	strh	r6, [r7, #34]	; 0x22
+  b72516:	0179      	lsls	r1, r7, #5
+  b72518:	8638      	strh	r0, [r7, #48]	; 0x30
+  b7251a:	ffff 8428 	vraddhn.i<illegal width 128>	d24, <illegal reg q7.5>, q12
+  b7251e:	0179      	lsls	r1, r7, #5
+  b72520:	863c      	strh	r4, [r7, #48]	; 0x30
+  b72522:	ffff 846c 	vmls.i<illegal width 64>	q12, <illegal reg q7.5>, d28[0]
+  b72526:	0179      	lsls	r1, r7, #5
+  b72528:	845c      	strh	r4, [r3, #34]	; 0x22
+  b7252a:	0179      	lsls	r1, r7, #5
+  b7252c:	8526      	strh	r6, [r4, #40]	; 0x28
+  b7252e:	0179      	lsls	r1, r7, #5
+  b72530:	84ec      	strh	r4, [r5, #38]	; 0x26
+  b72532:	0179      	lsls	r1, r7, #5
+  b72534:	8514      	strh	r4, [r2, #40]	; 0x28
+  b72536:	0179      	lsls	r1, r7, #5
+  b72538:	84c8      	strh	r0, [r1, #38]	; 0x26
+  b7253a:	0179      	lsls	r1, r7, #5

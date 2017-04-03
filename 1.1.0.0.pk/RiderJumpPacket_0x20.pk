@@ -1,0 +1,6 @@
+  cd60b2:	b510      	push	{r4, lr}
+  cd60b4:	4604      	mov	r4, r0
+  cd60b6:	4608      	mov	r0, r1
+  cd60b8:	f63e e74e 	blx	714f58 <ReadOnlyBinaryStream::getVarInt()@plt>
+  cd60bc:	60e0      	str	r0, [r4, #12]
+  cd60be:	bd10      	pop	{r4, pc}

@@ -1,0 +1,6 @@
+  cd60fe:	b510      	push	{r4, lr}
+  cd6100:	4604      	mov	r4, r0
+  cd6102:	4608      	mov	r0, r1
+  cd6104:	f63b e680 	blx	711e08 <ReadOnlyBinaryStream::getByte()@plt>
+  cd6108:	7320      	strb	r0, [r4, #12]
+  cd610a:	bd10      	pop	{r4, pc}

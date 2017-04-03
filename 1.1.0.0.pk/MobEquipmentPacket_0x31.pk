@@ -1,0 +1,27 @@
+  cd5f14:	b5b0      	push	{r4, r5, r7, lr}
+  cd5f16:	b082      	sub	sp, #8
+  cd5f18:	4604      	mov	r4, r0
+  cd5f1a:	4668      	mov	r0, sp
+  cd5f1c:	460d      	mov	r5, r1
+  cd5f1e:	f646 e650 	blx	71cbc0 <EntityRuntimeID ReadOnlyBinaryStream::getType<EntityRuntimeID>()@plt>
+  cd5f22:	e9dd 0100 	ldrd	r0, r1, [sp]
+  cd5f26:	e9c4 0104 	strd	r0, r1, [r4, #16]
+  cd5f2a:	f104 0118 	add.w	r1, r4, #24
+  cd5f2e:	4628      	mov	r0, r5
+  cd5f30:	f64b e46e 	blx	721810 <void ReadOnlyBinaryStream::readType<ItemInstance>(ItemInstance&)@plt>
+  cd5f34:	4628      	mov	r0, r5
+  cd5f36:	f63b e768 	blx	711e08 <ReadOnlyBinaryStream::getByte()@plt>
+  cd5f3a:	f884 004e 	strb.w	r0, [r4, #78]	; 0x4e
+  cd5f3e:	4628      	mov	r0, r5
+  cd5f40:	f63b e762 	blx	711e08 <ReadOnlyBinaryStream::getByte()@plt>
+  cd5f44:	f884 004f 	strb.w	r0, [r4, #79]	; 0x4f
+  cd5f48:	4628      	mov	r0, r5
+  cd5f4a:	f63b e75e 	blx	711e08 <ReadOnlyBinaryStream::getByte()@plt>
+  cd5f4e:	f884 0050 	strb.w	r0, [r4, #80]	; 0x50
+  cd5f52:	f994 104e 	ldrsb.w	r1, [r4, #78]	; 0x4e
+  cd5f56:	6461      	str	r1, [r4, #68]	; 0x44
+  cd5f58:	f994 104f 	ldrsb.w	r1, [r4, #79]	; 0x4f
+  cd5f5c:	64a1      	str	r1, [r4, #72]	; 0x48
+  cd5f5e:	f884 004d 	strb.w	r0, [r4, #77]	; 0x4d
+  cd5f62:	b002      	add	sp, #8
+  cd5f64:	bdb0      	pop	{r4, r5, r7, pc}

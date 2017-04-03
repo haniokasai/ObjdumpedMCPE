@@ -1,0 +1,22 @@
+  cd64b2:	b5b0      	push	{r4, r5, r7, lr}
+  cd64b4:	b082      	sub	sp, #8
+  cd64b6:	4605      	mov	r5, r0
+  cd64b8:	4668      	mov	r0, sp
+  cd64ba:	460c      	mov	r4, r1
+  cd64bc:	f646 e380 	blx	71cbc0 <EntityRuntimeID ReadOnlyBinaryStream::getType<EntityRuntimeID>()@plt>
+  cd64c0:	e9dd 0100 	ldrd	r0, r1, [sp]
+  cd64c4:	e9c5 0104 	strd	r0, r1, [r5, #16]
+  cd64c8:	f105 0118 	add.w	r1, r5, #24
+  cd64cc:	4620      	mov	r0, r4
+  cd64ce:	f64b e1a0 	blx	721810 <void ReadOnlyBinaryStream::readType<ItemInstance>(ItemInstance&)@plt>
+  cd64d2:	f105 0144 	add.w	r1, r5, #68	; 0x44
+  cd64d6:	4620      	mov	r0, r4
+  cd64d8:	f64b e19a 	blx	721810 <void ReadOnlyBinaryStream::readType<ItemInstance>(ItemInstance&)@plt>
+  cd64dc:	f105 0170 	add.w	r1, r5, #112	; 0x70
+  cd64e0:	4620      	mov	r0, r4
+  cd64e2:	f64b e196 	blx	721810 <void ReadOnlyBinaryStream::readType<ItemInstance>(ItemInstance&)@plt>
+  cd64e6:	f105 019c 	add.w	r1, r5, #156	; 0x9c
+  cd64ea:	4620      	mov	r0, r4
+  cd64ec:	f64b e190 	blx	721810 <void ReadOnlyBinaryStream::readType<ItemInstance>(ItemInstance&)@plt>
+  cd64f0:	b002      	add	sp, #8
+  cd64f2:	bdb0      	pop	{r4, r5, r7, pc}

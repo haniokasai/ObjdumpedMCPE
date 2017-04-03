@@ -1,0 +1,17 @@
+  cd669c:	b5b0      	push	{r4, r5, r7, lr}
+  cd669e:	b084      	sub	sp, #16
+  cd66a0:	4605      	mov	r5, r0
+  cd66a2:	a801      	add	r0, sp, #4
+  cd66a4:	460c      	mov	r4, r1
+  cd66a6:	f64b e0c6 	blx	721834 <BlockPos ReadOnlyBinaryStream::getType<BlockPos>()@plt>
+  cd66aa:	9801      	ldr	r0, [sp, #4]
+  cd66ac:	60e8      	str	r0, [r5, #12]
+  cd66ae:	9802      	ldr	r0, [sp, #8]
+  cd66b0:	6128      	str	r0, [r5, #16]
+  cd66b2:	9803      	ldr	r0, [sp, #12]
+  cd66b4:	6168      	str	r0, [r5, #20]
+  cd66b6:	4620      	mov	r0, r4
+  cd66b8:	f63b e3a6 	blx	711e08 <ReadOnlyBinaryStream::getByte()@plt>
+  cd66bc:	7628      	strb	r0, [r5, #24]
+  cd66be:	b004      	add	sp, #16
+  cd66c0:	bdb0      	pop	{r4, r5, r7, pc}

@@ -1,0 +1,187 @@
+  c9ac18:	b570      	push	{r4, r5, r6, lr}
+  c9ac1a:	b084      	sub	sp, #16
+  c9ac1c:	4604      	mov	r4, r0
+  c9ac1e:	a802      	add	r0, sp, #8
+  c9ac20:	460d      	mov	r5, r1
+  c9ac22:	f683 e67a 	blx	71e918 <EntityUniqueID ReadOnlyBinaryStream::getType<EntityUniqueID>()@plt>
+  c9ac26:	e9dd 0102 	ldrd	r0, r1, [sp, #8]
+  c9ac2a:	e9c4 0106 	strd	r0, r1, [r4, #24]
+  c9ac2e:	4628      	mov	r0, r5
+  c9ac30:	f67a e1aa 	blx	714f88 <ReadOnlyBinaryStream::getUnsignedVarInt()@plt>
+  c9ac34:	62a0      	str	r0, [r4, #40]	; 0x28
+  c9ac36:	2807      	cmp	r0, #7
+  c9ac38:	d84d      	bhi.n	c9acd6 <BossEventPacket::read(BinaryStream&)+0xbe>
+  c9ac3a:	e8df f000 	tbb	[pc, r0]
+  c9ac3e:	040d      	lsls	r5, r1, #16
+  c9ac40:	044c      	lsls	r4, r1, #17
+  c9ac42:	3933      	subs	r1, #51	; 0x33
+  c9ac44:	2924      	cmp	r1, #36	; 0x24
+  c9ac46:	a802      	add	r0, sp, #8
+  c9ac48:	4629      	mov	r1, r5
+  c9ac4a:	f683 e666 	blx	71e918 <EntityUniqueID ReadOnlyBinaryStream::getType<EntityUniqueID>()@plt>
+  c9ac4e:	e9dd 0102 	ldrd	r0, r1, [sp, #8]
+  c9ac52:	e9c4 0108 	strd	r0, r1, [r4, #32]
+  c9ac56:	e03e      	b.n	c9acd6 <BossEventPacket::read(BinaryStream&)+0xbe>
+  c9ac58:	ae01      	add	r6, sp, #4
+  c9ac5a:	4629      	mov	r1, r5
+  c9ac5c:	4630      	mov	r0, r6
+  c9ac5e:	f677 e0e0 	blx	711e20 <ReadOnlyBinaryStream::getString()@plt>
+  c9ac62:	f104 002c 	add.w	r0, r4, #44	; 0x2c
+  c9ac66:	4631      	mov	r1, r6
+  c9ac68:	f2db eb9e 	blx	f763a8 <ContainerScreenController::_getCoalesceOrder(std::string const&) const+0x8>
+  c9ac6c:	4860      	ldr	r0, [pc, #384]	; (c9adf0 <BossEventPacket::read(BinaryStream&)+0x1d8>)
+  c9ac6e:	4a59      	ldr	r2, [pc, #356]	; (c9add4 <BossEventPacket::read(BinaryStream&)+0x1bc>)
+  c9ac70:	4478      	add	r0, pc
+  c9ac72:	9901      	ldr	r1, [sp, #4]
+  c9ac74:	5812      	ldr	r2, [r2, r0]
+  c9ac76:	f1a1 000c 	sub.w	r0, r1, #12
+  c9ac7a:	4290      	cmp	r0, r2
+  c9ac7c:	d12d      	bne.n	c9acda <BossEventPacket::read(BinaryStream&)+0xc2>
+  c9ac7e:	4628      	mov	r0, r5
+  c9ac80:	f683 e650 	blx	71e924 <ReadOnlyBinaryStream::getFloat()@plt>
+  c9ac84:	6320      	str	r0, [r4, #48]	; 0x30
+  c9ac86:	4628      	mov	r0, r5
+  c9ac88:	f677 e0c4 	blx	711e14 <ReadOnlyBinaryStream::getUnsignedShort()@plt>
+  c9ac8c:	f884 003c 	strb.w	r0, [r4, #60]	; 0x3c
+  c9ac90:	4628      	mov	r0, r5
+  c9ac92:	f67a e17a 	blx	714f88 <ReadOnlyBinaryStream::getUnsignedVarInt()@plt>
+  c9ac96:	6360      	str	r0, [r4, #52]	; 0x34
+  c9ac98:	4628      	mov	r0, r5
+  c9ac9a:	f67a e176 	blx	714f88 <ReadOnlyBinaryStream::getUnsignedVarInt()@plt>
+  c9ac9e:	63a0      	str	r0, [r4, #56]	; 0x38
+  c9aca0:	b004      	add	sp, #16
+  c9aca2:	bd70      	pop	{r4, r5, r6, pc}
+  c9aca4:	4628      	mov	r0, r5
+  c9aca6:	f683 e63e 	blx	71e924 <ReadOnlyBinaryStream::getFloat()@plt>
+  c9acaa:	6320      	str	r0, [r4, #48]	; 0x30
+  c9acac:	b004      	add	sp, #16
+  c9acae:	bd70      	pop	{r4, r5, r6, pc}
+  c9acb0:	466e      	mov	r6, sp
+  c9acb2:	4629      	mov	r1, r5
+  c9acb4:	4630      	mov	r0, r6
+  c9acb6:	f677 e0b4 	blx	711e20 <ReadOnlyBinaryStream::getString()@plt>
+  c9acba:	f104 002c 	add.w	r0, r4, #44	; 0x2c
+  c9acbe:	4631      	mov	r1, r6
+  c9acc0:	f2db eb72 	blx	f763a8 <ContainerScreenController::_getCoalesceOrder(std::string const&) const+0x8>
+  c9acc4:	4846      	ldr	r0, [pc, #280]	; (c9ade0 <BossEventPacket::read(BinaryStream&)+0x1c8>)
+  c9acc6:	4a43      	ldr	r2, [pc, #268]	; (c9add4 <BossEventPacket::read(BinaryStream&)+0x1bc>)
+  c9acc8:	4478      	add	r0, pc
+  c9acca:	9900      	ldr	r1, [sp, #0]
+  c9accc:	5812      	ldr	r2, [r2, r0]
+  c9acce:	f1a1 000c 	sub.w	r0, r1, #12
+  c9acd2:	4290      	cmp	r0, r2
+  c9acd4:	d113      	bne.n	c9acfe <BossEventPacket::read(BinaryStream&)+0xe6>
+  c9acd6:	b004      	add	sp, #16
+  c9acd8:	bd70      	pop	{r4, r5, r6, pc}
+  c9acda:	4a46      	ldr	r2, [pc, #280]	; (c9adf4 <BossEventPacket::read(BinaryStream&)+0x1dc>)
+  c9acdc:	4b3f      	ldr	r3, [pc, #252]	; (c9addc <BossEventPacket::read(BinaryStream&)+0x1c4>)
+  c9acde:	447a      	add	r2, pc
+  c9ace0:	589b      	ldr	r3, [r3, r2]
+  c9ace2:	1f0a      	subs	r2, r1, #4
+  c9ace4:	b1eb      	cbz	r3, c9ad22 <BossEventPacket::read(BinaryStream&)+0x10a>
+  c9ace6:	f3bf 8f5b 	dmb	ish
+  c9acea:	e852 1f00 	ldrex	r1, [r2]
+  c9acee:	1e4b      	subs	r3, r1, #1
+  c9acf0:	e842 3600 	strex	r6, r3, [r2]
+  c9acf4:	2e00      	cmp	r6, #0
+  c9acf6:	d1f8      	bne.n	c9acea <BossEventPacket::read(BinaryStream&)+0xd2>
+  c9acf8:	f3bf 8f5b 	dmb	ish
+  c9acfc:	e014      	b.n	c9ad28 <BossEventPacket::read(BinaryStream&)+0x110>
+  c9acfe:	4a39      	ldr	r2, [pc, #228]	; (c9ade4 <BossEventPacket::read(BinaryStream&)+0x1cc>)
+  c9ad00:	4b36      	ldr	r3, [pc, #216]	; (c9addc <BossEventPacket::read(BinaryStream&)+0x1c4>)
+  c9ad02:	447a      	add	r2, pc
+  c9ad04:	589b      	ldr	r3, [r3, r2]
+  c9ad06:	1f0a      	subs	r2, r1, #4
+  c9ad08:	b1a3      	cbz	r3, c9ad34 <BossEventPacket::read(BinaryStream&)+0x11c>
+  c9ad0a:	f3bf 8f5b 	dmb	ish
+  c9ad0e:	e852 1f00 	ldrex	r1, [r2]
+  c9ad12:	1e4b      	subs	r3, r1, #1
+  c9ad14:	e842 3600 	strex	r6, r3, [r2]
+  c9ad18:	2e00      	cmp	r6, #0
+  c9ad1a:	d1f8      	bne.n	c9ad0e <BossEventPacket::read(BinaryStream&)+0xf6>
+  c9ad1c:	f3bf 8f5b 	dmb	ish
+  c9ad20:	e00b      	b.n	c9ad3a <BossEventPacket::read(BinaryStream&)+0x122>
+  c9ad22:	6811      	ldr	r1, [r2, #0]
+  c9ad24:	1e4b      	subs	r3, r1, #1
+  c9ad26:	6013      	str	r3, [r2, #0]
+  c9ad28:	2900      	cmp	r1, #0
+  c9ad2a:	dca8      	bgt.n	c9ac7e <BossEventPacket::read(BinaryStream&)+0x66>
+  c9ad2c:	a902      	add	r1, sp, #8
+  c9ad2e:	f2db eb44 	blx	f763b8 <ContainerScreenController::_getCoalesceOrder(std::string const&) const+0x18>
+  c9ad32:	e7a4      	b.n	c9ac7e <BossEventPacket::read(BinaryStream&)+0x66>
+  c9ad34:	6811      	ldr	r1, [r2, #0]
+  c9ad36:	1e4b      	subs	r3, r1, #1
+  c9ad38:	6013      	str	r3, [r2, #0]
+  c9ad3a:	2900      	cmp	r1, #0
+  c9ad3c:	dccb      	bgt.n	c9acd6 <BossEventPacket::read(BinaryStream&)+0xbe>
+  c9ad3e:	a902      	add	r1, sp, #8
+  c9ad40:	f2db eb3a 	blx	f763b8 <ContainerScreenController::_getCoalesceOrder(std::string const&) const+0x18>
+  c9ad44:	b004      	add	sp, #16
+  c9ad46:	bd70      	pop	{r4, r5, r6, pc}
+  c9ad48:	4a27      	ldr	r2, [pc, #156]	; (c9ade8 <BossEventPacket::read(BinaryStream&)+0x1d0>)
+  c9ad4a:	4604      	mov	r4, r0
+  c9ad4c:	4b21      	ldr	r3, [pc, #132]	; (c9add4 <BossEventPacket::read(BinaryStream&)+0x1bc>)
+  c9ad4e:	447a      	add	r2, pc
+  c9ad50:	9901      	ldr	r1, [sp, #4]
+  c9ad52:	f1a1 000c 	sub.w	r0, r1, #12
+  c9ad56:	589a      	ldr	r2, [r3, r2]
+  c9ad58:	4290      	cmp	r0, r2
+  c9ad5a:	d032      	beq.n	c9adc2 <BossEventPacket::read(BinaryStream&)+0x1aa>
+  c9ad5c:	4a23      	ldr	r2, [pc, #140]	; (c9adec <BossEventPacket::read(BinaryStream&)+0x1d4>)
+  c9ad5e:	4b1f      	ldr	r3, [pc, #124]	; (c9addc <BossEventPacket::read(BinaryStream&)+0x1c4>)
+  c9ad60:	447a      	add	r2, pc
+  c9ad62:	589b      	ldr	r3, [r3, r2]
+  c9ad64:	1f0a      	subs	r2, r1, #4
+  c9ad66:	b37b      	cbz	r3, c9adc8 <BossEventPacket::read(BinaryStream&)+0x1b0>
+  c9ad68:	f3bf 8f5b 	dmb	ish
+  c9ad6c:	e852 1f00 	ldrex	r1, [r2]
+  c9ad70:	1e4b      	subs	r3, r1, #1
+  c9ad72:	e842 3600 	strex	r6, r3, [r2]
+  c9ad76:	2e00      	cmp	r6, #0
+  c9ad78:	d1f8      	bne.n	c9ad6c <BossEventPacket::read(BinaryStream&)+0x154>
+  c9ad7a:	f3bf 8f5b 	dmb	ish
+  c9ad7e:	e01a      	b.n	c9adb6 <BossEventPacket::read(BinaryStream&)+0x19e>
+  c9ad80:	4a13      	ldr	r2, [pc, #76]	; (c9add0 <BossEventPacket::read(BinaryStream&)+0x1b8>)
+  c9ad82:	4604      	mov	r4, r0
+  c9ad84:	4b13      	ldr	r3, [pc, #76]	; (c9add4 <BossEventPacket::read(BinaryStream&)+0x1bc>)
+  c9ad86:	447a      	add	r2, pc
+  c9ad88:	9900      	ldr	r1, [sp, #0]
+  c9ad8a:	f1a1 000c 	sub.w	r0, r1, #12
+  c9ad8e:	589a      	ldr	r2, [r3, r2]
+  c9ad90:	4290      	cmp	r0, r2
+  c9ad92:	d016      	beq.n	c9adc2 <BossEventPacket::read(BinaryStream&)+0x1aa>
+  c9ad94:	4a10      	ldr	r2, [pc, #64]	; (c9add8 <BossEventPacket::read(BinaryStream&)+0x1c0>)
+  c9ad96:	4b11      	ldr	r3, [pc, #68]	; (c9addc <BossEventPacket::read(BinaryStream&)+0x1c4>)
+  c9ad98:	447a      	add	r2, pc
+  c9ad9a:	589b      	ldr	r3, [r3, r2]
+  c9ad9c:	1f0a      	subs	r2, r1, #4
+  c9ad9e:	b19b      	cbz	r3, c9adc8 <BossEventPacket::read(BinaryStream&)+0x1b0>
+  c9ada0:	f3bf 8f5b 	dmb	ish
+  c9ada4:	e852 1f00 	ldrex	r1, [r2]
+  c9ada8:	1e4b      	subs	r3, r1, #1
+  c9adaa:	e842 3600 	strex	r6, r3, [r2]
+  c9adae:	2e00      	cmp	r6, #0
+  c9adb0:	d1f8      	bne.n	c9ada4 <BossEventPacket::read(BinaryStream&)+0x18c>
+  c9adb2:	f3bf 8f5b 	dmb	ish
+  c9adb6:	2900      	cmp	r1, #0
+  c9adb8:	bfdc      	itt	le
+  c9adba:	f10d 0108 	addle.w	r1, sp, #8
+  c9adbe:	f2db eafc 	blxle	f763b8 <ContainerScreenController::_getCoalesceOrder(std::string const&) const+0x18>
+  c9adc2:	4620      	mov	r0, r4
+  c9adc4:	f672 e7ce 	blx	70dd64 <_Unwind_Resume@plt>
+  c9adc8:	6811      	ldr	r1, [r2, #0]
+  c9adca:	1e4b      	subs	r3, r1, #1
+  c9adcc:	6013      	str	r3, [r2, #0]
+  c9adce:	e7f2      	b.n	c9adb6 <BossEventPacket::read(BinaryStream&)+0x19e>
+  c9add0:	fb7a 0166 			; <UNDEFINED> instruction: 0xfb7a0166
+  c9add4:	8638      	strh	r0, [r7, #48]	; 0x30
+  c9add6:	ffff fb68 	vtbx.8	d31, {d15-d18}, d24
+  c9adda:	0166      	lsls	r6, r4, #5
+  c9addc:	863c      	strh	r4, [r7, #48]	; 0x30
+  c9adde:	ffff fc38 			; <UNDEFINED> instruction: 0xfffffc38
+  c9ade2:	0166      	lsls	r6, r4, #5
+  c9ade4:	fbfe 0166 			; <UNDEFINED> instruction: 0xfbfe0166
+  c9ade8:	fbb2 0166 			; <UNDEFINED> instruction: 0xfbb20166
+  c9adec:	fba0 0166 			; <UNDEFINED> instruction: 0xfba00166
+  c9adf0:	fc90 0166 	ldc2	1, cr0, [r0], {102}	; 0x66
+  c9adf4:	fc22 0166 	stc2	1, cr0, [r2], #-408	; 0xfffffe68

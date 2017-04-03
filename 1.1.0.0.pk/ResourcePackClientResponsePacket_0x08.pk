@@ -1,0 +1,106 @@
+  b11f34:	e92d 4ff0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, lr}
+  b11f38:	b087      	sub	sp, #28
+  b11f3a:	460c      	mov	r4, r1
+  b11f3c:	4606      	mov	r6, r0
+  b11f3e:	4620      	mov	r0, r4
+  b11f40:	f7ff e762 	blx	711e08 <ReadOnlyBinaryStream::getByte()@plt>
+  b11f44:	f886 0024 	strb.w	r0, [r6, #36]	; 0x24
+  b11f48:	f106 0b0c 	add.w	fp, r6, #12
+  b11f4c:	6971      	ldr	r1, [r6, #20]
+  b11f4e:	4658      	mov	r0, fp
+  b11f50:	f7ff e2f8 	blx	711544 <std::_Rb_tree<std::string, std::string, std::_Identity<std::string>, std::less<std::string>, std::allocator<std::string> >::_M_erase(std::_Rb_tree_node<std::string>*)@plt>
+  b11f54:	f106 0010 	add.w	r0, r6, #16
+  b11f58:	2100      	movs	r1, #0
+  b11f5a:	e9c6 1005 	strd	r1, r0, [r6, #20]
+  b11f5e:	e9c6 0107 	strd	r0, r1, [r6, #28]
+  b11f62:	4620      	mov	r0, r4
+  b11f64:	f7ff e756 	blx	711e14 <ReadOnlyBinaryStream::getUnsignedShort()@plt>
+  b11f68:	4606      	mov	r6, r0
+  b11f6a:	b3ce      	cbz	r6, b11fe0 <ResourcePackClientResponsePacket::read(BinaryStream&)+0xac>
+  b11f6c:	4835      	ldr	r0, [pc, #212]	; (b12044 <ResourcePackClientResponsePacket::read(BinaryStream&)+0x110>)
+  b11f6e:	af02      	add	r7, sp, #8
+  b11f70:	4931      	ldr	r1, [pc, #196]	; (b12038 <ResourcePackClientResponsePacket::read(BinaryStream&)+0x104>)
+  b11f72:	f10d 080c 	add.w	r8, sp, #12
+  b11f76:	4478      	add	r0, pc
+  b11f78:	4d31      	ldr	r5, [pc, #196]	; (b12040 <ResourcePackClientResponsePacket::read(BinaryStream&)+0x10c>)
+  b11f7a:	f04f 0900 	mov.w	r9, #0
+  b11f7e:	f851 a000 	ldr.w	sl, [r1, r0]
+  b11f82:	5828      	ldr	r0, [r5, r0]
+  b11f84:	9001      	str	r0, [sp, #4]
+  b11f86:	e019      	b.n	b11fbc <ResourcePackClientResponsePacket::read(BinaryStream&)+0x88>
+  b11f88:	1f0a      	subs	r2, r1, #4
+  b11f8a:	9901      	ldr	r1, [sp, #4]
+  b11f8c:	b169      	cbz	r1, b11faa <ResourcePackClientResponsePacket::read(BinaryStream&)+0x76>
+  b11f8e:	46ac      	mov	ip, r5
+  b11f90:	f3bf 8f5b 	dmb	ish
+  b11f94:	e852 1f00 	ldrex	r1, [r2]
+  b11f98:	1e4b      	subs	r3, r1, #1
+  b11f9a:	e842 3500 	strex	r5, r3, [r2]
+  b11f9e:	2d00      	cmp	r5, #0
+  b11fa0:	d1f8      	bne.n	b11f94 <ResourcePackClientResponsePacket::read(BinaryStream&)+0x60>
+  b11fa2:	f3bf 8f5b 	dmb	ish
+  b11fa6:	4665      	mov	r5, ip
+  b11fa8:	e002      	b.n	b11fb0 <ResourcePackClientResponsePacket::read(BinaryStream&)+0x7c>
+  b11faa:	6811      	ldr	r1, [r2, #0]
+  b11fac:	1e4b      	subs	r3, r1, #1
+  b11fae:	6013      	str	r3, [r2, #0]
+  b11fb0:	2900      	cmp	r1, #0
+  b11fb2:	dc11      	bgt.n	b11fd8 <ResourcePackClientResponsePacket::read(BinaryStream&)+0xa4>
+  b11fb4:	a905      	add	r1, sp, #20
+  b11fb6:	f06e ec62 	blx	b8087c <std::vector<PackModel, std::allocator<PackModel> >::erase(__gnu_cxx::__normal_iterator<PackModel const*, std::vector<PackModel, std::allocator<PackModel> > >, __gnu_cxx::__normal_iterator<PackModel const*, std::vector<PackModel, std::allocator<PackModel> > >)+0x100>
+  b11fba:	e00d      	b.n	b11fd8 <ResourcePackClientResponsePacket::read(BinaryStream&)+0xa4>
+  b11fbc:	4638      	mov	r0, r7
+  b11fbe:	4621      	mov	r1, r4
+  b11fc0:	f7ff e72e 	blx	711e20 <ReadOnlyBinaryStream::getString()@plt>
+  b11fc4:	4640      	mov	r0, r8
+  b11fc6:	4659      	mov	r1, fp
+  b11fc8:	463a      	mov	r2, r7
+  b11fca:	f7ff e2b6 	blx	711538 <std::pair<std::_Rb_tree_iterator<std::string>, bool> std::_Rb_tree<std::string, std::string, std::_Identity<std::string>, std::less<std::string>, std::allocator<std::string> >::_M_emplace_unique<std::string>(std::string&&)@plt>
+  b11fce:	9902      	ldr	r1, [sp, #8]
+  b11fd0:	f1a1 000c 	sub.w	r0, r1, #12
+  b11fd4:	4550      	cmp	r0, sl
+  b11fd6:	d1d7      	bne.n	b11f88 <ResourcePackClientResponsePacket::read(BinaryStream&)+0x54>
+  b11fd8:	f109 0901 	add.w	r9, r9, #1
+  b11fdc:	45b1      	cmp	r9, r6
+  b11fde:	dbed      	blt.n	b11fbc <ResourcePackClientResponsePacket::read(BinaryStream&)+0x88>
+  b11fe0:	b007      	add	sp, #28
+  b11fe2:	e8bd 8ff0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, pc}
+  b11fe6:	4a13      	ldr	r2, [pc, #76]	; (b12034 <ResourcePackClientResponsePacket::read(BinaryStream&)+0x100>)
+  b11fe8:	4604      	mov	r4, r0
+  b11fea:	4b13      	ldr	r3, [pc, #76]	; (b12038 <ResourcePackClientResponsePacket::read(BinaryStream&)+0x104>)
+  b11fec:	447a      	add	r2, pc
+  b11fee:	9902      	ldr	r1, [sp, #8]
+  b11ff0:	f1a1 000c 	sub.w	r0, r1, #12
+  b11ff4:	589a      	ldr	r2, [r3, r2]
+  b11ff6:	4290      	cmp	r0, r2
+  b11ff8:	d015      	beq.n	b12026 <ResourcePackClientResponsePacket::read(BinaryStream&)+0xf2>
+  b11ffa:	4a10      	ldr	r2, [pc, #64]	; (b1203c <ResourcePackClientResponsePacket::read(BinaryStream&)+0x108>)
+  b11ffc:	447a      	add	r2, pc
+  b11ffe:	58ab      	ldr	r3, [r5, r2]
+  b12000:	1f0a      	subs	r2, r1, #4
+  b12002:	b19b      	cbz	r3, b1202c <ResourcePackClientResponsePacket::read(BinaryStream&)+0xf8>
+  b12004:	f3bf 8f5b 	dmb	ish
+  b12008:	e852 1f00 	ldrex	r1, [r2]
+  b1200c:	1e4b      	subs	r3, r1, #1
+  b1200e:	e842 3700 	strex	r7, r3, [r2]
+  b12012:	2f00      	cmp	r7, #0
+  b12014:	d1f8      	bne.n	b12008 <ResourcePackClientResponsePacket::read(BinaryStream&)+0xd4>
+  b12016:	f3bf 8f5b 	dmb	ish
+  b1201a:	2900      	cmp	r1, #0
+  b1201c:	bfdc      	itt	le
+  b1201e:	f10d 0118 	addle.w	r1, sp, #24
+  b12022:	f06e ec2c 	blxle	b8087c <std::vector<PackModel, std::allocator<PackModel> >::erase(__gnu_cxx::__normal_iterator<PackModel const*, std::vector<PackModel, std::allocator<PackModel> > >, __gnu_cxx::__normal_iterator<PackModel const*, std::vector<PackModel, std::allocator<PackModel> > >)+0x100>
+  b12026:	4620      	mov	r0, r4
+  b12028:	f7fb e69c 	blx	70dd64 <_Unwind_Resume@plt>
+  b1202c:	6811      	ldr	r1, [r2, #0]
+  b1202e:	1e4b      	subs	r3, r1, #1
+  b12030:	6013      	str	r3, [r2, #0]
+  b12032:	e7f2      	b.n	b1201a <ResourcePackClientResponsePacket::read(BinaryStream&)+0xe6>
+  b12034:	8914      	ldrh	r4, [r2, #8]
+  b12036:	017f      	lsls	r7, r7, #5
+  b12038:	8638      	strh	r0, [r7, #48]	; 0x30
+  b1203a:	ffff 8904 	vtbl.8	d24, {d15-d16}, d4
+  b1203e:	017f      	lsls	r7, r7, #5
+  b12040:	863c      	strh	r4, [r7, #48]	; 0x30
+  b12042:	ffff 898a 	vtbl.8	d24, {d31-<overflow reg d32}, d10
+  b12046:	017f      	lsls	r7, r7, #5

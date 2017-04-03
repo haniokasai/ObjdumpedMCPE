@@ -1,0 +1,16 @@
+  cd6620:	b5b0      	push	{r4, r5, r7, lr}
+  cd6622:	b082      	sub	sp, #8
+  cd6624:	4605      	mov	r5, r0
+  cd6626:	4668      	mov	r0, sp
+  cd6628:	460c      	mov	r4, r1
+  cd662a:	f646 e2ca 	blx	71cbc0 <EntityRuntimeID ReadOnlyBinaryStream::getType<EntityRuntimeID>()@plt>
+  cd662e:	e9dd 0100 	ldrd	r0, r1, [sp]
+  cd6632:	e9c5 0104 	strd	r0, r1, [r5, #16]
+  cd6636:	4620      	mov	r0, r4
+  cd6638:	f648 e174 	blx	71e924 <ReadOnlyBinaryStream::getFloat()@plt>
+  cd663c:	61a8      	str	r0, [r5, #24]
+  cd663e:	4620      	mov	r0, r4
+  cd6640:	f640 e2e2 	blx	716c08 <ReadOnlyBinaryStream::getBool()@plt>
+  cd6644:	7728      	strb	r0, [r5, #28]
+  cd6646:	b002      	add	sp, #8
+  cd6648:	bdb0      	pop	{r4, r5, r7, pc}

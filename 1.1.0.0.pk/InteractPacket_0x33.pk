@@ -1,0 +1,14 @@
+  c63354:	b5b0      	push	{r4, r5, r7, lr}
+  c63356:	b082      	sub	sp, #8
+  c63358:	460c      	mov	r4, r1
+  c6335a:	4605      	mov	r5, r0
+  c6335c:	4620      	mov	r0, r4
+  c6335e:	f6ae e554 	blx	711e08 <ReadOnlyBinaryStream::getByte()@plt>
+  c63362:	7328      	strb	r0, [r5, #12]
+  c63364:	4668      	mov	r0, sp
+  c63366:	4621      	mov	r1, r4
+  c63368:	f6b9 e42a 	blx	71cbc0 <EntityRuntimeID ReadOnlyBinaryStream::getType<EntityRuntimeID>()@plt>
+  c6336c:	e9dd 0100 	ldrd	r0, r1, [sp]
+  c63370:	e9c5 0104 	strd	r0, r1, [r5, #16]
+  c63374:	b002      	add	sp, #8
+  c63376:	bdb0      	pop	{r4, r5, r7, pc}

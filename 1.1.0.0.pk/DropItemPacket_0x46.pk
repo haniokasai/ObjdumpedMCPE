@@ -1,0 +1,10 @@
+  cd6234:	b5b0      	push	{r4, r5, r7, lr}
+  cd6236:	460c      	mov	r4, r1
+  cd6238:	4605      	mov	r5, r0
+  cd623a:	4620      	mov	r0, r4
+  cd623c:	f63b e5e4 	blx	711e08 <ReadOnlyBinaryStream::getByte()@plt>
+  cd6240:	7328      	strb	r0, [r5, #12]
+  cd6242:	f105 0110 	add.w	r1, r5, #16
+  cd6246:	4620      	mov	r0, r4
+  cd6248:	e8bd 40b0 	ldmia.w	sp!, {r4, r5, r7, lr}
+  cd624c:	f2a1 bc92 	b.w	f77b74 <ContainerScreenController::_getCoalesceOrder(std::string const&) const+0x17d4>

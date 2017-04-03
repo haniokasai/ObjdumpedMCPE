@@ -1,0 +1,160 @@
+  c9a930:	b5f0      	push	{r4, r5, r6, r7, lr}
+  c9a932:	b087      	sub	sp, #28
+  c9a934:	ae02      	add	r6, sp, #8
+  c9a936:	4604      	mov	r4, r0
+  c9a938:	460d      	mov	r5, r1
+  c9a93a:	4630      	mov	r0, r6
+  c9a93c:	f677 e270 	blx	711e20 <ReadOnlyBinaryStream::getString()@plt>
+  c9a940:	f104 000c 	add.w	r0, r4, #12
+  c9a944:	4631      	mov	r1, r6
+  c9a946:	f2db ed30 	blx	f763a8 <ContainerScreenController::_getCoalesceOrder(std::string const&) const+0x8>
+  c9a94a:	4858      	ldr	r0, [pc, #352]	; (c9aaac <ResourcePackDataInfoPacket::read(BinaryStream&)+0x17c>)
+  c9a94c:	4f54      	ldr	r7, [pc, #336]	; (c9aaa0 <ResourcePackDataInfoPacket::read(BinaryStream&)+0x170>)
+  c9a94e:	4478      	add	r0, pc
+  c9a950:	9902      	ldr	r1, [sp, #8]
+  c9a952:	583a      	ldr	r2, [r7, r0]
+  c9a954:	f1a1 000c 	sub.w	r0, r1, #12
+  c9a958:	4290      	cmp	r0, r2
+  c9a95a:	d120      	bne.n	c9a99e <ResourcePackDataInfoPacket::read(BinaryStream&)+0x6e>
+  c9a95c:	4628      	mov	r0, r5
+  c9a95e:	f683 e7c4 	blx	71e8e8 <ReadOnlyBinaryStream::getUnsignedInt()@plt>
+  c9a962:	6120      	str	r0, [r4, #16]
+  c9a964:	4628      	mov	r0, r5
+  c9a966:	f683 e7c0 	blx	71e8e8 <ReadOnlyBinaryStream::getUnsignedInt()@plt>
+  c9a96a:	6160      	str	r0, [r4, #20]
+  c9a96c:	4628      	mov	r0, r5
+  c9a96e:	f683 e7c2 	blx	71e8f4 <ReadOnlyBinaryStream::getUnsignedInt64()@plt>
+  c9a972:	ae01      	add	r6, sp, #4
+  c9a974:	e9c4 0106 	strd	r0, r1, [r4, #24]
+  c9a978:	4629      	mov	r1, r5
+  c9a97a:	4630      	mov	r0, r6
+  c9a97c:	f677 e250 	blx	711e20 <ReadOnlyBinaryStream::getString()@plt>
+  c9a980:	f104 0020 	add.w	r0, r4, #32
+  c9a984:	4631      	mov	r1, r6
+  c9a986:	f2db ed10 	blx	f763a8 <ContainerScreenController::_getCoalesceOrder(std::string const&) const+0x8>
+  c9a98a:	484c      	ldr	r0, [pc, #304]	; (c9aabc <ResourcePackDataInfoPacket::read(BinaryStream&)+0x18c>)
+  c9a98c:	9901      	ldr	r1, [sp, #4]
+  c9a98e:	4478      	add	r0, pc
+  c9a990:	583a      	ldr	r2, [r7, r0]
+  c9a992:	f1a1 000c 	sub.w	r0, r1, #12
+  c9a996:	4290      	cmp	r0, r2
+  c9a998:	d113      	bne.n	c9a9c2 <ResourcePackDataInfoPacket::read(BinaryStream&)+0x92>
+  c9a99a:	b007      	add	sp, #28
+  c9a99c:	bdf0      	pop	{r4, r5, r6, r7, pc}
+  c9a99e:	4a44      	ldr	r2, [pc, #272]	; (c9aab0 <ResourcePackDataInfoPacket::read(BinaryStream&)+0x180>)
+  c9a9a0:	4b41      	ldr	r3, [pc, #260]	; (c9aaa8 <ResourcePackDataInfoPacket::read(BinaryStream&)+0x178>)
+  c9a9a2:	447a      	add	r2, pc
+  c9a9a4:	589b      	ldr	r3, [r3, r2]
+  c9a9a6:	1f0a      	subs	r2, r1, #4
+  c9a9a8:	b1eb      	cbz	r3, c9a9e6 <ResourcePackDataInfoPacket::read(BinaryStream&)+0xb6>
+  c9a9aa:	f3bf 8f5b 	dmb	ish
+  c9a9ae:	e852 1f00 	ldrex	r1, [r2]
+  c9a9b2:	1e4b      	subs	r3, r1, #1
+  c9a9b4:	e842 3600 	strex	r6, r3, [r2]
+  c9a9b8:	2e00      	cmp	r6, #0
+  c9a9ba:	d1f8      	bne.n	c9a9ae <ResourcePackDataInfoPacket::read(BinaryStream&)+0x7e>
+  c9a9bc:	f3bf 8f5b 	dmb	ish
+  c9a9c0:	e014      	b.n	c9a9ec <ResourcePackDataInfoPacket::read(BinaryStream&)+0xbc>
+  c9a9c2:	4a3f      	ldr	r2, [pc, #252]	; (c9aac0 <ResourcePackDataInfoPacket::read(BinaryStream&)+0x190>)
+  c9a9c4:	4b38      	ldr	r3, [pc, #224]	; (c9aaa8 <ResourcePackDataInfoPacket::read(BinaryStream&)+0x178>)
+  c9a9c6:	447a      	add	r2, pc
+  c9a9c8:	589b      	ldr	r3, [r3, r2]
+  c9a9ca:	1f0a      	subs	r2, r1, #4
+  c9a9cc:	b1a3      	cbz	r3, c9a9f8 <ResourcePackDataInfoPacket::read(BinaryStream&)+0xc8>
+  c9a9ce:	f3bf 8f5b 	dmb	ish
+  c9a9d2:	e852 1f00 	ldrex	r1, [r2]
+  c9a9d6:	1e4b      	subs	r3, r1, #1
+  c9a9d8:	e842 3700 	strex	r7, r3, [r2]
+  c9a9dc:	2f00      	cmp	r7, #0
+  c9a9de:	d1f8      	bne.n	c9a9d2 <ResourcePackDataInfoPacket::read(BinaryStream&)+0xa2>
+  c9a9e0:	f3bf 8f5b 	dmb	ish
+  c9a9e4:	e00b      	b.n	c9a9fe <ResourcePackDataInfoPacket::read(BinaryStream&)+0xce>
+  c9a9e6:	6811      	ldr	r1, [r2, #0]
+  c9a9e8:	1e4b      	subs	r3, r1, #1
+  c9a9ea:	6013      	str	r3, [r2, #0]
+  c9a9ec:	2900      	cmp	r1, #0
+  c9a9ee:	dcb5      	bgt.n	c9a95c <ResourcePackDataInfoPacket::read(BinaryStream&)+0x2c>
+  c9a9f0:	a903      	add	r1, sp, #12
+  c9a9f2:	f2db ece2 	blx	f763b8 <ContainerScreenController::_getCoalesceOrder(std::string const&) const+0x18>
+  c9a9f6:	e7b1      	b.n	c9a95c <ResourcePackDataInfoPacket::read(BinaryStream&)+0x2c>
+  c9a9f8:	6811      	ldr	r1, [r2, #0]
+  c9a9fa:	1e4b      	subs	r3, r1, #1
+  c9a9fc:	6013      	str	r3, [r2, #0]
+  c9a9fe:	2900      	cmp	r1, #0
+  c9aa00:	dccb      	bgt.n	c9a99a <ResourcePackDataInfoPacket::read(BinaryStream&)+0x6a>
+  c9aa02:	a904      	add	r1, sp, #16
+  c9aa04:	f2db ecd8 	blx	f763b8 <ContainerScreenController::_getCoalesceOrder(std::string const&) const+0x18>
+  c9aa08:	e7c7      	b.n	c9a99a <ResourcePackDataInfoPacket::read(BinaryStream&)+0x6a>
+  c9aa0a:	4a24      	ldr	r2, [pc, #144]	; (c9aa9c <ResourcePackDataInfoPacket::read(BinaryStream&)+0x16c>)
+  c9aa0c:	4604      	mov	r4, r0
+  c9aa0e:	4b24      	ldr	r3, [pc, #144]	; (c9aaa0 <ResourcePackDataInfoPacket::read(BinaryStream&)+0x170>)
+  c9aa10:	447a      	add	r2, pc
+  c9aa12:	9902      	ldr	r1, [sp, #8]
+  c9aa14:	f1a1 000c 	sub.w	r0, r1, #12
+  c9aa18:	589a      	ldr	r2, [r3, r2]
+  c9aa1a:	4290      	cmp	r0, r2
+  c9aa1c:	d033      	beq.n	c9aa86 <ResourcePackDataInfoPacket::read(BinaryStream&)+0x156>
+  c9aa1e:	4a21      	ldr	r2, [pc, #132]	; (c9aaa4 <ResourcePackDataInfoPacket::read(BinaryStream&)+0x174>)
+  c9aa20:	4b21      	ldr	r3, [pc, #132]	; (c9aaa8 <ResourcePackDataInfoPacket::read(BinaryStream&)+0x178>)
+  c9aa22:	447a      	add	r2, pc
+  c9aa24:	589b      	ldr	r3, [r3, r2]
+  c9aa26:	1f0a      	subs	r2, r1, #4
+  c9aa28:	b383      	cbz	r3, c9aa8c <ResourcePackDataInfoPacket::read(BinaryStream&)+0x15c>
+  c9aa2a:	f3bf 8f5b 	dmb	ish
+  c9aa2e:	e852 1f00 	ldrex	r1, [r2]
+  c9aa32:	1e4b      	subs	r3, r1, #1
+  c9aa34:	e842 3700 	strex	r7, r3, [r2]
+  c9aa38:	2f00      	cmp	r7, #0
+  c9aa3a:	d1f8      	bne.n	c9aa2e <ResourcePackDataInfoPacket::read(BinaryStream&)+0xfe>
+  c9aa3c:	f3bf 8f5b 	dmb	ish
+  c9aa40:	2900      	cmp	r1, #0
+  c9aa42:	dc20      	bgt.n	c9aa86 <ResourcePackDataInfoPacket::read(BinaryStream&)+0x156>
+  c9aa44:	a905      	add	r1, sp, #20
+  c9aa46:	e01c      	b.n	c9aa82 <ResourcePackDataInfoPacket::read(BinaryStream&)+0x152>
+  c9aa48:	4a1a      	ldr	r2, [pc, #104]	; (c9aab4 <ResourcePackDataInfoPacket::read(BinaryStream&)+0x184>)
+  c9aa4a:	4604      	mov	r4, r0
+  c9aa4c:	9901      	ldr	r1, [sp, #4]
+  c9aa4e:	447a      	add	r2, pc
+  c9aa50:	f1a1 000c 	sub.w	r0, r1, #12
+  c9aa54:	58ba      	ldr	r2, [r7, r2]
+  c9aa56:	4290      	cmp	r0, r2
+  c9aa58:	d015      	beq.n	c9aa86 <ResourcePackDataInfoPacket::read(BinaryStream&)+0x156>
+  c9aa5a:	4a17      	ldr	r2, [pc, #92]	; (c9aab8 <ResourcePackDataInfoPacket::read(BinaryStream&)+0x188>)
+  c9aa5c:	4b12      	ldr	r3, [pc, #72]	; (c9aaa8 <ResourcePackDataInfoPacket::read(BinaryStream&)+0x178>)
+  c9aa5e:	447a      	add	r2, pc
+  c9aa60:	589b      	ldr	r3, [r3, r2]
+  c9aa62:	1f0a      	subs	r2, r1, #4
+  c9aa64:	b1b3      	cbz	r3, c9aa94 <ResourcePackDataInfoPacket::read(BinaryStream&)+0x164>
+  c9aa66:	f3bf 8f5b 	dmb	ish
+  c9aa6a:	e852 1f00 	ldrex	r1, [r2]
+  c9aa6e:	1e4b      	subs	r3, r1, #1
+  c9aa70:	e842 3700 	strex	r7, r3, [r2]
+  c9aa74:	2f00      	cmp	r7, #0
+  c9aa76:	d1f8      	bne.n	c9aa6a <ResourcePackDataInfoPacket::read(BinaryStream&)+0x13a>
+  c9aa78:	f3bf 8f5b 	dmb	ish
+  c9aa7c:	2900      	cmp	r1, #0
+  c9aa7e:	dc02      	bgt.n	c9aa86 <ResourcePackDataInfoPacket::read(BinaryStream&)+0x156>
+  c9aa80:	a906      	add	r1, sp, #24
+  c9aa82:	f2db ec9a 	blx	f763b8 <ContainerScreenController::_getCoalesceOrder(std::string const&) const+0x18>
+  c9aa86:	4620      	mov	r0, r4
+  c9aa88:	f673 e16c 	blx	70dd64 <_Unwind_Resume@plt>
+  c9aa8c:	6811      	ldr	r1, [r2, #0]
+  c9aa8e:	1e4b      	subs	r3, r1, #1
+  c9aa90:	6013      	str	r3, [r2, #0]
+  c9aa92:	e7d5      	b.n	c9aa40 <ResourcePackDataInfoPacket::read(BinaryStream&)+0x110>
+  c9aa94:	6811      	ldr	r1, [r2, #0]
+  c9aa96:	1e4b      	subs	r3, r1, #1
+  c9aa98:	6013      	str	r3, [r2, #0]
+  c9aa9a:	e7ef      	b.n	c9aa7c <ResourcePackDataInfoPacket::read(BinaryStream&)+0x14c>
+  c9aa9c:	fef0 0166 	cdp2	1, 15, cr0, cr0, cr6, {3}
+  c9aaa0:	8638      	strh	r0, [r7, #48]	; 0x30
+  c9aaa2:	ffff fede 			; <UNDEFINED> instruction: 0xfffffede
+  c9aaa6:	0166      	lsls	r6, r4, #5
+  c9aaa8:	863c      	strh	r4, [r7, #48]	; 0x30
+  c9aaaa:	ffff ffb2 			; <UNDEFINED> instruction: 0xffffffb2
+  c9aaae:	0166      	lsls	r6, r4, #5
+  c9aab0:	ff5e 0166 	vrhadd.u16	q8, q7, q11
+  c9aab4:	feb2 0166 	cdp2	1, 11, cr0, cr2, cr6, {3}
+  c9aab8:	fea2 0166 	cdp2	1, 10, cr0, cr2, cr6, {3}
+  c9aabc:	ff72 0166 	vrhadd.u<illegal width 64>	q8, q1, q11
+  c9aac0:	ff3a 0166 	vrhadd.u<illegal width 64>	q0, q5, q11
